@@ -1,4 +1,5 @@
 name: Deploy to neocities
+uses: bcomnes/deploy-to-neocities@v3.0.4
 
 # only run on changes to main. Use main or master depending on whatever your default branch is called.
 on:
@@ -20,12 +21,12 @@ jobs:
     # Set up any tools and build steps here
     # This example uses a Node.js toolchain to build a site
     # If you don't need Node.js to build your site, you can omit this.
-    # - name: Use Node.js
-    #  uses: actions/setup-node@v4
-    #  with:
-    #    node-version: lts/*
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
     # If you have a different build process, replace this with your own build steps
-    # - name: Install deps and build
+    - name: Install deps and build
       run: |
         npm i
         npm run build
