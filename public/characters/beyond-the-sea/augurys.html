@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Augurys</title>
 
-    <link href="../css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="../utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="../utilities/list.min.js"></script>
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/bs-addons.css" rel="stylesheet">
+    <script type="text/javascript" src="../../utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../utilities/list.min.js"></script>
+    <script type="module">
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
 
 </head>
 <body>
@@ -22,6 +27,9 @@
         <div class="page-container d-flex flex-wrap">
 
             <div class="col-lg-2 col-12 pe-lg-2">
+                <img class="profile-icon col-12" src="../../images/character-icons/augurys.png"
+                    data-bs-toggle="tooltip">
+
                 <div class="page-sidebar sticky-top p-3">
 
                     <div class=""><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Back to Directory</div>
@@ -32,9 +40,12 @@
             <div class="col-lg-10 col-12">
                 <div class="page-body p-3">
 
-                    <div class="" id="directory-characters">
-                        <ul class="list d-flex flex-wrap col-12 p-0">
-                        </ul>
+                    <div class="d-flex flex-wrap col-12 p-0">
+
+                        <div class="">
+                            
+                        </div>
+
                     </div>
 
                 </div>
