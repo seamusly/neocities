@@ -1,0 +1,143 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+  HTML content. To learn how to do something, just try searching Google for questions like
+  "how to change link color." */
+
+@import url('https://fonts.cdnfonts.com/css/hello-bonia-serif');
+@import url('https://fonts.cdnfonts.com/css/gladriel');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css');
+@import url('https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css');
+@import url('https://cdn.boxicons.com/3.0.5/fonts/brands/boxicons-brands.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+/*
+
+font-family: 'Hello Bonia Serif', sans-serif;
+font-family: 'Hello Bosnia Script', sans-serif;
+
+font-family: 'Gladriel', sans-serif;
+
+font-family: "Montserrat", sans-serif;
+font-family: "Lexend", sans-serif;
+
+*/
+
+:root {
+  --placeholder: #8b8b8b;
+  --body-font-color: #ffece0;
+  --body-bg-color: #200B0D;
+  --body-container-bg-color: #3e2020;
+  --title-dropshadow-color: #211412;
+  --img-dropshadow-color: #ffece0;
+
+}
+
+/******************************************************
+
+*******************************************************/
+
+body {
+  background-image: url('../images/backgrounds/bg-tile-main.png');
+  color: var(--body-font-color);
+  font-family: "Lexend", sans-serif;
+}
+
+h1 {
+  font-family: 'Hello Bonia Serif', sans-serif;
+  font-size: 3rem;
+}
+
+/******************************************************
+
+*******************************************************/
+
+.main-container {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 7px solid var(--body-bg-color);
+  background: var(--body-bg-color);
+  filter: drop-shadow(0 0 5px black)
+  drop-shadow(0 0 10px var(--title-dropshadow-color));
+}
+
+.page-header {
+  height: 150px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  background: url('../images/backgrounds/bg-tile-animated.gif');
+}
+
+.page-header-title {
+  filter: drop-shadow(1px 1px 0 var(--title-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--title-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--title-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--title-dropshadow-color))
+    drop-shadow(0 0 5px var(--title-dropshadow-color));
+}
+
+.page-sidebar, .page-body {
+  background:  var(--body-container-bg-color);
+}
+
+.sidebar-header {
+  text-transform: uppercase;
+}
+
+.sidebar-subheader {
+  padding-left: 1em;
+}
+
+.char-directory-img {
+  min-width: 150px;
+  min-height: 150px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+  transition: ease 0.3s all;
+}
+
+.char-directory-img:hover {
+  transform: rotate(5deg);
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+}
+
+.char-directory-body {
+  text-align: center;
+}
+
+.char-directory-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: .1em;
+}
+
+.char-directory-title a {
+  text-decoration-style: dashed;
+  color: rgba(255,255,255,.7);
+  transition: ease 0.2s all;
+}
+
+.char-directory-title a:hover {
+  color: white;
+  letter-spacing: 1.5px;
+}
+
+.char-directory-prns {
+  color: white;
+  font-size: .9em;
+  padding: 3px 5px;
+}
