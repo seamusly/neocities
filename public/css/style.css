@@ -1,26 +1,24 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-  HTML content. To learn how to do something, just try searching Google for questions like
-  "how to change link color." */
+@import "../utilities/bootstrap-5.3.8-dist/css/bootstrap.min.css";
+@import "../utilities/boxicons-3.0/fonts/basic/boxicons.min.css";
+@import "../utilities/boxicons-3.0/fonts/brands/boxicons-brands.min.css";
+@import "../utilities/fontawesome-free-7.1.0-web/css/all.min.css";
 
-@import url('https://fonts.cdnfonts.com/css/hello-bonia-serif');
-@import url('https://fonts.cdnfonts.com/css/gladriel');
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css');
-@import url('https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css');
-@import url('https://cdn.boxicons.com/3.0.5/fonts/brands/boxicons-brands.min.css');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 
-/*
+@font-face {
+  font-family: 'Hello Bonia Serif';
+  src: url('../fonts/HelloboniaserifRegular.otf');
+}
 
-font-family: 'Hello Bonia Serif', sans-serif;
-font-family: 'Hello Bosnia Script', sans-serif;
+@font-face {
+  font-family: 'Lexend';
+  src: url('../fonts/Lexend-VariableFont_wght.ttf');
+}
 
-font-family: 'Gladriel', sans-serif;
+@font-face {
+  font-family: "Alegreya";
+  src: url('../fonts/Alegreya-VariableFont_wght.ttf');
+}
 
-font-family: "Montserrat", sans-serif;
-font-family: "Lexend", sans-serif;
-
-*/
 
 :root {
   --placeholder: #8b8b8b;
@@ -62,14 +60,14 @@ h1 {
 }
 
 .page-header {
-  height: 150px;
+  min-height: 175px;
   text-align: center;
   align-items: center;
   align-content: center;
   background: url('../images/backgrounds/bg-tile-animated.gif');
 }
 
-.page-header-title {
+.page-header-title, .page-header-subtitle {
   filter: drop-shadow(1px 1px 0 var(--title-dropshadow-color))
     drop-shadow(-1px -1px 0 var(--title-dropshadow-color))
     drop-shadow(-1px 1px 0 var(--title-dropshadow-color))
@@ -77,7 +75,14 @@ h1 {
     drop-shadow(0 0 5px var(--title-dropshadow-color));
 }
 
-.page-sidebar, .page-body {
+.page-header-subtitle {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-family: 'Alegreya', serif;
+  font-weight: normal;
+}
+
+.page-body {
   background:  var(--body-container-bg-color);
 }
 
