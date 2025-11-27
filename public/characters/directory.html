@@ -29,7 +29,7 @@
             item: function(values) {
             return `
             <div class="${values.tags}${values.published} char-directory-container p-sm-3 py-4 px-0 col-lg-3 col-sm-4 col-12">
-                <a href="${values.name}"><div class="char-directory-img" style="background-image:url('../images/character-icons/${values.icon}')"></div></a>
+                <a href="${values.link}"><div class="char-directory-img" style="background-image:url('../images/character-icons/${values.icon}')"></div></a>
                 <div class="char-directory-body">
                     <p class="char-directory-title"><a href="${values.link}">${values.name}</a></p>
                     <span class="char-directory-prns rounded" style="color:${values.tagtext}; background:${values.tagcolor}">${values.pronouns}</span>
