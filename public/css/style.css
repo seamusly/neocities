@@ -32,6 +32,7 @@
   --info-link-hover: #edb272;
 
   --body-card-bg-color: #4D2A2A;
+  --navtab-bg-color: #a35c2a;
 
 }
 
@@ -43,11 +44,22 @@ body {
   background-image: url('../images/backgrounds/bg-tile-main.png');
   color: var(--body-font-color);
   font-family: "Lexend", sans-serif;
+  font-size: 12pt;
 }
 
 h1 {
   font-family: 'Hello Bonia Serif', sans-serif;
   font-size: 3rem;
+}
+
+a {
+  color: var(--info-link-hover);
+  text-decoration: none;
+  transition: ease all .2s;
+}
+
+a:hover {
+  color: var(--navtab-bg-color);
 }
 
 /******************************************************
@@ -97,6 +109,10 @@ h1 {
 
 .sidebar-subheader {
   padding-left: 1em;
+}
+
+.unpublished {
+  filter: grayscale(100%);
 }
 
 .char-directory-img {
@@ -173,11 +189,47 @@ h1 {
   background: var(--body-container-bg-color);
 }
 
+.page-sidebar-tab {
+  border-radius: 1em 0 0 1em;
+  background: var(--navtab-bg-color);
+  padding: .4em .6em;
+  transition: ease-in-out all .2s;
+  margin-bottom: .5rem;
+}
+
+.page-sidebar-tab:hover {
+  margin-left: -.75rem;
+}
+
+.page-sidebar-tab a {
+  text-transform: uppercase;
+  color: var(--body-font-color);
+  text-decoration: none;
+}
+
+.page-sidebar-back {
+  border-radius: 0 1em 1em 0;
+  background: var(--navtab-bg-color);
+  padding: .4em .6em;
+  transition: ease-in-out all .2s;
+  margin-bottom: 1rem;
+  text-align: end;
+}
+
+.page-sidebar-back:hover {
+  margin-right: -.75rem;
+}
+
+.page-sidebar-back a {
+  color: var(--body-font-color);
+  text-decoration: none;
+}
+
 .profile-info-title {
   font-size: .8rem;
   text-transform: uppercase;
   margin-bottom: 0;
-  color: var(--info-title-color);
+  color: var(--info-link-hover);
 }
 
 .profile-info-divider {
@@ -216,6 +268,20 @@ a.profile-inline-img:hover {
   .profile-body-container {
     margin-top: 0.5rem;
   }
+
+  .profile-tabs {
+    font-size: 10pt;
+  }
+
+  .profile-tabs .nav-item {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .profile-tabs .nav-item .nav-link {
+    border: 3px solid var(--body-bg-color);
+    padding: .2em .25em;
+  }
 }
 
 .profile-tabs {
@@ -253,12 +319,18 @@ a.profile-inline-img:hover {
   background: var(--body-bg-color);
 }
 
-.profile-overview-header {
+.profile-about-header {
   font-family: 'Hello Bonia Serif', sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
 }
 
-.profile-overview-divider {
+@media (min-width: 768px) {
+  .profile-about-header {
+    font-size: 2.5rem;
+  }
+}
+
+.profile-about-divider {
   border-style: dashed;
   border-width: 2px 0 0 0;
   opacity: 50%;
@@ -282,19 +354,12 @@ a.profile-collapse-link:hover {
   content: '✦';
 }
 
-.profile-logs-container {
-  position: relative;
+.profile-logs-container, .profile-card {
   background: var(--body-card-bg-color);
 }
 
 .profile-logs-title {
   font-size: 1.75rem;
-}
-
-.profile-logs-tagsbox {
-  position: absolute;
-  right: 8px;
-  top: 8px;
 }
 
 .profile-logs-tag {
@@ -325,4 +390,38 @@ a .profile-logs-img:hover {
     drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
     drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
     drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+}
+
+/******************************************************
+
+*******************************************************/
+
+.gallery-card {
+  background: var(--body-card-bg-color);
+  transition: ease 0.3s all;
+}
+
+.gallery-card:hover {
+  background: var(--body-card-bg-color);
+    transform: rotate(5deg);
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(0 0 10px black);
+}
+
+.gallery-card-thumb {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery-card-info {
+  color: var(--body-font-color);
+}
+
+.gallery-card-title {
+  font-size: 1.2rem;
 }
