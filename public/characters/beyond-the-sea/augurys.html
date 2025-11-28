@@ -8,10 +8,115 @@
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/bs-addons.css" rel="stylesheet">
     <script type="text/javascript" src="../../utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../utilities/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="../../utilities/list.min.js"></script>
     <script type="module">
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        const submissionOptions = {
+            valueNames: [
+                'img',
+                'title',
+                'date',
+                'label1', // dungeon
+                'value1',
+                'label2', // levels
+                'value2',
+                'link',
+                'tags',
+            ],
+            item: function(values) {
+            return `
+                <div class="profile-logs-container p-3 d-flex flex-wrap col-12 my-2 ${values.tags}">
+
+                    ${values.label2 === 'Words' ?
+                    `<div class="profile-logs-imagebox col-lg-auto col-12 pe-lg-3 d-flex justify-content-center">
+                        <a href="${values.link}"><div class="profile-logs-img" style="background-image:url('../../images/${values.img}'); background-size:contain;"></div></a>
+                    </div>` : 
+                    `<div class="col-lg-auto col-12 pe-lg-3 d-flex justify-content-center">
+                        <a data-fslightbox href="../../images/${values.img}">
+                            <div class="profile-logs-img" style="background-image:url('../../images/${values.img}')"></div>
+                        </a>
+                    </div>`}
+
+                    <div class="profile-logs-info col-lg col-12">
+                        <h4 class="mb-0 mt-lg-0 mt-3 ps-lg-0 ps-1">${values.title}</h4>
+                        <hr class="profile-info-divider my-1">
+
+                        <div class="d-flex flex-wrap col-12">
+
+                            <div class="col-lg-4 col-sm-6 col-12 p-2">
+                                <p class="profile-info-title">Date</p>
+                                <span class="ms-2">${values.date}</span>
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 col-12 p-2">
+                                <p class="profile-info-title">${values.label1}</p>
+                                <span class="ms-2">${values.value1}</span>
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 col-12 p-2">
+                                <p class="profile-info-title">${values.label2}</p>
+                                <span class="ms-2">${values.value2}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                `
+                }
+            };
+
+        const submissionValues = [
+            /*
+            {
+                img: '',
+                title: '',
+                date: '',
+                dungeon: '',
+                levels: '',
+            },
+            */
+            {
+                img: 'tasks/11-03-25_age-apart_solo.jpg',
+                title: 'Sundered',
+                date: 'Nov 3, 2025 @ 9:08 PM',
+                label1: 'Task',
+                value1: 'An Age Apart',
+                label2: '',
+                value2: '',
+                tags: 'task solo artwork'
+            },
+            {
+                img: 'dungeons/11-03-25_verglas-labyrinth_collab.jpg',
+                title: 'Rock and a Hard Place',
+                date: 'Nov 3, 2025 @ 9:11 PM',
+                label1: 'Dungeon',
+                value1: 'Verglas Labyrinth',
+                label2: 'Levels',
+                value2: '1 <i class="fa-solid fa-angle-right text-success"></i> 5',
+                tags: 'dungeon collab artwork'
+            },
+            {
+                img: 'misc/book.png',
+                title: 'Comfortably Ignorant',
+                date: 'Nov 14, 2025 @ 12:19 AM',
+                label1: 'Task',
+                value1: 'Distortion World Escapades',
+                label2: 'Words',
+                value2: '1,633',
+                link: '#',
+                tags: 'task solo writing holidayhills'
+            },
+        ];
+
+        let directoryList = new List('dungeon-log', submissionOptions, submissionValues);
+        refreshFsLightbox();
+
+        $(`.profile-collapse-link`).on('click', function() {
+            $(this).toggleClass('active');
+        });
     </script>
 
 </head>
@@ -27,23 +132,181 @@
         <div class="page-container d-flex flex-wrap">
 
             <div class="col-lg-2 col-12 pe-lg-2">
-                <img class="profile-icon col-12" src="../../images/character-icons/augurys.png"
-                    data-bs-toggle="tooltip">
+                <div class="d-lg-block d-flex flex-wrap">
+                    <div class="col-lg-12 col-md-5 col-sm-6 col-12 text-center">
+                        <img class="profile-icon mt-lg-0 mt-0 col-12" src="../../images/character-icons/augurys.png">
+                    </div>
 
-                <div class="page-sidebar sticky-top p-3">
+                    <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
 
-                    <div class=""><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Back to Directory</div>
+                        <div class="profile-sidebar mx-auto p-lg-2 py-sm-2 px-sm-3 p-2">
 
+                            <!-- AGE -->
+                            <div>
+                                <p class="profile-info-title">Age</p>
+                                <span class="ms-2">content</span>
+                            </div>
+
+                            <hr class="profile-info-divider my-2">
+
+                            <!-- GENDER -->
+                            <div>
+                                <p class="profile-info-title">Gender</p>
+                                <span class="ms-2">content</span>
+                            </div>
+
+                            <hr class="profile-info-divider my-2">
+
+                            <!-- PRONOUNS -->
+                            <div>
+                                <p class="profile-info-title">Pronouns</p>
+                                <span class="ms-2">content</span>
+                            </div>
+
+                            <hr class="profile-info-divider my-2">
+
+                            <!-- HEIGHT -->
+                            <div>
+                                <p class="profile-info-title">Height</p>
+                                <span class="ms-2">content</span>
+                            </div>
+
+                            <hr class="profile-info-divider my-2">
+
+                            <!-- WEIGHT -->
+                            <div>
+                                <p class="profile-info-title">Weight</p>
+                                <span class="ms-2">content</span>
+                            </div>
+
+                            <hr class="profile-info-divider my-2">
+
+                            <!-- SPECIES -->
+                            <div>
+                                <p class="profile-info-title">Species</p>
+                                <span class="ms-2">content</span>
+                            </div>
+
+                        </div>
+
+                        <div class=""><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Back to Directory</div>
+
+                    </div>
                 </div>
             </div>
 
-            <div class="col-lg-10 col-12">
+            <div class="col-lg-10 col-12 profile-body-container">
+
+                <ul class="nav nav-tabs profile-tabs justify-content-end pe-2 col-12" id="myTab" role="tablist">
+                    <li class="nav-item col-lg-auto col" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview">Overview</button>
+                    </li>
+                    <li class="nav-item col-lg-auto col" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">History</button>
+                    </li>
+                    <li class="nav-item col-lg-auto col" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#design">Design</button>
+                    </li>
+                    <li class="nav-item col-lg-auto col" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gallery">Gallery</button>
+                    </li>
+                </ul>
+
                 <div class="page-body p-3">
 
-                    <div class="d-flex flex-wrap col-12 p-0">
+                    <div class="tab-content col-12 p-0" id="profile-content">
 
-                        <div class="">
+                        <div class="tab-pane fade show active" id="overview">
                             
+
+                            <div class="col-12 p-2">
+                                
+                                <a class="profile-inline-img d-inline float-end col-lg-4 col-md-3 col-12" href="../../images/character-refs/augurys-gijinka.png" data-fslightbox style="background-image:url('../../images/character-refs/augurys-gijinka.png')"></a>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                <!-- TRIVIA -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-4">
+                                    <hr class="profile-overview-divider" style="width:25px;">
+                                    <div class="profile-overview-header col-auto mx-2">
+                                        <span class="fa-xs profile-collapse-link active"></span>
+                                        Trivia
+                                    </div>
+                                    <hr class="profile-overview-divider col">
+                                </div>
+
+                                <div id="overview-trivia">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                </div>
+
+                                <!-- PERSONALITY -->
+                                <div class="d-flex align-items-center col-12 p-0 mt-4">
+                                    <hr class="profile-overview-divider" style="width:25px;">
+                                    <div class="profile-overview-header col-auto mx-2">
+                                        <span class="fa-xs profile-collapse-link active"></span>
+                                        Personality
+                                    </div>
+                                    <hr class="profile-overview-divider col">
+                                </div>
+
+                                <div id="overview-personality">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="tab-pane fade" id="history">
+                            <h2>History</h2>
+                        </div>
+
+                        <div class="tab-pane fade" id="design">
+                            <h2>Design</h2>
+                        </div>
+
+                        <div class="tab-pane fade" id="gallery">
+                            <h2>Gallery</h2>
+
+                            <div id="dungeon-log">
+                                <ul class="list p-0"></ul>
+                            </div>
+                            <div class="profile-logs-container p-3 d-none flex-wrap col-12 my-2">
+
+                                <div class="profile-logs-imagebox col-lg-auto col-12 pe-lg-3 d-flex justify-content-center">
+                                    <a data-fslightbox href="../../images/character-icons/placeholder.png">
+                                        <div class="profile-logs-img" style="background-image:url('../../images/character-icons/placeholder.png')"></div>
+                                    </a>
+                                </div>
+
+                                <div class="profile-logs-info col-lg col-12">
+                                    <h4 class="mb-0 mt-lg-0 mt-3 ps-lg-0 ps-1">Title</h4>
+                                    <hr class="profile-info-divider my-1">
+
+                                    <div class="d-flex flex-wrap col-12">
+
+                                        <div class="col-lg-4 col-sm-6 col-12 p-2">
+                                            <p class="profile-info-title">Date</p>
+                                            <span class="ms-2">content</span>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-6 col-12 p-2">
+                                            <p class="profile-info-title">Dungeon</p>
+                                            <span class="ms-2">content</span>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-6 col-12 p-2">
+                                            <p class="profile-info-title">Levels</p>
+                                            <span class="ms-2">content</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
@@ -55,5 +318,6 @@
 
     </div>
 
+    <script type="text/javascript" src="../../utilities/fslightbox.js"></script>
 </body>
 </html>

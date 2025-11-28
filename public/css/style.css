@@ -28,6 +28,11 @@
   --title-dropshadow-color: #211412;
   --img-dropshadow-color: #ffece0;
 
+  --info-title-color: #ffe5e0ce;
+  --info-link-hover: #edb272;
+
+  --body-card-bg-color: #4D2A2A;
+
 }
 
 /******************************************************
@@ -153,6 +158,165 @@ h1 {
 
 .profile-icon {
   margin-top: -6rem;
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+    max-width: 250px;
+}
+
+.profile-sidebar {
+  background: var(--body-container-bg-color);
+}
+
+.profile-info-title {
+  font-size: .8rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: var(--info-title-color);
+}
+
+.profile-info-divider {
+  border-style: dashed;
+}
+
+a.profile-inline-img {
+  min-height: 550px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+  transition: ease 0.3s all;
+}
+
+a.profile-inline-img:hover {
+  transform: rotate(2deg);
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+}
+
+.profile-body-container {
+  margin-top: -2.7rem;
+}
+
+@media (max-width: 768px) {
+  .profile-body-container {
+    margin-top: 0.5rem;
+  }
+}
+
+.profile-tabs {
+  border: 0;
+  margin-bottom: 1px;
+}
+
+.profile-tabs .nav-item {
+  margin-left: .3em;
+  margin-right: .3em;
+}
+
+.profile-tabs .nav-item .nav-link {
+  border-radius: 0;
+  border: 5px solid var(--body-bg-color);
+  border-bottom-width: 0px;
+  background: var(--body-container-bg-color);
+  padding: .4em .5em;
+  text-transform: uppercase;
+  color: var(--body-font-color);
+  transition: ease-in-out all .2s;
+}
+
+.profile-tabs .nav-item .nav-link:hover {
+  margin-top: -.4em;
+  padding-bottom: .8em;
+  color: var(--info-link-hover);
+}
+
+.profile-tabs .nav-item .nav-link:disabled {
+  color: hsl(from var(--info-title-color) h s l / 0.3);
+}
+
+.profile-tabs .nav-item .nav-link:not(.active) {
+  background: var(--body-bg-color);
+}
+
+.profile-overview-header {
+  font-family: 'Hello Bonia Serif', sans-serif;
+  font-size: 2.5rem;
+}
+
+.profile-overview-divider {
+  border-style: dashed;
+  border-width: 2px 0 0 0;
+  opacity: 50%;
+}
+
+.profile-collapse-link {
+  text-decoration: none;
+  color: var(--info-link-hover);
+  transition: ease all 0.1s;
+}
+
+a.profile-collapse-link:hover {
+  color: var(--body-font-color);
+}
+
+.profile-collapse-link:before {
+  content: '✧';
+}
+
+.profile-collapse-link.active:before {
+  content: '✦';
+}
+
+.profile-logs-container {
+  position: relative;
+  background: var(--body-card-bg-color);
+}
+
+.profile-logs-title {
+  font-size: 1.75rem;
+}
+
+.profile-logs-tagsbox {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.profile-logs-tag {
+  font-size: .9em;
+  padding: 3px 5px;
+}
+
+.profile-logs-img {
+  height: 110px;
+  width: 170px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+  transition: ease 0.3s all;
+}
+
+a .profile-logs-img:hover {
+  transform: rotate(5deg);
   filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
     drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
     drop-shadow(-1px 1px 0 var(--img-dropshadow-color))

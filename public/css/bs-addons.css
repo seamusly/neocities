@@ -83,3 +83,9 @@
 .me-n5 {
     margin-right: -3rem !important;
 }
+
+/*****************************************************/
+
+.text-success {
+    color: rgb(59, 187, 104) !important;
+}
