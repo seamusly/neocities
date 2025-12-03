@@ -1,6 +1,4 @@
 @import "../utilities/bootstrap-5.3.8-dist/css/bootstrap.min.css";
-@import "../utilities/boxicons-3.0/fonts/basic/boxicons.min.css";
-@import "../utilities/boxicons-3.0/fonts/brands/boxicons-brands.min.css";
 @import "../utilities/fontawesome-free-7.1.0-web/css/all.min.css";
 
 
@@ -82,6 +80,15 @@ a:hover {
   align-items: center;
   align-content: center;
   background: url('../images/backgrounds/bg-tile-animated.gif');
+  position: relative;
+}
+
+.page-footer {
+  min-height: 80px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  border: 1px white solid;
 }
 
 .page-header-title, .page-header-subtitle {
@@ -210,14 +217,16 @@ a:hover {
 .page-sidebar-back {
   border-radius: 0 1em 1em 0;
   background: var(--navtab-bg-color);
-  padding: .4em .6em;
+  padding: .4em .6em .4em 2em;
   transition: ease-in-out all .2s;
-  margin-bottom: 1rem;
   text-align: end;
+  position: absolute;
+  left: -9px;
+  top: 0;
 }
 
 .page-sidebar-back:hover {
-  margin-right: -.75rem;
+  padding-left: 3em;
 }
 
 .page-sidebar-back a {
@@ -260,17 +269,11 @@ a.profile-inline-img:hover {
     drop-shadow(1px -1px 0 var(--img-dropshadow-color));
 }
 
-.profile-body-container {
-  margin-top: -2.7rem;
-}
 
 @media (max-width: 768px) {
-  .profile-body-container {
-    margin-top: 0.5rem;
-  }
-
   .profile-tabs {
     font-size: 10pt;
+    bottom: 0;
   }
 
   .profile-tabs .nav-item {
@@ -287,6 +290,9 @@ a.profile-inline-img:hover {
 .profile-tabs {
   border: 0;
   margin-bottom: 1px;
+  position: absolute;
+  bottom: -8px;
+  right: 0;
 }
 
 .profile-tabs .nav-item {
@@ -395,6 +401,16 @@ a .profile-logs-img:hover {
 /******************************************************
 
 *******************************************************/
+
+.design-swatch {
+  height: 30px;
+  padding-right: 1em;
+  text-align: end;
+  align-items: center;
+  border: 2px white solid;
+  border-left-width: 0;
+  border-radius: 0 .25em 1em 0;
+}
 
 .gallery-card {
   background: var(--body-card-bg-color);

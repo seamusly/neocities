@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dragon-heist - Zane</title>
+
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/bs-addons.css" rel="stylesheet">
+    <link href="../../utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../../utilities/list.min.js"></script>
+    <script type="module">
+        // Import config and header utils
+        import { config } from '../../js/config.js';
+        import { createHeader, createFooter } from '../../js/layout.js';
+
+        // Create header and footer
+        $(document).ready(function() {
+            createHeader(config.pages.beyondthesea.title.zane, config.pages.beyondthesea.subtitle);
+            createFooter('../../');
+        });
+
+        // Initialize tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        const submissionOptions = {
+            valueNames: [
+                'imglink',
+                'caption',
+                'pagelink',
+                'title',
+                'date',
+                'tags'
+            ],
+            item: function(values) {
+                return `
+                <a class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 ${values.tags}" ${values.tags.includes('artwork') ? `data-lightbox="${values.title}" href="../../images/${values.imglink}" data-title="${values.caption}"` : `href="${values.pagelink}"`}">
+                    <div class="gallery-card p-2">
+                        <div class="gallery-card-thumb" style="background-image:url('../../images/${values.imglink}');${values.tags.includes('artwork') ? '' : 'background-size:contain;'}"></div>
+                    </div>
+                    <div class="mt-2 gallery-card-info text-center">
+                        <p class="mb-0 gallery-card-title">${values.title}</p>
+                        <p class="profile-info-title">${values.date}</p>
+                    </div>
+                </a>`
+            }
+        };
+
+        const submissionValues = [
+            {
+                imglink: 'tasks/11-03-25_age-apart_solo.jpg',
+                caption: 'Task: An Age Apart',
+                pagelink: '',
+                title: 'Sundered',
+                date: 'Nov 3, 2025 @ 9:08 PM',
+                tags: 'task solo artwork'
+            },
+            {
+                imglink: 'dungeons/11-03-25_verglas-labyrinth_collab.jpg',
+                caption: 'Verglas Labyrinth // @LevairTaivas',
+                pagelink: '',
+                title: 'Rock and a Hard Place',
+                date: 'Nov 3, 2025 @ 9:11 PM',
+                tags: 'dungeon collab artwork'
+            },
+            {
+                imglink: 'misc/book.png',
+                pagelink: '#',
+                title: 'Comfortably Ignorant',
+                date: 'Nov 14, 2025 @ 12:19 AM',
+                tags: 'task solo writing holidayhills'
+            },
+        ]
+
+        let galleryList = new List('gallery-container', submissionOptions, submissionValues);
+
+        $(`.profile-collapse-link`).on('click', function() {
+            $(this).toggleClass('active');
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div class="page-header mb-2">
+            <!-- <h1 class="page-header-title mb-0">Zane</h1>
+            <div class="page-header-subtitle">✦ PMD Beyond the Sea ✦</div> -->
+
+            <ul class="nav nav-tabs profile-tabs justify-content-end pe-md-2 col-12" id="myTab" role="tablist">
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about">About</button>
+                </li>
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">History</button>
+                </li>
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#stats">Stats</button>
+                </li>
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gallery">Gallery</button>
+                </li>
+            </ul>
+
+            <div class="mt-2 page-sidebar-back">
+                <a href="../../characters.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Characters</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="profile-content">
+            
+            <div class="tab-pane fade show active p-0" id="about">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Basics</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Trivia</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Personality</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <a class="profile-inline-img d-md-inline d-none float-md-end col-lg-4 col-md-3 col-12 ms-md-3 mb-md-0 mb-4 mt-md-0" href="../../images/character-refs/zane-gijinka-v1.png" data-lightbox="Gijinka Reference" style="background-image:url('../../images/character-refs/zane-gijinka-v1.png')"></a>
+
+                                <!-- BASIC -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <span class="fa-xs profile-collapse-link active"></span>
+                                        Basics
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <div class="d-flex flex-wrap align-items-center text-center col-md-6 p-2 profile-card mx-auto mt-2 mb-4">
+                                    <!-- NAME -->
+                                    <div class="col-6">
+                                        <p class="profile-info-title">Name</p>
+                                        <span>Za'nezrin Haevn</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <!-- ALIAS -->
+                                    <div class="col-6">
+                                        <p class="profile-info-title">Alias</p>
+                                        <span>Zane, Huỳnh Nhật Quang</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <!-- AGE -->
+                                    <div class="col-6">
+                                        <p class="profile-info-title">Age</p>
+                                        <span>Adult (24+)</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <!-- SPECIES -->
+                                    <div class="col-6">
+                                        <p class="profile-info-title">Species</p>
+                                        <span>Applin</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <!-- GENDER -->
+                                    <div class="col-6">
+                                        <p class="profile-info-title">Gender</p>
+                                        <span>Demiboy</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <!-- PRONOUNS -->
+                                    <div class="col-6">
+                                        <p class="profile-info-title">Pronouns</p>
+                                        <span>he/they</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <!-- PREFERENCES -->
+                                    <div class="col-12">
+                                        <span data-bs-toggle="tooltip" data-bs-title="Demiboy"><img src="../../images/pride-flags/demiboy.png"></span>
+                                        <span data-bs-toggle="tooltip" data-bs-title="Achillean"><img src="../../images/pride-flags/achillean.png"></span>
+                                        <span data-bs-toggle="tooltip" data-bs-title="Polyamorous"><img src="../../images/pride-flags/polyamorous.png"></span>
+                                    </div>
+                                </div>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                <!-- TRIVIA -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <span class="fa-xs profile-collapse-link active"></span>
+                                        Trivia
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <div id="about-trivia">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                </div>
+
+                                <!-- PERSONALITY -->
+                                <div class="d-flex align-items-center col-12 p-0 mt-5">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <span class="fa-xs profile-collapse-link active"></span>
+                                        Personality
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <div id="about-personality">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                </div>
+
+                            
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade p-0" id="history">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- SECTION -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <span class="fa-xs profile-collapse-link active"></span>
+                                        History
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade p-0" id="stats">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Ability</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Moves</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Logs</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- ABILITY -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#ability"></a>
+                                        Ability
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <!-- MOVES -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#moves"></a>
+                                        Moves
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <!-- LOGS -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#logs"></a>
+                                        LOGS
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade p-0" id="gallery">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- DESIGN -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-design"></a>
+                                        Design
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <div class="collapse show active" id="gallery-design">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="col-2 ms-n4">
+
+                                            <div class="profile-info-title px-3">Hair</div>
+                                            <div class="design-swatch mb-1" style="background:#EDE4DD;"></div>
+
+                                            <div class="profile-info-title px-3">Eyes</div>
+                                            <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(92, 64, 72, 1) 0%, rgba(92, 64, 72, 1) 50%, rgba(211, 150, 111, 1) 50%, rgba(211, 150, 111, 1) 100%);"></div>
+
+                                            <div class="profile-info-title px-3">Skin</div>
+                                            <div class="design-swatch mb-1" style="background:#855547;"></div>
+
+                                            <div class="profile-info-title px-3">Fur</div>
+                                            <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(38, 34, 31, 1) 0%, rgba(38, 34, 31, 1) 25%, rgba(175, 136, 106, 1) 25%, rgba(175, 136, 106, 1) 50%, rgba(128, 88, 87, 1) 50%, rgba(128, 88, 87, 1) 75%, rgba(204, 185, 171, 1) 75%, rgba(204, 185, 171, 1) 100%);"></div>
+
+                                            <div class="profile-info-title px-3">Coat</div>
+                                            <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(112, 66, 50, 1) 0%, rgba(112, 66, 50, 1) 25%, rgba(126, 89, 71, 1) 25%, rgba(126, 89, 71, 1) 50%, rgba(185, 144, 123, 1) 50%, rgba(185, 144, 123, 1) 75%, rgba(58, 26, 13, 1) 75%);"></div>
+
+                                        </div>
+
+                                        <a class="profile-inline-img d-block col-lg-4 col-md-3 col-12" href="../../images/character-refs/augurys-gijinka.png" data-lightbox="Gijinka Design Reference" style="background-image:url('../../images/character-refs/augurys-gijinka.png')"></a>
+                                    </div>
+                                </div>
+
+                                <!-- SUBMISSIONS -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-container"></a>
+                                        Submissions
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <div class="collapse show active" id="gallery-container">
+                                    <ul class="list p-0 d-flex flex-wrap col-12">
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="page-footer mt-2">
+        </div>
+
+    </div>
+</body>
+</html>
