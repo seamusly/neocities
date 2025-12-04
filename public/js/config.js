@@ -4,7 +4,7 @@ config.footer = {
     links: [
         {
             title: 'Sitemap',
-            link: 'sitemap.html',
+            link: '#',
         },
         {
             title: 'Credits',
@@ -14,6 +14,14 @@ config.footer = {
 };
 
 config.pages = {
+    index: {
+        root: './',
+        title: 'dragon-heist'
+    },
+    credits: {
+        root: './',
+        title: 'Credits'
+    },
     beyondthesea: {
         root: '../../',
         title: {

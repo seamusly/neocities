@@ -9,9 +9,21 @@
     <link href="css/bs-addons.css" rel="stylesheet">
     <script type="text/javascript" src="utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="utilities/lightbox2-2.11.5/lightbox.min.js"></script>
     <script type="module">
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        // Import config and utils
+        import { config } from './js/config.js';
+        import { utils } from './js/utils.js';
+
+        // Init page elements
+        $(document).ready(function() {
+            utils.init.header(config.pages.index.title);
+            utils.init.footer(config.footer.links, config.pages.index.root);
+            utils.init.top();
+
+            utils.init.tooltips();
+            utils.init.lightbox();
+        });
     </script>
 </head>
 <body>
@@ -19,7 +31,6 @@
     <div class="main-container">
 
         <div class="page-header mb-2">
-            <h1 class="page-header-title">dragon-heist</h1>
         </div>
 
         <div class="page-body p-md-4 p-3">
@@ -28,10 +39,14 @@
             <p>This site is a <i>heavy</i> WIP! At the moment, I'm focused on transferring art and character profiles over from Toyhou.se, and so these sections will be pretty barebones for the time being.</p>
             <p>Here are some links to get us started at least:</p>
             <ul class="fa-ul">
-              <li><i class="fa-solid fa-caret-right"></i> <a href="credits.html">Credits</a></li>
-              <li><i class="fa-solid fa-caret-right"></i> <a href="characters.html">Characters</a></li>
+                <li><i class="fa-solid fa-caret-right"></i> <a href="credits.html">Credits</a></li>
+                <li><i class="fa-solid fa-caret-right"></i> <a href="characters.html">Characters</a></li>
             </ul>
 
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-content"></div>
         </div>
 
     </div>

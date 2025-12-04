@@ -1,7 +1,7 @@
 let utils = {};
 
 utils.init = {
-    header(title, subtitle) {
+    header(title, subtitle = null) {
         const header = $(`.page-header`);
 
         if (subtitle) {
