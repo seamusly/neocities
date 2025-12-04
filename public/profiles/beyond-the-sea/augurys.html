@@ -13,13 +13,20 @@
     <script type="text/javascript" src="../../utilities/list.min.js"></script>
     <script type="text/javascript" src="../../utilities/lightbox2-2.11.5/lightbox.min.js"></script>
     <script type="module">
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        // Import config and utils
+        import { config } from '../../js/config.js';
+        import { utils } from '../../js/utils.js';
 
-        lightbox.option({
-            'resizeDuration': 400,
-            'fadeDuration': 200,
-        })
+        // Init page elements
+        $(document).ready(function() {
+            utils.init.header(config.pages.beyondthesea.title.augurys, config.pages.beyondthesea.subtitle);
+            utils.init.footer(config.footer.links, config.pages.beyondthesea.root);
+            utils.init.top();
+
+            utils.init.profile();
+            utils.init.tooltips();
+            utils.init.lightbox();
+        });
 
         const submissionOptions = {
             valueNames: [
@@ -71,10 +78,6 @@
         ]
 
         let galleryList = new List('gallery-container', submissionOptions, submissionValues);
-
-        $(`.profile-collapse-link`).on('click', function() {
-            $(this).toggleClass('active');
-        });
     </script>
 
 </head>
@@ -83,261 +86,527 @@
     <div class="main-container">
 
         <div class="page-header mb-2">
-            <h1 class="page-header-title mb-0">Augurys</h1>
-            <div class="page-header-subtitle">✦ PMD Beyond the Sea ✦</div>
+
+            <ul class="nav nav-tabs profile-tabs justify-content-end pe-md-2 col-12" id="myTab" role="tablist">
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about">About</button>
+                </li>
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">History</button>
+                </li>
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#design">Design</button>
+                </li>
+                <li class="nav-item col-md-auto col" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gallery">Gallery</button>
+                </li>
+            </ul>
+
+            <div class="mt-2 page-sidebar-back">
+                <a href="../../characters.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Characters</a>
+            </div>
         </div>
 
-        <div class="page-container d-flex flex-wrap">
+        <div class="tab-content" id="profile-content">
+            
+            <div class="tab-pane fade show active p-0" id="about">
+                <div class="page-container d-flex flex-wrap">
 
-            <div class="col-lg-2 col-12 pe-lg-2">
-                <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
-                    <div class="ms-n2 me-4">
-                        <div class="page-sidebar-back">
-                            <a href="../../characters.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Characters</a>
-                        </div>
-                    </div>
-
-                    <div class="ms-4 me-n2">
-                        <div class="page-sidebar-tab">
-                            <a href="#">section</a>
-                        </div>
-
-                        <div class="page-sidebar-tab">
-                            <a href="#">section</a>
-                        </div>
-
-                        <div class="page-sidebar-tab">
-                            <a href="#">section</a>
-                        </div>
-
-                        <div class="page-sidebar-tab">
-                            <a href="#">section</a>
-                        </div>
-                    </div>
-
-                    <div class="ms-n2 me-4">
-                        <div class="page-sidebar-back">
-                            <a href="#"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-lg-10 col-12 profile-body-container">
-
-                <ul class="nav nav-tabs profile-tabs justify-content-end pe-md-2 col-12" id="myTab" role="tablist">
-                    <li class="nav-item col-md-auto col" role="presentation">
-                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about">About</button>
-                    </li>
-                    <li class="nav-item col-md-auto col" role="presentation">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">History</button>
-                    </li>
-                    <li class="nav-item col-md-auto col" role="presentation">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#stats">Stats</button>
-                    </li>
-                    <li class="nav-item col-md-auto col" role="presentation">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gallery">Gallery</button>
-                    </li>
-                </ul>
-
-                <div class="page-body p-3">
-
-                    <div class="tab-content col-12 p-md-2 p-0" id="profile-content">
-
-                        <div class="tab-pane fade" id="about">
-                            
-                            <a class="profile-inline-img d-md-inline d-none float-md-end col-lg-4 col-md-3 col-12 ms-md-3 mb-md-0 mb-4 mt-md-0" href="../../images/character-refs/augurys-gijinka.png" data-lightbox="Gijinka Reference" style="background-image:url('../../images/character-refs/augurys-gijinka.png')"></a>
-
-                            <!-- BASIC -->
-                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <span class="fa-xs profile-collapse-link active"></span>
-                                    Basics
-                                </div>
-                                <hr class="profile-about-divider col">
-                            </div>
-
-                            <div class="d-flex flex-wrap align-items-center text-center col-md-6 p-2 profile-card mx-auto mt-2 mb-4">
-                                <!-- NAME -->
-                                <div class="col-6">
-                                    <p class="profile-info-title">Name</p>
-                                    <span>Augurys</span>
-                                    <hr class="profile-info-divider my-2">
-                                </div>
-
-                                <!-- ALIAS -->
-                                <div class="col-6">
-                                    <p class="profile-info-title">Alias</p>
-                                    <span>Auggy</span>
-                                    <hr class="profile-info-divider my-2">
-                                </div>
-
-                                <!-- AGE -->
-                                <div class="col-6">
-                                    <p class="profile-info-title">Age</p>
-                                    <span>Adult (25-30+)</span>
-                                    <hr class="profile-info-divider my-2">
-                                </div>
-
-                                <!-- SPECIES -->
-                                <div class="col-6">
-                                    <p class="profile-info-title">Species</p>
-                                    <span>Buneary</span>
-                                    <hr class="profile-info-divider my-2">
-                                </div>
-
-                                <!-- GENDER -->
-                                <div class="col-6">
-                                    <p class="profile-info-title">Gender</p>
-                                    <span>Non-binary</span>
-                                    <hr class="profile-info-divider my-2">
-                                </div>
-
-                                <!-- PRONOUNS -->
-                                <div class="col-6">
-                                    <p class="profile-info-title">Pronouns</p>
-                                    <span>they/them</span>
-                                    <hr class="profile-info-divider my-2">
-                                </div>
-
-                                <!-- PREFERENCES -->
-                                <div class="col-12">
-                                    <span data-bs-toggle="tooltip" data-bs-title="Non-binary"><img src="../../images/pride-flags/nonbinary.png"></span>
-                                    <span data-bs-toggle="tooltip" data-bs-title="Pansexual"><img src="../../images/pride-flags/pansexual.png"></span>
-                                </div>
-                            </div>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
-
-                            <!-- TRIVIA -->
-                            <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <span class="fa-xs profile-collapse-link active"></span>
-                                    Trivia
-                                </div>
-                                <hr class="profile-about-divider col">
-                            </div>
-
-                            <div id="about-trivia">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
-
-                            </div>
-
-                            <!-- PERSONALITY -->
-                            <div class="d-flex align-items-center col-12 p-0 mt-5">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <span class="fa-xs profile-collapse-link active"></span>
-                                    Personality
-                                </div>
-                                <hr class="profile-about-divider col">
-                            </div>
-
-                            <div id="about-personality">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tab-pane fade" id="history">
-                            <h2>History</h2>
-                        </div>
-
-                        <div class="tab-pane fade" id="stats">
-
-                            <!-- ABILITY -->
-                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#ability"></a>
-                                    Ability
-                                </div>
-                                <hr class="profile-about-divider col">
-                            </div>
-
-                            <!-- MOVES -->
-                            <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#moves"></a>
-                                    Moves
-                                </div>
-                                <hr class="profile-about-divider col">
-                            </div>
-
-                            <!-- LOGS -->
-                            <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#logs"></a>
-                                    LOGS
-                                </div>
-                                <hr class="profile-about-divider col">
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade show active" id="gallery">
-                            <!-- DESIGN -->
-                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-design"></a>
-                                    Design
-                                </div>
-                                <hr class="profile-about-divider col">
-                            </div>
-
-                            <div class="collapse show active" id="gallery-design">
-                                <div class="d-flex flex-wrap">
-                                    <div class="col-2 ms-n4">
-
-                                        <div class="profile-info-title px-3">Hair</div>
-                                        <div class="design-swatch mb-1" style="background:#EDE4DD;"></div>
-
-                                        <div class="profile-info-title px-3">Eyes</div>
-                                        <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(92, 64, 72, 1) 0%, rgba(92, 64, 72, 1) 50%, rgba(211, 150, 111, 1) 50%, rgba(211, 150, 111, 1) 100%);"></div>
-
-                                        <div class="profile-info-title px-3">Skin</div>
-                                        <div class="design-swatch mb-1" style="background:#855547;"></div>
-
-                                        <div class="profile-info-title px-3">Fur</div>
-                                        <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(38, 34, 31, 1) 0%, rgba(38, 34, 31, 1) 25%, rgba(175, 136, 106, 1) 25%, rgba(175, 136, 106, 1) 50%, rgba(128, 88, 87, 1) 50%, rgba(128, 88, 87, 1) 75%, rgba(204, 185, 171, 1) 75%, rgba(204, 185, 171, 1) 100%);"></div>
-
-                                        <div class="profile-info-title px-3">Coat</div>
-                                        <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(112, 66, 50, 1) 0%, rgba(112, 66, 50, 1) 25%, rgba(126, 89, 71, 1) 25%, rgba(126, 89, 71, 1) 50%, rgba(185, 144, 123, 1) 50%, rgba(185, 144, 123, 1) 75%, rgba(58, 26, 13, 1) 75%);"></div>
-
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#about-basics">Basics</a>
                                     </div>
 
-                                    <a class="profile-inline-img d-block col-lg-4 col-md-3 col-12" href="../../images/character-refs/augurys-gijinka.png" data-lightbox="Gijinka Design Reference" style="background-image:url('../../images/character-refs/augurys-gijinka.png')"></a>
+                                    <div class="page-sidebar-tab">
+                                        <a href="#about-trivia">Trivia</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#about-personality">Personality</a>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <!-- SUBMISSIONS -->
-                            <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                <hr class="profile-about-divider" style="width:25px;">
-                                <div class="profile-about-header col-auto mx-2">
-                                    <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-container"></a>
-                                    Submissions
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <a class="profile-inline-img d-md-inline d-none float-md-end col-lg-4 col-md-3 col-12 ms-md-3 mb-md-0 mb-4 mt-md-0" href="../../images/character-refs/augurys-gijinka.png" data-lightbox="Gijinka Reference" style="background-image:url('../../images/character-refs/augurys-gijinka.png')"></a>
+
+                                <div id="about-basics">
+                                    <!-- BASIC -->
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2" id="about-basics">
+                                            <span class="fa-xs profile-collapse-link active"></span>
+                                            Basics
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+                                    
+
+                                    <div class="d-flex flex-wrap align-items-center text-center col-md-6 p-2 profile-card mx-auto mt-2 mb-4">
+                                        <!-- NAME -->
+                                        <div class="col-6">
+                                            <p class="profile-info-title">Name</p>
+                                            <span>Augurys</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <!-- ALIAS -->
+                                        <div class="col-6">
+                                            <p class="profile-info-title">Alias</p>
+                                            <span>Auggy</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <!-- AGE -->
+                                        <div class="col-6">
+                                            <p class="profile-info-title">Age</p>
+                                            <span>Adult (25-30+)</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <!-- SPECIES -->
+                                        <div class="col-6">
+                                            <p class="profile-info-title">Species</p>
+                                            <span>Buneary</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <!-- GENDER -->
+                                        <div class="col-6">
+                                            <p class="profile-info-title">Gender</p>
+                                            <span>Non-binary</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <!-- PRONOUNS -->
+                                        <div class="col-6">
+                                            <p class="profile-info-title">Pronouns</p>
+                                            <span>they/them</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <!-- PREFERENCES -->
+                                        <div class="col-12">
+                                            <span data-bs-toggle="tooltip" data-bs-title="Non-binary"><img src="../../images/pride-flags/nonbinary.png"></span>
+                                            <span data-bs-toggle="tooltip" data-bs-title="Pansexual"><img src="../../images/pride-flags/pansexual.png"></span>
+                                        </div>
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
                                 </div>
-                                <hr class="profile-about-divider col">
-                            </div>
 
-                            <div class="collapse show active" id="gallery-container">
-                                <ul class="list p-0 d-flex flex-wrap col-12">
-                                </ul>
+                                <!-- TRIVIA -->
+                                <div id="about-trivia">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <span class="fa-xs profile-collapse-link active"></span>
+                                            Trivia
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                </div>
+
+                                <!-- PERSONALITY -->
+                                <div id="about-personality">
+                                    <div class="d-flex align-items-center col-12 p-0 mt-5">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <span class="fa-xs profile-collapse-link active"></span>
+                                            Personality
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
 
                 </div>
             </div>
 
+
+            <div class="tab-pane fade p-0" id="history">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- SECTION -->
+                                <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                    <hr class="profile-about-divider" style="width:25px;">
+                                    <div class="profile-about-header col-auto mx-2">
+                                        <span class="fa-xs profile-collapse-link active"></span>
+                                        History
+                                    </div>
+                                    <hr class="profile-about-divider col">
+                                </div>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade p-0" id="design">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#design-humanoid">Humanoid Form</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#design-feral">Feral Form</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- DESIGN -->
+                                <div id="design-gijinka">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#design-humanoid-container"></a>
+                                            Humanoid Form
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="design-humanoid-container">
+                                        <div class="d-flex flex-wrap align-items-start">
+
+                                            <div class="text-center col-md-5 col-12 mx-auto my-auto p-0 d-flex flex-column align-items-center">
+                                                <div class="col-12 p-2 profile-card mx-auto mb-3">
+                                                    <!-- VARIANT -->
+                                                    <p class="profile-info-title">Variant</p>
+                                                    <span>Hue Berry, Monster Juice</span>
+                                                </div>
+
+                                                <div class="col-12 d-flex flex-wrap align-items-center p-2 profile-card mx-auto mb-3">
+                                                    <!-- HEIGHT -->
+                                                    <div class="col-6">
+                                                        <p class="profile-info-title">Height</p>
+                                                        <span>5'7"</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- WEIGHT -->
+                                                    <div class="col-6">
+                                                        <p class="profile-info-title">Weight</p>
+                                                        <span>140 lbs</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- BUILD -->
+                                                    <div class="col-6">
+                                                        <p class="profile-info-title">Build</p>
+                                                        <span>Lithe</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- DESIGNER -->
+                                                    <div class="col-6">
+                                                        <p class="profile-info-title">Designer</p>
+                                                        <span><a href="https://spaceplosion.carrd.co/"><i class="fa-solid fa-user"></i>final</a></span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+                                                </div>
+
+                                                <!-- DESIGN NOTES -->
+                                                <div class="col-12 profile-card p-2">
+                                                    <p class="profile-info-title">Design Notes</p>
+
+                                                    <div class="profile-scrollbox text-start pe-3 py-2" style="height:230px;">
+                                                        <ul class="fa-ul ms-2">
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <a class="profile-inline-img d-block col-md-5 col-12 mt-md-0 mt-3" href="../../images/character-refs/zane-gijinka-v1.png" data-lightbox="Gijinka Design Reference" data-title="@NyandereMuffins (lines) / @dragon-heist (colours)" style="background-image:url('../../images/character-refs/zane-gijinka-v1.png')" data-form="humanoid"></a>
+
+                                            <a class="d-none" href="../../images/character-refs/zane-gijinka-v2.png" data-lightbox="Gijinka Design Reference" data-title="@NyandereMuffins (lines) / @dragon-heist (colours)" style="background-image:url('../../images/character-refs/zane-gijinka-v2.png')" data-form="humanoid"></a>
+
+                                            <div class="col-md-2 col ps-md-3 my-3 palette-container">
+
+                                                <div class="profile-info-title px-3">Hair</div>
+                                                <div class="design-swatch mb-1" style="background:#EDE4DD;"></div>
+
+                                                <div class="profile-info-title px-3">Eyes</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(92, 64, 72, 1) 0%, rgba(92, 64, 72, 1) 50%, rgba(211, 150, 111, 1) 50%, rgba(211, 150, 111, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Skin</div>
+                                                <div class="design-swatch mb-1" style="background:#855547;"></div>
+
+                                                <div class="profile-info-title px-3">Fur</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(38, 34, 31, 1) 0%, rgba(38, 34, 31, 1) 25%, rgba(175, 136, 106, 1) 25%, rgba(175, 136, 106, 1) 50%, rgba(128, 88, 87, 1) 50%, rgba(128, 88, 87, 1) 75%, rgba(204, 185, 171, 1) 75%, rgba(204, 185, 171, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Coat</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(112, 66, 50, 1) 0%, rgba(112, 66, 50, 1) 25%, rgba(126, 89, 71, 1) 25%, rgba(126, 89, 71, 1) 50%, rgba(185, 144, 123, 1) 50%, rgba(185, 144, 123, 1) 75%, rgba(58, 26, 13, 1) 75%);"></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- DESIGN -->
+                                <div id="design-feral">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-4">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#design-feral-container"></a>
+                                            Feral Form
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="design-feral-container">
+                                        <div class="d-flex flex-wrap align-items-center">
+
+                                            <div class="col-md-2 col pe-md-3 my-3 palette-container-start">
+
+                                                <div class="profile-info-title px-3">Hair</div>
+                                                <div class="design-swatch-start mb-1" style="background:#EDE4DD;"></div>
+
+                                                <div class="profile-info-title px-3">Eyes</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,rgba(92, 64, 72, 1) 0%, rgba(92, 64, 72, 1) 50%, rgba(211, 150, 111, 1) 50%, rgba(211, 150, 111, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Skin</div>
+                                                <div class="design-swatch-start mb-1" style="background:#855547;"></div>
+
+                                                <div class="profile-info-title px-3">Fur</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,rgba(38, 34, 31, 1) 0%, rgba(38, 34, 31, 1) 25%, rgba(175, 136, 106, 1) 25%, rgba(175, 136, 106, 1) 50%, rgba(128, 88, 87, 1) 50%, rgba(128, 88, 87, 1) 75%, rgba(204, 185, 171, 1) 75%, rgba(204, 185, 171, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Coat</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,rgba(112, 66, 50, 1) 0%, rgba(112, 66, 50, 1) 25%, rgba(126, 89, 71, 1) 25%, rgba(126, 89, 71, 1) 50%, rgba(185, 144, 123, 1) 50%, rgba(185, 144, 123, 1) 75%, rgba(58, 26, 13, 1) 75%);"></div>
+
+                                            </div>
+
+                                            <a class="profile-inline-img d-block col-md-5 col-12 mt-md-0 mt-3" href="../../images/character-refs/zane-applin.png" data-lightbox="Feral Design Reference" data-title="@dragon-heist" style="background-image:url('../../images/character-refs/zane-applin.png')" data-form="feral"></a>
+
+                                            <div class="text-center col-md-5 col-12 mx-auto my-auto p-0 d-flex flex-column align-items-center">
+                                                <div class="col-12 p-2 profile-card mx-auto mb-3">
+                                                    <!-- MOD PACKS -->
+                                                    <p class="profile-info-title">Mod Packs</p>
+                                                    <span>--</span>
+                                                </div>
+
+                                                <div class="col-12 d-flex flex-wrap align-items-center p-2 profile-card mx-auto mb-3">
+                                                    <!-- HEIGHT -->
+                                                    <div class="col-4">
+                                                        <p class="profile-info-title">Height</p>
+                                                        <span>5'7"</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- WEIGHT -->
+                                                    <div class="col-4">
+                                                        <p class="profile-info-title">Weight</p>
+                                                        <span>140 lbs</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- DESIGNER -->
+                                                    <div class="col-4">
+                                                        <p class="profile-info-title">Designer</p>
+                                                        <span><i class="fa-solid fa-user"></i>dragon-heist</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+                                                </div>
+
+                                                <!-- DESIGN NOTES -->
+                                                <div class="col-12 profile-card p-2">
+                                                    <p class="profile-info-title">Design Notes</p>
+
+                                                    <div class="profile-scrollbox text-start pe-3 py-2" style="height:180px;">
+                                                        <ul class="fa-ul ms-2">
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> content</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade p-0" id="gallery">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 col-12 pe-lg-2">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-4 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#">Section</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- DESIGN -->
+                                <div id="gallery-design">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-design-container"></a>
+                                            Design
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-design-container">
+                                        <div class="d-flex flex-wrap">
+                                            <div class="col-2 ms-n4">
+
+                                                <div class="profile-info-title px-3">Hair</div>
+                                                <div class="design-swatch mb-1" style="background:#EDE4DD;"></div>
+
+                                                <div class="profile-info-title px-3">Eyes</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(92, 64, 72, 1) 0%, rgba(92, 64, 72, 1) 50%, rgba(211, 150, 111, 1) 50%, rgba(211, 150, 111, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Skin</div>
+                                                <div class="design-swatch mb-1" style="background:#855547;"></div>
+
+                                                <div class="profile-info-title px-3">Fur</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(38, 34, 31, 1) 0%, rgba(38, 34, 31, 1) 25%, rgba(175, 136, 106, 1) 25%, rgba(175, 136, 106, 1) 50%, rgba(128, 88, 87, 1) 50%, rgba(128, 88, 87, 1) 75%, rgba(204, 185, 171, 1) 75%, rgba(204, 185, 171, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Coat</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,rgba(112, 66, 50, 1) 0%, rgba(112, 66, 50, 1) 25%, rgba(126, 89, 71, 1) 25%, rgba(126, 89, 71, 1) 50%, rgba(185, 144, 123, 1) 50%, rgba(185, 144, 123, 1) 75%, rgba(58, 26, 13, 1) 75%);"></div>
+
+                                            </div>
+
+                                            <a class="profile-inline-img d-block col-lg-4 col-md-3 col-12" href="../../images/character-refs/augurys-gijinka.png" data-lightbox="Gijinka Design Reference" style="background-image:url('../../images/character-refs/augurys-gijinka.png')"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SUBMISSIONS -->
+                                <div id="gallery-submissions">
+                                    
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-container"></a>
+                                            Submissions
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12">
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-content"></div>
         </div>
 
     </div>

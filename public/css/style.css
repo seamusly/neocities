@@ -84,11 +84,28 @@ a:hover {
 }
 
 .page-footer {
-  min-height: 80px;
+  min-height: 75px;
   text-align: center;
   align-items: center;
   align-content: center;
-  border: 1px white solid;
+  position: relative;
+}
+
+.page-footer span {
+  color: hsl(from var(--navtab-bg-color) h s l / 0.5);
+}
+
+.page-footer span a {
+  text-decoration: underline dashed hsl(from var(--navtab-bg-color) h s l / 0.5);
+}
+
+.back-to-top {
+  position: fixed;
+  right: .5rem;
+  bottom: .5rem;
+  background: hsl(from var(--navtab-bg-color) h s l / 0.5);
+  padding: .5em;
+  border-radius: 5em;
 }
 
 .page-header-title, .page-header-subtitle {
@@ -246,7 +263,6 @@ a:hover {
 }
 
 a.profile-inline-img {
-  min-height: 550px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -255,6 +271,14 @@ a.profile-inline-img {
     drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
     drop-shadow(1px -1px 0 var(--img-dropshadow-color));
   transition: ease 0.3s all;
+}
+
+a.profile-inline-img[data-form="humanoid"] {
+  min-height: 550px;
+}
+
+a.profile-inline-img[data-form="feral"] {
+  min-height: 400px;
 }
 
 a.profile-inline-img:hover {
@@ -269,22 +293,52 @@ a.profile-inline-img:hover {
     drop-shadow(1px -1px 0 var(--img-dropshadow-color));
 }
 
+.trait-positive {
+  border-left: rgb(69, 219, 122) 5px solid;
+}
+
+.trait-neutral {
+  border-left: rgb(255, 197, 52) 5px solid;
+}
+
+.trait-negative {
+  border-left: rgb(217, 58, 58) 5px solid;
+}
 
 @media (max-width: 768px) {
   .profile-tabs {
-    font-size: 10pt;
-    bottom: 0;
+    font-size: 11pt !important;
+    border-bottom-width: 0px !important;
   }
 
   .profile-tabs .nav-item {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .profile-tabs .nav-item .nav-link {
-    border: 3px solid var(--body-bg-color);
-    padding: .2em .25em;
+    border: 3px solid var(--body-bg-color) !important;
+    border-bottom-width: 0px;
+    padding: .2em .5em !important;
   }
+
+  .profile-about-header {
+    font-size: 1.9rem !important;
+  }
+
+  .back-to-top {
+    right: 1rem !important;
+    bottom: .5rem !important;
+  }
+
+  .palette-container {
+    margin-right: -1rem !important;
+  }
+
+  .palette-container-start {
+    margin-left: -1rem !important;
+  }
+
 }
 
 .profile-tabs {
@@ -327,13 +381,7 @@ a.profile-inline-img:hover {
 
 .profile-about-header {
   font-family: 'Hello Bonia Serif', sans-serif;
-  font-size: 1.9rem;
-}
-
-@media (min-width: 768px) {
-  .profile-about-header {
-    font-size: 2.5rem;
-  }
+  font-size: 2.5rem;
 }
 
 .profile-about-divider {
@@ -402,13 +450,37 @@ a .profile-logs-img:hover {
 
 *******************************************************/
 
+.profile-scrollbox {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.palette-container {
+  margin-right: -1.5rem;
+}
+
+.palette-container-start {
+  margin-left: -1.5rem;
+}
+
 .design-swatch {
   height: 30px;
   padding-right: 1em;
   text-align: end;
   align-items: center;
   border: 2px white solid;
-  border-left-width: 0;
+  border-right-width: 0px;
+  border-radius: .25em 0 0 1em;
+}
+
+.design-swatch-start {
+  height: 30px;
+  padding-left: 1em;
+  text-align: start;
+  align-items: center;
+  border: 2px white solid;
+  border-left-width: 0px;
   border-radius: 0 .25em 1em 0;
 }
 
