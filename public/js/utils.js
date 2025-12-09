@@ -35,7 +35,10 @@ utils.init = {
 
     top() {
         $('body').append(`
-            <div class="back-to-top"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></div>
+            <div class="jump-container">
+                <a role="button" class="btn jump-btn mb-1" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+                <a role="button" class="btn jump-btn" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
+            </div>
         `);
     },
 

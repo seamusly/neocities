@@ -31,6 +31,25 @@
 
   --body-card-bg-color: #4D2A2A;
   --navtab-bg-color: #a35c2a;
+  --navtab-bg-hover: #db8047;
+
+  --default-border-radius: 0.375rem;
+
+  --bts-app-color: #234074;
+
+  --img-dropshadow-default: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+
+  --img-dropshadow-hover: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
 
 }
 
@@ -45,18 +64,28 @@ body {
   font-size: 12pt;
 }
 
+body.beyond-the-sea {
+  background-image: url('../images/backgrounds/bg-beyondthesea-dark.png');
+  background-attachment: fixed;
+  background-size: contain;
+}
+
+[data-lightbox] {
+  image-rendering: auto;
+}
+
 h1 {
   font-family: 'Hello Bonia Serif', sans-serif;
   font-size: 3rem;
 }
 
-a {
+a, .profile-text-toggler {
   color: var(--info-link-hover);
   text-decoration: none;
   transition: ease all .2s;
 }
 
-a:hover {
+a:hover, .profile-text-toggler:hover {
   color: var(--navtab-bg-color);
 }
 
@@ -87,6 +116,13 @@ a:hover {
   position: relative;
 }
 
+.page-header.beyond-the-sea {
+  background: url('../images/backgrounds/bg-pmdeos-dusk.gif');
+  background-size: cover;
+  background-position: 0 25%;
+  image-rendering: pixelated;
+}
+
 .page-footer {
   min-height: 75px;
   text-align: center;
@@ -103,13 +139,26 @@ a:hover {
   text-decoration: underline dashed hsl(from var(--navtab-bg-color) h s l / 0.5);
 }
 
-.back-to-top {
+.jump-container {
   position: fixed;
   right: .5rem;
   bottom: .5rem;
-  background: hsl(from var(--navtab-bg-color) h s l / 0.5);
-  padding: .5em;
+  mix-blend-mode: luminosity;
+}
+
+.jump-btn {
+  background: hsl(from var(--body-card-bg-color) h s l / 0.75);
+  width: 40px;
+  height: 40px;
   border-radius: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.jump-btn:hover {
+  background: var(--body-card-bg-color);
 }
 
 .page-header-title, .page-header-subtitle {
@@ -149,23 +198,13 @@ a:hover {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+  filter: var(--img-dropshadow-default);
   transition: ease 0.3s all;
 }
 
 .char-directory-img:hover {
   transform: rotate(5deg);
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+  filter: var(--img-dropshadow-hover);
 }
 
 .char-directory-body {
@@ -200,19 +239,6 @@ a:hover {
 
 *******************************************************/
 
-.profile-icon {
-  margin-top: -6rem;
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
-    max-width: 250px;
-}
-
 .profile-sidebar {
   background: var(--body-container-bg-color);
 }
@@ -227,6 +253,7 @@ a:hover {
 
 .page-sidebar-tab:hover {
   margin-left: -.75rem;
+  background: var(--navtab-bg-hover);
 }
 
 .page-sidebar-tab a {
@@ -270,10 +297,7 @@ a.profile-inline-img {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+  filter: var(--img-dropshadow-default);
   transition: ease 0.3s all;
 }
 
@@ -287,14 +311,12 @@ a.profile-inline-img[data-form="feral"] {
 
 a.profile-inline-img:hover {
   transform: rotate(2deg);
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
+  filter: var(--img-dropshadow-hover);
+}
+
+.profile-text-toggler {
+  cursor: pointer;
+  font-variant: small-caps;
 }
 
 .trait-positive {
@@ -328,6 +350,7 @@ a.profile-inline-img:hover {
 
   .profile-about-header {
     font-size: 1.9rem !important;
+    text-align: center;
   }
 
   .back-to-top {
@@ -386,6 +409,7 @@ a.profile-inline-img:hover {
 .profile-about-header {
   font-family: 'Hello Bonia Serif', sans-serif;
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .profile-about-divider {
@@ -423,31 +447,6 @@ a.profile-collapse-link:hover {
 .profile-logs-tag {
   font-size: .9em;
   padding: 3px 5px;
-}
-
-.profile-logs-img {
-  height: 110px;
-  width: 170px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
-  transition: ease 0.3s all;
-}
-
-a .profile-logs-img:hover {
-  transform: rotate(5deg);
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color));
 }
 
 /******************************************************
@@ -496,10 +495,7 @@ a .profile-logs-img:hover {
 .gallery-card:hover {
   background: var(--body-card-bg-color);
     transform: rotate(5deg);
-  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
-    drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
-    drop-shadow(1px -1px 0 var(--img-dropshadow-color))
+  filter: var(--img-dropshadow-default)
     drop-shadow(0 0 10px black);
 }
 
@@ -516,4 +512,106 @@ a .profile-logs-img:hover {
 
 .gallery-card-title {
   font-size: 1.2rem;
+}
+
+/******************************************************/
+
+.app-modal-container {
+  background: linear-gradient(180deg,#a8d9f0 20%, #d5f1f9 70%);
+}
+
+.bts-visual-app {
+  background: url('../images/backgrounds/bg-beyondthesea-app.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  position: relative;
+  image-rendering: auto;
+  font-family: "Lexend", sans-serif;
+  color: var(--bts-app-color);
+  border-radius: var(--default-border-radius);
+}
+
+.bts-visual-app .app-title {
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+.bts-visual-app .app-subtitle {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.app-subtitle img {
+  width: 32px;
+}
+
+.bts-visual-app .app-box {
+  background: rgba(213,241,249,0.75);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: var(--default-border-radius);
+  margin-bottom: 1rem;
+}
+
+.bts-visual-app .app-image {
+  filter: drop-shadow(0 0 4px black);
+}
+
+.bts-visual-app .app-credit {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  z-index: 10;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.bts-visual-app .app-label {
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: hsl(from var(--bts-app-color) h s l / 0.7)
+}
+
+.app-credit::before {
+  content: '\f1fc';
+  font-family: 'Font Awesome 7 Free';
+}
+
+.app-credit a, .app-credit::before {
+  color: #3274e7;
+  transition: all ease 0.15s;
+}
+
+.app-credit a:hover {
+  color: #1b3e8b;
+}
+
+.btn-profile {
+  background: var(--navtab-bg-color);
+  color: white;
+  transition: all ease 0.2s;
+  border-radius: 1em;
+  text-transform: uppercase;
+  font-size: .9em;
+}
+
+.btn-profile:hover {
+  background: var(--navtab-bg-hover);
+  transform: rotate(-2deg);
+}
+
+/******************************************************/
+
+.table-wrapper {
+  overflow: auto;
+  border-radius: 1em;
+  border: 1px solid #341615;
 }
