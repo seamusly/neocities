@@ -29,6 +29,9 @@
   --info-title-color: #ffe5e0ce;
   --info-link-hover: #edb272;
 
+  --card-link-color: #ffd6b9;
+  --card-link-hover: #cb765a;
+
   --body-card-bg-color: #4D2A2A;
   --navtab-bg-color: #a35c2a;
   --navtab-bg-hover: #db8047;
@@ -440,6 +443,16 @@ a.profile-collapse-link:hover {
   background: var(--body-card-bg-color);
 }
 
+.profile-card a {
+  color: var(--card-link-color);
+  transition: all 0.2s ease;
+  text-decoration: underline dotted;
+}
+
+.profile-card a:hover {
+  color: var(--card-link-hover);
+}
+
 .profile-logs-title {
   font-size: 1.75rem;
 }
@@ -614,4 +627,20 @@ a.profile-collapse-link:hover {
   overflow: auto;
   border-radius: 1em;
   border: 1px solid #341615;
+}
+
+/******************************************************/
+
+.submission-img {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+  border-radius: .5em;
+}
+
+.modal-title {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+}
+
+.submission-header {
+  font-size: 1.5rem;
 }
