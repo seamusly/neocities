@@ -126,6 +126,13 @@ a:hover, .profile-text-toggler:hover {
   image-rendering: pixelated;
 }
 
+.page-header.beyond-the-sea.gallery {
+  background: url('../images/backgrounds/bg-pmdeos-night.gif');
+  background-size: cover;
+  background-position: 0 25%;
+  image-rendering: pixelated;
+}
+
 .page-footer {
   min-height: 75px;
   text-align: center;
@@ -183,6 +190,25 @@ a:hover, .profile-text-toggler:hover {
   background:  var(--body-container-bg-color);
 }
 
+.profile-body-container {
+  opacity: 0%;
+}
+
+.profile-body-container.active {
+  opacity: 100%;
+  animation: 1s fade-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
 .sidebar-header {
   text-transform: uppercase;
 }
@@ -193,6 +219,7 @@ a:hover, .profile-text-toggler:hover {
 
 .unpublished {
   filter: grayscale(100%);
+  cursor: not-allowed;
 }
 
 .char-directory-img {
@@ -252,6 +279,10 @@ a:hover, .profile-text-toggler:hover {
   padding: .4em .6em;
   transition: ease-in-out all .2s;
   margin-bottom: .5rem;
+  filter: drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+  drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+  drop-shadow(0 1px 0 var(--img-dropshadow-color))
+  drop-shadow(0 -1px 0 var(--img-dropshadow-color))
 }
 
 .page-sidebar-tab:hover {
@@ -272,8 +303,12 @@ a:hover, .profile-text-toggler:hover {
   transition: ease-in-out all .2s;
   text-align: end;
   position: absolute;
-  left: -9px;
+  left: 0;
   top: 0;
+  filter: drop-shadow(1px 1px 0 var(--img-dropshadow-color))
+  drop-shadow(1px -1px 0 var(--img-dropshadow-color))
+  drop-shadow(0 1px 0 var(--img-dropshadow-color))
+  drop-shadow(0 -1px 0 var(--img-dropshadow-color));
 }
 
 .page-sidebar-back:hover {
@@ -290,6 +325,13 @@ a:hover, .profile-text-toggler:hover {
   text-transform: uppercase;
   margin-bottom: 0;
   color: var(--info-link-hover);
+}
+
+.gallery-date-title {
+  font-size: .8rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: white;
 }
 
 .profile-info-divider {
@@ -507,7 +549,7 @@ a.profile-collapse-link:hover {
 
 .gallery-card:hover {
   background: var(--body-card-bg-color);
-    transform: rotate(5deg);
+    transform: rotate(2.5deg);
   filter: var(--img-dropshadow-default)
     drop-shadow(0 0 10px black);
 }
@@ -634,6 +676,11 @@ a.profile-collapse-link:hover {
 .submission-img {
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
   border-radius: .5em;
+  transition: ease .25s all;
+}
+
+.submission-img:hover {
+  transform: rotate(1.5deg);
 }
 
 .modal-title {
@@ -643,4 +690,14 @@ a.profile-collapse-link:hover {
 
 .submission-header {
   font-size: 1.5rem;
+}
+
+.submission-credit {
+  font-size: smaller;
+  opacity: 50%;
+  margin-left: .25rem;
+}
+
+.description {
+  font-size: .9em;
 }

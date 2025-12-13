@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <meta name="robots" content="noai, noimageai">
+
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/bs-addons.css" rel="stylesheet"/>
+    <link href="utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="utilities/list.min.js"></script>
+    <script type="text/javascript" src="utilities/lightbox2-2.11.5/lightbox.min.js"></script>
+    <script type="module">
+        // Import config and utils
+        import { config } from './js/config.js';
+        import { utils } from './js/utils.js';
+        import { gallery } from './js/gallery.js';
+        import { images } from './js/images.js';
+
+        let url = new URL(window.location.href);
+        let baseURL = window.location.origin + window.location.pathname;
+        let urlParams = new URLSearchParams(window.location.search);
+
+        let pageSubtitle = null;
+
+        // Init page elements
+        $(document).ready(function() {
+            utils.init.header(config.pages.gallery.title, pageSubtitle);
+            utils.init.footer(config.footer.links, config.pages.gallery.root);
+            utils.init.top();
+
+            utils.init.tooltips();
+            utils.init.lightbox();
+        });
+
+        if (urlParams.has('view')) {
+            $('.page-body').removeClass('col-lg-10');
+            $(`#page-sidebar`).remove();
+            $(`#gallery-full`).remove();
+            $(`#gallery-card`).removeClass('d-none');
+
+            let view = urlParams.get('view');
+
+            if (view.includes('pmdbts')) pageSubtitle = config.pages.beyondthesea.subtitle;
+
+            let galleryObj = images.pmdbts.submissions.find((obj) => obj.key === view);
+
+            galleryObj.characters.forEach((char) => {
+                let variantArr = utils.parse.emojiVariants(char.species);
+                if (typeof variantArr !== 'array') return;
+                variantArr.forEach((variant) => {
+                    char.species = utils.parse.inlineEmoji(char.species, variant, `${config.pages.gallery.root}images/misc/${utils.parse.emojiImg(variant)}`);
+                });
+            });
+
+            await gallery.page.setBaseInfo(galleryObj, view);
+            $(`.profile-body-container`).addClass('active');
+
+        } else {
+            $(`#gallery-card`).remove();
+            $(`#back-to-gallery`).remove();
+
+            let galleryList = new List('gallery-beyondthesea-container', gallery.options.createSubmissionsOptions(config.pages.gallery.root), images.pmdbts.submissions);
+            $(`.profile-body-container`).addClass('active');
+        }
+
+    </script>
+
+</head>
+<body class="beyond-the-sea">
+
+    <div class="main-container">
+
+        <div class="page-header beyond-the-sea gallery mb-2">
+
+            <div class="mt-2 page-sidebar-back" id="back-to-gallery">
+                <a href="gallery.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Gallery</a>
+            </div>
+        </div>
+            
+        <div class="page-container d-flex flex-wrap">
+
+            <div class="col-lg-2 pe-lg-2 d-lg-block d-none" id="page-sidebar">
+                <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                    <div class="ms-2 me-n3">
+                        <div class="col-12 p-md-2 p-0">
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-beyondthesea"><i class="fa-solid fa-angles-right"></i> Beyond the Sea</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-body p-3 col-lg-10 col-12">
+
+                <div class="profile-body-container">
+
+                    <div class="col-12 p-md-2 p-0" id="gallery-full">
+                        <div id="gallery-beyondthesea">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="profile-about-divider" style="width:25px;">
+                                <div class="profile-about-header col-auto mx-2">
+                                    <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-beyondthesea-container"></a>
+                                    Beyond the Sea
+                                </div>
+                                <hr class="profile-about-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-beyondthesea-container">
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 p-md-2 p-0 d-none" id="gallery-card">
+
+                        <div class="d-flex flex-wrap">
+
+                            <div class="pe-lg-2 py-lg-2 p-1 col-lg-5 col-12 d-flex flex-column">
+                                <h2 class="title mb-3 text-center">Title</h2>
+
+                                <div class="profile-card p-2 d-flex flex-wrap">
+
+                                    <div class="col-sm-6 col-12">
+                                        <p class="profile-info-title">Date</p>
+                                        <span class="date">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-sm-6 col-12">
+                                        <p class="profile-info-title">Activity</p>
+                                        <span class="activity">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-sm-6 col-12 d-none" id="event-container">
+                                        <p class="profile-info-title">Event</p>
+                                        <span class="event">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-12" id="prompt-dungeon-container">
+                                        <p class="profile-info-title" id="prompt-dungeon-label">Prompt</p>
+                                        <span id="prompt-dungeon-value">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <p class="profile-info-title">Credits</p>
+                                        <ul class="fa-ul ms-1 mb-1 credits"></ul>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <p class="profile-info-title">Characters</p>
+                                        <ul class="fa-ul ms-1 mb-1 characters"></ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="profile-card p-2 d-flex flex-wrap flex-grow-1 mt-3">
+                                    
+                                    <div class="col-12">
+                                        <p class="profile-info-title">Description</p>
+                                        <div class="px-1 pb-1 description">
+                                            <p>...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ps-lg-3 py-lg-2 p-1 col-lg-7 col-sm-10 col-12">
+                                <a href="images/character-icons/placeholder.webp" data-lightbox="submission" class="imglink"></a>
+                            </div>
+
+                        </div>
+
+                        <div id="logs-levels" class="d-none">
+                            <!-- SECTION -->
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                <hr class="profile-about-divider" style="width:25px;">
+                                <div class="profile-about-header col-auto mx-2">
+                                    <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#levels-container"></a>
+                                    Levels
+                                </div>
+                                <hr class="profile-about-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="levels-container">
+                                <div class="table-wrapper my-2">
+                                    <table class="table table-default table-striped text-center mb-0">
+                                        <thead class="table-default-head">
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Title</th>
+                                                <th>Activity</th>
+                                                <th>Dungeon</th>
+                                                <th>Gained</th>
+                                                <th>Bonus</th>
+                                                <th>Levels</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="level-logs-body">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-footer" id="footer">
+            <div class="footer-content"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

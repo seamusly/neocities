@@ -22,51 +22,32 @@ config.pages = {
         root: './',
         title: 'Credits'
     },
+    characters : {
+        root: './',
+        title: 'Characters'
+    },
+    gallery : {
+        root: './',
+        title: 'Gallery'
+    },
     beyondthesea: {
         root: '../../',
-        title: {
-            augurys: 'Augurys',
-            zane: 'Zane'
+        profiles: {
+            Augurys: {
+                title: 'Augurys',
+                link: 'beyond-the-sea/augurys.html',
+            },
+            Zane: {
+                title: 'Zane',
+                link: 'beyond-the-sea/zane.html',
+            },
+            Estys: {
+                title: 'Estys',
+                link: ''
+            }
         },
         subtitle: '✦ PMD Beyond the Sea ✦'
     }
-}
-
-config.filters = {
-    collab: [
-        'solo',
-        'collab'
-    ],
-    medium: [
-        'artwork',
-        'writing'
-    ],
-    submission: [
-        'dungeon',
-        'task'
-    ],
-    event: [
-        'holidayhills',
-        'mission'
-    ],
-    year: [
-        '2022',
-        '2023',
-        '2024',
-        '2025',
-        '2026'
-    ],
-    season: [
-        'winter',
-        'spring',
-        'summer',
-        'fall'
-    ],
-    design: [
-        'olddesign',
-        'gijinka',
-        'feral'
-    ],
 }
 
 export { config };

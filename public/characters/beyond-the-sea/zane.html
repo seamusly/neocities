@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dragon-heist - Zane</title>
 
+    <meta name="robots" content="noai, noimageai">
+
     <link href="../../css/style.css" rel="stylesheet"/>
     <link href="../../css/bs-addons.css" rel="stylesheet"/>
     <link href="../../css/pokemon-types.css" rel="stylesheet"/>
@@ -18,300 +20,53 @@
         import { config } from '../../js/config.js';
         import { utils } from '../../js/utils.js';
         import { pmdbts } from '../../js/pmdbts.js';
+        import { gallery } from '../../js/gallery.js';
+        import { images } from '../../js/images.js';
+
+        let othersWorkValues = {
+                imglink: ``,
+                title: '',
+                date: '',
+                datelabel: '',
+                category: '',
+                tags: '',
+                medium: ''
+        };
 
         // Init page elements
         $(document).ready(function() {
-            utils.init.header(config.pages.beyondthesea.title.zane, config.pages.beyondthesea.subtitle);
+            gallery.root = config.pages.beyondthesea.root;
+            utils.init.header(config.pages.beyondthesea.profiles.Zane.title, config.pages.beyondthesea.subtitle);
             utils.init.footer(config.footer.links, config.pages.beyondthesea.root);
             utils.init.top();
 
             utils.init.profile();
+
+            pmdbts.init.setTeam('Enochian');
+            pmdbts.init.setLevelLogs(config.pages.beyondthesea.root, 'Zane');
+
             utils.init.tooltips();
             utils.init.lightbox();
 
-            pmdbts.init.setTeam('Enochian');
+            getGallery();
         });
 
-        const logsValues = [
-            {
-                date: 'Oct 31, 2023',
-                activity: 'Dungeon',
-                dungeon: 'Isles of Paradise',
-                start: '1',
-                gained: '4',
-                bonus: '5',
-                item: 'Wonder Chest',
-                end: '10'
-            },
-            {
-                date: 'Nov 11, 2023',
-                activity: 'Dungeon',
-                dungeon: 'Fuzzy Tundra',
-                start: '10',
-                gained: '4',
-                bonus: '3',
-                item: 'Wonder Chest',
-                end: '17'
-            },
-            {
-                date: 'Nov 12, 2023',
-                activity: 'Dungeon',
-                dungeon: 'Fuzzy Tundra',
-                start: '17',
-                gained: '3',
-                bonus: '5',
-                item: 'Wonder Chest',
-                end: '25'
-            },
-            {
-                date: 'Nov 13, 2023',
-                activity: 'Dungeon',
-                dungeon: 'Treeshroud Forest',
-                start: '25',
-                gained: '1',
-                bonus: '2',
-                item: 'Wonder Chest',
-                end: '28'
-            },
-            {
-                date: 'Nov 14, 2023',
-                activity: 'Dungeon',
-                dungeon: 'Stompstump Peak',
-                start: '28',
-                gained: '2',
-                end: '30'
-            },
-            {
-                date: 'Feb 15, 2024',
-                activity: 'Dungeon',
-                dungeon: 'Beaver Hills',
-                start: '30',
-                gained: '1',
-                end: '31'
-            },
-            {
-                date: 'Feb 22, 2024',
-                activity: 'Dungeon',
-                dungeon: 'Abyssal Badlands',
-                start: '31',
-                gained: '2',
-                bonus: '5',
-                item: 'Wonder Chest',
-                end: '38'
-            },
-            {
-                date: 'Feb 25, 2024',
-                activity: 'Dungeon',
-                dungeon: 'Tallest of Grass Plains',
-                start: '38',
-                gained: '1',
-                bonus: '10',
-                item: 'Tera Orb',
-                end: '49'
-            },
-        ];
+        function getGallery() {
+            const allSubmissions = images.pmdbts.submissions.filter((sub) => sub.characters.filter((char) => char.name === 'Zane').length > 0);
+            if (allSubmissions.length < 1) return;
 
-        let levelLogs = $(`#level-logs-body`);
-        logsValues.forEach((log) => {
-            levelLogs.append(`
-                <tr>
-                    <td>${log.date}</td>
-                    <td>${log.activity}</td>
-                    <td>${log.dungeon}</td>
-                    <td>+${log.gained}</td>
-                    <td>${!log.bonus ? '--' : `+${log.bonus} <span data-bs-toggle="tooltip" data-bs-title="+${log.bonus} from ${log.item}"><img src="../../images/misc/${log.item.toLowerCase().replace(' ', '-')}-pixel.png"></span>`}</td>
-                    <td>${log.start} <i class="fa-solid fa-arrow-right text-success"></i> ${log.end}</td>
-                </tr>
-            `);
-        });
+            const allOther = images.pmdbts.others.filter((other) => other.characters.includes('Zane'));
 
-        const submissionOptions = {
-            valueNames: [
-                'imglink',
-                'caption',
-                'pagelink',
-                'title',
-                'date',
-                'tags',
-                'category'
-            ],
-            item: function(values) {
-                return `
-                <a class="gallery-item col-lg-3 col-md-4 col-sm-6 col-12 p-2 ${values.tags}" ${values.tags.includes('artwork') ? `data-lightbox="${values.category}" href="../../images/${values.imglink}" data-title="${values.caption}"` : `href="${values.pagelink}"`}">
-                    <div class="gallery-card p-2">
-                        <div class="gallery-card-thumb" style="background-image:url('../../images/${values.imglink}');${values.tags.includes('artwork') ? '' : 'background-size:contain;'}"></div>
-                    </div>
-                    <div class="mt-2 gallery-card-info text-center">
-                        <p class="mb-0 gallery-card-title">${values.title}</p>
-                        <p class="profile-info-title">${values.date}</p>
-                    </div>
-                </a>`
-            }
-        };
+            let personalList = new List('gallery-personal-container', gallery.options.createGeneralOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allOther, 'category', 'Personal'));
 
-        const taskValues = [
-            {
-                imglink: 'tasks/11-7-23_costume-party_solo.webp',
-                caption: '01 | Costume Party! // Fall 2023',
-                pagelink: '',
-                title: 'Extravagant Extras',
-                date: 'Nov 7, 2023 @ 5:36 PM',
-                tags: 'task solo artwork olddesign holidayhills fall 2023 gijinka',
-                category: 'Tasks',
-            },
-        ];
+            let othersList = new List('gallery-others-container', gallery.options.createGeneralOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allOther, 'category', 'Others'));
 
-        const oldSubmissionsValues = [
-            {
-                imglink: 'dungeons/10-30-23_halloween-town_collab.webp',
-                caption: 'Halloween Town // @atlasbarelyanimates',
-                pagelink: '',
-                title: 'OoOo, Haunted!',
-                date: 'Oct 30, 2023 @ 12:30 PM',
-                tags: 'dungeon holidayhills fall 2023 collab artwork olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/10-30-23_isles-of-paradise_solo.webp',
-                caption: 'Isles of Paradise',
-                pagelink: '',
-                title: 'Fire Watching',
-                date: 'Oct 30, 2023 @ 5:31 AM',
-                tags: 'dungeon solo artwork 2023 olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'tasks/11-7-23_costume-party_solo.webp',
-                caption: '01 | Costume Party! // Fall 2023',
-                pagelink: '',
-                title: 'Extravagant Extras',
-                date: 'Nov 7, 2023 @ 5:36 PM',
-                tags: 'task solo artwork olddesign holidayhills fall 2023 gijinka',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/11-11-23_fuzzy-tundra_solo.webp',
-                caption: 'Fuzzy Tundra',
-                pagelink: '',
-                title: 'Cold Nights, Fuzzy Feelings',
-                date: 'Nov 11, 2023 @ 3:48 AM',
-                tags: 'dungeon solo artwork 2023 olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/11-12-23_fuzzy-tundra_solo.webp',
-                caption: 'Fuzzy Tundra',
-                pagelink: '',
-                title: 'A (Mostly) Quiet Moment',
-                date: 'Nov 12, 2023 @ 12:17 AM',
-                tags: 'dungeon solo artwork 2023 olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/11-13-23_treeshroud-forest_solo.webp',
-                caption: 'Treeshroud Forest',
-                pagelink: '',
-                title: 'A Lesson in History',
-                date: 'Nov 13, 2023 @ 2:15 AM',
-                tags: 'dungeon solo artwork 2023 olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/11-14-23_stompstump-peak1_solo.webp',
-                caption: 'Stompstump Peak',
-                pagelink: '',
-                title: 'In Small Packages',
-                date: 'Nov 14, 2023 @ 6:08 AM',
-                tags: 'dungeon solo artwork 2023 olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/11-14-23_stompstump-peak2_solo.webp',
-                caption: 'Stompstump Peak',
-                pagelink: '',
-                title: 'Enthused Exploration',
-                date: 'Nov 14, 2023 @ 1:41 PM',
-                tags: 'dungeon solo artwork 2023 olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/01-12-24_winter-wonderland_collab.webp',
-                caption: 'Winter Wonderland // @.pears',
-                pagelink: '',
-                title: 'Snowy Expeditions',
-                date: 'Jan 12, 2024 @ 10:05 PM',
-                tags: 'dungeon holidayhills winter 2024 collab artwork olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/02-13-24_winter-wonderland_solo.webp',
-                caption: 'Winter Wonderland',
-                pagelink: '',
-                title: 'Stacking Through the Snow',
-                date: 'Feb 13, 2024 @ 7:32 PM',
-                tags: 'dungeon holidayhills winter 2024 solo artwork olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/02-15-24_beaver-hills_collab.webp',
-                caption: 'Beaver Hills (BH03) // @Keiava ',
-                pagelink: '',
-                title: 'Even Investigators Need Their Rest',
-                date: 'Feb 15, 2024 @ 4:41 AM',
-                tags: 'dungeon mission collab 2024 artwork olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/02-22-24_abyssal-badlands_solo.webp',
-                caption: 'Abyssal Badlands',
-                pagelink: '',
-                title: 'Suspicion in the Shadows',
-                date: 'Feb 22, 2024 @ 7:19 PM',
-                tags: 'dungeon solo artwork 2024 olddesign feral',
-                category: 'Old Submissions'
-            },
-            {
-                imglink: 'dungeons/02-25-24_tallest-of-grass-plains_solo.webp',
-                caption: 'Tallest of Grass Plains',
-                pagelink: '',
-                title: 'Most Flammable of Grass Plains',
-                date: 'Feb 25, 2024 @ 4:45 PM',
-                tags: 'dungeon solo artwork 2024 olddesign feral',
-                category: 'Old Submissions'
-            },
-        ]
+            let dungeonList = new List('gallery-dungeons-container', gallery.options.createSubmissionsOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allSubmissions, 'activity', 'Dungeon'));
 
-        /* let allGalleryItems = [];
+            let taskList = new List('gallery-tasks-container', gallery.options.createSubmissionsOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allSubmissions, 'activity', 'Task'));
 
-        let createDungeonSubmissions = function() {
-            const container = $(`#gallery-dungeons-list`);
-            dungeonValues.forEach((item) => {
-                let $newItem = $(submissionOptions.item(item));
-                container.append($newItem);
-                allGalleryItems.push($newItem);
-            });
+            let dailyList = new List('gallery-daily-container', gallery.options.createSubmissionsOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allSubmissions, 'activity', 'Daily Life'));
         }
-        createDungeonSubmissions();
-
-        $(`.filter-btn`).each(function() {
-            $(this).on('click', () => {
-                let isActive = $(this).attr('data-active') === 'true' ? true : false;
-                let search = $(this).attr('data-param');
-                let items = allGalleryItems.filter((i) => $(i).hasClass(search));
-
-                items.forEach((item) => {
-                    if (isActive && $(item).hasClass('d-none')) $(item).removeClass('d-none');
-                    else if (!isActive && !$(item).hasClass('d-none')) $(item).addClass('d-none');
-                });
-
-                $(this).attr('data-active', !isActive);
-            });
-        }); */
-
-        //let dungeonList = new List('gallery-dungeons-container', submissionOptions, dungeonValues);
-        //let taskList = new List('gallery-tasks-container', submissionOptions, taskValues);
-        let oldList = new List('gallery-old-container', submissionOptions, oldSubmissionsValues);
-        
 
     </script>
 
@@ -337,7 +92,7 @@
                 </li>
             </ul>
 
-            <div class="mt-2 page-sidebar-back d-none">
+            <div class="mt-2 page-sidebar-back">
                 <a href="../../characters.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Characters</a>
             </div>
         </div>
@@ -375,16 +130,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-10 col-12 profile-body-container">
+                    <div class="col-lg-10 col-12 profile-body-container active">
                         <div class="page-body p-3">
-
-                            <div class="text-center mb-4 d-none">
-                                <button type="button" class="btn btn-profile" data-bs-toggle="modal" data-bs-target="#submission-modal">
-                                    <i class="fa-solid fa-angles-right"></i>
-                                    Submission
-                                    <i class="fa-solid fa-angles-left"></i>
-                                </button>
-                            </div>
 
                             <div class="col-12 p-md-2 p-0">
 
@@ -955,7 +702,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-10 col-12 profile-body-container">
+                    <div class="col-lg-10 col-12 profile-body-container active">
                         <div class="page-body p-3">
 
                             <div class="col-12 p-md-2 p-0">
@@ -977,6 +724,7 @@
                                                 <thead class="table-default-head">
                                                     <tr>
                                                         <th>Date</th>
+                                                        <th>Title</th>
                                                         <th>Activity</th>
                                                         <th>Dungeon</th>
                                                         <th>Gained</th>
@@ -1023,7 +771,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-10 col-12 profile-body-container">
+                    <div class="col-lg-10 col-12 profile-body-container active">
                         <div class="page-body p-3">
 
                             <div class="col-12 p-md-2 p-0">
@@ -1242,6 +990,12 @@
                             <div class="ms-2 me-n3">
                                 <div class="col-12 p-md-2 p-0">
                                     <div class="page-sidebar-tab">
+                                        <a href="#gallery-personal"><i class="fa-solid fa-angles-right"></i> Personal Work</a>
+                                    </div>
+                                    <div class="page-sidebar-tab">
+                                        <a href="#gallery-others"><i class="fa-solid fa-angles-right"></i> By Others</a>
+                                    </div>
+                                    <div class="page-sidebar-tab">
                                         <a href="#gallery-dungeons"><i class="fa-solid fa-angles-right"></i> Dungeons</a>
                                     </div>
 
@@ -1253,16 +1007,13 @@
                                         <a href="#gallery-daily"><i class="fa-solid fa-angles-right"></i> Daily Life</a>
                                     </div>
 
-                                    <div class="page-sidebar-tab">
-                                        <a href="#gallery-old"><i class="fa-solid fa-angles-right"></i> Old Submissions</a>
-                                    </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="col-lg-10 col-12 profile-body-container">
+                    <div class="col-lg-10 col-12 profile-body-container active">
                         <div class="page-body p-3">
 
                             <!-- <div class="">
@@ -1272,10 +1023,46 @@
 
                             <div class="col-12 p-md-2 p-0">
 
+                                <!-- PERSONAL -->
+                                <div id="gallery-personal">
+
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-personal-container"></a>
+                                            Personal Work
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-personal-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-personal-list"></ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- OTHERS -->
+                                <div id="gallery-others">
+
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                        <hr class="profile-about-divider" style="width:25px;">
+                                        <div class="profile-about-header col-auto mx-2">
+                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-others-container"></a>
+                                            By Others
+                                        </div>
+                                        <hr class="profile-about-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-others-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-others-list"></ul>
+                                    </div>
+
+                                </div>
+
                                 <!-- DUNGEONS -->
                                 <div id="gallery-dungeons">
 
-                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
                                         <hr class="profile-about-divider" style="width:25px;">
                                         <div class="profile-about-header col-auto mx-2">
                                             <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-dungeons-container"></a>
@@ -1322,25 +1109,6 @@
                                     </div>
 
                                     <div class="collapse show active" id="gallery-daily-container">
-                                        <ul class="list p-0 d-flex flex-wrap col-12 gallery">
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                                <!-- OLD -->
-                                <div id="gallery-old">
-
-                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-old-container"></a>
-                                            Old Submissions
-                                        </div>
-                                        <hr class="profile-about-divider col">
-                                    </div>
-
-                                    <div class="collapse show active" id="gallery-old-container">
                                         <ul class="list p-0 d-flex flex-wrap col-12 gallery">
                                         </ul>
                                     </div>
@@ -1474,63 +1242,6 @@
 
             </div>
         </div>
-    </div>
-
-    <div class="modal fade modal-lg" id="submission-modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h1 class="modal-title fs-4">Snowy Expeditions</h1>
-                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="text-center my-3">
-                        <a href="../../images/dungeons/01-12-24_winter-wonderland_collab.webp" data-lightbox="submission">
-                            <img src="../../images/dungeons/01-12-24_winter-wonderland_collab.webp" class="col-lg-8 col-sm-10 col-12 submission-img">
-                        </a>
-                    </div>
-
-                    <div class="p-sm-2">
-                        <a class="submission-header active" data-bs-toggle="collapse" href="#submission-info">
-                            Information <i class="fa-solid fa-angle-down"></i>
-                        </a>
-
-                        <div class="submission-body p-2">
-                            <div class="collapse show active" id="submission-info">
-                                <ul class="fa-ul m-0">
-                                    <li><i class="fa-solid fa-caret-right"></i> <b>Credit:</b> @dragon-heist, @.pears</li>
-                                    <li><i class="fa-solid fa-caret-right"></i> <b>Characters:</b> Mirage, Zane</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-1">
-
-                    <div class="p-sm-2">
-                        <a class="submission-header" data-bs-toggle="collapse" href="#submission-desc">
-                            Description <i class="fa-solid fa-angle-down"></i>
-                        </a>
-
-                        <div class="submission-body p-2">
-                            <div class="collapse" id="submission-desc">
-                                <p>text here</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div class="modal-footer">
-                    <span style="font-size:small">Submitted <span>Jan 12, 2024 @ 10:05 PM</span></span>
-                </div>
-
-            </div>
-        </div>
-
     </div>
 
 </body>
