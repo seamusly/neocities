@@ -23,16 +23,6 @@
         import { gallery } from '../../js/gallery.js';
         import { images } from '../../js/images.js';
 
-        let othersWorkValues = {
-                imglink: ``,
-                title: '',
-                date: '',
-                datelabel: '',
-                category: '',
-                tags: '',
-                medium: ''
-        };
-
         // Init page elements
         $(document).ready(function() {
             gallery.root = config.pages.beyondthesea.root;
@@ -140,12 +130,12 @@
                                 <div id="profile-basics">
                                     <!-- BASIC -->
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#basics-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#basics-container"></a>
                                             Basics
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="basics-container">
@@ -249,12 +239,12 @@
                                 <div id="profile-trivia">
                                     <!-- TRIVIA -->
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#trivia-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#trivia-container"></a>
                                             Trivia
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="trivia-container">
@@ -270,12 +260,12 @@
                                 <!-- ABILITY & MOVES -->
                                 <div id="profile-moves">
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#moves-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#moves-container"></a>
                                             Ability & Moves
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="moves-container">
@@ -396,12 +386,12 @@
                                 <!-- PERSONALITY -->
                                 <div id="profile-personality">
                                     <div class="d-flex align-items-center col-12 p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#personality-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#personality-container"></a>
                                             Personality
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="personality-container">
@@ -629,12 +619,12 @@
                                 <div id="profile-history">
                                     <!-- SECTION -->
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#history-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#history-container"></a>
                                             History
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="history-container">
@@ -710,12 +700,12 @@
                                 <div id="logs-levels">
                                     <!-- SECTION -->
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#levels-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#levels-container"></a>
                                             Levels
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="levels-container">
@@ -779,12 +769,12 @@
                                 <!-- DESIGN -->
                                 <div id="design-humanoid">
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#design-humanoid-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#design-humanoid-container"></a>
                                             Humanoid Form
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="design-humanoid-container">
@@ -884,12 +874,12 @@
                                 <!-- DESIGN -->
                                 <div id="design-feral">
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#design-feral-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#design-feral-container"></a>
                                             Feral Form
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="design-feral-container">
@@ -1027,12 +1017,12 @@
                                 <div id="gallery-personal">
 
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-personal-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-personal-container"></a>
                                             Personal Work
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="gallery-personal-container">
@@ -1045,12 +1035,12 @@
                                 <div id="gallery-others">
 
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-others-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-others-container"></a>
                                             By Others
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="gallery-others-container">
@@ -1063,12 +1053,12 @@
                                 <div id="gallery-dungeons">
 
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-dungeons-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-dungeons-container"></a>
                                             Dungeons
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="gallery-dungeons-container">
@@ -1081,12 +1071,12 @@
                                 <div id="gallery-tasks">
 
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-tasks-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-tasks-container"></a>
                                             Tasks
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="gallery-tasks-container">
@@ -1100,12 +1090,12 @@
                                 <div id="gallery-daily">
 
                                     <div class="d-flex align-items-center col-md-auto p-0 mt-5">
-                                        <hr class="profile-about-divider" style="width:25px;">
-                                        <div class="profile-about-header col-auto mx-2">
-                                            <a class="fa-xs profile-collapse-link active" data-bs-toggle="collapse" href="#gallery-daily-container"></a>
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-daily-container"></a>
                                             Daily Life
                                         </div>
-                                        <hr class="profile-about-divider col">
+                                        <hr class="section-divider col">
                                     </div>
 
                                     <div class="collapse show active" id="gallery-daily-container">

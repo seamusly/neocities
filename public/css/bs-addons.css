@@ -98,6 +98,10 @@
     color: rgb(255, 95, 95) !important;
 }
 
+.text-nav {
+    color: #ba9a7a;
+}
+
 @media (min-width: 576px) {
     .mt-sm-n1 {
         margin-top: -0.25rem !important;
@@ -542,7 +546,12 @@
     }
 }
 
-/********************************************/
+/*****************************************************/
+
+.modal-title {
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+}
 
 .table-default-head {
     --bs-table-color: #edb272 !important;

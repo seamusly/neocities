@@ -35,16 +35,16 @@ utils.init = {
 
     top() {
         $('body').append(`
-            <div class="jump-container">
-                <a role="button" class="btn jump-btn mb-1" href="#"><i class="fa-solid fa-arrow-up"></i></a>
-                <a role="button" class="btn jump-btn" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
+            <div class="back-to-top-container">
+                <a role="button" class="btn back-to-top-btn mb-1" data-bs-toggle="tooltip" data-bs-title="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+                <a role="button" class="btn back-to-top-btn" data-bs-toggle="tooltip" data-bs-title="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
             </div>
         `);
     },
 
 
     profile() {
-        $(`.profile-collapse-link`).on('click', function() {
+        $(`.star-collapse-link`).on('click', function() {
             $(this).toggleClass('active');
         });
     },
