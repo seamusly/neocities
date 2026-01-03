@@ -138,4 +138,10 @@ utils.parse = {
     }
 }
 
+utils.url = {
+    getUrlParams() {
+        return new URLSearchParams(window.location.search);
+    },
+}
+
 export { utils };
