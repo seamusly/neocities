@@ -17,6 +17,9 @@
 
         // Init page elements
         $(document).ready(function() {
+            const urlParams = utils.url.getUrlParams();
+            console.log(urlParams);
+
             utils.init.header(config.pages.index.title);
             utils.init.footer(config.footer.links, config.pages.index.root);
             utils.init.top();

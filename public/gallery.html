@@ -29,15 +29,15 @@
 
         // Init page elements
         $(document).ready(async function() {
+            const urlParams = await utils.url.getUrlParams();
+            console.log(urlParams);
+
             utils.init.header(config.pages.gallery.title, pageSubtitle);
             utils.init.footer(config.footer.links, config.pages.gallery.root);
             utils.init.top();
 
             utils.init.tooltips();
             utils.init.lightbox();
-
-            const urlParams = await utils.url.getUrlParams();
-            console.log('got url params');
 
             if (urlParams.has('view')) {
                 $('.page-body').removeClass('col-lg-10');
