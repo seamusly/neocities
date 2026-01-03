@@ -1,4 +1,5 @@
 let utils = {};
+const siteUrl = 'dragon-heist.neocities';
 
 utils.init = {
     header(title, subtitle = null) {
@@ -139,6 +140,11 @@ utils.parse = {
 }
 
 utils.url = {
+    isLiveSite() {
+        const url = new URL(window.location.href)
+        return url.href.includes(siteUrl);
+    },
+
     getUrlParams() {
         return new URLSearchParams(window.location.search);
     },

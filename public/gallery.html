@@ -30,7 +30,6 @@
         // Init page elements
         $(document).ready(async function() {
             const urlParams = await utils.url.getUrlParams();
-            console.log(urlParams);
 
             utils.init.header(config.pages.gallery.title, pageSubtitle);
             utils.init.footer(config.footer.links, config.pages.gallery.root);
