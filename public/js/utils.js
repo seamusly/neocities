@@ -50,6 +50,15 @@ utils.init = {
         });
     },
 
+    warningButtons() {
+        $(`.btn-cw`).each(function() {
+            $(this).on('click', function() {
+                if ($(this).hasClass('collapsed')) $(this).html('Show content');
+                else $(this).html('Hide content');
+            });
+        });
+    },
+
 
     tooltips() {
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');

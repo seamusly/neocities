@@ -1015,6 +1015,104 @@ images.pmdbts = {
             description: `...`
         },
 
+        // Nov 14, 2025 - HH Task Solo (Auggy & Benoit)
+        {
+            imglink: 'misc/book.webp',
+            title: 'Comfortably Ignorant',
+            date: new Date(2025, 11 - 1, 14, 12, 19),
+            activity: 'Task',
+            prompt: '05 | Distortion World Escapades',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'gijinka', 'solo'],
+            medium: 'writing',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                },
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne',
+                }
+            ],
+            description: `Auggy and Benoit join the crystal-searching contest! How did they end up paired together? IDK, I just wanted to write something with Auggy in it and Benoit manifested part-way through.`,
+            text: `
+                <p>Augurys was hanging precariously off the side of one of the landmasses. Using only one arm, they held fast to one of the unnaturally tall plants that grew from the stones across the rift. They had wrapped part of it around their elbow and gripped it tightly in their palm. With how thick their coat’s sleeves were, they assumed that they would be mostly protected from the thorns that covered the surprisingly sturdy stem. They had their paws pressed firmly against the cliffside to keep themselves supported as they reached out with their free hand towards a sizable chunk of purplish-pink crystal embedded in the rocks below.</p>
+        
+                <p>With their smaller-than-average stature, it was proving to be a more daunting task than they had hoped when they first opted to put themselves in such a position. No matter how much effort they put into stretching towards the gem, it seemed to be just beyond their reach. Despite already being a few feet down from the safety of the ledge and awkwardly attempting to maneuver with the plant in place of a rope, they would not yet be deterred.</p>
+                
+                <p>Augurys kicked off of the cliff face very lightly, allowing gravity to take them further downwards. When their feet touched the stone again, they found themself finally about to touch the shimmering gem they had been eyeing. They ran their fingers over its surface, polishing one of the smoother sides and momentarily distracting themself with the prize. As they tried to close a fist around it, hooking their fingers under the lip of its topmost face, they found that it would still yet resist their attempts to pull it free of its tight confines.</p>
+                
+                <p style="opacity:50%;">“What the hell…?”</p>
+                
+                <p>“Come on, you…” Augurys murmured to themself, bracing their legs against the rocks and pushing back away from the deposit. At the same time, their movements were pushing the limits of their stem-rope.</p>
+                
+                <p style="opacity:75%;">“A-Aug—”</p>
+                
+                <p>They grunted loudly as they struggled to bring the arm gripping the crystal back towards their body. Still, there were small signs that they were making progress as the gem had shifted very slightly due to their pulling. They tried to pry it in a few different directions, rotating their wrist as they tried to find the correct angle at which to give one more strong yank. After applying the technique a few times, they could feel that the moment had to have been drawing close. “Almost…”</p>
+                
+                <p>A shadow appeared over them, though they heeded it no mind — it was unlikely that they had even noticed the figure casting it. A well-dressed man towered over them from the top of the ledge. His eyes widened behind his tinted glasses as he was introduced to the absurd scene in front of him. He immediately and involuntarily called out on the verge of shouting. “<b><i>Augurys</i>?! What the <i>hell</i> are you doing?!</b>”</p>
+                
+                <p>“Ah—”</p>
+                
+                <p>Not a second later, the crystal had come free from the rocks trapping it. The sudden release of tension caused Augurys to be thrusted backwards. They almost began to spin as they lost their footing against the cliff face and pivoted dangerously away from where they had been previously secured. In light of the unexpected motions, the stem flattened and strained greatly as the Buneary was pulling it downwards at an angle that could not support them for long.</p>
+                
+                <p>The man cried out even louder, “FUCK!”</p>
+                
+                <p>He reacted swiftly, diving for a section of the stem that was not quite as bent as the rest with both hands. There was very little around him to leverage himself, and so he instead opted to try and throw himself backwards while grappling the plant with as much force as he could muster. Sure enough, his clever thinking saw Augurys practically flying back over the ledge and landing on their front directly atop the man himself.</p>
+                
+                <p>It took a few seconds for Augurys to fully register what had happened and where they even were. Their chest was pressed awkwardly against the other person’s face, though they did not seem to mind — unlike the one being crushed beneath them.</p>
+                
+                <p>Eventually, something finally seemed to click in their head. They looked down at the man in confusion. “Benoit?”</p>
+                
+                <p>“Pfft— gods…!” His voice was muffled as he sputtered another obscenity into the air. He quickly sat himself up, pushing Augurys upright in the process. “You… you <i>idiot</i>! Fah…!”</p>
+                
+                <p>Benoit was practically shaking as shot a glare down Augurys who was similarly gazing up at him, although in a much calmer fashion. He gritted his teeth irritably and tried to ignore the heat rising to his head as he adjusted his glasses and straightened out his shirt collar. “What in the <i>hells</i> were you doing down there?!”</p>
+                
+                <p>“I was…” Augurys started and soon trailed off, still seemingly confused. They mimicked the man’s actions and adjusted their own glasses, which had miraculously not fallen from their nose even after they were jostled around so violently. Though it took longer than Benoit would have liked, a light finally went off in their head and they suddenly perked up eagerly. “Ah, I was getting this!”</p>
+                
+                <p>Augurys held out their hand, revealing the dimensional gem held snugly within their grasp. They were smiling — practically beaming with pride — as they presented it to their companion. Benoit, on the other hand, was less than amused by their antics. He heaved a heavy, exasperated sigh and gradually lowered himself back down to the ground.</p>
+                
+                <p>“Good…” he tried to say but could barely get the first few words out before he needed to take another breath. The adrenaline had begun to fade, and yet he was still reeling from the audacity of his own teammate. “...good job. That— it’s very impressive. Just <i>great</i>...”</p>
+                
+                <p>The two were tied up in a questionable scene; one that likely would have raised a few eyebrows among spectators had there been any. Benoit was laying back with an arm raised to his eyes while Augurys sat straddling his hips with their knees. For a brief time, both figures stayed frozen and silent.</p>
+                
+                <p>Augurys eventually set the crystal chunk down on the ground beside where Benoit was sprawled out. They were still sitting on top of him when they leaned forwards and brushed his outward facing palm with a finger. He did not react to their touch then. It was not until they spoke again that his attention was pulled back to the present.</p>
+                
+                <p>“You’re bleeding,” Augurys stated plainly.</p>
+                
+                <p>“Huh?” Benoit uncovered his face and lifted his head off of the floor slightly in response. He turned his arm over and raised the other to where he could see it out of the corner of his eye. At that, he finally took note of the small puncture wounds dotting both of his hands — likely where he had grabbed onto the thorny plant’s stem. He grimaced and let out a defeated groan. “Well, that’s just <i>fantastic</i>. You wouldn’t happen to have a handkerchief or anything, would you?”</p>
+                
+                <p>Augurys shook their head. “I don’t, but...”</p>
+                
+                <p>They reached out and took one of Benoit’s injured hands in both of their own. He offered no resistance as they moved to bend his elbow towards them, though he craned his neck to get a glimpse of what they intended to do. They wiped an oversized sleeve against his palm, smearing a small trace of blood into the soft fabric to his dismay.</p>
+                
+                <p>“Hey, you don’t have to do that…” Benoit protested half-heartedly. Despite his words, he still allowed them to bring his other palm to their coat to wipe it clean as well. “Augurys,” he spoke firmly, almost snapping. “It’s <i>fine</i>.”</p>
+                
+                <p>Whether through stubbornness or plain obliviousness, Benoit’s tone growing harsher did nothing to discourage the Buneary. They pressed his hands into their sleeves, then glanced up at him with a cheery little smile.</p>
+                
+                <p>Benoit had not long been a member of his team at the GCSF. At roughly the same time he had been admitted, so too had Augurys. They had rarely interacted up until that point, seeing as it was their team leaders who had often been monitoring them. How he ended up accompanying them into the Distortion World on that particular day was a mystery to him, and he surmised that Augurys themself would not have recalled what led to their present circumstances. Benoit knew that they were somewhat dense, lacking in the awareness that their peers had — or so they often <i>appeared</i> to be. He was not entirely convinced that it was merely unintentional each time they acted clueless or wandered recklessly into danger.</p>
+                
+                <p>Though with the way they were innocently looking at him with their big brown eyes then, it was hard for him to believe that they had much in the way of ulterior motives. They were a mystery he was unsure about cracking. Perhaps it would be better if he simply let things be, he thought. He rested his head once more and sighed.</p>
+                
+                <p>“Would you <i>get</i> off of me at least?” Benoit grumbled.</p>
+                
+                <p>“Oh! Okay.”</p>
+                
+                <p>They were more than happy to oblige, clumsily rolling off of him while still holding his hands. They settled down by his side, only letting go to pick up the end of their fluffy coat to offer to him. Realizing what they intended, he let them place a piece of it beneath his neck like a pillow. If nothing else, he had to admit that it was far more comfortable than the hard stone that he had been laying on for the past few minutes.</p>
+                
+                <p>“Comfy?” Augurys asked, eagerly anticipating his response.</p>
+                
+                <p>Benoit had been frowning — pouting for a while. But at that, he decided to nod his head and give his best attempt at a smile in return. “Yeah. Comfy.”</p>`
+        },
+
         // Dec 23, 2025 - Solo Dungeon
         {
             imglink: 'misc/book.webp',
@@ -1093,6 +1191,37 @@ images.pmdbts = {
                 <p>"There. They were a little crooked, you know," the Buneary giggled.</p>
 
                 <p>"Ah... right. Thank you, Augurys." Benoit did not want to linger any longer on their interaction. He knew that they would nod at his thanks, and so he nodded in return without even thinking. The two of them had gone through this several times before, and he was eager to move on. He tread past them a few paces and then stood up to look back at them, simply saying, "Alright. Let's get going then."</p>`
+        },
+
+        // Jan 6, 2026 - Daily Life (Starscarred Lands)
+        {
+            imglink: 'misc/book.webp',
+            title: 'Brief History of the Starscarred Lands',
+            date: new Date(2026, 1 - 1, 3, 2 + 12, 39),
+            activity: 'Daily Life',
+            tags: ['pokemon', 'pmdbts', 'dailylife', 'solo'],
+            medium: 'writing',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                },
+            ],
+            description: `<p>A brief look into Augurys's place of origin.</p><p class="fst-italic">(Though Augurys does not appear in this small piece, it is linked back to them as it is relevant to their backstory.)</p>`,
+            text: `
+                <p>The <b>Starscarred Lands</b> were discovered several decades following the establishment of the GCSF. They are a set of floating islands comprised of one central landmass and several, much tinier off-shoots connected by bridges and large, titanic chains forged of enchanted metal. At some point, gargantuan meteor fell through the atmosphere and struck the floating continent located in the <b>Sea of Clouds</b>.</p>
+
+                <p>The collision altered the trajectory of the meteor, causing what remained of it after the impact to fall harmlessly into the Great Ocean. However, the continent itself had been utterly devastated and shattered into several pieces.</p>
+                                                    
+                <p>At some point, it was discovered that the meteor had brought a cosmic power from the stars that had since embedded itself into the earth and transformed the land into place lush with magic. The fragments of the meteor were discovered to carry certain magical properties that many considered valuable for a variety of reasons, and the coveting of the shards launched a global rush to acquire them. Many parties came into conflict over the shards, resulting in a number of major conflicts that left the land in a dismal state.</p>
+                                                    
+                <p>After all was said and done, the collection of islands earned its name for all that had irreparably changed it over the years since the disaster and its original name was lost to time. Hundreds of years following the conflict, the islands have since been largely rebuilt and have become a haven for those of magical aptitude or those with a keen interest in the arcane and mysteries of the realm.</p>`
         },
 
     ]

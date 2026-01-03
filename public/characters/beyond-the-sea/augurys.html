@@ -31,6 +31,7 @@
             utils.init.top();
 
             utils.init.profile();
+            utils.init.warningButtons();
 
             pmdbts.init.setTeam('Syzygy');
             pmdbts.init.setLevelLogs(config.pages.beyondthesea.root, 'Augurys');
@@ -67,17 +68,18 @@
 
         <div class="page-header beyond-the-sea mb-2">
 
-            <ul class="nav nav-tabs profile-tabs justify-content-md-end justify-content-center pe-md-2 col-12" id="myTab" role="tablist">
-                <li class="nav-item col-md-auto col-3 px-md-0 px-sm-3" role="presentation">
+            <ul class="nav nav-tabs profile-tabs justify-content-md-end justify-content-center pe-md-2 col-12" role="tablist">
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
                     <button class="nav-link active col-12" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
                 </li>
-                <li class="nav-item col-md-auto col-3 px-md-0 px-sm-3" role="presentation">
+
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
                     <button class="nav-link col-12" data-bs-toggle="tab" data-bs-target="#design">Design</button>
                 </li>
-                <li class="nav-item col-md-auto col-3 px-md-0 px-sm-3" role="presentation">
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
                     <button class="nav-link col-12" data-bs-toggle="tab" data-bs-target="#gallery">Gallery</button>
                 </li>
-                <li class="nav-item col-md-auto col-3 px-md-0 px-sm-3" role="presentation">
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
                     <button class="nav-link col-12" data-bs-toggle="tab" data-bs-target="#logs">Logs</button>
                 </li>
             </ul>
@@ -249,9 +251,9 @@
 
                                     <div class="collapse show active" id="trivia-container">
                                         <ul class="fa-ul ms-2">
-                                            <li class="my-1"><i class="fa-solid fa-angle-right"></i> --</li>
-                                            <li class="my-1"><i class="fa-solid fa-angle-right"></i> --</li>
-                                            <li class="my-1"><i class="fa-solid fa-angle-right"></i> --</li>
+                                            <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Augurys also accepts she/they pronouns, but typically refers to themself with they/them.</li>
+                                            <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> They are polyamorous and pansexual. They have had their fair share of casual flings, but it is unclear whether they are at all interested in pursuing romantic relationships at present.</li>
+                                            <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> In their feral form, Augurys is considered small even for a Buneary.</li>
                                         </ul>
                                     </div>
 
@@ -636,31 +638,119 @@
                                             </div>
                                         </div>
 
-                                        <div style="text-indent: 2.5em;">
-                                            <p>Zane was born in the modest little village of Asterei on the Starry Cascada Islands. His mother Naminea raised him whilst his father Bazylthram was largely missing from his youth. The latter served as a diplomat for the illustrious Starfall City and would often be traveling to other islands, and so there was seldom time for him to visit home. Despite his father's absence, Zane lived a generally happy childhood. As a boy, his mother helped him develop his lifelong love of music and performance, and he aspired to become an adventuring bard one day.</p>
+                                        <div class="collapse show mb-2" id="backstory-cw">
+                                            <div class="content-warning-container p-3">
+                                                <div class="d-flex flex-wrap">
+                                                    <h5 class="col">Content Warning <i class="fas fa-warning"></i></h5>
+                                                    <div class="col-auto mb-2"><button type="button" class="btn-close" data-bs-toggle="collapse" href="#backstory-cw"></button></div>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
 
-                                            <p>When Zane was around 9 years old, his mother suddenly and mysterious disappeared. For a time, his neighbours cared for him in the hopes that Naminea would return or get into contact with them. However, after weeks had passed with no news, his caretakers ultimately decided to call on Bazylthram to come and retrieve his son. It took several more weeks before Bazylthram arrived back in Asterei. When he left, he took Zane with him back to the city with the intent of leaving behind their family home for good.</p>
+                                                <div class="px-md-2">
+                                                    <p class="mb-2">This backstory features potentially upsetting topics such as:</p>
+
+                                                    <ul class="fa-ul ms-md-4 ms-2">
+                                                        <li class="mb-1"><i class="fa-solid fa-angle-right"></i> Implications of...</li>
+                                                        <li class="mb-1 ms-4 opacity-75"><i class="fa-solid fa-angles-right"></i> Emotional / psychological manipulation, gaslighting, and controlling behaviour</li>
+                                                        <li class="mb-1 ms-4 opacity-75"><i class="fa-solid fa-angles-right"></i> Mind control, brainwashing</li>
+                                                        <li class="mb-1 ms-4 opacity-75"><i class="fa-solid fa-angles-right"></i> Dubious consent (in a non-sexual context)</li>
+                                                        <li class="mb-1"><i class="fa-solid fa-angle-right"></i> Memory loss</li>
+                                                    </ul>
+                                                </div>
+
+                                                <hr class="profile-info-divider my-2">
+
+                                                <div class="text-center">
+                                                    <button class="btn-cw collapsed" data-bs-toggle="collapse" href="#backstory-contents">Show content</button>
+                                                </div>
+
+                                            </div>
                                         </div>
 
-                                        <div class="collapse history-more" style="text-indent: 2.5em;">
-                                            <p>As Zane grew into a teenager, he found himself clashing often with his father. Bazylthram was at a loss as to how to raise his son, and so Zane was often left to his own devices or neglected entirely. Around this time, as he was allowed to roam the city at his discretion, he fell in with a band of rogues who called themselves "the Iris". The gang was led by a man named Hisekawa, who seemed to act as a sort of surrogate father to many of the younger members like Zane himself.</p>
+                                        <div class="collapse mt-4" id="backstory-contents">
+                                            <!-- SECTION -->
+                                            <div class="d-flex align-items-center col-md-auto p-0 my-4">
+                                                <hr class="section-divider" style="width:50px;">
+                                                <div class="section-header col-auto mx-2">
+                                                    <span class="fa-xs star-collapse-link"></span>
+                                                    Summary
+                                                </div>
+                                                <hr class="section-divider col">
+                                            </div>
 
-                                            <p>Throughout his teenage years and into his early adulthood, Zane stayed with the Iris and forged closed bonds with the various members of the crew. Now with years of experience under their belts, Hisekawa felt they were ready to take on a particularly risky heist with a very generous payout. After extensive planning and preparations, the Iris was able to complete the heist, only to be betrayed by their leader in the aftermath as Hisekawa ran off with the payload and alerted the authorities as to their whereabouts. Following that, the members of the Iris scattered.</p>
+                                            <div class="px-3">
+                                                <ul class="fa-ul ms-md-4 ms-2 mb-2">
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Augurys was born in the distant future, on a floating continent that was torn apart by a meteor called the <b>Starscarred Lands</b>.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> The islands were covered in cosmic powers and potent magics that drew scholars and mages all across the realm. Augurys followed in the footsteps of their parents and wished to understand and make use of the land's magics.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> After reaching adulthood, they moved to the city of <b>Solhart</b> to attend <b>Astron Academy</b>.</li>
+                                                </ul>
 
-                                            <p>By chance, as he had ducked into a skyport to hide, Zane ended up accidentally stowing away on an airship that would soon depart from Starfall City. While hiding amidst the cargo, he was discovered by a person named <b class="text-highlight">Gwisin</b> -- a member of a bounty hunting team aboard the ship. Despite seemingly realizing that Zane was a wanted man, Gwisin said nothing of the matter and instead accompanied him for the remainder of the trip. Their destination was the city of Ethovalon on Kala Island, located far below the Starry Cascada Islands in the Great Ocean.</p>
+                                                <div class="collapse summary-more">
+                                                    <ul class="fa-ul ms-md-4 ms-2">
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Early into their first year, they met a Malamar named <b>Ephemir</b>. The two quickly became close friends and were practically inseparable before long.</li>
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> At some point after meeting Ephemir, Augurys began to suffer from memory loss and confusion. As a result, they started to rely heavily on Ephemir to help them in their daily life.</li>
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Towards the end of the academic year, Ephemir invited Augurys to accompany him back to his home: one of the impact sites of the meteor that struck the continent years ago.</li>
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> On the day of their departure, while Augurys was alone and preparing for the trip, a powerful mage broke into their home and urged Augurys to leave with them. They tried to warn Augurys that Ephemir was a dangerous individual who had been hypnotizing them over the last few months.</li>
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Suddenly, Ephemir returned and clashed with the mage. The ensuing use of chaotic magics caused an eruption that sent Augurys back in time to the present day.</li>
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Augurys was found in a catatonic state by villagers living in the Land of Mists. After they regained consciousness, the villagers opted to contact the GCSF for aid.</li>
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Members of the rescuer team <b>Syzygy</b> arrived and took charge of Augurys. While exploring options for treatment in Ethovalon afterwards, Augurys became enamoured by the thought of living as an explorer. They asked to join the team soon after.</li>
+                                                        <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Though the team's leaders hesitated at first, they ultimately allowed Augurys to join them under the condition that they were frequently monitored so that they wouldn't land themself into trouble.</li>
+                                                    </ul>
+                                                </div>
 
-                                            <p>Over the course of the journey, Gwisin informed Zane about the GCSF and its status as an exploration guild. Though Zane could not fully understand their actions, Gwisin extended an invitation to him to join their team, <b class="text-highlight">Enochian</b>. Having had it pitched to him as a chance to make money and lay low by traveling the breadth of the Great Ocean for a time, Zane accepted.</p>
+                                                <p class="text-center mb-0">
+                                                    <a data-bs-toggle="collapse" data-bs-target=".summary-more" class="profile-text-toggler">
+                                                        <span class="collapse fade show active summary-more" style="transition-duration: 0s;">Show more</span>
+                                                        <span class="collapse fade summary-more" style="transition-duration: 0s;">Show less</span>
+                                                    </a>
+                                                </p>
+                                            </div>
 
-                                            <p>Though he now works as member of the bounty hunting branch and largely avoids having to set foot in the Sea of Clouds, Zane ultimately hopes to discover what happened to the other members of the Iris and confront Hisekawa for his betrayal.</p>
+                                            <!-- SECTION -->
+                                            <div class="d-flex align-items-center col-md-auto p-0 my-4">
+                                                <hr class="section-divider" style="width:50px;">
+                                                <div class="section-header col-auto mx-2">
+                                                    <span class="fa-xs star-collapse-link"></span>
+                                                    Backstory
+                                                </div>
+                                                <hr class="section-divider col">
+                                            </div>
+
+                                            <div class="px-3">
+                                                <div style="text-indent: 2.5em;">
+                                                    <p>Augurys was born long after the establishment of the <b class="text-highlight">Global Communications Setup Foundation</b>. They were raised on a continent located in the Sea of Clouds known as the <b class="text-highlight">Starscarred Lands</b>.</p>
+                                                
+                                                    <p>The town of <b class="text-highlight">Brightdust</b> was their home for most of their life. Brightdust was known primarily for its mining industry though it was also a relatively safe place for interested arcane adepts and scientific researchers to sample some of the magical geological phenomena common across the island and especially near craters. Being that the town had such a close relation to the land's inherent magical nature, Augurys's parents moved there and settled before they were born.</p>
+                                                </div>
+
+                                                <div class="collapse history-more" style="text-indent: 2.5em;">
+                                                    <p>Throughout most of Augurys's childhood, they followed the example of their family members and learned from the brilliant minds of their community. They had an innate curiosity for all things related to magic and the nature of the cosmic powers that had transformed the land. They spent most of their early years learning to channel some of the power themself, honing their ability to wield it in a variety of ways including for offence and for simply day-to-day utility. By the time they were reaching their adulthood, they were eager to continue their studies and move onto new opportunities. To that end, they ventured to <b class="text-highlight">Solhart</b>; a major city on the continent and home to the top-rated university across the Starscarred Lands known as the <b class="text-highlight">Astron Academy</b>.</p>
+
+                                                    <p>Within their first year of attending the academy, Augurys became acquainted with a Malamar named <b class="text-danger">Ephemir</b> who they noticed across the room during one of their lectures. They were compelled to speak with him, taking an interest in his participation in their shared class at the time. The two were immediately friendly with one another and before long, Augurys found him to be a constant companion of theirs throughout the academic year.</p>
+                                                    
+                                                    <p>Some time after Augurys had met Ephemir however, they found themself much more scatterbrained way than usual. They began to struggle with their memory as well, usually forgetting the details of their day and eventually being unable to recall where they were the night prior. During this time, Ephemir graciously offered his aid. Given that they were together so often, he would fill in the blanks for Augurys and help them with their day-to-day activities. After a while, it became that Ephemir was a part of almost every aspect of Augurys's life, and they were seemingly content to be with him.</p>
+                                                    
+                                                    <p>One day, Ephemir spoke of a place he considered home: a section of impact site where the great meteor had struck the continent centuries ago, and one of the scattered origin points of the cosmic powers of the Starscarred Lands. He invited Augurys to come with him to visit the crater some time in the near future, and Augurys happily accepted. They planned to take the trip once the academic year had concluded.</p>
+
+                                                    <p>Augurys was so eager to see such a historical site that the remainder of the school year passed quickly. On the day that they were to depart Solhart with Ephemir, they were left alone for a brief period of time while Ephemir was doing one last errand run. During that time, a person broke into their home and restrained them in a hurry. Augurys realized that they were a magic-user and one that was decorated in icons reserved only for experts in the arcane arts within the city at that. The mage urged Augurys to come quietly and told them that Ephemir was unstable and a threat to both their safety and the city at large as he had been rewriting their personality for his personal gain since they met.</p>
+                                                    
+                                                    <p>Before Augurys could question the mage however, Ephemir arrived and a battle broke out. In the ensuing conflict, as the mage and Ephemir clashed and filled the air with chaotic magics, there was an explosion and a bright light that consumed them all.</p>
+                                                    
+                                                    <p>When Augurys next came to consciousness, they were being cared for by a pair strangers in an unfamiliar village. The couple informed them that a group of children had ventured to the outskirts of the village and found them alone in a catatonic state within the forest. It had been a few days since the incident, and the couple had been caring for them since. Augurys was unable to answer questions about their past, who they were, or where they came from, rendering them a complete amnesiac in a foreign land. They were later told that they were in the <b class="text-highlight">Land of Mists</b> and despite their seemingly troubled past, they were fairly content and even cheerful in the days that followed.</p>
+                                                    
+                                                    <p>The villagers opted to call on an exploration guild for aid with their dilemma and allowed Augurys to stay with them until help arrived. Within a few days, members of a GCSF rescue team arrived in the village. Among them were <b class="text-highlight">Theo</b> and <b class="text-highlight">Ambrosius</b>, the leaders of a team called <b class="text-highlight">Syzygy</b>. The two were happy to take Augurys back to the guild's base of operations on <b>Kala Island</b> with the hopes of helping them regain their memories.</p>
+                                                    
+                                                    <p>Soon after arriving at Ethovalon and after spending time with the members of Syzygy, Augurys became endeared to the team and the idea of life with an exploration guild. They asked if there was a way for them to register to become a part of the team, and were met with hesitation from the leaders. Both Theo and Ambrosius as well as <b class="text-highlight">Hawke</b> -- who served as an additional authority on the team -- were concerned with Augurys's overall disposition. They were extremely well-read and knowledgeable on subjects beyond most of the team's members, yet their curiosity and lack of self-preservation was sure to land them in trouble. Knowing this, and realizing that they could potentially end up in an even more precarious profession, the leaders of Syzygy agreed to accept them as a new recruit and have since been monitoring them closely.</p>
+                                                </div>
+                                            </div>
+
+                                            <p class="text-center mb-0">
+                                                <a data-bs-toggle="collapse" data-bs-target=".history-more" class="profile-text-toggler">
+                                                    <span class="collapse fade show active history-more" style="transition-duration: 0s;">Show more</span>
+                                                    <span class="collapse fade history-more" style="transition-duration: 0s;">Show less</span>
+                                                </a>
+                                            </p>
                                         </div>
-
-                                        <p class="text-center mb-0">
-                                            <a data-bs-toggle="collapse" data-bs-target=".history-more" class="profile-text-toggler">
-                                                <span class="collapse fade show active history-more" style="transition-duration: 0s;">Show more</span>
-                                                <span class="collapse fade history-more" style="transition-duration: 0s;">Show less</span>
-                                            </a>
-                                        </p>
-
                                     </div>
                                 </div>
 
@@ -671,7 +761,6 @@
 
                 </div>
             </div>
-
 
             <div class="tab-pane fade p-0" id="logs">
                 <div class="page-container d-flex flex-wrap">
@@ -879,20 +968,20 @@
 
                                             <div class="col-lg-2 col-md-3 col pe-md-3 mt-3 palette-container-start">
 
-                                                <div class="profile-info-title px-3">Tail / Eyes</div>
-                                                <div class="design-swatch-start mb-1" style="background:#F19855;"></div>
+                                                <div class="profile-info-title px-3">Fur</div>
+                                                <div class="design-swatch-start mb-1" style="background:#986152;"></div>
 
                                                 <div class="profile-info-title px-3">Eyes</div>
-                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,#6FD5A0 0%, #6FD5A0 50%, #fff 50%, #fff 100%);"></div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,rgba(92, 64, 72, 1) 0%, rgba(92, 64, 72, 1) 50%, rgba(211, 150, 111, 1) 50%, rgba(211, 150, 111, 1) 100%);"></div>
 
-                                                <div class="profile-info-title px-3">Fur</div>
-                                                <div class="design-swatch-start mb-1" style="background:#33161A;"></div>
+                                                <div class="profile-info-title px-3">Cotton</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,rgba(38, 34, 31, 1) 0%, rgba(38, 34, 31, 1) 25%, rgba(175, 136, 106, 1) 25%, rgba(175, 136, 106, 1) 50%, rgba(128, 88, 87, 1) 50%, rgba(128, 88, 87, 1) 75%, rgba(204, 185, 171, 1) 75%, rgba(204, 185, 171, 1) 100%);"></div>
 
-                                                <div class="profile-info-title px-3">Horns</div>
-                                                <div class="design-swatch-start mb-1" style="background:#5C2E23;"></div>
+                                                <div class="profile-info-title px-3">Accessories</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,#d7ac72 0%, #d7ac72 50%, #A59176 50%, #A59176 100%);"></div>
 
-                                                <div class="profile-info-title px-3">Apple</div>
-                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,#522135 0%, #522135 33%, #962545 33%, #962545 64%, #EDD0BB 64%, #EDD0BB 100%);"></div>
+                                                <div class="profile-info-title px-3">Ear / Paws</div>
+                                                <div class="design-swatch-start mb-1" style="background:#C07168;"></div>
 
                                             </div>
 
@@ -909,14 +998,14 @@
                                                     <!-- HEIGHT -->
                                                     <div class="col-6">
                                                         <p class="profile-info-title">Height</p>
-                                                        <span>1'0"</span>
+                                                        <span>0'10"</span>
                                                         <hr class="profile-info-divider my-2">
                                                     </div>
 
                                                     <!-- WEIGHT -->
                                                     <div class="col-6">
                                                         <p class="profile-info-title">Weight</p>
-                                                        <span>12.1 lbs</span>
+                                                        <span>10 lbs</span>
                                                         <hr class="profile-info-divider my-2">
                                                     </div>
 

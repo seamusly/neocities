@@ -112,7 +112,7 @@ a:hover, .profile-text-toggler:hover {
 }
 
 .page-header {
-  min-height: 175px;
+  min-height: 200px;
   text-align: center;
   align-items: center;
   align-content: center;
@@ -377,6 +377,10 @@ a.profile-inline-img:hover {
 }
 
 @media (max-width: 768px) {
+  .page-header {
+    min-height: 250px;
+  }
+
   .profile-tabs {
     font-size: 11pt !important;
     border-bottom-width: 0px !important;

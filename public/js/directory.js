@@ -221,8 +221,8 @@ const directoryValues = [
     },
     {
         name: 'Augurys',
-        pronouns: 'they/any',
-        icon: 'placeholder.png',
+        pronouns: 'they/them',
+        icon: 'augurys-bts.png',
         link: '#',
         tagtext: '#fff',
         tagcolor: '#a66f35',

@@ -83,24 +83,29 @@ gallery.page = {
         });
 
         return `
-        <div class="content-warning-container p-3 mb-4">
-            <h5>Content Warning <i class="fas fa-warning"></i></h5>
-            <hr class="profile-info-divider my-2">
+        <div class="collapse show" id="gallery-${subObj.medium}-warning">
+            <div class="content-warning-container p-3 mb-4">
+                <div class="d-flex flex-wrap">
+                    <h5 class="col">Content Warning <i class="fas fa-warning"></i></h5>
+                    <div class="col-auto mb-2"><button type="button" class="btn-close" data-bs-toggle="collapse" href="#gallery-${subObj.medium}-warning"></button></div>
+                </div>
+                <hr class="profile-info-divider my-2">
 
-            <div class="px-md-2">
-                <p class="mb-2">The following work features potentially upsetting topics such as:</p>
+                <div class="px-md-2">
+                    <p class="mb-2">The following work features potentially upsetting topics such as:</p>
 
-                <ul class="fa-ul ms-md-4 ms-2">
-                    ${warnings}
-                </ul>
+                    <ul class="fa-ul ms-md-4 ms-2">
+                        ${warnings}
+                    </ul>
+                </div>
+
+                <hr class="profile-info-divider my-2">
+
+                <div class="text-center">
+                    <button class="btn-cw collapsed" data-bs-toggle="collapse" href="#gallery-${subObj.medium}-contents">Show content</button>
+                </div>
+
             </div>
-
-            <hr class="profile-info-divider my-2">
-
-            <div class="px-md-2">
-                <button class="btn-cw" data-bs-toggle="collapse" href="#gallery-${subObj.medium}-contents">Show content</button>
-            </div>
-
         </div>
         `
     },
@@ -157,7 +162,6 @@ gallery.page = {
         }
 
         if (subObj.event) {
-            $(`#prompt-dungeon-container`).addClass('col-sm-6');
             $(`#event-container`).removeClass('d-none');
             $(`.event`).html(subObj.event);
         }
