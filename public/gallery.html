@@ -21,57 +21,58 @@
         import { gallery } from './js/gallery.js';
         import { images } from './js/images.js';
 
-        let url = new URL(window.location.href);
-        let baseURL = window.location.origin + window.location.pathname;
-        let urlParams = new URLSearchParams(window.location.search);
+        try {
+            const url = new URL(window.location.href);
+            const baseURL = window.location.origin + window.location.pathname;
+            const urlParams = new URLSearchParams(window.location.search);
 
-        console.log(urlParams)
+            let pageSubtitle = null;
 
-        let pageSubtitle = null;
+            // Init page elements
+            $(document).ready(function() {
+                utils.init.header(config.pages.gallery.title, pageSubtitle);
+                utils.init.footer(config.footer.links, config.pages.gallery.root);
+                utils.init.top();
 
-        // Init page elements
-        $(document).ready(function() {
-            utils.init.header(config.pages.gallery.title, pageSubtitle);
-            utils.init.footer(config.footer.links, config.pages.gallery.root);
-            utils.init.top();
-
-            utils.init.tooltips();
-            utils.init.lightbox();
-        });
-
-        if (urlParams.has('view')) {
-            console.log('setting gallery view');
-            $('.page-body').removeClass('col-lg-10');
-            $(`#page-sidebar`).remove();
-            $(`#gallery-full`).remove();
-
-            let view = urlParams.get('view');
-
-            if (view.includes('pmdbts')) pageSubtitle = config.pages.beyondthesea.subtitle;
-
-            let galleryObj = images.pmdbts.submissions.find((obj) => obj.key === view);
-
-            galleryObj.characters.forEach((char) => {
-                let variantArr = utils.parse.emojiVariants(char.species);
-                if (typeof variantArr !== 'array') return;
-                variantArr.forEach((variant) => {
-                    char.species = utils.parse.inlineEmoji(char.species, variant, `${config.pages.gallery.root}images/misc/${utils.parse.emojiImg(variant)}`);
-                });
+                utils.init.tooltips();
+                utils.init.lightbox();
             });
 
-            await gallery.page.setBaseInfo(galleryObj, view);
-            $(`.profile-body-container`).addClass('active');
+            if (urlParams.has('view')) {
+                $('.page-body').removeClass('col-lg-10');
+                $(`#page-sidebar`).remove();
+                $(`#gallery-full`).remove();
 
-        } else {
-            $(`#gallery-card`).remove();
-            $(`#gallery-writing-card`).remove();
-            $(`#back-to-gallery`).remove();
-            // REMOVE LATER
-            //$('.page-body').removeClass('col-lg-10');
-            //$(`#page-sidebar`).remove();
+                let view = urlParams.get('view');
 
-            let galleryList = new List('gallery-beyondthesea-container', gallery.options.createSubmissionsOptions(config.pages.gallery.root), images.pmdbts.submissions);
-            $(`.profile-body-container`).addClass('active');
+                if (view.includes('pmdbts')) pageSubtitle = config.pages.beyondthesea.subtitle;
+
+                let galleryObj = images.pmdbts.submissions.find((obj) => obj.key === view);
+
+                galleryObj.characters.forEach((char) => {
+                    let variantArr = utils.parse.emojiVariants(char.species);
+                    if (typeof variantArr !== 'array') return;
+                    variantArr.forEach((variant) => {
+                        char.species = utils.parse.inlineEmoji(char.species, variant, `${config.pages.gallery.root}images/misc/${utils.parse.emojiImg(variant)}`);
+                    });
+                });
+
+                await gallery.page.setBaseInfo(galleryObj, view);
+                $(`.profile-body-container`).addClass('active');
+
+            } else {
+                $(`#gallery-card`).remove();
+                $(`#gallery-writing-card`).remove();
+                $(`#back-to-gallery`).remove();
+                // REMOVE LATER
+                //$('.page-body').removeClass('col-lg-10');
+                //$(`#page-sidebar`).remove();
+
+                let galleryList = new List('gallery-beyondthesea-container', gallery.options.createSubmissionsOptions(config.pages.gallery.root), images.pmdbts.submissions);
+                $(`.profile-body-container`).addClass('active');
+            }
+        } catch (error) {
+            console.log(error);
         }
 
     </script>
