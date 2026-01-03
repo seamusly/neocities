@@ -36,7 +36,9 @@
             utils.init.tooltips();
             utils.init.lightbox();
 
-            const urlParams = utils.url.getUrlParams();
+            const urlParams = await utils.url.getUrlParams();
+            console.log('got url params');
+
             if (urlParams.has('view')) {
                 $('.page-body').removeClass('col-lg-10');
                 $(`#page-sidebar`).remove();
