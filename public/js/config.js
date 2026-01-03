@@ -37,6 +37,10 @@ config.pages = {
                 title: 'Augurys',
                 link: 'beyond-the-sea/augurys.html',
             },
+            Benoit: {
+                title: 'Benoit',
+                link: 'beyond-the-sea/benoit.html',
+            },
             Zane: {
                 title: 'Zane',
                 link: 'beyond-the-sea/zane.html',

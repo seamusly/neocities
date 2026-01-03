@@ -79,6 +79,18 @@ images.pmdbts = {
             value: '$0.50 USD'
         },
         {
+            imglink: `/character-icons/benoit.webp`,
+            date: new Date(2025, 12 - 1, 1),
+            title: 'Chibi Icon',
+            credit: 'helloaerin',
+            creditlink: 'https://toyhou.se/helloaerin',
+            category: 'Others',
+            tags: 'commission gijinka',
+            medium: 'artwork',
+            characters: [ 'Benoit' ],
+            value: '$0.50 USD'
+        },
+        {
             imglink: `/character-icons/zane-bts-brown.webp`,
             date: new Date(2025, 12 - 1, 11),
             title: 'Chibi Icon v2',
@@ -114,6 +126,18 @@ images.pmdbts = {
             tags: 'commission gijinka',
             medium: 'artwork',
             characters: [ 'Augurys' ],
+            value: '$0.50 USD',
+        },
+        {
+            imglink: `/commissions/benoit-dinky-helloaerin.webp`,
+            date: new Date(2025, 12 - 1, 20),
+            title: 'Dinky',
+            credit: 'helloaerin',
+            creditlink: 'https://toyhou.se/helloaerin',
+            category: 'Others',
+            tags: 'commission gijinka',
+            medium: 'artwork',
+            characters: [ 'Benoit' ],
             value: '$0.50 USD',
         },
     ],
@@ -1112,6 +1136,46 @@ images.pmdbts = {
                 
                 <p>Benoit had been frowning — pouting for a while. But at that, he decided to nod his head and give his best attempt at a smile in return. “Yeah. Comfy.”</p>`
         },
+        
+        // Dec 9, 2025 - Collab Dungeon (Faerie's Grove)
+        {
+            imglink: 'dungeons/2025-12-09_faeriesgrove_collab.webp',
+            title: 'For the Night is Bright',
+            date: new Date(2025, 12 - 1, 9, 5 + 12, 40),
+            activity: 'Dungeon',
+            dungeon: `Faerie's Grove`,
+            levels: {
+                gained: 5
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters'
+                },
+                {
+                    user: 'embea',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/embea'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne',
+                    startlvl: 5
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling',
+                    startlvl: 0
+                }
+            ],
+            description: ''
+        },
 
         // Dec 23, 2025 - Solo Dungeon
         {
@@ -1137,7 +1201,7 @@ images.pmdbts = {
                     name: 'Benoit',
                     team: 'Syzygy',
                     species: 'Dedenne',
-                    startlvl: 5
+                    startlvl: 10
                 },
                 {
                     name: 'Augurys',
