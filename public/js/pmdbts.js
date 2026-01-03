@@ -12,10 +12,10 @@ pmdbts.teams = {
     },
     syzygy: {
         name: 'Syzygy',
-        branch: 'Bounty Hunters',
+        branch: 'Rescuers',
         teamtype: 'Two-Leader Team',
-        rank: 'Master',
-        rankpoints: 'MAX',
+        rank: 'Silver',
+        rankpoints: '7 RP',
     }
 }
 

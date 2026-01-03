@@ -548,9 +548,41 @@ a.star-collapse-link.collapsed:hover {
   border-radius: 0 .25em 1em 0;
 }
 
+.content-warning-container {
+  background: #752b26;
+  border-radius: 1em;
+  border: 2px #bb706a dashed;
+}
+
+.btn-cw {
+  background: var(--navtab-bg-color);
+  border-radius: 2em;
+  border: 2px white solid;
+  transition: all 0.3s ease;
+  color: white;
+  padding: .2em .75em;
+  font-variant: small-caps;
+  font-weight: 500;
+  letter-spacing: .5px;
+  font-size: 1.05em;
+}
+
+.btn-cw:hover {
+  background: var(--navtab-bg-hover);
+}
+
 .gallery-card {
   background: var(--body-card-bg-color);
   transition: ease 0.3s all;
+}
+
+#gallery-writing-contents {
+  text-indent: 30px;
+  line-height: 18pt;
+}
+
+#gallery-writing-contents p {
+  margin-bottom: 1.5rem;
 }
 
 .gallery-card:hover {

@@ -75,6 +75,36 @@ gallery.page = {
 
     },
 
+    contentWarning(subObj) {
+        let warnings = '';
+
+        subObj.cw.forEach((warning) => {
+            warnings = warnings + `<li class="mb-1"><i class="fa-solid fa-angle-right"></i> ${warning}</li>\n`;
+        });
+
+        return `
+        <div class="content-warning-container p-3 mb-4">
+            <h5>Content Warning <i class="fas fa-warning"></i></h5>
+            <hr class="profile-info-divider my-2">
+
+            <div class="px-md-2">
+                <p class="mb-2">The following work features potentially upsetting topics such as:</p>
+
+                <ul class="fa-ul ms-md-4 ms-2">
+                    ${warnings}
+                </ul>
+            </div>
+
+            <hr class="profile-info-divider my-2">
+
+            <div class="px-md-2">
+                <button class="btn-cw" data-bs-toggle="collapse" href="#gallery-${subObj.medium}-contents">Show content</button>
+            </div>
+
+        </div>
+        `
+    },
+
     async setBaseInfo (subObj, view) {
         console.log('set base info');
         // Set the image preview
@@ -87,6 +117,21 @@ gallery.page = {
         $(`.date`).html(utils.parse.timestampFull(subObj.date));
 
         $(`.description`).html(subObj.description ?? '...');
+
+        if (!subObj.cw) {
+            $(`#gallery-${subObj.medium}-contents`).addClass('show');
+        } else {
+            $(`#gallery-${subObj.medium}-container`).prepend(this.contentWarning(subObj));
+        }
+
+        if (!subObj.medium.includes('art')) {
+            $(`#gallery-writing-contents`).html(subObj.text);
+            $(`#gallery-card`).remove();
+            $(`#gallery-writing-card`).removeClass('d-none');
+        } else {
+            $(`#gallery-writing-card`).remove();
+            $(`#gallery-card`).removeClass('d-none');
+        }
 
         if (view.includes('pmdbts')) await this.setBeyondTheSeaInfo(subObj);
         return true;

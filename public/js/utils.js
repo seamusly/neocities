@@ -111,7 +111,7 @@ utils.parse = {
         if (month <= 1 || month === 11) return 'Winter';
         else if (month < 5) return 'Spring';
         else if (month < 8) return 'Summer';
-        else return 'Winter';
+        else return 'Fall';
     },
 
     emptyVal(val) {

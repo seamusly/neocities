@@ -67,6 +67,18 @@ images.pmdbts = {
             value: '$0.50 USD'
         },
         {
+            imglink: `/character-icons/augurys-bts.webp`,
+            date: new Date(2025, 12 - 1, 1),
+            title: 'Chibi Icon',
+            credit: 'helloaerin',
+            creditlink: 'https://toyhou.se/helloaerin',
+            category: 'Others',
+            tags: 'commission gijinka',
+            medium: 'artwork',
+            characters: [ 'Augurys' ],
+            value: '$0.50 USD'
+        },
+        {
             imglink: `/character-icons/zane-bts-brown.webp`,
             date: new Date(2025, 12 - 1, 11),
             title: 'Chibi Icon v2',
@@ -77,7 +89,33 @@ images.pmdbts = {
             medium: 'artwork',
             characters: [ 'Zane' ],
             value: '$0 USD'
-        }
+        },
+        {
+            imglink: `/commissions/augurys-bts-fullbody-chibi-bramblefoxx.webp`,
+            date: new Date(2025, 12 - 1, 17),
+            title: 'Fullbody Chibi',
+            credit: 'bramblefoxx',
+            creditlink: 'https://toyhou.se/bramblefoxx',
+            category: 'Others',
+            tags: 'trade gijinka',
+            medium: 'artwork',
+            characters: [ 'Augurys' ],
+            value: 'Trade',
+            bgsize: '200%',
+            bgalign: '55% 5%'
+        },
+        {
+            imglink: `/commissions/augurys-bts-dinky-helloaerin.webp`,
+            date: new Date(2025, 12 - 1, 20),
+            title: 'Dinky',
+            credit: 'helloaerin',
+            creditlink: 'https://toyhou.se/helloaerin',
+            category: 'Others',
+            tags: 'commission gijinka',
+            medium: 'artwork',
+            characters: [ 'Augurys' ],
+            value: '$0.50 USD',
+        },
     ],
 
     submissions: [
@@ -844,6 +882,217 @@ images.pmdbts = {
                 }
             ],
             description: ''
+        },
+
+        // Nov 3, 2025 - Age Apart Task
+        {
+            imglink: 'tasks/2025-11-03_ageapart_solo.webp',
+            title: 'Sundered',
+            date: new Date(2025, 11 - 1, 3, 9 + 12, 8),
+            activity: 'Task',
+            prompt: 'An Age Apart',
+            tags: ['pokemon', 'pmdbts', 'no-characters', 'solo', 'personal-story'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                },
+            ],
+            description: `<p>(Augurys is not depicted in this piece, however this is a submissions for their "An Age Apart" task.)</p>`
+        },
+
+        // Nov 3, 2025 - Collab Dungeon
+        {
+            imglink: 'dungeons/2025-11-03_verglaslabyrinth_collab.webp',
+            title: 'Rock and a Hard Place',
+            date: new Date(2025, 11 - 1, 3, 9 + 12, 11),
+            activity: 'Dungeon',
+            dungeon: 'Verglas Labyrinth',
+            levels: {
+                gained: 4
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters'
+                },
+                {
+                    user: 'LevairTaivas',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/LevairTaivas'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                    startlvl: 1
+                },
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne',
+                    startlvl: 1
+                }
+            ],
+            description: ''
+        },
+
+        // Nov 12, 2025 - HH Task Collab 1
+        {
+            imglink: 'tasks/2025-11-12_distortionworldescapades_collab.webp',
+            title: 'Distortion World Escapades',
+            date: new Date(2025, 11 - 1, 12, 12, 54),
+            activity: 'Task',
+            prompt: '05 | Distortion World Escapades',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters'
+                },
+                {
+                    user: 'Keiava',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/Keiava'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                }
+            ],
+            description: `...`
+        },
+
+        // Nov 12, 2025 - HH Task Collab 2
+        {
+            imglink: 'tasks/2025-11-12_allaroundupsidedown_collab.webp',
+            title: 'All-Around Upside Down',
+            date: new Date(2025, 11 - 1, 12, 2 + 12, 25),
+            activity: 'Task',
+            prompt: '05 | Distortion World Escapades',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters'
+                },
+                {
+                    user: 'embea',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/embea'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                },
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne',
+                }
+            ],
+            description: `...`
+        },
+
+        // Dec 23, 2025 - Solo Dungeon
+        {
+            imglink: 'misc/book.webp',
+            title: 'The Little Things',
+            date: new Date(2025, 12 - 1, 23, 4 + 12, 53),
+            activity: 'Dungeon',
+            dungeon: 'Paradise Wastelands',
+            item: 'Wonder Chest',
+            levels: {
+                gained: 5,
+                bonus: 5
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
+            medium: 'writing',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne',
+                    startlvl: 5
+                },
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                    startlvl: 5
+                },
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                    startlvl: 0
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling',
+                    startlvl: 0
+                }
+            ],
+            description: 'Benoit, Augurys, Ana, and Valor venture into the Paradise Wastelands.',
+            text: `
+                <p>Despite its shoddy appearance, the Paradise Wastelands were once a hotspot for tourists from all corners of the Great Ocean -- or so the reports would lead explorers to believe. Where once there stood a proud and lavish establishment offering respite, relaxation, and a wide array of fineries, there now only stood the very foundations that the structures that once made up the resort.</p>
+
+                <p>To Benoit, the ruins were a haunting sight, calling to mind what he imagines became of the tiny start-up cafe that he once owned on his home island. To think of what became of the surrounding city was a line of thought that even he dared not venture into, and so the man -- currently roaming about on his hands and feet in the form of a Dedenne -- simply shook his head and moved on.</p>
+
+                <p>Though he had already steeled himself enough to continue after his companions, it seemed that his moment of pause brought forth a concerned Buneary, who was waiting for him as he finally glanced back up at the path ahead. "Benoit? Are you alright?"</p>
+
+                <p>Benoit rolled his eyes. Though he appreciated that he was remembered, the last thing he wished to do then was divulge his inner thoughts to another; least of all to his rather airheaded teammate. He had to tilt almost his entire body in order to look up at the Buneary in his current form. "I'm fine, Auggy. Don't fall behind now."</p>
+
+                <p>Without moving from his current position, Benoit then had to crane what little of his neck he had to turn his gaze towards the canopy above. There, hovering just beneath the shade of the palm leaves and jungle foliage, was the familiar blocky form of a Combee and a Chingling. While he knew his own teammate well, he could not say the same about the Chingling who had accompanied them from another team within the GCSF. All he knew of her was that she was on the quiet side. Even for a Chingling, he seldom heard her bell ringing, and she had yet to speak much to him besides a few affirmations. At the very least, he did know her name, which he spoke aloud as he called up to the yellow-tinted duo surveying from their vantage point.</p>
+
+                <p>"Ana! Valor!" Benoit shouted. Though Ana -- the Combie made of metal plating -- immediately turned to face him, it took Val a few seconds more to realize he had said anything at all. At that, he squinted, pondering what exactly the reasoning could be until he seemed to come to a realization that he chose not to speak aloud. "What do you see up there? Any major roadblocks coming up?"</p>
+
+                <p>After an electric-sounding buzz, Ana responded earnestly. "No sir!"</p>
+
+                <p>The Combee even bounced, as though exaggerating his movements in the cheerful way he often did. Once he had answered however, Benoit watched as he turned towards Val and the image of his three faces blinked out. He had known that Ana's faces were simply projections upon three tiny screens -- or even one head-sized screen when he was in his humanoid form -- but he had not had the opportunity to watch them change from their usual visage. When they did, Ana projected various images of hand gestures.</p>
+
+                <p>By the time the images of the hands stopped, Benoit had been so taken by them that he had not noticed Valor watching intently. It was only when he heard the broken sound of the Chingling's bell that he realized she had been reading the pictures, and she nodded towards Ana in understanding. Soon after, she looked towards Benoit and waved at him with a smile. He could not help but wave back.</p>
+
+                <p>"You 'n Auggy are good to go down there! Me 'n Vally will go on ahead to make sure there isn't anything else to worry about!" Ana called out to Benoit and Augurys both as his faces returned to his form.</p>
+
+                <p>"Sounds good," Benoit responded promptly, giving Ana a wave as well before he put his paws down.</p>
+
+                <p>Soon after, both Ana and Valor were off once more, hovering a short way ahead of the two grounded adventurers. Benoit sighed not out of exasperation or frustration, but a general sense of tiredness. He had hardly been on any outings since joining the GCSF and his own rescuer team, and yet he found it taxing all the same when he was chosen to do so. It was his responsibility all the same though, and after he took a breath, he would be ready to go again. Yet as he was about to place his front paws back down on the ground to get walking, he was stopped again by Augurys.</p>
+
+                <p>The two stared at each other for an extended beat -- longer than Benoit would have liked. There was always some sense of awkwardness between himself and the Buneary that he could not quite decipher, yet it never seemed to bother them as he simply looked at him with a content little smile upon their face. They reached out to him with one of their own paws and it took him everything to not flinch back, worried about what they were planning to do. "H-hey, don't--"</p>
+
+                <p>Before he could finish his protest, he felt the glasses on his face rise a few inches. They tipped side-to-side briefly before being placed back down upon the slope of his nose, where they now stood still. He had closed his eyes while it was happening, and by the time he opened them again, Augurys was standing back and gazing at him proudly.</p>
+
+                <p>"There. They were a little crooked, you know," the Buneary giggled.</p>
+
+                <p>"Ah... right. Thank you, Augurys." Benoit did not want to linger any longer on their interaction. He knew that they would nod at his thanks, and so he nodded in return without even thinking. The two of them had gone through this several times before, and he was eager to move on. He tread past them a few paces and then stood up to look back at them, simply saying, "Alright. Let's get going then."</p>`
         },
 
     ]

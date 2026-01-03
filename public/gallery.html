@@ -41,7 +41,6 @@
             $('.page-body').removeClass('col-lg-10');
             $(`#page-sidebar`).remove();
             $(`#gallery-full`).remove();
-            $(`#gallery-card`).removeClass('d-none');
 
             let view = urlParams.get('view');
 
@@ -62,7 +61,11 @@
 
         } else {
             $(`#gallery-card`).remove();
+            $(`#gallery-writing-card`).remove();
             $(`#back-to-gallery`).remove();
+            // REMOVE LATER
+            //$('.page-body').removeClass('col-lg-10');
+            //$(`#page-sidebar`).remove();
 
             let galleryList = new List('gallery-beyondthesea-container', gallery.options.createSubmissionsOptions(config.pages.gallery.root), images.pmdbts.submissions);
             $(`.profile-body-container`).addClass('active');
@@ -170,7 +173,7 @@
 
                                 </div>
 
-                                <div class="profile-card p-2 d-flex flex-wrap flex-grow-1 mt-3">
+                                <div class="profile-card p-2 d-flex flex-wrap mt-3">
                                     
                                     <div class="col-12">
                                         <p class="profile-info-title">Description</p>
@@ -181,8 +184,10 @@
                                 </div>
                             </div>
 
-                            <div class="ps-lg-3 py-lg-2 p-1 col-lg-7 col-sm-10 col-12">
-                                <a href="images/character-icons/placeholder.webp" data-lightbox="submission" class="imglink"></a>
+                            <div class="ps-lg-3 py-lg-2 p-1 col-lg-7 col-sm-10 col-12" id="gallery-artwork-container">
+                                <div class="collapse" id="gallery-artwork-contents">
+                                    <a href="images/character-icons/placeholder.webp" data-lightbox="submission" class="imglink"></a>
+                                </div>
                             </div>
 
                         </div>
@@ -218,6 +223,79 @@
                                     </table>
                                 </div>
                             </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 p-md-2 p-0 d-none" id="gallery-writing-card">
+
+                        <div class="d-flex flex-wrap">
+
+                            <div class="pe-lg-2 py-lg-2 p-1 col-lg-5 col-12 d-flex flex-column">
+                                <div class="sticky-top">
+                                    <h2 class="title mb-3 text-center">Title</h2>
+
+                                    <div class="profile-card p-2 d-flex flex-wrap">
+
+                                        <div class="col-sm-6 col-12">
+                                            <p class="profile-info-title">Date</p>
+                                            <span class="date">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-sm-6 col-12">
+                                            <p class="profile-info-title">Activity</p>
+                                            <span class="activity">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-sm-6 col-12 d-none" id="event-container">
+                                            <p class="profile-info-title">Event</p>
+                                            <span class="event">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-12" id="prompt-dungeon-container">
+                                            <p class="profile-info-title" id="prompt-dungeon-label">Prompt</p>
+                                            <span id="prompt-dungeon-value">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <p class="profile-info-title">Authors</p>
+                                            <ul class="fa-ul ms-1 mb-1 credits"></ul>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <p class="profile-info-title">Characters</p>
+                                            <ul class="fa-ul ms-1 mb-1 characters"></ul>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="profile-card p-2 d-flex flex-wrap mt-3">
+                                        
+                                        <div class="col-12">
+                                            <p class="profile-info-title">Description</p>
+                                            <div class="px-1 pb-1 description">
+                                                <p>...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ps-lg-4 py-lg-2 px-1 py-4 col-lg-7 col-sm-10 col-12" id="gallery-writing-container">
+
+                                <div class="collapse" id="gallery-writing-contents">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in consectetur leo. Donec eget risus in turpis consequat sagittis a sed ante. Maecenas at nulla ut sem placerat malesuada ac sed purus. Vestibulum pellentesque justo at libero eleifend, imperdiet semper elit ullamcorper. Maecenas magna tortor, ultricies eget nunc vitae, iaculis dapibus leo. Phasellus sed leo non leo tempor condimentum quis in felis. Pellentesque ante sem, lacinia ut justo sit amet, placerat suscipit massa. Maecenas nisi sem, venenatis et placerat eu, imperdiet sit amet tortor. Vivamus dignissim lacus orci, quis bibendum nisi elementum at. Vestibulum in quam bibendum, rutrum nunc vel, ornare massa. Nam id diam ligula. Fusce facilisis consectetur quam ac dapibus. Fusce eu venenatis elit, vel ullamcorper tellus. Nulla sem enim, tempor viverra nibh at, consequat scelerisque purus. Donec nec nibh tincidunt, pharetra nunc eu, mollis mi.</p>
+
+                                    <p>Praesent ac felis eget sem ornare dapibus. Donec scelerisque non dui varius tempor. Fusce pulvinar sodales est. In vel luctus mi. Aenean neque quam, aliquet a elit sed, scelerisque varius est. Pellentesque a dui velit. Etiam interdum mollis porttitor. Proin porta interdum ipsum, vitae eleifend arcu maximus id. Phasellus luctus mi eu libero venenatis tincidunt eget vitae justo. Suspendisse fringilla, sapien non tempor fringilla, nisi neque porttitor massa, ac feugiat purus orci a neque. Pellentesque interdum, dolor eu commodo rhoncus, sapien turpis varius sem, vitae posuere justo nulla vel mi. Nulla quis interdum odio.</p>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
