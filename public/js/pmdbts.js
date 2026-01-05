@@ -41,7 +41,7 @@ pmdbts.init = {
             levelLogs.append(`
                 <tr>
                     <td>${utils.parse.timestampTooltip(log.date)}</td>
-                    <td><a href="${root}gallery.html?view=${log.key}">${log.title}</a></td>
+                    <td><a href="${root}gallery${!utils.url.isLiveSite() ? '.html' : ''}?view=${log.key}">${log.title}</a></td>
                     <td>${log.activity}</td>
                     <td>${log.dungeon ? log.dungeon : log.prompt}</td>
                     <td>+${log.levels.gained}</td>
