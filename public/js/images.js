@@ -32,6 +32,18 @@ images.pmdbts = {
             bgalign: '10% 5%'
         },
         {
+            imglink: `/character-icons/ana.webp`,
+            date: new Date(2025, 8 - 1, 4),
+            title: 'Chibi Icon',
+            credit: 'helloaerin',
+            creditlink: 'https://toyhou.se/helloaerin',
+            category: 'Others',
+            tags: 'commission gijinka',
+            medium: 'artwork',
+            characters: [ 'Ana' ],
+            value: '$0.50 USD'
+        },
+        {
             imglink: `/character-refs/zane-gijinka-v1.webp`,
             date: new Date(2025, 12 - 1, 2),
             title: 'Gijinka Lines',
@@ -908,6 +920,258 @@ images.pmdbts = {
             description: ''
         },
 
+        // Aug 1, 2025 - Daily Life (Static Ana)
+        {
+            imglink: 'daily-life/ana-static.webp',
+            title: `it's me!`,
+            date: new Date(2025, 8 - 1, 2, 12, 28),
+            activity: 'Daily Life',
+            tags: ['pokemon', 'pmdbts', 'dailylife', 'solo', 'gijinka'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                },
+            ],
+            description: `<p>Based on the music video for <a href="https://www.youtube.com/watch?v=KlTNKOnfXFk">Static by FLAVOR FOLEY</a>!</p>`,
+        },
+
+        // Sep 5, 2025 - Solo Dungeon
+        {
+            imglink: 'dungeons/2025-09-05_glacierpalace_solo.webp',
+            title: 'Ice Cold Stares',
+            date: new Date(2025, 9 - 1, 5, 7 + 12, 22),
+            activity: 'Dungeon',
+            dungeon: 'Glacier Palace',
+            item: 'Wonder Chest',
+            levels: {
+                gained: 5,
+                bonus: 5
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Hawke',
+                    team: 'Syzygy',
+                    species: 'Astral Charcadet',
+                    startlvl: 24
+                },
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                    startlvl: 1
+                },
+                {
+                    name: 'Fray',
+                    team: 'Syzygy',
+                    species: 'Hue Monster Tandemaus',
+                    startlvl: 1
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling',
+                    startlvl: 0
+                }
+            ],
+            description: ''
+        },
+
+        // Sep 6, 2025 - Collab Dungeon
+        {
+            imglink: 'dungeons/2025-09-06_glacierpalace_collab.webp',
+            title: 'Shimmering Ice',
+            date: new Date(2025, 9 - 1, 6, 6, 8),
+            activity: 'Dungeon',
+            dungeon: 'Glacier Palace',
+            levels: {
+                gained: 5
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'character lines & colours'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'background & character shading',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Hawke',
+                    team: 'Syzygy',
+                    species: 'Astral Charcadet',
+                    startlvl: 24
+                },
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                    startlvl: 11
+                },
+                {
+                    name: 'Fray',
+                    team: 'Syzygy',
+                    species: 'Hue Monster Tandemaus',
+                    startlvl: 1
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling',
+                    startlvl: 0
+                }
+            ],
+            description: ''
+        },
+
+        // Sep 6, 2025 - Collab Dungeon
+        {
+            imglink: 'dungeons/2025-10-04_skypeak_collab.webp',
+            title: 'Peaks Ablaze',
+            date: new Date(2025, 10 - 1, 4, 5 + 12, 28),
+            activity: 'Dungeon',
+            dungeon: 'Sky Peak',
+            event: 'May-June 2025 Missions',
+            prompt: 'Rescuers 01 | Fire Response',
+            levels: {
+                gained: 1
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours'
+                },
+                {
+                    user: 'LettersofSky',
+                    role: 'lines',
+                    link: 'https://toyhou.se/LettersofSky'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Ambrosius',
+                    team: 'Syzygy',
+                    species: 'Fiendish Dubwool',
+                    startlvl: 31
+                },
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                    startlvl: 16
+                }
+            ],
+            description: ''
+        },
+
+        // Oct 13, 2025 - HH Collab
+        {
+            imglink: 'dungeons/2025-10-13_fallorchard_collab.webp',
+            title: `Out Pickin' Pumpkins!`,
+            date: new Date(2025, 10 - 1, 13, 6, 43),
+            activity: 'Dungeon',
+            dungeon: 'Fall Orchard',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours',
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'lines',
+                    link: 'https://toyhou.se/MinishMae'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee'
+                }
+            ],
+            description: ''
+        },
+
+        // Oct 19, 2025 - HH Task Solo (Ana Puppet Show)
+        {
+            imglink: 'tasks/2025-10-19_distortedpuppetshow_solo.webp',
+            title: 'Distorted Puppet Show',
+            date: new Date(2025, 10 - 1, 19, 3 + 12, 26),
+            activity: 'Task',
+            prompt: '05 | Distortion World Escapades',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                }
+            ],
+            description: `...`,
+        },
+
+        // Oct 27, 2025 - HH Task Collab (Deltarune Costumes)
+        {
+            imglink: 'tasks/2025-10-27_whatsadeltarune_collab.webp',
+            title: `What's a "Deltarune"?`,
+            date: new Date(2025, 10 - 1, 27, 3 + 12, 24),
+            activity: 'Task',
+            prompt: '01 | Costumed Cosplay',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'gijinka', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'lines'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'sketch & colours',
+                    link: 'https://toyhou.se/MinishMae'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                }
+            ],
+            description: `...`
+        },
+
         // Nov 3, 2025 - Age Apart Task
         {
             imglink: 'tasks/2025-11-03_ageapart_solo.webp',
@@ -1213,7 +1477,7 @@ images.pmdbts = {
                     name: 'Ana',
                     team: 'Syzygy',
                     species: 'Temporal Combee',
-                    startlvl: 0
+                    startlvl: 17
                 },
                 {
                     name: 'Valor',

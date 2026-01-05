@@ -33,6 +33,10 @@ config.pages = {
     beyondthesea: {
         root: '../../',
         profiles: {
+            Ana: {
+                title: 'Ana',
+                link: 'beyond-the-sea/ana.html'
+            },
             Augurys: {
                 title: 'Augurys',
                 link: 'beyond-the-sea/augurys.html',
