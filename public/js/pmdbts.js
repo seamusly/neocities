@@ -16,6 +16,13 @@ pmdbts.teams = {
         teamtype: 'Two-Leader Team',
         rank: 'Silver',
         rankpoints: '7 RP',
+    },
+    'four seasons': {
+        name: 'Four Seasons',
+        branch: 'Wayfarers',
+        teamtype: 'Team with a Friend',
+        rank: 'Rookie',
+        rankpoints: '0 RP'
     }
 }
 

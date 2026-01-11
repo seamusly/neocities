@@ -97,6 +97,48 @@ a:hover, .profile-text-toggler:hover {
   color: var(--info-link-hover);
 }
 
+.profile-icon {
+  max-height: 200px;
+  aspect-ratio: 1/1;
+  border: 8px solid var(--body-card-bg-color);
+  border-radius: 100%;
+  background: url('../images/misc/personal-icon-1.webp') #FAE6E4;
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: center 40%;
+  position: relative;
+}
+
+.profile-icon:hover {
+  background: url('../images/misc/personal-icon-2.webp') #ffddd2;
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: center 40%;
+  animation: profile-icon-hover 2s ease-in;
+}
+
+@keyframes profile-icon-hover {
+  0% {
+    background-position: center 50%;
+  }
+  5% {
+    background-position: center 40%;
+  }
+  10% {
+    background-position: center 43%;
+  }
+  15% {
+    background-position: center 40%;
+  }
+}
+
+.status-arrow {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: var(--body-card-bg-color);
+  width: 20px;
+  height: 25px;
+}
+
 /******************************************************
 
 *******************************************************/
@@ -491,7 +533,7 @@ a.star-collapse-link.collapsed:hover {
   content: '✦';
 }
 
-.profile-logs-container, .profile-card {
+.profile-logs-container, .profile-card, .status-bubble {
   background: var(--body-card-bg-color);
 }
 
@@ -738,3 +780,5 @@ a.star-collapse-link.collapsed:hover {
 .description {
   font-size: .9em;
 }
+
+/******************************************************/

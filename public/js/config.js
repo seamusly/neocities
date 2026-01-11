@@ -45,13 +45,21 @@ config.pages = {
                 title: 'Benoit',
                 link: 'beyond-the-sea/benoit.html',
             },
-            Zane: {
-                title: 'Zane',
-                link: 'beyond-the-sea/zane.html',
+            Glory: {
+                title: 'Glory',
+                link: 'beyond-the-sea/glory.html',
             },
             Estys: {
                 title: 'Estys',
                 link: ''
+            },
+            Polly: {
+                title: 'Polly',
+                link: 'beyond-the-sea/polly.html',
+            },
+            Zane: {
+                title: 'Zane',
+                link: 'beyond-the-sea/zane.html',
             }
         },
         subtitle: '✦ PMD Beyond the Sea ✦'
