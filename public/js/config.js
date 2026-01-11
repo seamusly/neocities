@@ -3,6 +3,10 @@ let config = {};
 config.footer = {
     links: [
         {
+            title: 'Home',
+            link: 'index.html',
+        },
+        {
             title: 'Sitemap',
             link: '#',
         },
