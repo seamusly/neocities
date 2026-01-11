@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend-VariableFont_wght.ttf');
+}
+
+:root {
+    --bg-color: #4D2A2A;
+    --font-color: #ffece0;
+    --link-color: #edb272;
+    --link-hover-color: #a35c2a;
+}
+
+#statuscafe {
+    padding: .5em;
+    background-color: var(--bg-color);
+    border: none;
+    font-family: "Lexend", sans-serif;
+    color: var(--font-color);
+}
+
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+
+#statuscafe-username a {
+    color: var(--link-color);
+}
+
+#statuscafe-username a {
+    color: var(--link-hover-color);
+}
+
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+}
