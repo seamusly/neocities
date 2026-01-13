@@ -60,11 +60,9 @@
                 $(`#gallery-card`).remove();
                 $(`#gallery-writing-card`).remove();
                 $(`#back-to-gallery`).remove();
-                // REMOVE LATER
-                //$('.page-body').removeClass('col-lg-10');
-                //$(`#page-sidebar`).remove();
 
-                let galleryList = new List('gallery-beyondthesea-container', gallery.options.createSubmissionsOptions(config.pages.gallery.root), images.pmdbts.submissions);
+                let commsGalleryList = new List('gallery-comms-container', gallery.options.createGalleryOptions(config.pages.gallery.root), images.commissions['2026']);
+                let btsGalleryList = new List('gallery-beyondthesea-container', gallery.options.createSubmissionsOptions(config.pages.gallery.root), images.pmdbts.submissions);
                 $(`.profile-body-container`).addClass('active');
             }
         });
@@ -92,6 +90,10 @@
                         <div class="col-12 p-md-2 p-0">
 
                             <div class="page-sidebar-tab">
+                                <a href="#gallery-comms"><i class="fa-solid fa-angles-right"></i> Commissions</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
                                 <a href="#gallery-beyondthesea"><i class="fa-solid fa-angles-right"></i> Beyond the Sea</a>
                             </div>
 
@@ -106,6 +108,24 @@
                 <div class="profile-body-container">
 
                     <div class="col-12 p-md-2 p-0" id="gallery-full">
+                        <div id="gallery-comms">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-comms-container"></a>
+                                    Commissions
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-comms-container">
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+                            </div>
+
+                        </div>
+
                         <div id="gallery-beyondthesea">
 
                             <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">

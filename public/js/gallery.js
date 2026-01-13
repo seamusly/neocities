@@ -4,6 +4,38 @@ import { utils } from './utils.js';
 let gallery = {};
 
 gallery.options = {
+    createGalleryOptions(root) {
+        return {
+            valueNames: [
+                'imglink',
+                'datelabel',
+                'title',
+                'credit',
+                'category',
+                'medium',
+                'value',
+                'key',
+                'bgsize',
+                'bgalign'
+            ],
+        item: function(values) {
+            return `
+                <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-12 p-2" data-medium="${values.medium}">
+                    <a ${values.medium === 'artwork' ? `data-lightbox="${values.category}" href="${root}images${values.imglink}"` : `href="${root}gallery${!utils.url.isLiveSite() ? '.html' : ''}?view=${values.key}"`}">
+                        <div class="gallery-card p-2">
+                            <div class="gallery-card-thumb" style="background-image:url('${root}images${values.imglink}');${values.medium === 'artwork' ? (values.bgsize ? `background-size:${values.bgsize};` : '') : 'background-size:contain;'}background-position:${values.bgalign ?? 'center' }"></div>
+                        </div>
+                    </a>
+                    <div class="mt-2 gallery-card-info text-center">
+                        <p class="mb-0 gallery-card-title"><!--<a href="${root}gallery${!utils.url.isLiveSite() ? '.html' : ''}?view=${values.key}">-->${values.title}<!-- <i class="text-success fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>--></p>
+                        <p class="gallery-date-title opacity-75 mb-1">${values.datelabel}</p>
+                        ${ values.credit ? `${`<p class="gallery-date-title opacity-75">${values.creditlink ? `<a href="${values.creditlink}"><i class="fa-solid fa-palette"></i> ${values.credit}</a>` : `<i class="fa-solid fa-user"></i> ${values.credit}`}</p>`}` : '' }
+                    </div>
+                </div>`
+            }
+        }
+    },
+
     createGeneralOptions(root) {
         return {
             valueNames: [

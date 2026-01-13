@@ -1,10 +1,166 @@
 import { utils } from './utils.js';
 let images = {};
 
+images.commissions = {
+    '2026': [
+        {
+            imglink: `/commissions/2026-01-03_villaincomplex_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 3),
+            title: 'Mini Chibi - Mariya',
+            credit: 'villaincomplex',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-04_phoenixxtalon_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 4),
+            title: 'Mini Chibi - Phoenix',
+            credit: 'PhoeniXXTalon',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-06_dummiikale_semichibi.webp`,
+            date: new Date(2026, 1 - 1, 6),
+            title: 'Mini Chibi - Phoenix',
+            credit: 'DummiiKale',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-06_sleepylegion_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 6),
+            title: 'Mini Chibi - Mink',
+            credit: 'SleepyLegion',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-06_scharkdesign_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 6),
+            title: 'Mini Chibi - Maia',
+            credit: 'ScharkDesign',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-08_lilfungus_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 8),
+            title: 'Mini Chibi - Blaire',
+            credit: 'Lil_Fungus',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-08_marciemai_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 8),
+            title: 'Mini Chibi - Evan',
+            credit: 'MarcieMai',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-09_hyuse_semichibi.webp`,
+            date: new Date(2026, 1 - 1, 9),
+            title: 'Semi Chibi - Yuta',
+            credit: 'Hyuse',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-09_votapoki_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 9),
+            title: 'Mini Chibi - Keikomi',
+            credit: 'votapoki',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-09_lovebiites_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 9),
+            title: 'Mini Chibi - Diamond',
+            credit: 'LoveBiites',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-09_sagethewolfblooded_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 9),
+            title: 'Mini Chibi - Sol & Roach',
+            credit: 'Sagethewolfblooded',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-10_scharkdesign_minichibi1.webp`,
+            date: new Date(2026, 1 - 1, 10),
+            title: 'Mini Chibi - Indira',
+            credit: 'ScharkDesign',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-10_scharkdesign_minichibi2.webp`,
+            date: new Date(2026, 1 - 1, 10),
+            title: 'Mini Chibi - Aeolian',
+            credit: 'ScharkDesign',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-10_scharkdesign_minichibi3.webp`,
+            date: new Date(2026, 1 - 1, 10),
+            title: 'Mini Chibi - Ardent',
+            credit: 'ScharkDesign',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-13_yeehaw09_minichibi1.webp`,
+            date: new Date(2026, 1 - 1, 13),
+            title: 'Mini Chibi - Moo Spirit',
+            credit: 'Yeehaw09',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+    ]
+
+}
+
 images.pmdbts = {
     others: [
         {
-            imglink: `/commissions/zane-bts-normal_old.webp`,
+            imglink: `/others/zane-bts-normal_old.webp`,
             date: new Date(2024, 10 - 1, 20),
             title: 'Gijinka Design v1',
             credit: 'evaporatedmilkx',
@@ -18,7 +174,7 @@ images.pmdbts = {
             bgalign: '10% 5%'
         },
         {
-            imglink: `/commissions/zane-bts-ashen_old.webp`,
+            imglink: `/others/zane-bts-ashen_old.webp`,
             date: new Date(2024, 10 - 1, 20),
             title: 'Gijinka Design v2',
             credit: 'evaporatedmilkx',
@@ -115,7 +271,7 @@ images.pmdbts = {
             value: '$0 USD'
         },
         {
-            imglink: `/commissions/augurys-bts-fullbody-chibi-bramblefoxx.webp`,
+            imglink: `/others/augurys-bts-fullbody-chibi-bramblefoxx.webp`,
             date: new Date(2025, 12 - 1, 17),
             title: 'Fullbody Chibi',
             credit: 'bramblefoxx',
@@ -129,7 +285,7 @@ images.pmdbts = {
             bgalign: '55% 5%'
         },
         {
-            imglink: `/commissions/augurys-bts-dinky-helloaerin.webp`,
+            imglink: `/others/augurys-bts-dinky-helloaerin.webp`,
             date: new Date(2025, 12 - 1, 20),
             title: 'Dinky',
             credit: 'helloaerin',
@@ -141,7 +297,7 @@ images.pmdbts = {
             value: '$0.50 USD',
         },
         {
-            imglink: `/commissions/benoit-dinky-helloaerin.webp`,
+            imglink: `/others/benoit-dinky-helloaerin.webp`,
             date: new Date(2025, 12 - 1, 20),
             title: 'Dinky',
             credit: 'helloaerin',
@@ -1554,6 +1710,8 @@ images.pmdbts = {
 
     ]
 }
+
+utils.init.scrubSubmissions(images.commissions['2026'], '.comms');
 
 utils.init.scrubSubmissions(images.pmdbts.submissions, '.pmdbts');
 utils.parse.sortByDate(images.pmdbts.submissions);
