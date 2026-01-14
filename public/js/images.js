@@ -153,6 +153,16 @@ images.commissions = {
             value: '$2.50 USD',
             bgsize: 'contain'
         },
+        {
+            imglink: `/commissions/2026-01-13_bankruptbunny_minichibi1.webp`,
+            date: new Date(2026, 1 - 1, 13),
+            title: 'Mini Chibi - Aurelia',
+            credit: 'bankruptbunny',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
     ]
 
 }

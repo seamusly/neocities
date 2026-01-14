@@ -7,6 +7,7 @@
 
     <link href="css/style.css" rel="stylesheet">
     <link href="css/bs-addons.css" rel="stylesheet">
+    <link href="utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
     <script type="text/javascript" src="utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="utilities/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="utilities/list.min.js"></script>
@@ -37,8 +38,14 @@
                 latestGallery.push(latestArr[i]);
             }
 
-            let latestGalleryList = new List('gallery-recent', gallery.options.createGalleryOptions(config.pages.gallery.root), latestGallery);
+            getGallery(latestGallery);
+
         });
+
+        function getGallery(imagesArr) {
+
+            let latestGalleryList = new List('gallery-recent-container', gallery.options.createGalleryOptions(config.pages.gallery.root), imagesArr);
+        }
     </script>
 </head>
 <body>
@@ -77,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-9 col-12">
+            <div class="col-lg-9 col-12 d-flex">
                 <div class="page-body p-3">
 
                     <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2 mb-3">
@@ -89,18 +96,27 @@
                         <hr class="section-divider col">
                     </div>
 
-                    <p>This site is a <i>heavy</i> WIP! At the moment, I'm focused on transferring art and character profiles over from Toyhou.se, and so these sections will be pretty barebones for the time being.</p>
-                    <p>Here are some links to get us started at least:</p>
-                    <ul class="fa-ul">
-                        <li><i class="fa-solid fa-caret-right"></i> <a href="credits.html">Credits</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i> <a href="characters.html">Characters</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i> <a href="gallery.html">Gallery</a></li>
-                    </ul>
+                    <div class="px-3">
+                        <p>This site is a <i>heavy</i> WIP! At the moment, I'm focused on transferring art and character profiles over from Toyhou.se, and so these sections will be pretty barebones for the time being.</p>
+                        <p>Here are some links to get us started at least:</p>
+                        <ul class="fa-ul ms-md-4 ms-2">
+                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="credits.html">Credits</a></li>
+                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="characters.html">Characters</a></li>
+                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
 
-                    <h3>Recent Images</h3>
+                    <div class="d-flex align-items-center col-md-auto p-0 mt-lg-4 mt-5 mb-3">
+                        <hr class="section-divider" style="width:25px;">
+                        <div class="section-header col-auto mx-3">
+                            <span class="fa-xs star-collapse-link"></span>
+                            Recent Images
+                        </div>
+                        <hr class="section-divider col">
+                    </div>
 
-                    <div id="gallery-recent">
-                        <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                    <div class="collapse show active" id="gallery-recent-container">
+                        <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-recent">
                         </ul>
                     </div>
 
