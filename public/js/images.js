@@ -163,6 +163,26 @@ images.commissions = {
             value: '$2.50 USD',
             bgsize: 'contain'
         },
+        {
+            imglink: `/commissions/2026-01-14_bankruptbunny_minichibi1.webp`,
+            date: new Date(2026, 1 - 1, 14),
+            title: 'Mini Chibi - Holly',
+            credit: 'bankruptbunny',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-14_bankruptbunny_minichibi2.webp`,
+            date: new Date(2026, 1 - 1, 14),
+            title: 'Mini Chibi - Iara',
+            credit: 'bankruptbunny',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
     ]
 
 }
