@@ -183,6 +183,16 @@ images.commissions = {
             value: '$2.50 USD',
             bgsize: 'contain'
         },
+        {
+            imglink: `/commissions/2026-01-14_bankruptbunny_minichibi3.webp`,
+            date: new Date(2026, 1 - 1, 14),
+            title: 'Mini Chibi - Madz',
+            credit: 'bankruptbunny',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
     ]
 
 }

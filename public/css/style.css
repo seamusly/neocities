@@ -156,6 +156,9 @@ a:hover, .profile-text-toggler:hover {
 .page-header {
   min-height: 200px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   align-content: center;
   background: url('../images/backgrounds/bg-tile-animated.gif');

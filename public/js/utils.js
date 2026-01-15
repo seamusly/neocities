@@ -7,7 +7,7 @@ utils.init = {
 
         if (subtitle) {
             header.prepend(`
-                <div class="page-header-subtitle">${subtitle}</div>
+                <div class="page-header-subtitle col-12">${subtitle}</div>
             `);
         }
 
