@@ -193,6 +193,36 @@ images.commissions = {
             value: '$2.50 USD',
             bgsize: 'contain'
         },
+        {
+            imglink: `/commissions/2026-01-19_robomikka_minichibi1.webp`,
+            date: new Date(2026, 1 - 1, 19),
+            title: 'Mini Chibi - Mikka',
+            credit: 'Robomikka',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-19_robomikka_minichibi2.webp`,
+            date: new Date(2026, 1 - 1, 19),
+            title: 'Mini Chibi - Monkey',
+            credit: 'Robomikka',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-01-19_robomikka_minichibi3.webp`,
+            date: new Date(2026, 1 - 1, 19),
+            title: 'Mini Chibi - Butterfly',
+            credit: 'Robomikka',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
     ]
 
 }
