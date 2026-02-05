@@ -242,7 +242,7 @@ images.commissions = {
             medium: 'artwork',
             value: '$2.50 USD',
             bgsize: 'contain'
-        }
+        },
         {
             imglink: `/commissions/2026-02-05_someguynamedrudy_minichibi2.webp`,
             date: new Date(2026, 2 - 1, 5),
