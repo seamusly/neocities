@@ -223,6 +223,36 @@ images.commissions = {
             value: '$2.50 USD',
             bgsize: 'contain'
         },
+        {
+            imglink: `/commissions/2026-01-30_someguynamedrudy_minichibi.webp`,
+            date: new Date(2026, 1 - 1, 30),
+            title: 'Mini Chibi - Dessication & Rowdy',
+            credit: 'someguynamedrudy',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-02-05_someguynamedrudy_minichibi1.webp`,
+            date: new Date(2026, 2 - 1, 5),
+            title: 'Mini Chibi - Guilded Guise',
+            credit: 'someguynamedrudy',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        }
+        {
+            imglink: `/commissions/2026-02-05_someguynamedrudy_minichibi2.webp`,
+            date: new Date(2026, 2 - 1, 5),
+            title: 'Mini Chibi - BlackBurn',
+            credit: 'someguynamedrudy',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
     ]
 
 }
