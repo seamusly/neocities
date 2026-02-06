@@ -45,6 +45,8 @@ pmdbts.init = {
         let levelLogs = $(`#level-logs-body`);
         logsArr.forEach((log) => {
             let charObj = log.characters.find((char) => char.name === character);
+            if (log.items) log.levels.bonus = log.items[charObj.team] === 'Wonder Chest' ? 5 : 10;
+            
             levelLogs.append(`
                 <tr>
                     <td>${utils.parse.timestampTooltip(log.date)}</td>
@@ -52,7 +54,7 @@ pmdbts.init = {
                     <td>${log.activity}</td>
                     <td>${log.dungeon ? log.dungeon : log.prompt}</td>
                     <td>+${log.levels.gained}</td>
-                    <td>${!log.levels.bonus ? '--' : `+${log.levels.bonus} <span data-bs-toggle="tooltip" data-bs-title="+${log.levels.bonus} from ${log.item}"><img src="${root}images/misc/${log.item.toLowerCase().replace(' ', '-')}-pixel.png"></span>`}</td>
+                    <td>${!log.levels.bonus ? '--' : `+${log.levels.bonus} <span data-bs-toggle="tooltip" data-bs-title="+${log.levels.bonus} from ${log.items[charObj.team]}"><img src="${root}images/misc/${log.items[charObj.team].toLowerCase().replace(' ', '-')}-pixel.png"></span>`}</td>
                     <td>${charObj.startlvl} <i class="fa-solid fa-arrow-right text-success"></i> ${charObj.startlvl + log.levels.gained + (log.levels.bonus ?? 0)}</td>
                 </tr>
             `);

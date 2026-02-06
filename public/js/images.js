@@ -418,10 +418,11 @@ images.pmdbts = {
             date: new Date(2023, 10 - 1, 30, 5, 31),
             activity: 'Dungeon',
             dungeon: 'Isles of Paradise',
-            item: 'Wonder Chest',
+            items: {
+                'Enochian': 'Wonder Chest'
+            },
             levels: {
                 gained: 4,
-                bonus: 5
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'artwork',
@@ -535,10 +536,11 @@ images.pmdbts = {
             date: new Date(2023, 11 - 1, 11, 3, 48),
             activity: 'Dungeon',
             dungeon: 'Fuzzy Tundra',
-            item: 'Wonder Chest',
+            items: {
+                'Enochian': 'Wonder Chest'
+            },
             levels: {
                 gained: 4,
-                bonus: 3
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'artwork',
@@ -580,10 +582,11 @@ images.pmdbts = {
             date: new Date(2023, 11 - 1, 12, 12, 17),
             activity: 'Dungeon',
             dungeon: 'Fuzzy Tundra',
-            item: 'Wonder Chest',
+            items: {
+                'Enochian': 'Wonder Chest'
+            },
             levels: {
                 gained: 3,
-                bonus: 5
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'artwork',
@@ -625,10 +628,11 @@ images.pmdbts = {
             date: new Date(2023, 11 - 1, 13, 2, 15),
             activity: 'Dungeon',
             dungeon: 'Treeshroud Forest',
-            item: 'Wonder Chest',
+            items: {
+                'Enochian': 'Wonder Chest'
+            },
             levels: {
                 gained: 1,
-                bonus: 2
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'artwork',
@@ -1050,10 +1054,11 @@ images.pmdbts = {
             date: new Date(2024, 2 - 1, 22, 7 + 12, 19),
             activity: 'Dungeon',
             dungeon: 'Abyssal Badlands',
-            item: 'Wonder Chest',
+            items: {
+                'Enochian': 'Wonder Chest'
+            },
             levels: {
                 gained: 2,
-                bonus: 5
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'artwork',
@@ -1096,10 +1101,11 @@ images.pmdbts = {
             date: new Date(2024, 2 - 1, 25, 4 + 12, 45),
             activity: 'Dungeon',
             dungeon: 'Tallest of Grass Plains',
-            item: 'Tera Orb',
+            items: {
+                'Enochian': 'Tera Orb'
+            },
             levels: {
                 gained: 1,
-                bonus: 10
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'artwork',
@@ -1142,10 +1148,11 @@ images.pmdbts = {
             date: new Date(2024, 3 - 1, 23, 11 + 12, 46),
             activity: 'Dungeon',
             dungeon: 'Enchanted Woods',
-            item: 'Wonder Chest',
+            items: {
+                'Enochian': 'Wonder Chest'
+            },
             levels: {
                 gained: 4,
-                bonus: 5
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
             medium: 'artwork',
@@ -1206,10 +1213,11 @@ images.pmdbts = {
             date: new Date(2025, 9 - 1, 5, 7 + 12, 22),
             activity: 'Dungeon',
             dungeon: 'Glacier Palace',
-            item: 'Wonder Chest',
+            items: {
+                'Syzygy': 'Wonder Chest'
+            },
             levels: {
                 gained: 5,
-                bonus: 5
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'artwork',
@@ -1704,10 +1712,11 @@ images.pmdbts = {
             date: new Date(2025, 12 - 1, 23, 4 + 12, 53),
             activity: 'Dungeon',
             dungeon: 'Paradise Wastelands',
-            item: 'Wonder Chest',
+            items: {
+                'Syzygy': 'Wonder Chest'
+            },
             levels: {
                 gained: 5,
-                bonus: 5
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'writing',
@@ -2116,10 +2125,12 @@ images.pmdbts = {
             date: new Date(2026, 1 - 1, 31, 2, 22),
             activity: 'Dungeon',
             dungeon: `Volsung Temple`,
-            item: 'Wonder Chest',
+            items: {
+                'Enochian': 'Wonder Chest',
+                'Four Seasons': 'Tera Orb'
+            },
             levels: {
                 gained: 5,
-                bonus: 5
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
             medium: 'artwork',
@@ -2158,10 +2169,11 @@ images.pmdbts = {
             date: new Date(2026, 1 - 1, 31, 8 + 12, 54),
             activity: 'Dungeon',
             dungeon: 'Sorbet Forest',
-            item: 'Tera Orb',
+            items: {
+                'Syzygy': 'Tera Orb'
+            },
             levels: {
                 gained: 4,
-                bonus: 10
             },
             tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
             medium: 'writing',
@@ -2184,10 +2196,10 @@ images.pmdbts = {
                     startlvl: 15
                 },
                 {
-                    name: 'Ana',
+                    name: 'Makoto',
                     team: 'Syzygy',
-                    species: 'Temporal Combee',
-                    startlvl: 13
+                    species: 'Zorua Deco Hisui',
+                    startlvl: 1
                 },
                 {
                     name: 'Valor',

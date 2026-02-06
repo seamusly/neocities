@@ -67,7 +67,6 @@ utils.init = {
 
 
     lightbox(resizeDuration = 400, fadeDuration = 200) {
-        console.log('lightbox init');
         lightbox.option({
             'resizeDuration': resizeDuration,
             'fadeDuration': fadeDuration,
