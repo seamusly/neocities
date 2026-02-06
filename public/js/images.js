@@ -1777,7 +1777,7 @@ images.pmdbts = {
                 <p>"Ah... right. Thank you, Augurys." Benoit did not want to linger any longer on their interaction. He knew that they would nod at his thanks, and so he nodded in return without even thinking. The two of them had gone through this several times before, and he was eager to move on. He tread past them a few paces and then stood up to look back at them, simply saying, "Alright. Let's get going then."</p>`
         },
 
-        // Jan 6, 2026 - Daily Life (Starscarred Lands)
+        // Jan 3, 2026 - Daily Life (Starscarred Lands)
         {
             imglink: 'misc/book.webp',
             title: 'Brief History of the Starscarred Lands',
@@ -1806,6 +1806,437 @@ images.pmdbts = {
                 <p>At some point, it was discovered that the meteor had brought a cosmic power from the stars that had since embedded itself into the earth and transformed the land into place lush with magic. The fragments of the meteor were discovered to carry certain magical properties that many considered valuable for a variety of reasons, and the coveting of the shards launched a global rush to acquire them. Many parties came into conflict over the shards, resulting in a number of major conflicts that left the land in a dismal state.</p>
                                                     
                 <p>After all was said and done, the collection of islands earned its name for all that had irreparably changed it over the years since the disaster and its original name was lost to time. Hundreds of years following the conflict, the islands have since been largely rebuilt and have become a haven for those of magical aptitude or those with a keen interest in the arcane and mysteries of the realm.</p>`
+        },
+
+        // Jan 6, 2026 - Collab Dungeon (Everlasting Gardens w/ embea)
+        {
+            imglink: 'dungeons/2026-01-06_everlastinggardens_collab.webp',
+            title: 'Too Tall to Ride',
+            date: new Date(2026, 1 - 1, 6, 2, 4),
+            activity: 'Dungeon',
+            dungeon: `Everlasting Gardens`,
+            levels: {
+                gained: 1
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters'
+                },
+                {
+                    user: 'embea',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/embea'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Raiden',
+                    team: 'Enochian',
+                    species: 'Torchic',
+                    startlvl: 100
+                },
+                {
+                    name: 'Estys',
+                    team: 'Enochian',
+                    species: 'Wooper Shiny (Paldea)',
+                    startlvl: 100
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 15, 2026 - Collab Dungeon (Cloudy Heavens w/ embea)
+        {
+            imglink: 'dungeons/2026-01-15_cloudyheavens_collab.webp',
+            title: 'Mushroom in the Clouds',
+            date: new Date(2026, 1 - 1, 15, 2, 36),
+            activity: 'Dungeon',
+            dungeon: `Cloudy Heavens`,
+            levels: {
+                gained: 3
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters'
+                },
+                {
+                    user: 'embea',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/embea'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Tula',
+                    team: 'Enochian',
+                    species: 'Hue Morelull',
+                    startlvl: 100
+                },
+                {
+                    name: 'Gwisin',
+                    team: 'Enochian',
+                    species: 'Ethereal Shedinja',
+                    startlvl: 94
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 15, 2026 - HH Collab (Mystic Taiga w/ rui)
+        {
+            imglink: 'dungeons/2026-01-15_mystictaiga_collab.webp',
+            title: `Beneath the Lights`,
+            date: new Date(2026, 1 - 1, 15, 3 + 12, 52),
+            activity: 'Dungeon',
+            dungeon: 'Mystic Taiga',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters',
+                },
+                {
+                    user: 'togetherinsong',
+                    role: 'background',
+                    link: 'https://toyhou.se/radweekend'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Fray',
+                    team: 'Syzygy',
+                    species: 'Hue Tandemaus'
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling'
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 25, 2026 - HH Collab (Mystic Taiga w/ Killager, Timelocke, Mae)
+        {
+            imglink: 'dungeons/2026-01-24_mystictaiga_collab.webp',
+            title: `Snowball Headshot!`,
+            date: new Date(2026, 1 - 1, 24, 7, 36),
+            activity: 'Dungeon',
+            dungeon: 'Mystic Taiga',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'shading',
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'sketch',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'StarlitMayorKillager',
+                    role: 'lines',
+                    link: 'https://www.deviantart.com/starlitmayorkillager'
+                },
+                {
+                    user: 'Timelocke',
+                    role: 'colours',
+                    link: 'https://www.deviantart.com/timelocke'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne'
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 25, 2026 - HH Collab (Mystic Taiga w/ Ghost)
+        {
+            imglink: 'dungeons/2026-01-25_mystictaiga_collab.webp',
+            title: `A Snowball's Chance`,
+            date: new Date(2026, 1 - 1, 26, 6 + 12, 36),
+            activity: 'Dungeon',
+            dungeon: 'Mystic Taiga',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters',
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne'
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling'
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 26, 2026 - HH Collab (Mystic Taiga w/ Ghost)
+        {
+            imglink: 'dungeons/2026-01-26_mystictaiga_collab.webp',
+            title: `Stargazing`,
+            date: new Date(2026, 1 - 1, 26, 5, 4),
+            activity: 'Dungeon',
+            dungeon: 'Mystic Taiga',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters',
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'background',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne'
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling'
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 28, 2026 - HH Collab (Mystic Taiga w/ Jester)
+        {
+            imglink: 'dungeons/2026-01-28_mystictaiga1_collab.webp',
+            title: `Mist-covered Lands`,
+            date: new Date(2026, 1 - 1, 28, 4, 10),
+            activity: 'Dungeon',
+            dungeon: 'Mystic Taiga',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters',
+                },
+                {
+                    user: 'Halloween-Jester',
+                    role: 'background',
+                    link: 'https://toyhou.se/Halloween-Jester'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne'
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling'
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 28, 2026 - HH Collab (Mystic Taiga w/ Mae)
+        {
+            imglink: 'dungeons/2026-01-28_mystictaiga2_collab.webp',
+            title: `Seasonal Cuddle Pile`,
+            date: new Date(2026, 1 - 1, 28, 7 + 12, 41),
+            activity: 'Dungeon',
+            dungeon: 'Mystic Taiga',
+            event: 'Holiday Hills',
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'characters',
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'background',
+                    link: 'https://toyhou.se/MinishMae'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Polly',
+                    team: 'Four Seasons',
+                    species: 'Hue Numel'
+                },
+                {
+                    name: 'Fortuna',
+                    team: 'Syzygy',
+                    species: 'Seasonal Smoliv'
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 31, 2026 - Collab Dungeon (Volsung Temple w/ Mae)
+        {
+            imglink: 'dungeons/2026-01-31_volsungtemple_collab.webp',
+            title: 'Into the Unknown!',
+            date: new Date(2026, 1 - 1, 31, 2, 22),
+            activity: 'Dungeon',
+            dungeon: `Volsung Temple`,
+            item: 'Wonder Chest',
+            levels: {
+                gained: 5,
+                bonus: 5
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'sketch, colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'lines',
+                    link: 'https://toyhou.se/MinishMae'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Polly',
+                    team: 'Four Seasons',
+                    species: 'Hue Numel',
+                    startlvl: 5
+                },
+                {
+                    name: 'Zane',
+                    team: 'Enochian',
+                    species: 'Hue Monster Applin',
+                    startlvl: 52
+                }
+            ],
+            description: ''
+        },
+
+        // Jan 31, 2025 - Solo Dungeon (Sorbet Forest)
+        {
+            imglink: 'misc/book.webp',
+            title: 'The Usual, As Usual',
+            date: new Date(2026, 1 - 1, 31, 8 + 12, 54),
+            activity: 'Dungeon',
+            dungeon: 'Sorbet Forest',
+            item: 'Tera Orb',
+            levels: {
+                gained: 4,
+                bonus: 10
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'solo'],
+            medium: 'writing',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                }
+            ],
+            characters: [
+                {
+                    name: 'Benoit',
+                    team: 'Syzygy',
+                    species: 'Dedenne',
+                    startlvl: 20
+                },
+                {
+                    name: 'Augurys',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                    startlvl: 15
+                },
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                    startlvl: 13
+                },
+                {
+                    name: 'Valor',
+                    team: 'Enochian',
+                    species: 'Chingling',
+                    startlvl: 100
+                }
+            ],
+            description: `Benoit longs for a break from the Holiday Hills's snowy forests.`,
+            text: `
+                <p>Benoit was never one to complain about his conditions, at least not so outwardly. Back when he resided on the Dark Continent, he had learned when it was in his best interests to remain quiet and keep his thoughts to himself, especially when he felt negatively about something. But that was then — back when he was a tailor for royalty, when he was beholden to the social expectations of those who were included in the inner circles of the city’s most elite.</p>
+        
+                <p>Back in Ethovalon, there was a celebration taking place. A snowstorm that had blown through the city and its surrounding environs set the stage for what was meant to be a joyous month of feasting and intrigue. The Holiday Hills and the dungeon that was conjured up accordingly for the festivities predictably followed a similar climate, setting its expeditions in the Mystic Taiga, a woodland covered in tall trees, white snow, and mist.</p>
+                
+                <p>Benoit had partaken in the seasonal expeditions in the past, seeing them as low-stakes encounters that he could use to get acclimated to his new position as a member of a world-class exploration guild. While he was more willing to entertain the summer and autumn variants of the space however, the Dedenne man was much less open to the thought of trudging through piles of snow in freezing temperatures. And yet, there he was.</p>
+                
+                <p>However, it was not the Mystic Taiga and the magic of the Holiday Hills that plagued him on that particular day. Instead, he had opted to follow his teammates on an <i>actual</i> outing that day. Having grown tired of wandering the cold interiors of the dungeon back in Ethovalon, the thought of getting a break from the scenery was welcomed. Yet when he realized far too late what their destination was to be, Benoit could only groan as he pressed his hands to his face in despair.</p>
+                
+                <p>Once again, the Dedenne found himself standing in a forest; one covered in sheets of ice and snow. Rather than the endless nights covered in auroral skies however, the dungeon saw rays of sun peeking from behind the leafless canopy of trees. The light reflected off of virtually everything in sight. It would have overwhelmed him as it did his teammates had he not had his usual tinted glasses to shield his eyes from the brightness.</p>
+                
+                <p>Though he had been leading at the time, Benoit paused a short ways into the clearing at the entrance to turn around and face his team. “Fray,” he called first. “You doing alright—?”</p>
+                
+                <p>Benoit’s words were caught in his throat however as an intense, brilliant light suddenly flashed in his periphery. The phenomenon was so powerful that it sent the diminutive rodent staggering. He tripped with a grunt, and his ball-like form sent him rolling a few feet away. “Shit, <i>what</i> the—?!”</p>
+                
+                <p>It took a few seconds for him to recover from his dazed state, blinking away the speckles clouding his vision as he tried to turn his attention upwards towards what caused the seeming explosion. When he could finally make out the shape of the one responsible however, he merely gritted his little teeth and sighed in exasperation.</p>
+                
+                <p>Makoto, a baneful Zorua and more recent addition to the team’s numbers, had his shoulder turned to the light himself. Beneath him, Fray was cowering with both their paws pressed against their head. Alongside their shadow, the Tandemaus was practically pressed into Makoto’s fur with their eyes shut in fright. Makoto was similarly grimacing, perhaps even more unpleased with what he was seeing for himself.</p>
+                
+                <p>There, standing in the center of the wintery clearing, was a Buneary. Augurys seemed to stumble back and forth a few times themself, trying to regain their balance as the initial burst of power subsided. Atop their head, they now wore a magnificent crystalline crown shaped like an eye. It shone like a beacon, illuminating the entire forest floor and blinding those nearby. As Benoit started to get up to his feet, he could hear the rustling of shrubs nearby, signaling the presence of on-lookers who he could only guess were attempting to move away from them.</p>
+                
+                <p>“Auggy!” Benoit scolded them as he bound up towards them on all four of his paws. “What do you think you’re doing?!”</p>
+                
+                <p>He did not wait for their response before he let his shoulders drop in disappointment. They were still rubbing at their face themself, trying to see again after blinding even themself. He had come to expect the Buneary to be somewhat air-headed over the last few months they had found themselves on the same ventures. He could not even pretend to be surprised that the team only barely set foot into Sorbet Forest before he was fretting over something Augurys did.</p>
+                
+                <p>Taking a breath, he started speaking again in a calmer tone than previously. “We were supposed to use the orb <i>after</i> getting closer to the lake.”</p>
+                
+                <p>Augurys eventually looked up to meet Benoit’s gaze. They wore a blank expression on their face as always and merely blinked at him a few times before their eyes widened and they smiled sheepishly. ”…oh. Right.”</p>
+                
+                <p>“Don’t worry, Benoit.” The sound of Makoto’s jeering voice came from behind them. He was sneering, returning Augurys’s typical friendly demeanour with his own sarcastic grin. “Now that we’ve alerted just about every Pokemon in the area, there should be a path cleared for us to just stroll on in. <i>Thank you</i> for that, Augurys.”</p>
+                
+                <p>“You’re welcome!” The Buneary practically — and literally — beamed in response.</p>
+                
+                <p>Makoto scoffed. He leaned down and bit lightly down on the scruff of Fray’s neck, lifting them into the air a moment later as though they were a kitten being carried by its mother. They squealed in surprise, though did not seem to struggle in the Zorua’s grasp as he trampled off to find cover for them both from Augurys’s light.</p>
+                
+                <p>Benoit squeezed his eyes shut himself and would have hung his head in resignation had he not been addressed suddenly. Augurys looked to him, happy as ever, and reached a hand out to pat him on the side. They said nothing, although he had been through a similar sequence of events with them enough times before to know that they were beckoning him to join them. Despite their current circumstances and his usual reservations about the bubbly, somewhat clumsy ‘mon, he knew that he would end up walking at their side regardless. He could not say his reasons, however.</p>
+                
+                <p>And so, as always, Benoit quietly sighed before he nodded at them. “Alright then… let’s get going?”</p>
+                
+                <p>“Yes!” Augurys returned his nod enthusiastically. They were clueless as always. Nevertheless, he would walk at their side as usual.</p>`
         },
 
     ]
