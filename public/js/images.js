@@ -253,6 +253,36 @@ images.commissions = {
             value: '$2.50 USD',
             bgsize: 'contain'
         },
+        {
+            imglink: `/commissions/2026-02-06_someguynamedrudy_minichibi.webp`,
+            date: new Date(2026, 2 - 1, 6),
+            title: 'Mini Chibi - FrostFire',
+            credit: 'someguynamedrudy',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-02-07_someguynamedrudy_minichibi1.webp`,
+            date: new Date(2026, 2 - 1, 7),
+            title: 'Mini Chibi - Niku',
+            credit: 'someguynamedrudy',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-02-07_someguynamedrudy_minichibi2.webp`,
+            date: new Date(2026, 2 - 1, 7),
+            title: 'Mini Chibi - Vanta Black',
+            credit: 'someguynamedrudy',
+            category: 'Mini Chibi',
+            medium: 'artwork',
+            value: '$2.50 USD',
+            bgsize: 'contain'
+        },
     ]
 
 }
