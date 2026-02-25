@@ -27,6 +27,7 @@ pmdbts.teams = {
 }
 
 pmdbts.init = {
+
     setTeam(teamname) {
         let data = pmdbts.teams[teamname.toLowerCase()];
         Object.keys(data).forEach((key) => {

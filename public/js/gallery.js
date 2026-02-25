@@ -44,9 +44,11 @@ gallery.options = {
                 'title',
                 'credit',
                 'creditlink',
-                'category',
+                'activity',
                 'tags',
                 'medium',
+                'dungeon',
+                'holidayhills',
                 'characters',
                 'value',
                 'key',
@@ -55,8 +57,8 @@ gallery.options = {
             ],
         item: function(values) {
             return `
-                <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-12 p-2" data-tags="${values.tags.toString()}" data-medium="${values.medium}">
-                    <a ${values.medium === 'artwork' ? `data-lightbox="${values.category}" href="${root}images/${values.imglink}"` : `href="${root}gallery${!utils.url.isLiveSite() ? '.html' : ''}?view=${values.key}"`}">
+                <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-12 p-2" data-tags="${values.tags.toString().replaceAll(',', ' ')}" data-medium="${values.medium}"${dungeon !== '' ? ` data-dungeon="${values.dungeon}"` : ''}>
+                    <a ${values.medium === 'artwork' ? `data-lightbox="${values.activity}" href="${root}images/${values.imglink}"` : `href="${root}gallery${!utils.url.isLiveSite() ? '.html' : ''}?view=${values.key}"`}">
                         <div class="gallery-card p-2">
                             <div class="gallery-card-thumb" style="background-image:url('${root}images/${values.imglink}');${values.medium === 'artwork' ? (values.bgsize ? `background-size:${values.bgsize};` : '') : 'background-size:contain;'}background-position:${values.bgalign ?? 'center' }"></div>
                         </div>
@@ -79,14 +81,15 @@ gallery.options = {
                 'title',
                 'date',
                 'datelabel',
-                'category',
+                'activity',
                 'tags',
-                'medium'
+                'medium',
+                'dungeon'
             ],
             item: function(values) {
                 return `
-                <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-12 p-2" data-tags="${values.tags.toString()}" data-medium="${values.medium}">
-                    <a ${values.medium === 'artwork' ? `data-lightbox="${values.category}" href="${root}images/${values.imglink}"` : `href="${root}gallery${!utils.url.isLiveSite() ? '.html' : ''}?view=${values.key}"`}">
+                <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-12 p-2" data-tags="${values.tags.toString().replaceAll(',', ' ')}" data-medium="${values.medium}"${values.dungeon !== undefined ? ` data-dungeon="${values.dungeon}"` : ''}>
+                    <a ${values.medium === 'artwork' ? `data-lightbox="${values.activity}" href="${root}images/${values.imglink}"` : `href="${root}gallery${!utils.url.isLiveSite() ? '.html' : ''}?view=${values.key}"`}">
                         <div class="gallery-card p-2">
                             <div class="gallery-card-thumb" style="background-image:url('${root}images/${values.imglink}');${values.medium === 'artwork' ? '' : 'background-size:contain;'}"></div>
                         </div>

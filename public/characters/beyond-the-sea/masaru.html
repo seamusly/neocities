@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dragon-heist - Masaru</title>
+
+    <meta name="robots" content="noai, noimageai">
+
+    <link href="../../css/style.css" rel="stylesheet"/>
+    <link href="../../css/bs-addons.css" rel="stylesheet"/>
+    <link href="../../css/pokemon-types.css" rel="stylesheet"/>
+    <link href="../../utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../../utilities/list.min.js"></script>
+    <script type="text/javascript" src="../../utilities/lightbox2-2.11.5/lightbox.min.js"></script>
+    <script type="module">
+        // Import config and utils
+        import { config } from '../../js/config.js';
+        import { utils } from '../../js/utils.js';
+        import { pmdbts } from '../../js/pmdbts.js';
+        import { gallery } from '../../js/gallery.js';
+        import { images } from '../../js/images.js';
+
+        // Init page elements
+        $(document).ready(function() {
+            gallery.root = config.pages.beyondthesea.root;
+            utils.init.header(config.pages.beyondthesea.profiles.Masaru.title, config.pages.beyondthesea.subtitle);
+            utils.init.footer(config.footer.links, config.pages.beyondthesea.root);
+            utils.init.top();
+
+            utils.init.profile();
+            utils.init.warningButtons();
+
+            pmdbts.init.setTeam('Four Seasons');
+            pmdbts.init.setLevelLogs(config.pages.beyondthesea.root, 'Masaru');
+
+            utils.init.tooltips();
+            utils.init.lightbox();
+
+            getGallery();
+        });
+
+        function getGallery() {
+            const allSubmissions = images.pmdbts.submissions.filter((sub) => sub.characters.filter((char) => char.name === 'Masaru' || char.name === 'Láni').length > 0);
+            if (allSubmissions.length < 1) return;
+
+            const allOther = images.pmdbts.others.filter((other) => other.characters.includes('Masaru' || 'Láni'));
+
+            let personalList = new List('gallery-personal-container', gallery.options.createGeneralOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allOther, 'category', 'Personal'));
+
+            let othersList = new List('gallery-others-container', gallery.options.createGeneralOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allOther, 'category', 'Others'));
+
+            let dungeonList = new List('gallery-dungeons-container', gallery.options.createSubmissionsOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allSubmissions, 'activity', 'Dungeon'));
+
+            let taskList = new List('gallery-tasks-container', gallery.options.createSubmissionsOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allSubmissions, 'activity', 'Task'));
+
+            let dailyList = new List('gallery-daily-container', gallery.options.createSubmissionsOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allSubmissions, 'activity', 'Daily Life'));
+        }
+
+    </script>
+
+</head>
+<body class="beyond-the-sea">
+
+    <div class="main-container">
+
+        <div class="page-header beyond-the-sea mb-2">
+
+            <ul class="nav nav-tabs profile-tabs justify-content-md-end justify-content-center pe-md-2 col-12" role="tablist">
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
+                    <button class="nav-link active col-12" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
+                </li>
+
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
+                    <button class="nav-link col-12" data-bs-toggle="tab" data-bs-target="#design">Design</button>
+                </li>
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
+                    <button class="nav-link col-12" data-bs-toggle="tab" data-bs-target="#gallery">Gallery</button>
+                </li>
+                <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
+                    <button class="nav-link col-12" data-bs-toggle="tab" data-bs-target="#logs">Logs</button>
+                </li>
+            </ul>
+
+            <div class="mt-2 page-sidebar-back">
+                <a href="../../characters.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Characters</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="profile-content">
+            
+            <div class="tab-pane fade p-0 active show" id="profile">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 pe-lg-2 d-lg-block d-none">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+                            <div class="ms-2 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#profile-basics"><i class="fa-solid fa-angles-right"></i> Basics</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#profile-trivia"><i class="fa-solid fa-angles-right"></i> Trivia</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#profile-moves"><i class="fa-solid fa-angles-right"></i> Ability & Moves</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#profile-personality"><i class="fa-solid fa-angles-right"></i> Personality</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#profile-history"><i class="fa-solid fa-angles-right"></i> History</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container active">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <a class="profile-inline-img d-md-inline d-block float-md-end col-lg-4 col-md-3 col-12 ms-md-3 mb-4 mt-md-0" href="../../images/character-refs/masaru-gijinka-v1.webp" data-lightbox="Gijinka Reference" data-title="@872dragons (lines) / @dragon-heist (colours)" style="background-image:url('../../images/character-refs/masaru-gijinka-v1.webp')" data-form="humanoid"></a>
+                                
+                                <div id="profile-basics">
+                                    <!-- BASIC -->
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#basics-container"></a>
+                                            Basics
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="basics-container">
+
+                                        <div class="d-flex flex-wrap align-items-center text-center col-md-6 p-2 profile-card mx-auto mt-2 mb-3">
+                                            <!-- NAME -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Name</p>
+                                                <span>Masaru</span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- ALIAS -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Alias</p>
+                                                <span>Maru</span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- AGE -->
+                                            <div class="col-6">
+                                                <p class="profile-info-title">Age</p>
+                                                <span>24</span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- SPECIES -->
+                                            <div class="col-6">
+                                                <p class="profile-info-title">Species</p>
+                                                <span>Flareon</span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- GENDER -->
+                                            <div class="col-6">
+                                                <p class="profile-info-title">Gender</p>
+                                                <span>Male</span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- PRONOUNS -->
+                                            <div class="col-6">
+                                                <p class="profile-info-title">Pronouns</p>
+                                                <span>he/him</span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- PREFERENCES -->
+                                            <div class="col-12">
+                                                <span data-bs-toggle="tooltip" data-bs-title="Bisexual"><img src="../../images/pride-flags/bisexual.png"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-wrap align-items-center text-center col-md-6 p-2 profile-card mx-auto mt-2 mb-3">
+
+                                            <!-- TEAM -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Team</p>
+                                                <span data-teaminfo="name"></span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- BRANCH -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Branch</p>
+                                                <span data-teaminfo="branch"></span>
+                                                <hr class="profile-info-divider my-2">
+                                            </div>
+
+                                            <!-- POSITION -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Position</p>
+                                                <span data-teaminfo="position">Recruit</span>
+                                                <hr class="profile-info-divider my-2 d-sm-none d-block">
+                                            </div>
+
+                                            <!-- JOINED -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Joined</p>
+                                                <span data-teaminfo="joined">February 00, 2026</span>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="text-center mb-4">
+                                            <button type="button" class="btn btn-profile" data-bs-toggle="modal" data-bs-target="#app-modal">
+                                                <i class="fa-solid fa-angles-right"></i>
+                                                Visual Application
+                                                <i class="fa-solid fa-angles-left"></i>
+                                            </button>
+                                        </div>
+
+                                        <p class="d-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a facilisis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam consequat in nibh ac luctus. Duis scelerisque sapien in viverra placerat. Etiam sit amet eros in eros maximus tincidunt. Morbi volutpat nulla vitae sagittis porttitor. Proin a lectus tincidunt, posuere orci a, aliquam nisl. Nullam pretium sem dui, sit amet faucibus metus blandit at. In et sapien non justo consectetur lobortis a eget nulla. Donec posuere eget diam sed volutpat. Nulla lorem erat, mollis eu lectus sed, vulputate aliquet magna. In non lorem in nulla bibendum hendrerit. Nunc vel scelerisque nibh. Maecenas sed porta nulla.</p>
+                                    </div>
+
+                                </div>
+
+                                <div id="profile-trivia">
+                                    <!-- TRIVIA -->
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#trivia-container"></a>
+                                            Trivia
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="trivia-container">
+                                        <ul class="fa-ul ms-2">
+                                            <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Masaru (along with his sworn brother <a href="../../characters/beyond-the-sea/ulan.html">Ulán</a>) are inspired by the characters <span class="text-highlight fw-bold">Red Hot</span> and <span class="text-highlight fw-bold">Deep Blue</span> from <i>Final Fantasy XIV</i>.</li>
+                                            <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Unknown to most, Masaru is an avid reader of romantic fiction.</li>
+                                            <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> His favourite foods are spicy and he enjoys bitter coffee.</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- ABILITY & MOVES -->
+                                <div id="profile-moves">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#moves-container"></a>
+                                            Ability & Moves
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="moves-container">
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card mx-auto my-2">
+                                            <!-- ABILITY -->
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Ability</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Flash Fire</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <div>
+                                                        <span class="profile-info-title me-2">via</span>
+                                                        <span style="font-size:small;">Basic</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">If hit by a Fire-type move, the Pokémon absorbs the flames and uses them to power up its own Fire-type moves.</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="d-flex flex-wrap col-12 justify-content-center">
+
+                                            <!-- MOVE -->
+                                            <div class="col-md-6 col-12 pe-md-2 py-md-2 my-md-0 my-2 p-0">
+                                                <div class="text-center p-2 h-100 profile-card mx-auto">
+                                                    <span class="profile-info-title">Move</span>
+                                                    <p class="mb-1" style="font-size:large;">Take Down</p>
+                                                    <hr class="col-12 my-2">
+
+                                                    <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                        <div class="pt-1"><span class="pokesprite type normal"></span> <span class="pokesprite attack physical" data-bs-toggle="tooltip" data-bs-title="Physical Attack"></span></div>
+                                                        <div>
+                                                            <span class="profile-info-title me-2">via</span>
+                                                            <span style="font-size:small;">Level 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="profile-info-divider my-2">
+                                                    <p class="mb-1">A reckless full-body charge attack for slamming into the target. This also damages the user a little.</p>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- MOVE -->
+                                            <div class="col-md-6 col-12 ps-md-2 py-md-2 my-md-0 my-2 p-0">
+                                                <div class="text-center p-2 h-100 profile-card mx-auto">
+                                                    <span class="profile-info-title">Move</span>
+                                                    <p class="mb-1" style="font-size:large;">Fire Spin</p>
+                                                    <hr class="col-12 my-2">
+
+                                                    <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                        <div class="pt-1"><span class="pokesprite type fire"></span> <span class="pokesprite attack special" data-bs-toggle="tooltip" data-bs-title="Special Attack"></span></div>
+                                                        <div>
+                                                            <span class="profile-info-title me-2">via</span>
+                                                            <span style="font-size:small;">TM024</span>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="profile-info-divider my-2">
+                                                    <p class="mb-1">The user attacks everything around it by swamping its surroundings with a giant wave.The user traps the target inside a fierce vortex of fire that inflicts damage for four to five turns.</p>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- MOVE -->
+                                            <div class="col-md-6 col-12 pe-md-2 py-md-2 my-md-0 my-2 p-0">
+                                                <div class="text-center p-2 h-100 profile-card mx-auto">
+                                                    <span class="profile-info-title">Move</span>
+                                                    <p class="mb-1" style="font-size:large;">Fire Fang</p>
+                                                    <hr class="col-12 my-2">
+
+                                                    <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                        <div class="pt-1"><span class="pokesprite type fire"></span> <span class="pokesprite attack physical" data-bs-toggle="tooltip" data-bs-title="Physical Attack"></span></div>
+                                                        <div>
+                                                            <span class="profile-info-title me-2">via</span>
+                                                            <span style="font-size:small;">TM008</span>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="profile-info-divider my-2">
+                                                    <p class="mb-1">The user bites with flame-cloaked fangs. This may also make the target flinch or leave it with a burn.</p>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- MOVE -->
+                                            <div class="col-md-6 col-12 ps-md-2 py-md-2 my-md-0 my-2 p-0">
+                                                <div class="text-center p-2 h-100 profile-card mx-auto">
+                                                    <span class="profile-info-title">Move</span>
+                                                    <p class="mb-1" style="font-size:large;">Flare Blitz</p>
+                                                    <hr class="col-12 my-2">
+
+                                                    <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                        <div class="pt-1"><span class="pokesprite type fire"></span> <span class="pokesprite attack physical" data-bs-toggle="tooltip" data-bs-title="Physical Attack"></span></div>
+                                                        <div>
+                                                            <span class="profile-info-title me-2">via</span>
+                                                            <span style="font-size:small;">TM165</span>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="profile-info-divider my-2">
+                                                    <p class="mb-1">The user cloaks itself in fire and charges the target to inflict damage. This also damages the user quite a lot and may leave the target with a burn.</p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- PERSONALITY -->
+                                <div id="profile-personality">
+                                    <div class="d-flex align-items-center col-12 p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#personality-container"></a>
+                                            Personality
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="personality-container">
+                                        <div class="d-flex flex-wrap align-items-center text-center col-12 p-2 profile-card mx-auto mt-2 mb-4">
+                                            <!-- NAME -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Nature</p>
+                                                <span>Lax</span>
+                                                <hr class="profile-info-divider my-2 d-sm-none d-block">
+                                            </div>
+
+                                            <!-- ALIAS -->
+                                            <div class="col-sm-6 col-12">
+                                                <p class="profile-info-title">Characteristic</p>
+                                                <span>Takes plenty of siestas</span>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- POSITIVE -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-positive mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Patient</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-success" style="font-size:small;">
+                                                        <i class="fa-solid fa-plus"></i> Positive
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- POSITIVE -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-positive mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Compassionate</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-success" style="font-size:small;">
+                                                        <i class="fa-solid fa-plus"></i> Positive
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- POSITIVE -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-positive mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Observant</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-success" style="font-size:small;">
+                                                        <i class="fa-solid fa-plus"></i> Positive
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <!-- NEUTRAL -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-neutral mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Bold</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-warning" style="font-size:small;">
+                                                        <i class="fa-solid fa-o"></i> Neutral
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- NEUTRAL -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-neutral mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Stoic</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-warning" style="font-size:small;">
+                                                        <i class="fa-solid fa-o"></i> Neutral
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- NEGATIVE -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-negative mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Irresponsible</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-danger" style="font-size:small;">
+                                                        <i class="fa-solid fa-minus"></i> Negative
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- NEGATIVE -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-negative mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Lazy</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-danger" style="font-size:small;">
+                                                        <i class="fa-solid fa-minus"></i> Negative
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- NEGATIVE -->
+                                        <div class="d-flex flex-wrap align-items-start text-center col-12 p-2 profile-card trait-negative mx-auto my-2">
+                                            <div class="col-xl-2 col-sm-3 col-12">
+                                                <div class="profile-info-title mt-1 col-12">Trait</div>
+                                                <div class="col-12 pt-1 px-2" style="font-size:large;">
+                                                    <div>Awkward</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="vr mx-3 d-sm-inline d-none"></div>
+                                            <hr class="col-12 my-3 d-sm-none d-block">
+
+                                            <div class="col text-sm-start text-center px-1">
+                                                <div class="d-flex flex-wrap align-items-start justify-content-between">
+                                                    <div><span class="profile-info-title">Description</span></div>
+                                                    <span class="text-danger" style="font-size:small;">
+                                                        <i class="fa-solid fa-minus"></i> Negative
+                                                    </span>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+                                                <p class="mb-1">...</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- HISTORY -->
+                                <div id="profile-history">
+                                    <!-- SECTION -->
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#history-container"></a>
+                                            History
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="history-container">
+                                        <div class="d-flex flex-wrap align-items-center text-center col-12 p-2 profile-card mx-auto mt-2 mb-4">
+                                            <!-- ALIAS -->
+                                            <div class="col-12">
+                                                <p class="profile-info-title">Place of Origin</p>
+                                                <span>Onekama, Spiral Archipelago</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="collapse show mb-2" id="backstory-cw">
+                                            <div class="content-warning-container p-3">
+                                                <div class="d-flex flex-wrap">
+                                                    <h5 class="col">Content Warning <i class="fas fa-warning"></i></h5>
+                                                    <div class="col-auto mb-2"><button type="button" class="btn-close" data-bs-toggle="collapse" href="#backstory-cw"></button></div>
+                                                </div>
+                                                <hr class="profile-info-divider my-2">
+
+                                                <div class="px-md-2">
+                                                    <p class="mb-2">This backstory features potentially upsetting topics such as:</p>
+
+                                                    <ul class="fa-ul ms-md-4 ms-2">
+                                                        <li class="mb-1"><i class="fa-solid fa-angle-right"></i> Mentions of familial death</li>
+                                                        <li class="mb-1"><i class="fa-solid fa-angle-right"></i> Neglect</li>
+                                                        <li class="mb-1"><i class="fa-solid fa-angle-right"></i> Physical violence, mentions of bullying</li>
+                                                        <li class="mb-1"><i class="fa-solid fa-angle-right"></i> Mentions of domestic abuse</li>
+                                                    </ul>
+                                                </div>
+
+                                                <hr class="profile-info-divider my-2">
+
+                                                <div class="text-center">
+                                                    <button class="btn-cw collapsed" data-bs-toggle="collapse" href="#backstory-contents">Show content</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="collapse mt-4" id="backstory-contents">
+                                            <!-- SECTION -->
+                                            <div class="d-flex align-items-center col-md-auto p-0 my-4">
+                                                <hr class="section-divider" style="width:50px;">
+                                                <div class="section-header col-auto mx-2">
+                                                    <span class="fa-xs star-collapse-link"></span>
+                                                    Summary
+                                                </div>
+                                                <hr class="section-divider col">
+                                            </div>
+
+                                            <div class="px-3">
+                                                <ul class="fa-ul ms-md-4 ms-2 mb-2">
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Masaru was orphaned at a young age. Though he lived in an orphanage, he was often neglected to a point that he was able to wander off of the premises to explored the town on his own.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> He was largely listless and unsure of what to do with himself until he met a boy named <span class="fw-bold text-highlight">Ulan</span> one fateful day.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Ulan had been getting bullied by other students of his school. Seeing this, Masaru stood up for the boy and encouraged him to defend himself.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> After emerging victorious against the bullies, Ulan quickly befriended Masaru and the two became close friends.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Over the years, Masaru grew into an intimidating figure. The local mob approached him to offer him work as a bodyguard or as a debt collector, although he was easily distracted and so they did not often employ him.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> As Ulan's uncle owed the mob large sums of money and Ulan detested his uncle, he eventually came up with an idea for him and Masaru to "trap" the man and leave him to his fate.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> The pair stole money set aside for the debt collectors and beat the man bloody when he attempted to fight them over the matter.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> They left Onekama shortly after and traveled the surrounding islands before deciding to go to Ethovalon to join the GCSF.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> In Ethovalon, they were arrested for property damage almost immediately and offered a chance to serve their sentence as part of the guild.</li>
+                                                    <li class="my-2"><i class="fa-solid fa-angle-right opacity-50"></i> Under these circumstances, they were assigned to the team <span class="fw-bold text-highlight">Four Seasons</span> and told to keep their antics to a minimum.</li>
+
+                                                </ul>
+
+                                            </div>
+
+                                            <!-- SECTION -->
+                                            <div class="d-flex align-items-center col-md-auto p-0 my-4">
+                                                <hr class="section-divider" style="width:50px;">
+                                                <div class="section-header col-auto mx-2">
+                                                    <span class="fa-xs star-collapse-link"></span>
+                                                    Backstory
+                                                </div>
+                                                <hr class="section-divider col">
+                                            </div>
+
+                                            <div class="px-3">
+                                                <div style="text-indent: 2.5em;">
+                                                    <p>Masaru was orphaned at a young age due to a house fire that claimed the lives of both his parents. Though he lived at an orphanage for a time, he was often neglected by those in charge of the establishment and so he would roam the town of Onekama unsupervised. He became somewhat of a thief -- albeit often unintentionally -- as he would take food and trinkets off of carts and stalls he passed by. Among the items he stole were books both written and illustrated that would catch his eye and although most vendors treated him harshly, there were a few who were willing to let him peruse their goods and borrow them.</p>
+
+                                                    <p>For the most part, he was listless and often didn't know what to do with himself. At some point, he no longer returned to the orphanage as he realized there was no point in returning to a place where nobody cared that he was missing.</p>
+                                                </div>
+
+                                                <div class="collapse history-more" style="text-indent: 2.5em;">
+                                                    <p>One day while he was reading on the playground of a local school, an student was pushed into him, causing them both to fall to the ground. The student was being bullied by his peers and seemed hesitant to defend himself. Seeing this, Masaru acted on his instincts and stood up for the boy himself. Though Masaru didn't realize at the time, his actions allowed for the boy to fight back against the aggressors. Together, Masaru and the boy fought and won against the bullies; an act that resulted in the boy's suspension from school due to the violent nature of their actions. Later, the boy introduced himself as <span class="text-highlight fw-bold">Ulan</span> and he invited Masaru to spend more time with him.</p>
+
+                                                    <p>In the ensuing months, Masaru and Ulan grew extremely close. Ulan was very outspoken once he had been given the means to come out of his shell, and so Masaru was happy to follow his lead wherever he went, having finally found something for himself to do. Though they spent much of their time together in their teenage years, it was only once Ulan opened up to Masaru about his own tumultuous home life that Masaru revealed to Ulan that he was essentially homeless himself. From then on, the boys became nigh inseparable.</p>
+
+                                                    <p>As the years went on, Ulan became more and more irritable and hateful towards his abusive uncle. As Masaru would do whatever Ulan asked of him, Masaru agreed right away when Ulan hatched a plan to "trap" his uncle and leave him to the mercy of the loan sharks he owed money to. While Masaru was on his own, he was hired on by the local mob at times to be a bodyguard and even a debt collector himself due to his intimidating appearance. Alone, however, he was not very effective at his job and so the mob did not make a habit of employing him often.</p>
+
+                                                    <p>After Ulan had moved his mother and sister out of the town, he and Masaru stole a large sum of money that Ulan's uncle had been saving to give to the debt collectors. On the night that the money was due, Ulan's uncle confronted the pair and was promptly beaten down brutally before being left to his fate.</p>
+
+                                                    Masaru and Ulan left Onekama together and never looked back. For a time, the two traveled to surrounding islands and took on odd-jobs to fund their lifestyle. At some point however, Ulan had caught wind of how lucrative adventuring as a career could be and proposed that the two of them travel to the nearest adventurers guild to enlist with them. Thus, the pair traveled to Ethovalon with the intent to join the <span class="text-highlight fw-bold">Global Communications Setup Foundation</span>.
+
+                                                    <p>Upon arriving however, Masaru had immediately gotten into trouble by causing a fire in the marketplace whilst arguing with a local (with Ulan not doing much to improve the situation either). The two were promptly arrested and offered the chance to work off their sentence with the GCSF, an opportunity that Ulan jumped to accept for the both of them.</p>
+
+                                                    <p>Though Masaru still lacks much ambition of his own, he was happy to follow Ulan in joining the guild and becoming a member of <span class="text-highlight fw-bold">Team Four Seasons</span>.</p>
+                                                </div>
+                                            </div>
+
+                                            <p class="text-center mb-0">
+                                                <a data-bs-toggle="collapse" data-bs-target=".history-more" class="profile-text-toggler">
+                                                    <span class="collapse fade show active history-more" style="transition-duration: 0s;">Show more</span>
+                                                    <span class="collapse fade history-more" style="transition-duration: 0s;">Show less</span>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade p-0" id="logs">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 pe-lg-2 d-lg-block d-none">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-2 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#logs-levels"><i class="fa-solid fa-angles-right"></i> Levels</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container active">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <div id="logs-levels">
+                                    <!-- SECTION -->
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#levels-container"></a>
+                                            Levels
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="levels-container">
+                                        <div class="table-wrapper my-2">
+                                            <table class="table table-default table-striped text-center mb-0">
+                                                <thead class="table-default-head">
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Title</th>
+                                                        <th>Activity</th>
+                                                        <th>Dungeon</th>
+                                                        <th>Gained</th>
+                                                        <th>Bonus</th>
+                                                        <th>Levels</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody id="level-logs-body">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade p-0" id="design">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 pe-lg-2 d-lg-block d-none">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-2 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#design-humanoid"><i class="fa-solid fa-angles-right"></i> Humanoid Form</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#design-feral"><i class="fa-solid fa-angles-right"></i> Feral Form</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container active">
+                        <div class="page-body p-3">
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- DESIGN -->
+                                <div id="design-humanoid">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#design-humanoid-container"></a>
+                                            Humanoid Form
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="design-humanoid-container">
+                                        <div class="d-flex flex-wrap align-items-start">
+
+                                            <div class="text-center col-lg-5 col-md-5 col-12 mx-auto my-auto p-0 d-flex flex-column align-items-center">
+                                                <div class="col-12 p-2 profile-card mx-auto mb-3">
+                                                    <!-- VARIANT -->
+                                                    <p class="profile-info-title">Variant</p>
+                                                    <span>Fiendish</span>
+
+                                                    <hr class="profile-info-divider my-2">
+
+                                                    <!-- MOD PACKS -->
+                                                    <p class="profile-info-title">Accessory Packs</p>
+                                                    <span>Modern Accessory Pack</span>
+                                                </div>
+
+                                                <div class="col-12 d-flex flex-wrap align-items-center p-2 profile-card mx-auto mb-3">
+                                                    <!-- HEIGHT -->
+                                                    <div class="col-4">
+                                                        <p class="profile-info-title">Height</p>
+                                                        <span>6'3"</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- WEIGHT -->
+                                                    <div class="col-4">
+                                                        <p class="profile-info-title">Weight</p>
+                                                        <span>225 lbs</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- BUILD -->
+                                                    <div class="col-4">
+                                                        <p class="profile-info-title">Build</p>
+                                                        <span>Muscular</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- DESIGNER -->
+                                                    <div class="col-md-6 col-12">
+                                                        <p class="profile-info-title">Designer</p>
+                                                        <span>dragon-heist</span>
+                                                        <hr class="profile-info-divider my-2 d-md-none d-block">
+                                                    </div>
+
+                                                    <!-- ARTIST -->
+                                                    <div class="col-md-6 col-12">
+                                                        <p class="profile-info-title">Artist <span class="opacity-50 text-white" data-bs-toggle="tooltip" data-bs-title="Lines"><i class="fa-solid fa-info-circle fa-sm"></i></span></p>
+                                                        <span><a href="https://toyhou.se/872dragons">872dragons</a></span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- DESIGN NOTES -->
+                                                <div class="col-12 profile-card p-2">
+                                                    <p class="profile-info-title">Design Notes</p>
+
+                                                    <div class="profile-scrollbox text-start pe-3 py-2" style="height:230px;">
+                                                        <ul class="fa-ul ms-2">
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <a class="profile-inline-img d-block col-lg-5 col-md-4 col-sm-9 col-12 mt-md-0 mt-3" href="../../images/character-refs/masaru-gijinka-v1.webp" data-lightbox="Gijinka Design Reference" data-title="@872dragons (lines) / @dragon-heist (colours)" style="background-image:url('../../images/character-refs/masaru-gijinka-v1.webp')" data-form="humanoid"></a>
+
+                                            <div class="col-lg-2 col-md-3 col ps-md-3 my-3 palette-container">
+
+                                                <div class="profile-info-title px-3">Hair</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg, #A32B0F 15%, #3B1010 65%, #3B1010 80%, #2A1717 80%);"></div>
+
+                                                <div class="profile-info-title px-3">Eyes</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg, #190A0B 40%, #F65218 40%, #F65218 80%, #FECD4A 80%);"></div>
+
+                                                <div class="profile-info-title px-3">Skin</div>
+                                                <div class="design-swatch mb-1 d-none" style="background:linear-gradient(90deg, #712D31 40%, #110A12 40%, #110A12 70%, #A32E13 70%);"></div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg, #AC6C59 25%, #712D31 25%, #712D31 50%, #110A12 50%, #110A12 75%, #A32E13 75%);"></div>
+
+                                                <div class="profile-info-title px-3">Horns / Claws</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg, #96240C 20%, #2F0C19 80%);"></div>
+
+                                                <div class="profile-info-title px-3">Ears / Wings</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,#421213 50%, #B63F1B 50%);"></div>
+
+                                                <div class="profile-info-title px-3">Tail</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,#421213 20%, #130A12 80%);"></div>
+
+                                                <div class="profile-info-title px-3">Clothes</div>
+                                                <div class="design-swatch mb-1" style="background:linear-gradient(90deg,#B26650 20%, #36222B 20%, #36222B 40%, #F2B55F 40%, #F2B55F 60%, #428584 60%, #428584 80%, #A67F69 80%);"></div>
+
+                                                <div class="profile-info-title px-3">Gloves</div>
+                                                <div class="design-swatch mb-1" style="background:#110A11;"></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- DESIGN -->
+                                <div id="design-feral">
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#design-feral-container"></a>
+                                            Feral Form
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="design-feral-container">
+                                        <div class="d-flex flex-wrap align-items-center">
+
+                                            <div class="col-lg-2 col-md-3 col pe-md-3 mt-3 palette-container-start">
+
+                                                <div class="profile-info-title px-3">Fur</div>
+                                                <div class="design-swatch-start mb-1" style="background:#986152;"></div>
+
+                                                <div class="profile-info-title px-3">Eyes</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,rgba(92, 64, 72, 1) 0%, rgba(92, 64, 72, 1) 50%, rgba(211, 150, 111, 1) 50%, rgba(211, 150, 111, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Cotton</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,rgba(38, 34, 31, 1) 0%, rgba(38, 34, 31, 1) 25%, rgba(175, 136, 106, 1) 25%, rgba(175, 136, 106, 1) 50%, rgba(128, 88, 87, 1) 50%, rgba(128, 88, 87, 1) 75%, rgba(204, 185, 171, 1) 75%, rgba(204, 185, 171, 1) 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Accessories</div>
+                                                <div class="design-swatch-start mb-1" style="background:linear-gradient(90deg,#d7ac72 0%, #d7ac72 50%, #A59176 50%, #A59176 100%);"></div>
+
+                                                <div class="profile-info-title px-3">Ear / Paws</div>
+                                                <div class="design-swatch-start mb-1" style="background:#C07168;"></div>
+
+                                            </div>
+
+                                            <a class="profile-inline-img d-block col-lg-5 col-md-4 col-sm-8 col-12 mt-md-0" href="../../images/character-refs/augurys-buneary.webp" data-lightbox="Feral Design Reference" data-title="@dragon-heist" style="background-image:url('../../images/character-refs/augurys-buneary.webp')" data-form="feral"></a>
+
+                                            <div class="text-center col-lg-5 col-md-5 col-12 mx-auto my-auto p-0 d-flex flex-column align-items-center">
+                                                <div class="col-12 p-2 profile-card mx-auto mb-3">
+                                                    <!-- MOD PACKS -->
+                                                    <p class="profile-info-title">Mod Packs</p>
+                                                    <span>--</span>
+                                                </div>
+
+                                                <div class="col-12 d-flex flex-wrap align-items-center p-2 profile-card mx-auto mb-3">
+                                                    <!-- HEIGHT -->
+                                                    <div class="col-6">
+                                                        <p class="profile-info-title">Height</p>
+                                                        <span>3'02"</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- WEIGHT -->
+                                                    <div class="col-6">
+                                                        <p class="profile-info-title">Weight</p>
+                                                        <span>59 lbs</span>
+                                                        <hr class="profile-info-divider my-2">
+                                                    </div>
+
+                                                    <!-- DESIGNER -->
+                                                    <div class="col-md-6 col-12">
+                                                        <p class="profile-info-title">Designer</p>
+                                                        <span>dragon-heist</span>
+                                                        <hr class="profile-info-divider my-2 d-md-none d-inline">
+                                                    </div>
+
+                                                    <!-- ARTIST -->
+                                                    <div class="col-md-6 col-12">
+                                                        <p class="profile-info-title">Artist</p>
+                                                        <span>dragon-heist</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- DESIGN NOTES -->
+                                                <div class="col-12 profile-card p-2">
+                                                    <p class="profile-info-title">Design Notes</p>
+
+                                                    <div class="profile-scrollbox text-start pe-3 py-2" style="height:180px;">
+                                                        <ul class="fa-ul ms-2">
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                            <li><i class="fa-solid fa-angle-right"></i> ...</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade p-0" id="gallery">
+                <div class="page-container d-flex flex-wrap">
+
+                    <div class="col-lg-2 pe-lg-2 d-lg-block d-none">
+                        <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                            <div class="ms-2 me-n3">
+                                <div class="col-12 p-md-2 p-0">
+                                    <div class="page-sidebar-tab">
+                                        <a href="#gallery-personal"><i class="fa-solid fa-angles-right"></i> Personal Work</a>
+                                    </div>
+                                    <div class="page-sidebar-tab">
+                                        <a href="#gallery-others"><i class="fa-solid fa-angles-right"></i> By Others</a>
+                                    </div>
+                                    <div class="page-sidebar-tab">
+                                        <a href="#gallery-dungeons"><i class="fa-solid fa-angles-right"></i> Dungeons</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#gallery-tasks"><i class="fa-solid fa-angles-right"></i> Tasks</a>
+                                    </div>
+
+                                    <div class="page-sidebar-tab">
+                                        <a href="#gallery-daily"><i class="fa-solid fa-angles-right"></i> Daily Life</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-12 profile-body-container active">
+                        <div class="page-body p-3">
+
+                            <!-- <div class="">
+                                <button class="filter-btn mx-3" data-param="collab" data-active='true'>Collab</button>
+                                <button class="filter-btn mx-3" data-param="solo" data-active='true'>Solo</button>
+                            </div> -->
+
+                            <div class="col-12 p-md-2 p-0">
+
+                                <!-- PERSONAL -->
+                                <div id="gallery-personal">
+
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-personal-container"></a>
+                                            Personal Work
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-personal-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-personal-list"></ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- OTHERS -->
+                                <div id="gallery-others">
+
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-others-container"></a>
+                                            By Others
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-others-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-others-list"></ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- DUNGEONS -->
+                                <div id="gallery-dungeons">
+
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-dungeons-container"></a>
+                                            Dungeons
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-dungeons-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-dungeons-list"></ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- TASKS -->
+                                <div id="gallery-tasks">
+
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-tasks-container"></a>
+                                            Tasks
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-tasks-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12">
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- DAILY LIFE -->
+                                <div id="gallery-daily">
+
+                                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                        <hr class="section-divider" style="width:25px;">
+                                        <div class="fancy-section-header col-auto mx-2">
+                                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#gallery-daily-container"></a>
+                                            Daily Life
+                                        </div>
+                                        <hr class="section-divider col">
+                                    </div>
+
+                                    <div class="collapse show active" id="gallery-daily-container">
+                                        <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="page-footer" id="footer">
+            <div class="footer-content"></div>
+        </div>
+
+    </div>
+
+    <!-- VISUAL APPLICATION -->
+    <div class="modal fade modal-lg app-modal" id="app-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content app-modal-container p-2">
+                <p class="text-end mb-2"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></p>
+
+                <div class="p-3 bts-visual-app">
+
+                    <!-- Team Name & Branch -->
+                    <div class="mt-1 row no-gutters flex-wrap justify-content-center text-center">
+                        
+                        <div class="col-lg-7 col-12">
+                            <div class="p-lg-3 p-2 app-title app-box mb-lg-0 mb-3">
+                                <div class="app-label d-sm-block d-none">Team Name</div>
+
+                                <!-- Team Name -->
+                                Four Seasons
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-5 col-12">
+                            <div class="p-lg-3 p-2 app-title app-box">
+                                <div class="app-label d-sm-block d-none">Branch</div>
+
+                                <!-- Branch -->
+                                Wayfarers
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- Team Name & Branch (end) -->
+                    
+                    <div class="my-1 row no-gutters flex-wrap justify-content-center">
+                        
+                        <!-- Gijinka Image Box -->
+                        <div class="col-lg-7 pl-lg-1 pr-lg-3 text-center">
+                            
+                            <div class="p-2 app-box h-100 mb-0">
+
+                                <div class="app-label d-sm-block d-none">Humanoid Form</div>
+
+                                <!-- Artist Credit -->
+                                <div class="app-credit" data-bs-toggle="tooltip" data-bs-title="Lines">
+                                    <a href="https://toyhou.se/872dragons">872dragons</a>
+                                </div>
+                                
+                                <!-- Gijinka/Humanoid Image URL -->
+                                <img src="../../images/character-refs/masaru-gijinka-v1.webp" class="m-auto w-100 app-image">
+                                
+                            </div>
+                            
+                        </div>
+                        <!-- Gijinka Image Box (end) -->
+                        
+                        <!-- Info & Feral Image Box -->
+                        <div class="col-lg-5 mt-lg-0 mt-3 pr-lg-1 pl-lg-3 d-flex flex-wrap text-center">
+                            
+                            <!-- Character Name -->
+                            <div class="col-12 app-subtitle app-box">
+                                <div class="app-label d-sm-block d-none">Name</div>
+                                Masaru
+                            </div>
+                            
+                            <!-- Age & Gender -->
+                            <div class="col-12 app-subtitle app-box">
+                                <div class="app-label d-sm-block d-none">Age & Gender</div>
+                                24
+                                <div class="vr mx-3 h-50 my-auto bg-dark" style="width:3px"></div>
+                                Male
+                            </div>
+                
+                            <!-- Species -->
+                            <div class="col-12 app-subtitle app-box">
+                                <div class="app-label d-sm-block d-none">Species</div>
+                                Fiendish Flareon
+                            </div>
+                            
+                            <!-- Nature -->
+                            <div class="col-12 app-subtitle app-box">
+                                <div class="app-label d-sm-block d-none">Nature</div>
+                                Lax
+                            </div>
+                            
+                            <!-- Feral Image URL -->
+                            <div class="col-12 px-2 pt-3 app-box mb-0">
+                                <div class="app-label d-sm-block d-none">Feral Form</div>
+                                
+                                <img src="../../images/character-refs/augurys-buneary.webp" class="mt-sm-0 mt-3 mx-auto mb-2 w-100 app-image" style="max-width:400px;">
+                                
+                                <!-- Artist Credit -->
+                                <div class="app-credit">
+                                    dragon-heist
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Info & Feral Image Box (end) -->
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

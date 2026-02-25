@@ -82,6 +82,12 @@ utils.init = {
             sub = utils.parse.scrubKeys(sub);
         });
     },
+
+    createSubmissionData(submissions) {
+        submissions.forEach((sub) => {
+            if (!sub.dungeon) sub.dungeon = '';
+        });
+    },
 }
 
 utils.parse = {

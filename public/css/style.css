@@ -84,6 +84,27 @@ h1 {
   font-size: 3rem;
 }
 
+.highlight {
+  background: var(--navtab-bg-color);
+}
+
+blockquote {
+  padding: 1em;
+  font-size: 1.15em;
+  background: var(--body-card-bg-color);
+  text-align: center;
+}
+
+p.blockquote-cite {
+  text-align: right;
+  margin-bottom: 0;
+  margin-top: 1.2em;
+}
+
+p.blockquote-cite::before {
+  content: '⸺ ';
+}
+
 a, .profile-text-toggler {
   color: var(--info-link-hover);
   text-decoration: none;
@@ -657,6 +678,10 @@ a.star-collapse-link.collapsed:hover {
   font-size: 1.2rem;
 }
 
+.gallery {
+  overflow: hidden;
+}
+
 /******************************************************/
 
 .app-modal-container {
@@ -698,6 +723,8 @@ a.star-collapse-link.collapsed:hover {
   position: relative;
   border-radius: var(--default-border-radius);
   margin-bottom: 1rem;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
 }
 
 .bts-visual-app .app-image {

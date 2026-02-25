@@ -14,6 +14,10 @@ config.footer = {
             title: 'Credits',
             link: 'credits.html',
         },
+        {
+            title: 'Links',
+            link: 'links.html',
+        },
     ]
 };
 
@@ -25,6 +29,10 @@ config.pages = {
     credits: {
         root: './',
         title: 'Credits'
+    },
+    links: {
+        root: './',
+        title: 'Links'
     },
     characters : {
         root: './',
@@ -49,17 +57,25 @@ config.pages = {
                 title: 'Benoit',
                 link: 'beyond-the-sea/benoit.html',
             },
-            Glory: {
-                title: 'Glory',
-                link: 'beyond-the-sea/glory.html',
-            },
             Estys: {
                 title: 'Estys',
                 link: ''
             },
+            Glory: {
+                title: 'Glory',
+                link: 'beyond-the-sea/glory.html',
+            },
+            Masaru: {
+                title: 'Masaru',
+                link: 'beyond-the-sea/masaru.html',
+            },
             Polly: {
                 title: 'Polly',
                 link: 'beyond-the-sea/polly.html',
+            },
+            Ulan: {
+                title: 'Ulán',
+                link: 'beyond-the-sea/ulan.html',
             },
             Zane: {
                 title: 'Zane',
