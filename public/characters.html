@@ -50,306 +50,334 @@
             }
         };
 
-        const directoryValues = [
-            /*
-            {
-                name: '',
-                pronouns: '',
-                icon: '',
-                link: '#',
-                tagtext: '',
-                tagcolor: '',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'published'
-            },
-            */
-            {
-                name: 'Grit',
-                pronouns: 'he/him',
-                icon: 'grit.webp',
-                link: '#',
-                tagtext: '#fffaf8',
-                tagcolor: '#932727',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Hoshikiri',
-                pronouns: 'he/any',
-                icon: 'hoshikiri.webp',
-                link: '#',
-                tagtext: '#1f2d44',
-                tagcolor: '#a0bedd',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Tula',
-                pronouns: 'they/them',
-                icon: 'tula.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#9b7777',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Gwisin',
-                pronouns: 'he/any',
-                icon: 'gwisin-bts.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#736b6c',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Glory',
-                pronouns: 'he/him',
-                icon: 'placeholder.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#ae642d',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Estys',
-                pronouns: 'he/she/they',
-                icon: 'estys.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#854aa6',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Lester',
-                pronouns: 'he/him',
-                icon: 'lester.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#a83232',
-                tags: 'allworlds pmdbts enochian pokemon arpg fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Zane',
-                pronouns: 'he/they',
-                icon: 'zane-bts-orange.webp',
-                link: 'beyond-the-sea/zane.html',
-                tagtext: '#fff',
-                tagcolor: '#2e8080',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'published'
-            },
-            {
-                name: 'Valor',
-                pronouns: 'she/they',
-                icon: 'valor.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#993232',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Sídhe',
-                pronouns: 'he/they/it',
-                icon: 'placeholder.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#42826a',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Quasaria',
-                pronouns: 'he/him',
-                icon: 'quasaria.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#161335',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Pandemon',
-                pronouns: 'they/it',
-                icon: 'pandemon.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#41b9b9',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Titania',
-                pronouns: 'they/she',
-                icon: 'titania.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#279f7e',
-                tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
+        const directoryValues = {
+            enochian: [
+                /*
+                {
+                    name: '',
+                    pronouns: '',
+                    icon: '',
+                    link: '#',
+                    tagtext: '',
+                    tagcolor: '',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'published'
+                },
+                */
+                {
+                    name: 'Grit',
+                    pronouns: 'he/him',
+                    icon: 'grit.webp',
+                    link: '#',
+                    tagtext: '#fffaf8',
+                    tagcolor: '#932727',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Hoshikiri',
+                    pronouns: 'he/any',
+                    icon: 'hoshikiri.webp',
+                    link: '#',
+                    tagtext: '#1f2d44',
+                    tagcolor: '#a0bedd',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Tula',
+                    pronouns: 'they/them',
+                    icon: 'tula.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#9b7777',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Gwisin',
+                    pronouns: 'he/any',
+                    icon: 'gwisin-bts.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#736b6c',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Glory',
+                    pronouns: 'he/him',
+                    icon: 'placeholder.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#ae642d',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Estys',
+                    pronouns: 'he/she/they',
+                    icon: 'estys.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#854aa6',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Lester',
+                    pronouns: 'he/him',
+                    icon: 'lester.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#a83232',
+                    tags: 'allworlds pmdbts enochian pokemon arpg fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Zane',
+                    pronouns: 'he/they',
+                    icon: 'zane-bts-orange.webp',
+                    link: 'beyond-the-sea/zane.html',
+                    tagtext: '#fff',
+                    tagcolor: '#2e8080',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'published'
+                },
+                {
+                    name: 'Valor',
+                    pronouns: 'she/they',
+                    icon: 'valor.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#993232',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Sídhe',
+                    pronouns: 'he/they/it',
+                    icon: 'placeholder.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#42826a',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Quasaria',
+                    pronouns: 'he/him',
+                    icon: 'quasaria.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#161335',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Pandemon',
+                    pronouns: 'they/it',
+                    icon: 'pandemon.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#41b9b9',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Titania',
+                    pronouns: 'they/she',
+                    icon: 'titania.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#279f7e',
+                    tags: 'allworlds pmdbts enochian pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+            ],
 
-            // SYZYGY ----------------------------------------------------
-            {
-                name: 'Theo',
-                pronouns: 'he/they',
-                icon: 'theo.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#932f2f',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Ambrosius',
-                pronouns: 'he/any',
-                icon: 'ambrosius.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#3451a8',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Hawke',
-                pronouns: 'he/him',
-                icon: 'hawke.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#0b6693',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Ana',
-                pronouns: 'he/they',
-                icon: 'ana.webp',
-                link: 'beyond-the-sea/ana.html',
-                tagtext: '#fff',
-                tagcolor: '#ae593e',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'published'
-            },
-            {
-                name: 'Fray',
-                pronouns: 'they/he',
-                icon: 'fray.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#644c4c',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Augurys',
-                pronouns: 'they/them',
-                icon: 'augurys-bts.webp',
-                link: 'beyond-the-sea/augurys.html',
-                tagtext: '#fff',
-                tagcolor: '#a66f35',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'published'
-            },
-            {
-                name: 'Oberon',
-                pronouns: 'he/they',
-                icon: 'oberon.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#419d7b',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Fortuna',
-                pronouns: 'they/them',
-                icon: 'fortuna.webp',
-                link: '#',
-                tagtext: '#482111',
-                tagcolor: '#ffd077',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Fantaseia',
-                pronouns: 'she/he/they',
-                icon: 'fantaseia.webp',
-                link: '#',
-                tagtext: '#4a1b19',
-                tagcolor: '#d3a2fb',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Ikelos',
-                pronouns: 'he/she/they',
-                icon: 'ikelos.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#774e4e',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Eros',
-                pronouns: 'he/him',
-                icon: 'eros.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#d04e60',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Benoit',
-                pronouns: 'he/him',
-                icon: 'benoit.webp',
-                link: 'beyond-the-sea/benoit.html',
-                tagtext: '#fff',
-                tagcolor: '#d04f4f',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'published'
-            },
-            {
-                name: 'Makoto',
-                pronouns: 'he/they',
-                icon: 'makoto.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#3b93bd',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            {
-                name: 'Bug',
-                pronouns: 'they/any',
-                icon: 'bug.webp',
-                link: '#',
-                tagtext: '#fff',
-                tagcolor: '#67a7ce',
-                tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
-                published: 'unpublished'
-            },
-            
-            // FOUR SEASONS ----------------------------------------------------
-            {
-                name: 'Polly',
-                pronouns: 'he/they/she',
-                icon: 'placeholder.webp',
-                link: 'beyond-the-sea/polly.html',
-                tagtext: '#fff',
-                tagcolor: '#932f2f',
-                tags: 'allworlds pmdbts fourseasons pokemon arpg fandom ',
-                published: 'published'
-            },
-        ];
+            syzygy: [
+                {
+                    name: 'Theo',
+                    pronouns: 'he/they',
+                    icon: 'theo.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#932f2f',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Ambrosius',
+                    pronouns: 'he/any',
+                    icon: 'ambrosius.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#3451a8',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Hawke',
+                    pronouns: 'he/him',
+                    icon: 'hawke-dnd.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#0b6693',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Ana',
+                    pronouns: 'he/they',
+                    icon: 'ana.webp',
+                    link: 'beyond-the-sea/ana.html',
+                    tagtext: '#fff',
+                    tagcolor: '#ae593e',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'published'
+                },
+                {
+                    name: 'Fray',
+                    pronouns: 'they/he',
+                    icon: 'fray.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#644c4c',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Augurys',
+                    pronouns: 'they/them',
+                    icon: 'augurys-bts.webp',
+                    link: 'beyond-the-sea/augurys.html',
+                    tagtext: '#fff',
+                    tagcolor: '#a66f35',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'published'
+                },
+                {
+                    name: 'Oberon',
+                    pronouns: 'he/they',
+                    icon: 'oberon.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#419d7b',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Fortuna',
+                    pronouns: 'they/them',
+                    icon: 'fortuna.webp',
+                    link: '#',
+                    tagtext: '#482111',
+                    tagcolor: '#ffd077',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Fantaseia',
+                    pronouns: 'she/he/they',
+                    icon: 'fantaseia.webp',
+                    link: '#',
+                    tagtext: '#4a1b19',
+                    tagcolor: '#d3a2fb',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Ikelos',
+                    pronouns: 'he/she/they',
+                    icon: 'ikelos.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#774e4e',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Eros',
+                    pronouns: 'he/him',
+                    icon: 'eros.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#d04e60',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Benoit',
+                    pronouns: 'he/him',
+                    icon: 'benoit.webp',
+                    link: 'beyond-the-sea/benoit.html',
+                    tagtext: '#fff',
+                    tagcolor: '#d04f4f',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'published'
+                },
+                {
+                    name: 'Makoto',
+                    pronouns: 'he/they',
+                    icon: 'makoto.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#3b93bd',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+                {
+                    name: 'Bug',
+                    pronouns: 'they/any',
+                    icon: 'bug.webp',
+                    link: '#',
+                    tagtext: '#fff',
+                    tagcolor: '#67a7ce',
+                    tags: 'allworlds pmdbts syzygy pokemon arpg au fandom ',
+                    published: 'unpublished'
+                },
+            ],
 
-        let directoryList = new List('directory-characters', directoryOptions, directoryValues);
+            fourseasons: [
+                {
+                    name: 'Polly',
+                    pronouns: 'he/they/she',
+                    icon: 'placeholder.webp',
+                    link: 'beyond-the-sea/polly.html',
+                    tagtext: '#fff',
+                    tagcolor: '#932f2f',
+                    tags: 'allworlds pmdbts fourseasons pokemon arpg fandom ',
+                    published: 'published'
+                },
+
+                {
+                    name: 'Ulán',
+                    pronouns: 'he/him',
+                    icon: 'placeholder.webp',
+                    link: 'beyond-the-sea/ulan.html',
+                    tagtext: '#fff',
+                    tagcolor: '#2d6b84',
+                    tags: 'allworlds pmdbts fourseasons pokemon arpg fandom ',
+                    published: 'unpublished'
+                },
+
+                {
+                    name: 'Masaru',
+                    pronouns: 'he/him',
+                    icon: 'placeholder.webp',
+                    link: 'beyond-the-sea/masaru.html',
+                    tagtext: '#fff',
+                    tagcolor: '#822424',
+                    tags: 'allworlds pmdbts fourseasons pokemon arpg fandom ',
+                    published: 'unpublished'
+                },
+            ]
+        }
+
+        let enochianList = new List('enochian-characters', directoryOptions, directoryValues.enochian);
+        let syzygyList = new List('syzygy-characters', directoryOptions, directoryValues.syzygy);
+        let fourseasonsList = new List('fourseasons-characters', directoryOptions, directoryValues.fourseasons);
 
     </script>
 
@@ -379,8 +407,9 @@
                     <div class="sidebar-subheader"><i class="fa-solid fa-folder-open"></i> PMD Beyond the Sea</div>
 
                     <ul class="fa-ul">
-                        <li><i class="fa-solid fa-arrow-turn-up fa-rotate-90"></i> Enochian</li>
-                        <li><i class="fa-solid fa-arrow-turn-up fa-rotate-90"></i> Syzygy</li>
+                        <li><a href="#top"><i class="fa-solid fa-arrow-turn-up fa-rotate-90"></i> Enochian</a></li>
+                        <li><a href="#syzygy-characters"><i class="fa-solid fa-arrow-turn-up fa-rotate-90"></i> Syzygy</a></li>
+                        <li><a href="#fourseasons-characters"><i class="fa-solid fa-arrow-turn-up fa-rotate-90"></i> Four Seasons</a></li>
                     </ul>
 
                 </div>
@@ -389,9 +418,46 @@
             <div class="col-lg-9 col-12">
                 <div class="page-body p-3">
 
-                    <div class="" id="directory-characters">
-                        <ul class="list d-flex flex-wrap col-12 p-0">
-                        </ul>
+                    <!-- ENOCHIAN -->
+                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                        <hr class="section-divider" style="width:25px;">
+                        <div class="fancy-section-header col-auto mx-2">
+                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#enochian-characters"></a>
+                            Enochian
+                        </div>
+                        <hr class="section-divider col">
+                    </div>
+
+                    <div class="collapse show active" id="enochian-characters">
+                        <ul class="list d-flex flex-wrap col-12 p-0"></ul>
+                    </div>
+
+                    <!-- SYZYGY -->
+                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                        <hr class="section-divider" style="width:25px;">
+                        <div class="fancy-section-header col-auto mx-2">
+                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#syzygy-characters"></a>
+                            Syzygy
+                        </div>
+                        <hr class="section-divider col">
+                    </div>
+
+                    <div class="collapse show active" id="syzygy-characters">
+                        <ul class="list d-flex flex-wrap col-12 p-0"></ul>
+                    </div>
+
+                    <!-- FOUR SEASONS -->
+                    <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                        <hr class="section-divider" style="width:25px;">
+                        <div class="fancy-section-header col-auto mx-2">
+                            <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#fourseasons-characters"></a>
+                            Four Seasons
+                        </div>
+                        <hr class="section-divider col">
+                    </div>
+
+                    <div class="collapse show active" id="fourseasons-characters">
+                        <ul class="list d-flex flex-wrap col-12 p-0"></ul>
                     </div>
 
                 </div>
