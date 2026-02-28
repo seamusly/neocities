@@ -1,0 +1,307 @@
+/* CSS Root Variables */
+:root {
+    --spotify-green: #1ed760;
+    --bg-dark: #181818;
+    --bg-darker: #0f0f0f;
+    --text-primary: #fff;
+    --text-secondary: #b3b3b3;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --progress-bg: #535353;
+    --progress-fill: var(--spotify-green);
+    --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    --shadow-album: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --border-radius-card: 12px;
+    --border-radius-album: 8px;
+    --border-radius-pill: 30px;
+    --border-radius-progress: 2px;
+    --transition-default: all 0.2s ease;
+    --fade-height: 100px;
+}
+
+.spotify-card {
+    background: linear-gradient(145deg, var(--bg-dark), var(--bg-darker));
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    max-width: 500px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+}
+
+@media (min-width: 576px) {
+    .spotify-card {
+        bottom: 1rem !important;
+        left: .75rem !important;
+    }
+}
+
+.player-card-minimize {
+    position: absolute;
+    top: 0.5em;
+    right: 0.75em;
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Compact mode styles */
+.spotify-card.compact {
+    max-width: 375px !important;
+    padding: 0.75em !important;
+}
+
+.compact .album-art-small {
+    width: 80px;
+    height: 80px;
+}
+
+.compact .track-info-compact {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.compact .full-only {
+    display: none !important;
+}
+
+.full-only {
+    display: block;
+}
+
+.compact-only {
+    display: none !important;
+}
+
+.compact .compact-only {
+    display: flex !important;
+}
+
+/* Album art */
+.album-art-small {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--border-radius-album);
+    box-shadow: var(--shadow-album);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+.album-art-small::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.3) 100%);
+    pointer-events: none;
+}
+
+/* Progress bar */
+.progress-bar-wrapper {
+    height: 4px;
+    background: var(--progress-bg);
+    border-radius: var(--border-radius-progress);
+    cursor: pointer;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--progress-fill);
+    border-radius: var(--border-radius-progress);
+    transition: width 0.1s linear;
+}
+
+/* Volume control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-pill);
+    padding: 4px 12px;
+    border: 1px solid var(--border-color);
+}
+
+.volume-control i {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    width: 20px;
+}
+
+.volume-slider-container {
+    position: relative;
+    width: 80px;
+    height: 4px;
+    background: var(--progress-bg);
+    border-radius: var(--border-radius-progress);
+    cursor: pointer;
+}
+
+.volume-slider-fill {
+    width: 15%;
+    height: 100%;
+    background: var(--progress-fill);
+    border-radius: var(--border-radius-progress);
+    pointer-events: none;
+}
+
+.volume-range {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    opacity: 0;
+    cursor: pointer;
+    margin: 0;
+    z-index: 2;
+}
+
+/* Playlist container with gradient fade */
+.playlist-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.playlist-items {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--progress-bg) var(--bg-darker);
+    transition: max-height 0.3s ease;
+}
+
+.playlist-items.collapsed {
+    max-height: var(--fade-height);
+    overflow-y: hidden;
+}
+
+/* Gradient fade overlay */
+.playlist-wrapper.fade-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--bg-darker));
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.playlist-wrapper.fade-overlay.collapsed-fade::after {
+    opacity: 1;
+}
+
+.playlist-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playlist-items::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+    border-radius: 4px;
+}
+
+.playlist-items::-webkit-scrollbar-thumb {
+    background: var(--progress-bg);
+    border-radius: 4px;
+}
+
+.playlist-items::-webkit-scrollbar-thumb:hover {
+    background: #6f6f6f;
+}
+
+.playlist-item {
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.playlist-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.playlist-item.active {
+    background: rgba(30, 215, 96, 0.1);
+}
+
+.playlist-item.active .track-title,
+.playlist-item.active .item-duration {
+    color: var(--spotify-green) !important;
+}
+
+/* Play/Pause button styles */
+.play-pause-btn {
+    color: var(--spotify-green) !important;
+    font-size: 2rem !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+}
+
+.play-pause-btn i {
+    font-size: 2rem !important;
+}
+
+/* Compact play button */
+.compact .play-pause-btn {
+    font-size: 1.5rem !important;
+}
+
+.compact .play-pause-btn i {
+    font-size: 1.5rem !important;
+}
+
+/* Minimize / hide buttons */
+.minimize-btn,
+.hide-btn {
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.minimize-btn:hover,
+.hide-btn:hover {
+    color: var(--text-primary) !important;
+}
+
+/* Show player button (appears when hidden) */
+.show-player-btn {
+    position: fixed;
+    bottom: .75rem;
+    left: .5rem;
+    background: var(--bg-darker);
+    color: var(--text-secondary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-card);
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.show-player-btn:hover {
+    color: var(--spotify-green);
+    transform: scale(1.1);
+}
+
+/* Chevron rotation */
+.rotate-chevron {
+    transition: transform 0.3s ease;
+}
+
+.rotate-chevron.collapsed {
+    transform: rotate(-90deg);
+}
+
+/* Hide audio element */
+#audioElement {
+    display: none;
+}

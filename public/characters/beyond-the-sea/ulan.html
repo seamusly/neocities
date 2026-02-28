@@ -10,11 +10,13 @@
     <link href="../../css/style.css" rel="stylesheet"/>
     <link href="../../css/bs-addons.css" rel="stylesheet"/>
     <link href="../../css/pokemon-types.css" rel="stylesheet"/>
+    <link href="../../css/music-player.css" rel="stylesheet"/>
     <link href="../../utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
     <script type="text/javascript" src="../../utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="../../utilities/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="../../utilities/list.min.js"></script>
     <script type="text/javascript" src="../../utilities/lightbox2-2.11.5/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../js/music-player.js"></script>
     <script type="module">
         // Import config and utils
         import { config } from '../../js/config.js';
@@ -26,7 +28,7 @@
         // Init page elements
         $(document).ready(function() {
             gallery.root = config.pages.beyondthesea.root;
-            utils.init.header(config.pages.beyondthesea.profiles.Ulán.title, config.pages.beyondthesea.subtitle);
+            utils.init.header(config.pages.beyondthesea.profiles.Ulan.title, config.pages.beyondthesea.subtitle);
             utils.init.footer(config.footer.links, config.pages.beyondthesea.root);
             utils.init.top();
 
@@ -43,10 +45,10 @@
         });
 
         function getGallery() {
-            const allSubmissions = images.pmdbts.submissions.filter((sub) => sub.characters.filter((char) => char.name === 'Ulán' || char.name === 'Láni').length > 0);
+            const allSubmissions = images.pmdbts.submissions.filter((sub) => sub.characters.filter((char) => char.name === 'Ulán').length > 0);
             if (allSubmissions.length < 1) return;
 
-            const allOther = images.pmdbts.others.filter((other) => other.characters.includes('Ulán' || 'Láni'));
+            const allOther = images.pmdbts.others.filter((other) => other.characters.includes('Ulán'));
 
             let personalList = new List('gallery-personal-container', gallery.options.createGeneralOptions(config.pages.beyondthesea.root), utils.parse.filterSubmissions(allOther, 'category', 'Personal'));
 
@@ -63,6 +65,143 @@
 
 </head>
 <body class="beyond-the-sea">
+
+    <!-- Main player card -->
+    <div class="spotify-card p-4 w-100" id="playerCard">
+        <!-- Control buttons (hide, minimize/restore) -->
+        <div class="player-card-minimize">
+            <i class="fas fa-times text-secondary hide-btn" id="hideBtn" title="Hide player"></i>
+            <i class="fas fa-compress text-secondary minimize-btn" id="minimizeBtn" title="Minimize player"></i>
+            <i class="fas fa-expand text-secondary minimize-btn" id="restoreBtn" title="Restore player"
+                style="display: none;"></i>
+        </div>
+
+        <!-- Main Player Row - Full Mode -->
+        <div class="full-only">
+            <div class="row g-4 align-items-center mb-4">
+                <!-- Album Art Column -->
+                <div class="col-auto">
+                <div class="album-art-small" id="albumArt"></div>
+                </div>
+
+                <!-- Controls Column -->
+                <div class="col">
+                <!-- Track Info -->
+                <div class="d-flex flex-column mb-2">
+                    <h6 class="text-white fw-semibold mb-0 text-truncate" id="currentTrackLabel">lofi code walk</h6>
+                    <small class="text-secondary text-truncate" id="trackArtist">Lofi Girl</small>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="d-flex align-items-center gap-3 mb-2">
+                    <span class="small text-secondary" id="currentTime" style="min-width: 40px;">0:00</span>
+                    <div class="progress-bar-wrapper flex-grow-1" id="progressBar">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                    </div>
+                    <span class="small text-secondary" id="duration" style="min-width: 40px;">0:00</span>
+                </div>
+
+                <!-- Control Buttons Row -->
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                    <button class="btn btn-link text-secondary p-1" id="shuffleBtn"><i class="fas fa-random fs-6"></i></button>
+                    <button class="btn btn-link text-secondary p-1" id="prevBtn"><i
+                        class="fas fa-backward-step fs-6"></i></button>
+
+                    <!-- Play/Pause buttons -->
+                    <button class="btn btn-link play-pause-btn" id="playBtn"><i class="fas fa-play-circle"></i></button>
+                    <button class="btn btn-link play-pause-btn" id="pauseBtn"><i class="fas fa-pause-circle"></i></button>
+
+                    <button class="btn btn-link text-secondary p-1" id="nextBtn"><i
+                        class="fas fa-forward-step fs-6"></i></button>
+                    <button class="btn btn-link text-secondary p-1" id="repeatBtn"><i class="fas fa-repeat fs-6"></i></button>
+
+                    <!-- Volume Control -->
+                    <div class="volume-control ms-auto">
+                    <i class="fas fa-volume-up" id="volumeIcon"></i>
+                    <div class="volume-slider-container">
+                        <div class="volume-slider-fill" id="volumeFill"></div>
+                        <input type="range" class="volume-range" id="volumeRange" min="0" max="100" value="3" step="1">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Playlist Header -->
+            <div
+                class="d-flex align-items-center justify-content-between py-3 border-top border-bottom border-secondary border-opacity-10 mb-3"
+                id="playlistToggle" role="button" data-bs-toggle="collapse" data-bs-target="#playlistCollapse"
+                aria-expanded="false" aria-controls="playlistCollapse">
+                <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-list-ul text-secondary"></i>
+                <span class="text-secondary text-uppercase small fw-medium">Playlist</span>
+                <span class="badge bg-dark bg-opacity-25 text-secondary rounded-pill" id="playlistCount">3 tracks</span>
+                </div>
+                <i class="fas fa-chevron-down text-secondary rotate-chevron collapsed" id="chevronIcon"></i>
+            </div>
+
+            <!-- Collapsible Playlist Container -->
+            <div class="collapse" id="playlistCollapse">
+                <div class="playlist-wrapper fade-overlay collapsed-fade" id="playlistWrapper">
+                <div class="playlist-items collapsed" id="playlistItems"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Mode - Only visible when minimized -->
+        <div class="compact-only">
+            <div class="d-flex align-items-center gap-3">
+                <!-- Mini Album Art -->
+                <div class="album-art-small" id="compactAlbumArt"></div>
+
+                <!-- Compact Controls -->
+                <div class="flex-grow-1">
+                <!-- Compact Track Info -->
+                <div class="track-info-compact mb-1">
+                    <div class="text-white small fw-semibold text-truncate" id="compactTrackLabel">lofi code walk</div>
+                    <div class="text-secondary small text-truncate" id="compactTrackArtist">Lofi Girl</div>
+                </div>
+
+                <!-- Progress Bar (compact) -->
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="small text-secondary" id="compactCurrentTime" style="min-width: 35px;">0:00</span>
+                    <div class="progress-bar-wrapper flex-grow-1" id="compactProgressBar">
+                    <div class="progress-bar-fill" id="compactProgressFill"></div>
+                    </div>
+                    <span class="small text-secondary" id="compactDuration" style="min-width: 35px;">0:00</span>
+                </div>
+
+                <!-- Compact Control Buttons -->
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-link text-secondary p-0" id="compactPrevBtn"><i
+                        class="fas fa-backward-step"></i></button>
+                    <button class="btn btn-link play-pause-btn p-0" id="compactPlayBtn"><i
+                        class="fas fa-play-circle"></i></button>
+                    <button class="btn btn-link play-pause-btn p-0" id="compactPauseBtn"><i
+                        class="fas fa-pause-circle"></i></button>
+                    <button class="btn btn-link text-secondary p-0" id="compactNextBtn"><i
+                        class="fas fa-forward-step"></i></button>
+
+                    <!-- Compact Volume Control -->
+                    <div class="volume-control ms-auto" style="padding: 2px 8px;">
+                    <i class="fas fa-volume-up" id="compactVolumeIcon"></i>
+                    <div class="volume-slider-container" style="width: 60px;">
+                        <div class="volume-slider-fill" id="compactVolumeFill"></div>
+                        <input type="range" class="volume-range" id="compactVolumeRange" min="0" max="100" value="15" step="1">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show player button (hidden by default) -->
+    <div class="show-player-btn" id="showPlayerBtn" style="display: none;">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <audio id="audioElement" preload="metadata"></audio>
 
     <div class="main-container">
 
