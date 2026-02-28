@@ -1,22 +1,25 @@
 // Playlist data
 const playlist = [
     {
-    title: 'Heartbreak Feels So Good',
-    artist: 'Fall Out Boy',
-    url: 'https://deskomy.com/en-us/link/fRAhPFkFSj9isLJa9dSt4dZY9OdFJuTpSXwNs4MC8MduvPfpz5yEYhhx68kSU8zp?download=1',
-    coverUrl: 'https://resources.tidal.com/images/50721dbc/9019/49fa/b199/0ee195f1b872/1280x1280.jpg',
+        title: 'Heartbreak Feels So Good',
+        artist: 'Fall Out Boy',
+        url: 'https://deskomy.com/en-us/link/fRAhPFkFSj9isLJa9dSt4dZY9OdFJuTpSXwNs4MC8MduvPfpz5yEYhhx68kSU8zp?download=1',
+        coverUrl: 'https://resources.tidal.com/images/50721dbc/9019/49fa/b199/0ee195f1b872/1280x1280.jpg',
+        durationFormatted: '3:37',
     },
     {
-    title: 'Out For Blood',
-    artist: 'Sum 41',
-    url: 'https://deskomy.com/en-us/link/PVq8rcDeTWxqpdiYRiUnuKFBNNtgcTf1XPU1b7BmUXUEj5FaAEzEwT29Tegjszm3?download=1',
-    coverUrl: 'https://resources.tidal.com/images/f369cd97/bac6/44e0/9351/76aad5aeaed6/1280x1280.jpg',
+        title: 'Out For Blood',
+        artist: 'Sum 41',
+        url: 'https://deskomy.com/en-us/link/PVq8rcDeTWxqpdiYRiUnuKFBNNtgcTf1XPU1b7BmUXUEj5FaAEzEwT29Tegjszm3?download=1',
+        coverUrl: 'https://resources.tidal.com/images/f369cd97/bac6/44e0/9351/76aad5aeaed6/1280x1280.jpg',
+        durationFormatted: '3:39',
     },
     {
-    title: 'DESTROY!! (Rock Cover)',
-    artist: 'Ferry, Andy in Steps',
-    url: 'https://deskomy.com/en-us/link/J7tbXnF7Fz5QP8Pm0YGgQsAvBQFoIIKzNktSP7buBVQ4KvzcyxuBfMsDkqAO7XXP?download=1',
-    coverUrl: 'https://resources.tidal.com/images/cc463333/6749/4fc6/9f7e/7c35c7b05224/1280x1280.jpg',
+        title: 'DESTROY!! (Rock Cover)',
+        artist: 'Ferry, Andy in Steps',
+        url: 'https://deskomy.com/en-us/link/J7tbXnF7Fz5QP8Pm0YGgQsAvBQFoIIKzNktSP7buBVQ4KvzcyxuBfMsDkqAO7XXP?download=1',
+        coverUrl: 'https://resources.tidal.com/images/cc463333/6749/4fc6/9f7e/7c35c7b05224/1280x1280.jpg',
+        durationFormatted: '2:06',
     }
 ];
 
@@ -316,10 +319,10 @@ $(document).ready(function () {
     .on('loadedmetadata', handleMetadata)
     .on('ended', () => {
         if (repeatMode) {
-        audioElement.currentTime = 0;
-        audioElement.play();
+            audioElement.currentTime = 0;
+            audioElement.play();
         } else {
-        nextTrack();
+            nextTrack();
         }
     })
     .on('play', () => {
