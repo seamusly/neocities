@@ -30,6 +30,7 @@
             utils.init.footer(config.footer.links, config.pages.beyondthesea.root);
             utils.init.top();
 
+            utils.init.loadIncludedFiles();
             utils.init.profile();
             utils.init.warningButtons();
 
@@ -63,6 +64,8 @@
 
 </head>
 <body class="beyond-the-sea">
+
+    <div class="load-html" data-source="../../includes/profile-sidebar-small.html"></div>
 
     <div class="main-container">
 
@@ -218,7 +221,7 @@
                                             <!-- JOINED -->
                                             <div class="col-sm-6 col-12">
                                                 <p class="profile-info-title">Joined</p>
-                                                <span data-teaminfo="joined">January 00, 2026</span>
+                                                <span data-teaminfo="joined">January 17, 2026</span>
                                             </div>
 
 

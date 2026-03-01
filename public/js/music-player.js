@@ -1,27 +1,31 @@
+let character;
+
 // Playlist data
-const playlist = [
-    {
-        title: 'Heartbreak Feels So Good',
-        artist: 'Fall Out Boy',
-        url: 'https://deskomy.com/en-us/link/fRAhPFkFSj9isLJa9dSt4dZY9OdFJuTpSXwNs4MC8MduvPfpz5yEYhhx68kSU8zp?download=1',
-        coverUrl: 'https://resources.tidal.com/images/50721dbc/9019/49fa/b199/0ee195f1b872/1280x1280.jpg',
-        durationFormatted: '3:37',
-    },
-    {
-        title: 'Out For Blood',
-        artist: 'Sum 41',
-        url: 'https://deskomy.com/en-us/link/PVq8rcDeTWxqpdiYRiUnuKFBNNtgcTf1XPU1b7BmUXUEj5FaAEzEwT29Tegjszm3?download=1',
-        coverUrl: 'https://resources.tidal.com/images/f369cd97/bac6/44e0/9351/76aad5aeaed6/1280x1280.jpg',
-        durationFormatted: '3:39',
-    },
-    {
-        title: 'DESTROY!! (Rock Cover)',
-        artist: 'Ferry, Andy in Steps',
-        url: 'https://deskomy.com/en-us/link/J7tbXnF7Fz5QP8Pm0YGgQsAvBQFoIIKzNktSP7buBVQ4KvzcyxuBfMsDkqAO7XXP?download=1',
-        coverUrl: 'https://resources.tidal.com/images/cc463333/6749/4fc6/9f7e/7c35c7b05224/1280x1280.jpg',
-        durationFormatted: '2:06',
-    }
-];
+const playlist = { 
+    ulan: [
+        {
+            title: 'Heartbreak Feels So Good',
+            artist: 'Fall Out Boy',
+            url: 'https://deskomy.com/en-us/link/fRAhPFkFSj9isLJa9dSt4dZY9OdFJuTpSXwNs4MC8MduvPfpz5yEYhhx68kSU8zp?download=1',
+            coverUrl: 'https://resources.tidal.com/images/50721dbc/9019/49fa/b199/0ee195f1b872/1280x1280.jpg',
+            durationFormatted: '3:37',
+        },
+        {
+            title: 'Out For Blood',
+            artist: 'Sum 41',
+            url: 'https://deskomy.com/en-us/link/PVq8rcDeTWxqpdiYRiUnuKFBNNtgcTf1XPU1b7BmUXUEj5FaAEzEwT29Tegjszm3?download=1',
+            coverUrl: 'https://resources.tidal.com/images/f369cd97/bac6/44e0/9351/76aad5aeaed6/1280x1280.jpg',
+            durationFormatted: '3:39',
+        },
+        {
+            title: 'DESTROY!! (Rock Cover)',
+            artist: 'Ferry, Andy in Steps',
+            url: 'https://deskomy.com/en-us/link/J7tbXnF7Fz5QP8Pm0YGgQsAvBQFoIIKzNktSP7buBVQ4KvzcyxuBfMsDkqAO7XXP?download=1',
+            coverUrl: 'https://resources.tidal.com/images/cc463333/6749/4fc6/9f7e/7c35c7b05224/1280x1280.jpg',
+            durationFormatted: '2:06',
+        }
+    ],
+};
 
 // State
 let currentIndex = 0, isPlaying = false, shuffleMode = false, repeatMode = false, isMinimized = false;
@@ -76,7 +80,7 @@ const updateProgressBars = () => {
 
 // Render playlist
 const renderPlaylist = () => {
-    const html = playlist.map((track, i) => `
+    const html = playlist[character].map((track, i) => `
     <div class="playlist-item d-flex align-items-center gap-3 p-2 rounded ${i === currentIndex ? 'active' : ''}" data-index="${i}">
         <span class="small text-secondary" style="width: 24px;">${i + 1}</span>
         <div class="flex-grow-1 min-w-0">
@@ -91,10 +95,10 @@ const renderPlaylist = () => {
 
 // Update UI
 const updateTrackInfo = () => {
-    const track = playlist[currentIndex];
+    const track = playlist[character][currentIndex];
     $('#currentTrackLabel, #compactTrackLabel').text(track.title);
     $('#trackArtist, #compactTrackArtist').text(track.artist);
-    $('#playlistCount').text(`${playlist.length} tracks`);
+    $('#playlistCount').text(`${playlist[character].length} tracks`);
     updateAlbumCover(track.coverUrl);
     $('.playlist-item').removeClass('active').filter(`[data-index="${currentIndex}"]`).addClass('active');
     updatePlayPauseButtons();
@@ -102,11 +106,11 @@ const updateTrackInfo = () => {
 
 // Load and play track
 const loadAndPlayTrack = (index, shouldPlay = isPlaying) => {
-    if (index < 0) index = playlist.length - 1;
-    if (index >= playlist.length) index = 0;
+    if (index < 0) index = playlist[character].length - 1;
+    if (index >= playlist[character].length) index = 0;
 
     currentIndex = index;
-    const track = playlist[currentIndex];
+    const track = playlist[character][currentIndex];
     audioElement.src = track.url;
     audioElement.load();
     updateTrackInfo();
@@ -148,8 +152,8 @@ const nextTrack = () => {
     const newIndex = shuffleMode
     ? (() => {
         let i;
-        do i = Math.floor(Math.random() * playlist.length);
-        while (playlist.length > 1 && i === currentIndex);
+        do i = Math.floor(Math.random() * playlist[character].length);
+        while (playlist[character].length > 1 && i === currentIndex);
         return i;
         })()
     : currentIndex + 1;
@@ -160,8 +164,8 @@ const prevTrack = () => {
     const newIndex = shuffleMode
     ? (() => {
         let i;
-        do i = Math.floor(Math.random() * playlist.length);
-        while (playlist.length > 1 && i === currentIndex);
+        do i = Math.floor(Math.random() * playlist[character].length);
+        while (playlist[character].length > 1 && i === currentIndex);
         return i;
         })()
     : currentIndex - 1;
@@ -205,7 +209,7 @@ const handleProgressClick = (e, isCompact = false) => {
 const handleMetadata = () => {
     const d = audioElement.duration;
     $('#duration, #compactDuration').text(formatTime(d));
-    playlist[currentIndex].durationFormatted = formatTime(d);
+    playlist[character][currentIndex].durationFormatted = formatTime(d);
     renderPlaylist();
     updateTrackInfo();
 };
@@ -260,6 +264,10 @@ const handleCollapseHide = () => {
 
 // Initialize
 $(document).ready(function () {
+    const url = new URL(window.location.href);
+    let arr = url.href.match(/\/(\w+)/g);
+    character = arr[arr.length - 1].substring(1);
+
     audioElement = $('#audioElement')[0];
     audioElement.volume = 0.03;
 
@@ -276,6 +284,7 @@ $(document).ready(function () {
 
     // Start in compact mode
     toggleMinimize();
+    hidePlayer();
 
     // Control buttons
     $('#minimizeBtn, #restoreBtn').on('click', toggleMinimize);
@@ -335,6 +344,6 @@ $(document).ready(function () {
     });
 
     // Preload first track
-    audioElement.src = playlist[0].url;
+    audioElement.src = playlist[character][0].url;
     audioElement.load();
 });

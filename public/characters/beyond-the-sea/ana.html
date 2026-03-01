@@ -30,6 +30,7 @@
             utils.init.footer(config.footer.links, config.pages.beyondthesea.root);
             utils.init.top();
 
+            utils.init.loadIncludedFiles();
             utils.init.profile();
             utils.init.warningButtons();
 
@@ -63,6 +64,8 @@
 
 </head>
 <body class="beyond-the-sea">
+
+    <div class="load-html" data-source="../../includes/profile-sidebar-small.html"></div>
 
     <div class="main-container">
 

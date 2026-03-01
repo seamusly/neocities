@@ -43,10 +43,39 @@ utils.init = {
         `);
     },
 
+    // Load files via include
+    // Will replace the entire div
+    loadIncludedFiles() {
+        $(".load-html").each(function () {
+            const target = $(this);
+            $.get(this.dataset.source, function (data) {
+                target.replaceWith(data);
+            });
+        });
+    },
+
 
     profile() {
         $(`.star-collapse-link`).on('click', function() {
             $(this).toggleClass('active');
+        });
+
+        this.registerSmallNav('profile');
+        this.registerSmallNav('design');
+        this.registerSmallNav('gallery');
+        this.registerSmallNav('logs');
+    },
+
+    registerSmallNav(tag) {
+        $(`[data-bs-target="#${tag}"]`).on('click', function() {
+            utils.init.toggleSmallNav(tag);
+        });
+    },
+
+    toggleSmallNav(tag) {
+        $(`.page-sidebar-container`).each(function () {
+            if (this.id.includes(tag)) return $(this).removeClass('d-none');
+            $(this).addClass('d-none');
         });
     },
 

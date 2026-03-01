@@ -340,10 +340,33 @@ a:hover, .profile-text-toggler:hover {
   background: var(--body-container-bg-color);
 }
 
+.page-sidebar-collapse {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--body-bg-color);
+}
+
+.page-sidebar-container {
+  margin-top: 50px;
+  font-size: 1.1em;
+}
+
+.page-sidebar-container > div {
+  padding: 0.25rem 1.25rem;
+  transition: ease-in-out all .2s;
+}
+
+.page-sidebar-container > div:hover {
+  background: var(--body-container-bg-color);
+}
+
 .page-sidebar-tab {
   border-radius: 1em 0 0 1em;
   background: var(--navtab-bg-color);
-  padding: .4em .6em;
+  padding: .4em;
   transition: ease-in-out all .2s;
   margin-bottom: .5rem;
   filter: drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
@@ -378,11 +401,33 @@ a:hover, .profile-text-toggler:hover {
   drop-shadow(0 -1px 0 var(--img-dropshadow-color));
 }
 
-.page-sidebar-back:hover {
-  padding-left: 3em;
+.page-sidebar-small {
+  border-radius: .75em 0 0 .75em;
+  background: var(--navtab-bg-color);
+  padding: .4em .6em;
+  transition: ease-in-out all .2s;
+  text-align: start;
+  position: fixed;
+  right: 0;
+  top: .5em;
+  filter: drop-shadow(-1px 1px 0 var(--img-dropshadow-color))
+  drop-shadow(-1px -1px 0 var(--img-dropshadow-color))
+  drop-shadow(0 1px 0 var(--img-dropshadow-color))
+  drop-shadow(0 -1px 0 var(--img-dropshadow-color));
+  z-index: 99;
+  cursor: pointer;
 }
 
-.page-sidebar-back a {
+.page-sidebar-small:hover {
+  background: var(--navtab-bg-hover);
+}
+
+.page-sidebar-back:hover {
+  padding-left: 3em;
+  background: var(--navtab-bg-hover);
+}
+
+.page-sidebar-back a, .page-sidebar-small a {
   color: var(--body-font-color);
   text-decoration: none;
 }
