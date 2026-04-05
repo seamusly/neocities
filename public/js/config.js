@@ -42,6 +42,10 @@ config.pages = {
         root: './',
         title: 'Gallery'
     },
+    comms : {
+        root: './../',
+        title: 'Gallery'
+    },
     beyondthesea: {
         root: '../../',
         profiles: {

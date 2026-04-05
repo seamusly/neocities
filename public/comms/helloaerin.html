@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐉 helloaerin</title>
+
+    <meta name="robots" content="noai, noimageai">
+
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/bs-addons.css" rel="stylesheet"/>
+    <link href="../utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../utilities/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="../utilities/list.min.js"></script>
+    <script type="text/javascript" src="../utilities/lightbox2-2.11.5/lightbox.min.js"></script>
+    <script type="module">
+        // Import config and utils
+        import { config } from './../js/config.js';
+        import { utils } from './../js/utils.js';
+        import { gallery } from './../js/gallery.js';
+        import { images } from './../js/images.js';
+
+        let pageSubtitle = null;
+
+        const commsList = [
+            // CHIBI REF SHEET
+            {
+                type: 'CHIBI REF SHEET',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174941/helloaerin-chibiref-tula_v1.png',
+                character: 'Tula'
+            },
+            {
+                type: 'CHIBI REF SHEET',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174941/helloaerin-chibiref-tula_v2.png',
+                character: 'Tula'
+            },
+            {
+                type: 'CHIBI REF SHEET',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174941/helloaerin-chibiref-tula_v3.png',
+                character: 'Tula'
+            },
+
+            // DINKY CHIBIS
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-norse.png',
+                character: 'Norse<br><sup><i class="fas fa-user"></i> spaceplosion</sup>',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-gp.png',
+                character: 'Glory',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-augurys.png',
+                character: 'Augurys<br><sup>(Beyond the Sea)</sup>',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-benoit.png',
+                character: 'Benoit',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-fray.png',
+                character: 'Fray',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-makoto_v1.png',
+                character: 'Makoto<br><sup>(old design)</sup>',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-ulan.png',
+                character: 'Ulán',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-masaru.png',
+                character: 'Masaru',
+                size: '115%'
+            },
+
+            // TINY CHIBIS
+            {
+                type: 'TINY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-tiny-fortuna.png',
+                character: 'Fortuna'
+            },
+            {
+                type: 'TINY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-tiny-firefly.png',
+                character: 'Firefly<br><sup>(Beyond the Sea)</sup>'
+            }
+            ,
+            {
+                type: 'TINY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-tiny-fantaseia.png',
+                character: 'Fantaseia'
+            },
+            {
+                type: 'TINY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-tiny-ikelos.png',
+                character: 'Ikelos'
+            },
+
+            // HOLIDAY MINIS
+            {
+                type: 'HOLIDAY MINI',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174344/helloaerin-halloween-kessy.png',
+                character: 'Kessy<br><sup><i class="fas fa-user"></i> Minish-Mae</sup>',
+                size: '145%'
+            },
+            {
+                type: 'HOLIDAY MINI',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174344/helloaerin-christmas-polly_v2.png',
+                character: 'Polly',
+                size: '145%'
+            },
+            {
+                type: 'HOLIDAY MINI',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174344/helloaerin-christmas-polly_v1.png',
+                character: 'Polly<br><sup>(old design)</sup>',
+                size: '145%'
+            },
+            {
+                type: 'HOLIDAY MINI',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174344/helloaerin-christmas-norse.png',
+                character: 'Norse<br><sup><i class="fas fa-user"></i> spaceplosion</sup>',
+                size: '145%'
+            },
+            {
+                type: 'HOLIDAY MINI',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174260/helloaerin-ych003-polly.png',
+                character: 'Polly<br><sup>(old design)</sup>'
+            },
+
+            // CHIBI BUSTS
+            {
+                type: 'CHIBI BUSTS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-ych002-augurys.png',
+                character: 'Augurys',
+                size: '78%'
+            },
+            {
+                type: 'CHIBI BUSTS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-ych002-gwisin.png',
+                character: 'Gwisin',
+                size: '78%'
+            },
+            {
+                type: 'CHIBI BUSTS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-ych002-theo.png',
+                character: 'Theo',
+                size: '78%'
+            },
+            {
+                type: 'CHIBI BUSTS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175244/helloaerin-ych002-moxxy.png',
+                character: 'Moxxy<br><sup><i class="fas fa-user"></i> Cajunwildcat</sup>',
+                size: '78%'
+            },
+
+            // MISC 
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175126/helloaerin-minichibi-tula.png',
+                character: 'Tula',
+                size: '115%'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175126/helloaerin-minihead-titania.png',
+                character: 'Titania<br><sup>(old design)</sup>',
+                size: 'contain'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175126/helloaerin-minihead-oberon.png',
+                character: 'Oberon<br><sup>(old design)</sup>',
+                size: 'contain'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175126/helloaerin-minihead-tsukuhito.png',
+                character: 'Tsukuhito',
+                size: 'contain'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173258/helloaerin-ych00-augurys.png',
+                character: 'Augurys',
+                size: '90%'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173258/helloaerin-ych00-gwisin.png',
+                character: 'Gwisin',
+                size: '90%'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173258/helloaerin-ych00-theo.png',
+                character: 'Theo',
+                size: '90%'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173258/helloaerin-ych00-moxxy.png',
+                character: 'Moxxy<br><sup><i class="fas fa-user"></i> Cajunwildcat</sup>',
+                size: '90%'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174775/helloaerin-smooch-avikon.png',
+                character: 'Avikon<br><sup><i class="fas fa-user"></i> BA_Turtle</sup>'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174775/helloaerin-smooch-weisheng.png',
+                character: 'Weisheng<br><sup><i class="fas fa-user"></i> Minish-Mae</sup>'
+            },
+
+            // ANIMATED
+            {
+                type: 'ANIMATIONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175095/helloaerin-teddy-tula_krile.gif',
+                character: 'Tula'
+            },
+            {
+                type: 'ANIMATIONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175070/helloaerin-bonbon-tula_v1.gif',
+                character: 'Tula'
+            },
+            {
+                type: 'ANIMATIONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175070/helloaerin-bonbon-tula_v2.gif',
+                character: 'Tula'
+            },
+            {
+                type: 'ANIMATIONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775175070/helloaerin-bonbon-tula_v3.gif',
+                character: 'Tula'
+            },
+            {
+                type: 'ANIMATIONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174756/helloaerin-little-augurys.gif',
+                character: 'Augurys',
+                size: '120%'
+            },
+            {
+                type: 'ANIMATIONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174756/helloaerin-little-xanric.gif',
+                character: 'Xanric<br><sup><i class="fas fa-user"></i> TheOneTruBae</sup>',
+                size: '120%'
+            },
+            {
+                type: 'ANIMATIONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174738/helloaerin-puffy-norse.gif',
+                character: 'Norse<br><sup><i class="fas fa-user"></i> spaceplosion</sup>',
+                size: '120%'
+            },
+
+            // GUMMY ICONS
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-carserys.png',
+                character: 'Carserys'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-jasper_v1.png',
+                character: 'Jasper'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-nereid.png',
+                character: 'Nereid'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-keres.png',
+                character: 'Keres'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-moonstone.png',
+                character: 'Moonstone'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-seren.png',
+                character: 'Seren<br><sup>(not mine)</sup>'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-fortuna_v2.png',
+                character: 'Fortuna<br><sup>(Hellbite)</sup>'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-fortuna_v1.png',
+                character: 'Fortuna'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-astra.png',
+                character: 'Astraxeas<br><sup><i class="fas fa-user"></i> BA_Turtle</sup>'
+            },
+            {
+                type: 'GUMMY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174012/helloaerin-gummy-esen.png',
+                character: 'Esen'
+            },
+
+            // POP ICONS
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-grit.png',
+                character: 'Grit'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-hoshikiri.png',
+                character: 'Hoshikiri'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-tula.png',
+                character: 'Tula'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-raiden.png',
+                character: 'Raiden'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-valor.png',
+                character: 'Valor'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-rose.png',
+                character: 'Rose'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-ikaros.png',
+                character: 'Ikaros'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-quasaria.png',
+                character: 'Quasaria'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-pandemon.png',
+                character: 'Pandemon'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-lester.png',
+                character: 'Lester'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-nock.png',
+                character: 'Nock'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-nocturne_v1.png',
+                character: 'Nocturne'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-nocturne_v2.png',
+                character: 'Nocturne'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-oberon.png',
+                character: 'Oberon'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-titania.png',
+                character: 'Titania'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-mirage.png',
+                character: 'Mirage'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-eros.png',
+                character: 'Eros'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-agape.png',
+                character: 'Agape<br><sup><i class="fas fa-user"></i> Minish-Mae</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-iknaeia.png',
+                character: 'Iknaeia'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-adrasteos.png',
+                character: 'Adrasteos'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-fortuna.png',
+                character: 'Fortuna'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775422145/helloaerin-pop-fantaseia.png',
+                character: 'Fantaseia'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-ikelos.png',
+                character: 'Ikelos'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-hermes.png',
+                character: 'Hermes'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-avikon.png',
+                character: 'Avikon<br><sup><i class="fas fa-user"></i> BA_Turtle</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-astra.png',
+                character: 'Astraxeas<br><sup><i class="fas fa-user"></i> BA_Turtle</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-estys_v2.png',
+                character: 'Estys<br><sup>(Beyond the Sea)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-estys_v1.png',
+                character: 'Estys'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-zane_v1.png',
+                character: 'Zane<br><sup>(Beyond the Sea)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-gwisin.png',
+                character: 'Gwisin<br><sup>(Beyond the Sea)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-ephemir.png',
+                character: 'Ephemir<br><sup>(Beyond the Sea)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-augurys_v1.png',
+                character: 'Augurys'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-augurys_v2.png',
+                character: 'Augurys<br><sup>(Beyond the Sea)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-benoit.png',
+                character: 'Benoit'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-ambrosius.png',
+                character: 'Ambrosius'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-theo.png',
+                character: 'Theo'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-hawke_v1.png',
+                character: 'Hawke<br><sup>(old design)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-hawke_v2.png',
+                character: 'Hawke'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-polly.png',
+                character: 'Polly'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-archie.png',
+                character: 'Archie'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-bug.png',
+                character: 'Bug'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-moth.png',
+                character: '(TBN)'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-beetle.png',
+                character: '(TBN)'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-esen.png',
+                character: 'Esen'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-ana.png',
+                character: 'Ana'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-fray.png',
+                character: 'Fray'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-makoto_v1.png',
+                character: 'Makoto<br><sup>(old design)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-makoto_v2.png',
+                character: 'Makoto'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-ulan.png',
+                character: 'Ulán'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-masaru.png',
+                character: 'Masaru'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-vervain.png',
+                character: 'Vervain'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775422036/helloaerin-pop-abby.png',
+                character: 'Abby'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-lysius.png',
+                character: 'Lysius'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-qiwen.png',
+                character: 'Qǐ-Wén'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-firefly.png',
+                character: 'Firefly<br><sup>(Beyond the Sea)</sup>'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-calypso.png',
+                character: 'Calypso'
+            },
+        ]
+
+        const galleryOptions = {
+            valueNames: [
+                'type',
+                'imglink',
+                'character',
+                'position'
+            ],
+            item: function(values) {
+                return `
+                <div class="gallery-item col-lg-3 col-md-4 col-sm-6 col-12 p-2">
+                    <a data-lightbox="${values.type}" href="${values.imglink}">
+                        <div class="gallery-card p-2">
+                            <div class="gallery-card-thumb" style="background-image:url('${values.imglink}'); background-size:${values.size === null ? 'cover' : values.size};background-position:center;"></div>
+                        </div>
+                        <div class="mt-2 gallery-card-info text-center">
+                            <p class="gallery-date-title opacity-75">${values.character}</p>
+                        </div>
+                    </a>
+                </div>
+                `
+            }
+        }
+
+        // Init page elements
+        $(document).ready(async function() {
+            const urlParams = await utils.url.getUrlParams();
+
+            //utils.init.header(config.pages.gallery.title, pageSubtitle);
+            utils.init.footer(config.footer.links, config.pages.comms.root);
+            utils.init.top();
+
+            utils.init.tooltips();
+            utils.init.lightbox();
+
+            let chibirefList = new List('gallery-chibiref-container', galleryOptions, commsList.filter((i) => i.type === 'CHIBI REF SHEET'));
+            let dinkyList = new List('gallery-dinky-container', galleryOptions, commsList.filter((i) => i.type === 'DINKY'));
+            let tinyList = new List('gallery-tiny-container', galleryOptions, commsList.filter((i) => i.type === 'TINY'));
+            let holidayList = new List('gallery-holiday-container', galleryOptions, commsList.filter((i) => i.type === 'HOLIDAY MINI'));
+            let bustsList = new List('gallery-busts-container', galleryOptions, commsList.filter((i) => i.type === 'CHIBI BUSTS'));
+            let miscList = new List('gallery-misc-container', galleryOptions, commsList.filter((i) => i.type === 'MISC'));
+            let animList = new List('gallery-anim-container', galleryOptions, commsList.filter((i) => i.type === 'ANIMATIONS'));
+            let gummyList = new List('gallery-gummy-container', galleryOptions, commsList.filter((i) => i.type === 'GUMMY'));
+            let popList = new List('gallery-pop-container', galleryOptions, commsList.filter((i) => i.type === 'POP'));
+
+            $(`.profile-body-container`).addClass('active');
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div class="page-header gallery mb-2">
+
+            <h1 class="page-header-title mb-0">helloaerin</h1>
+
+            <div class="page-header-subtitle col-12">Commissions Showcase</div>
+
+            <div class="mt-2 page-sidebar-back" id="back-to-gallery">
+                <a href="../gallery.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Gallery</a>
+            </div>
+        </div>
+            
+        <div class="page-container d-flex flex-wrap">
+
+            <div class="col-lg-2 pe-lg-2 d-lg-block d-none" id="page-sidebar">
+                <div class="page-sidebar col-lg-12 col-md-7 col-sm-6 col-12 sticky-top">
+
+                    <div class="ms-2 me-n3">
+                        <div class="col-12 p-md-2 p-0">
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-chibiref"><i class="fa-solid fa-angles-right"></i> CHIBI REFS</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-gummy"><i class="fa-solid fa-angles-right"></i> GUMMY</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-anim"><i class="fa-solid fa-angles-right"></i> ANIMATIONS</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-busts"><i class="fa-solid fa-angles-right"></i> CHIBI BUSTS</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-holiday"><i class="fa-solid fa-angles-right"></i> HOLIDAY MINIS</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-tiny"><i class="fa-solid fa-angles-right"></i> TINY</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-dinky"><i class="fa-solid fa-angles-right"></i> DINKY</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-misc"><i class="fa-solid fa-angles-right"></i> MISC. CHIBIS</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-pop"><i class="fa-solid fa-angles-right"></i> POP ICONS</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-body p-3 col-lg-10 col-12">
+
+                <div class="profile-body-container">
+
+                    <div class="px-3 mt-2 mb-4" id="about">
+                        <div class="col-12 p-2 profile-card mx-auto mb-3">
+                            <p class="profile-info-title mb-2 text-center">What's this about?</p>
+                            <p><a href="https://toyhou.se/helloaerin"><i class="fas fa-user"></i> helloaerin</a> is an artist I have commissioned <i>a lot</i> in the past and whose work I absoutely adore! I've been ordering art from her since 2024, and all of the icons I use on my <a href="../characters.html">character directory</a> are created by her!</p>
+
+                            <p>I wanted to make this page compiling almost all of the art I've received from them, both for myself as I love to see it all in one place, and also as a showcase and a token of appreciation for an artist I would <i>highly</i> recommend anybody go and commission.</p>
+
+                            <p>She offers a ton of YCH-style options, different art styles (mainly for chibis), and even mini animations -- all at <i>extremely</i> affordable prices. So, if you're ever looking for some cute art of your favourite little guys, please consider commissioning her! She seriously deserves the support and more!</p>
+                            <hr class="profile-info-divider my-3">
+                            <p class="profile-info-title mb-2 text-center">Find her at some of the links below!</p>
+                            <p class="text-center">
+                                <a href="https://toyhou.se/11187952."><i class="fa-solid fa-file-signature"></i> Terms of Service</a>
+                                <span class="opacity-50 mx-1">┆</span>
+                                <a href="https://toyhou.se/helloaerin/characters"><i class="fa-solid fa-house"></i> Toyhouse</a>
+                                <span class="opacity-50 mx-1">┆</span>
+                                <a href="https://vgen.co/helloaerin"><i class="fa-solid fa-paintbrush"></i> VGen</a>
+                                <span class="opacity-50 mx-1">┆</span>
+                                <a href="https://ko-fi.com/helloaerin2/"><i class="fa-solid fa-mug-hot"></i> Ko-fi</a>
+                                <span class="opacity-50 mx-1">┆</span>
+                                <a href="https://www.deviantart.com/helloaerin"><i class="fa-brands fa-deviantart"></i> DeviantArt</a>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 p-md-2 p-0" id="gallery-full">
+                        <div id="gallery-chibiref">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-chibiref-container"></a>
+                                    Chibi Refs
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-chibiref-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-gummy">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-gummy-container"></a>
+                                    Gummy
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-gummy-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-anim">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-anim-container"></a>
+                                    Animations
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-anim-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-busts">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-busts-container"></a>
+                                    Chibi Busts
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-busts-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-holiday">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-holiday-container"></a>
+                                    Holiday Minis
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-holiday-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-tiny">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-tiny-container"></a>
+                                    Tiny
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-tiny-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-dinky">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-dinky-container"></a>
+                                    Dinky
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-dinky-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-misc">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-misc-container"></a>
+                                    Misc. Chibis
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-misc-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-pop">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-pop-container"></a>
+                                    POP Icons
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-pop-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 p-md-2 p-0 d-none" id="gallery-card">
+
+                        <div class="d-flex flex-wrap">
+
+                            <div class="pe-lg-2 py-lg-2 p-1 col-lg-5 col-12 d-flex flex-column">
+                                <h2 class="title mb-3 text-center">Title</h2>
+
+                                <div class="profile-card p-2 d-flex flex-wrap">
+
+                                    <div class="col-sm-6 col-12">
+                                        <p class="profile-info-title">Date</p>
+                                        <span class="date">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-sm-6 col-12">
+                                        <p class="profile-info-title">Activity</p>
+                                        <span class="activity">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-12 d-none" id="event-container">
+                                        <p class="profile-info-title">Event</p>
+                                        <span class="event">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-12" id="prompt-dungeon-container">
+                                        <p class="profile-info-title" id="prompt-dungeon-label">Prompt</p>
+                                        <span id="prompt-dungeon-value">content</span>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <p class="profile-info-title">Credits</p>
+                                        <ul class="fa-ul ms-1 mb-1 credits"></ul>
+                                        <hr class="profile-info-divider my-2">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <p class="profile-info-title">Characters</p>
+                                        <ul class="fa-ul ms-1 mb-1 characters"></ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="profile-card p-2 d-flex flex-wrap mt-3">
+                                    
+                                    <div class="col-12">
+                                        <p class="profile-info-title">Description</p>
+                                        <div class="px-1 pb-1 description">
+                                            <p>...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ps-lg-3 py-lg-2 p-1 col-lg-7 col-sm-10 col-12" id="gallery-artwork-container">
+                                <div class="collapse" id="gallery-artwork-contents">
+                                    <a href="images/character-icons/placeholder.webp" data-lightbox="submission" class="imglink"></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="logs-levels" class="d-none">
+                            <!-- SECTION -->
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-5">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link active" data-bs-toggle="collapse" href="#levels-container"></a>
+                                    Levels
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="levels-container">
+                                <div class="table-wrapper my-2">
+                                    <table class="table table-default table-striped text-center mb-0">
+                                        <thead class="table-default-head">
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Title</th>
+                                                <th>Activity</th>
+                                                <th>Dungeon</th>
+                                                <th>Gained</th>
+                                                <th>Bonus</th>
+                                                <th>Levels</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="level-logs-body">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 p-md-2 p-0 d-none" id="gallery-writing-card">
+
+                        <div class="d-flex flex-wrap">
+
+                            <div class="pe-lg-2 py-lg-2 p-1 col-lg-5 col-12 d-flex flex-column">
+                                <div class="sticky-top">
+                                    <h2 class="title mb-3 text-center">Title</h2>
+
+                                    <div class="profile-card p-2 d-flex flex-wrap">
+
+                                        <div class="col-sm-6 col-12">
+                                            <p class="profile-info-title">Date</p>
+                                            <span class="date">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-sm-6 col-12">
+                                            <p class="profile-info-title">Activity</p>
+                                            <span class="activity">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-12 d-none" id="event-container">
+                                            <p class="profile-info-title">Event</p>
+                                            <span class="event">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-12" id="prompt-dungeon-container">
+                                            <p class="profile-info-title" id="prompt-dungeon-label">Prompt</p>
+                                            <span id="prompt-dungeon-value">content</span>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <p class="profile-info-title">Authors</p>
+                                            <ul class="fa-ul ms-1 mb-1 credits"></ul>
+                                            <hr class="profile-info-divider my-2">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <p class="profile-info-title">Characters</p>
+                                            <ul class="fa-ul ms-1 mb-1 characters"></ul>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="profile-card p-2 d-flex flex-wrap mt-3">
+                                        
+                                        <div class="col-12">
+                                            <p class="profile-info-title">Description</p>
+                                            <div class="px-1 pb-1 description">
+                                                <p>...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ps-lg-4 py-lg-2 px-1 py-4 col-lg-7 col-sm-10 col-12" id="gallery-writing-container">
+
+                                <div class="collapse" id="gallery-writing-contents">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in consectetur leo. Donec eget risus in turpis consequat sagittis a sed ante. Maecenas at nulla ut sem placerat malesuada ac sed purus. Vestibulum pellentesque justo at libero eleifend, imperdiet semper elit ullamcorper. Maecenas magna tortor, ultricies eget nunc vitae, iaculis dapibus leo. Phasellus sed leo non leo tempor condimentum quis in felis. Pellentesque ante sem, lacinia ut justo sit amet, placerat suscipit massa. Maecenas nisi sem, venenatis et placerat eu, imperdiet sit amet tortor. Vivamus dignissim lacus orci, quis bibendum nisi elementum at. Vestibulum in quam bibendum, rutrum nunc vel, ornare massa. Nam id diam ligula. Fusce facilisis consectetur quam ac dapibus. Fusce eu venenatis elit, vel ullamcorper tellus. Nulla sem enim, tempor viverra nibh at, consequat scelerisque purus. Donec nec nibh tincidunt, pharetra nunc eu, mollis mi.</p>
+
+                                    <p>Praesent ac felis eget sem ornare dapibus. Donec scelerisque non dui varius tempor. Fusce pulvinar sodales est. In vel luctus mi. Aenean neque quam, aliquet a elit sed, scelerisque varius est. Pellentesque a dui velit. Etiam interdum mollis porttitor. Proin porta interdum ipsum, vitae eleifend arcu maximus id. Phasellus luctus mi eu libero venenatis tincidunt eget vitae justo. Suspendisse fringilla, sapien non tempor fringilla, nisi neque porttitor massa, ac feugiat purus orci a neque. Pellentesque interdum, dolor eu commodo rhoncus, sapien turpis varius sem, vitae posuere justo nulla vel mi. Nulla quis interdum odio.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-footer" id="footer">
+            <div class="footer-content"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
