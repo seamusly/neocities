@@ -2,6 +2,29 @@ let character;
 
 // Playlist data
 const playlist = { 
+    benoit: [
+        {
+            title: 'Hip Shop (From "Deltarune")',
+            artist: 'Luke Pickman',
+            url: 'https://deskomy.com/en-us/link/q8WkRMGGhIh2IjNWNvzkFpr8RsEAABmO6Nu9cS9pXWa1wmWQlxzmJETzYpF1UzBj?download=1',
+            coverUrl: 'https://resources.tidal.com/images/adab81e0/9b2b/4f41/b7ae/6a398ff71c55/1280x1280.jpg',
+            durationFormatted: '3:45',
+        },
+        {
+            title: 'Roaring 20s',
+            artist: 'Panic! At The Disco',
+            url: 'https://deskomy.com/en-us/link/u85TNk3wgx0Inx7l6D6qiiIfKXgVEv03iLmv7vCEffgcnA7sJJiXaHKOtoEybTfZ?download=1',
+            coverUrl: 'https://resources.tidal.com/images/31d0375b/9481/4dca/984e/d68c0e371757/1280x1280.jpg',
+            durationFormatted: '3:06',
+        },
+        {
+            title: 'Razzmatazz',
+            artist: `I DON'T KNOW HOW BUT THEY FOUND ME`,
+            url: 'https://deskomy.com/en-us/link/5oe8KydsKTRymDbyZi8MkGKDOGFQxaoKeb7OzkehRUocmXpJQ9pZqYYB4v6CTiLy?download=1',
+            coverUrl: 'https://resources.tidal.com/images/57bc170d/0ac1/4431/b68b/4dda3b3ef543/1280x1280.jpg',
+            durationFormatted: '4:18',
+        }
+    ],
     ulan: [
         {
             title: 'Heartbreak Feels So Good',
