@@ -283,6 +283,106 @@ images.commissions = {
             value: '$2.50 USD',
             bgsize: 'contain'
         },
+        {
+            imglink: `/commissions/2026-03-10_ashen_semichibi.webp`,
+            date: new Date(2026, 3 - 1, 10),
+            title: 'Semi Chibi - Ashton (PMEX)',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-03-29_ashen_semichibi.webp`,
+            date: new Date(2026, 3 - 1, 29),
+            title: 'Semi Chibi - Wren',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-11_ashen_semichibi1.webp`,
+            date: new Date(2026, 4 - 1, 11),
+            title: 'Semi Chibi - Ashton (PLA)',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-11_ashen_semichibi2.webp`,
+            date: new Date(2026, 4 - 1, 11),
+            title: 'Semi Chibi - Ashton (PLZA)',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-12_ashen_semichibi.webp`,
+            date: new Date(2026, 4 - 1, 12),
+            title: 'Semi Chibi - Zorua',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-24_ashen_semichibi.webp`,
+            date: new Date(2026, 4 - 1, 24),
+            title: 'Semi Chibi - Blythe',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-26_ashen_semichibi.webp`,
+            date: new Date(2026, 4 - 1, 26),
+            title: 'Semi Chibi - Blake',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-28_ashen_semichibi.webp`,
+            date: new Date(2026, 4 - 1, 28),
+            title: 'Semi Chibi - Ashton (SWSH)',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-29_ashen_semichibi1.webp`,
+            date: new Date(2026, 4 - 1, 29),
+            title: 'Semi Chibi - Ashton (SV)',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
+        {
+            imglink: `/commissions/2026-04-29_ashen_semichibi2.webp`,
+            date: new Date(2026, 4 - 1, 29),
+            title: 'Semi Chibi - Reira',
+            credit: 'ashen',
+            category: 'Semi Chibi',
+            medium: 'artwork',
+            value: '$5.00 USD',
+            bgsize: 'contain'
+        },
     ]
 
 }
@@ -2279,6 +2379,427 @@ images.pmdbts = {
                 <p>And so, as always, Benoit quietly sighed before he nodded at them. “Alright then… let’s get going?”</p>
                 
                 <p>“Yes!” Augurys returned his nod enthusiastically. They were clueless as always. Nevertheless, he would walk at their side as usual.</p>`
+        },
+
+        // Feb 12, 2026 - Collab Dungeon (Boggy Wastes w/ Mae)
+        {
+            imglink: 'dungeons/2026-02-12_boggywastes_collab.webp',
+            title: 'Tracking Mud Everywhere!',
+            date: new Date(2026, 2 - 1, 12, 4 + 12, 54),
+            activity: 'Dungeon',
+            dungeon: `Boggy Wastes`,
+            items: {
+                'Four Seasons': 'Tera Orb'
+            },
+            levels: {
+                gained: 5,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'lines',
+                    link: 'https://toyhou.se/MinishMae'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Polly',
+                    team: 'Four Seasons',
+                    species: 'Hue Numel',
+                    startlvl: 20
+                }
+            ],
+            description: ''
+        },
+
+        // Feb 14, 2026 - Collab Dungeon (Boggy Wastes w/ Mae)
+        {
+            imglink: 'dungeons/2026-02-14_marineresort_collab.webp',
+            title: 'Gummi Gummi Picnic!',
+            date: new Date(2026, 2 - 1, 14, 4 + 12, 28),
+            activity: 'Dungeon',
+            dungeon: `Marine Resort`,
+            levels: {
+                gained: 5,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'lines',
+                    link: 'https://toyhou.se/MinishMae'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Polly',
+                    team: 'Four Seasons',
+                    species: 'Hue Numel',
+                    startlvl: 35
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 2, 2026 - Collab Dungeon (Inferno Field w/ Mae & Ghost)
+        {
+            imglink: 'dungeons/2026-03-02_infernofield_collab.webp',
+            title: 'Finding the Fire Stone',
+            date: new Date(2026, 3 - 1, 2, 4 + 12, 10),
+            activity: 'Dungeon',
+            dungeon: `Inferno Field`,
+            items: {
+                'Enochian' : 'Wonder Chest'
+            },
+            levels: {
+                gained: 5,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'lines',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'background, sketch',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Zane',
+                    team: 'Enochian',
+                    species: 'Hue Monster Applin',
+                    startlvl: 62
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 2, 2026 - Collab Dungeon (Tiny Meadow w/ Mae & Ghost)
+        {
+            imglink: 'dungeons/2026-03-02_tinymeadow_collab.webp',
+            title: "Klefki's Key",
+            date: new Date(2026, 3 - 1, 2, 4 + 12, 14),
+            activity: 'Dungeon',
+            dungeon: `Tiny Meadow`,
+            items: {
+                'Syzygy' : 'Wonder Chest'
+            },
+            levels: {
+                gained: 3,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'lines',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'background, sketch',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Buneary',
+                    team: 'Syzygy',
+                    species: 'Deco Buneary',
+                    startlvl: 29
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 2, 2026 - Collab Dungeon (Snowbound Mountains w/ Mae & Ghost)
+        {
+            imglink: 'dungeons/2026-03-02_snowboundmountains_collab.webp',
+            title: "Investigating with Pangoro",
+            date: new Date(2026, 3 - 1, 2, 4 + 12, 16),
+            activity: 'Dungeon',
+            dungeon: `Snowbound Mountains`,
+            levels: {
+                gained: 5,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'lines',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'background, sketch',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Polly',
+                    team: 'Four Seasons',
+                    species: 'Hue Numel',
+                    startlvl: 40
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 23, 2026 - Collab Dungeon (Waterspout Waters w/ Mae & Ghost & Poyo)
+        {
+            imglink: 'dungeons/2026-03-23_waterspoutwaters_collab.webp',
+            title: "Lost at Sea",
+            date: new Date(2026, 3 - 1, 23, 6 + 12, 22),
+            activity: 'Dungeon',
+            dungeon: `Waterspout Waters`,
+            items: {
+                'Syzygy' : 'Wonder Chest'
+            },
+            levels: {
+                gained: 3,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'background',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'lines',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                },
+                {
+                    user: 'Poyopaan',
+                    role: 'sketch',
+                    link: 'https://bsky.app/profile/poyopaan.bsky.social'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Hawke',
+                    team: 'Syzygy',
+                    species: 'Astral Charcadet',
+                    startlvl: 44
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 23, 2026 - Collab Dungeon (Snowy Ridge w/ Mae & Ghost & Poyo)
+        {
+            imglink: 'dungeons/2026-03-23_snowyridge_collab.webp',
+            title: "Lost at Sea",
+            date: new Date(2026, 3 - 1, 23, 6 + 12, 24),
+            activity: 'Dungeon',
+            dungeon: `Snowy Ridge`,
+            items: {
+                'Enochian' : 'Wonder Chest'
+            },
+            levels: {
+                gained: 5,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'background',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'lines',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                },
+                {
+                    user: 'Poyopaan',
+                    role: 'sketch',
+                    link: 'https://bsky.app/profile/poyopaan.bsky.social'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Lester',
+                    team: 'Enochian',
+                    species: 'Happy Zorua (Unova)',
+                    startlvl: 49
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 23, 2026 - Collab Dungeon (Berry Grove w/ Mae & Ghost & Poyo)
+        {
+            imglink: 'dungeons/2026-03-23_berrygrove_collab.webp',
+            title: "Showing Up for Swellow",
+            date: new Date(2026, 3 - 1, 23, 7 + 12, 26),
+            activity: 'Dungeon',
+            dungeon: ` Berry Grove`,
+            levels: {
+                gained: 2,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'background',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'lines',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                },
+                {
+                    user: 'Poyopaan',
+                    role: 'sketch',
+                    link: 'https://bsky.app/profile/poyopaan.bsky.social'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Ana',
+                    team: 'Syzygy',
+                    species: 'Temporal Combee',
+                    startlvl: 27
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 23, 2026 - Collab Dungeon (Stompstump Peak w/ Mae & Ghost & Poyo)
+        {
+            imglink: 'dungeons/2026-03-23_stompstumppeak_collab.webp',
+            title: "A Little Too Eager",
+            date: new Date(2026, 3 - 1, 23, 8 + 12, 52),
+            activity: 'Dungeon',
+            dungeon: `Stompstump Peak`,
+            levels: {
+                gained: 5,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'background',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Ghost-Zodiac',
+                    role: 'lines',
+                    link: 'https://www.deviantart.com/ghost-zodiac'
+                },
+                {
+                    user: 'Poyopaan',
+                    role: 'sketch',
+                    link: 'https://bsky.app/profile/poyopaan.bsky.social'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Hawke',
+                    team: 'Syzygy',
+                    species: 'Astral Charcadet',
+                    startlvl: 52
+                }
+            ],
+            description: ''
+        },
+
+        // Mar 28, 2026 - Collab Dungeon (Enchanted Woods w/ Mae & Timelocke)
+        {
+            imglink: 'dungeons/2026-03-28_enchantedwoods_collab.webp',
+            title: "A Little Too Eager",
+            date: new Date(2026, 3 - 1, 28, 4 + 12, 49),
+            activity: 'Dungeon',
+            dungeon: `Enchanted Woods`,
+            levels: {
+                gained: 5,
+            },
+            tags: ['pokemon', 'pmdbts', 'feral', 'collab'],
+            medium: 'artwork',
+            contributers: [
+                {
+                    user: 'dragon-heist',
+                    role: 'colours, shading'
+                },
+                {
+                    user: 'Minish-Mae',
+                    role: 'sketch',
+                    link: 'https://toyhou.se/MinishMae'
+                },
+                {
+                    user: 'Timelocke',
+                    role: 'lines',
+                    link: 'https://www.deviantart.com/Timelocke'
+                }
+            ],
+            characters: [
+                {
+                    name: 'Ambrosius',
+                    team: 'Syzygy',
+                    species: 'Fiendish Dubwool',
+                    startlvl: 52
+                },
+                {
+                    name: 'Lester',
+                    team: 'Enochian',
+                    species: 'Happy Zorua (Unova)',
+                    startlvl: 52
+                }
+            ],
+            description: ''
         },
 
     ]
