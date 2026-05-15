@@ -69,14 +69,14 @@
             },
             {
                 type: 'DINKY',
-                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-fray.png',
-                character: 'Fray',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173843/helloaerin-dinky-orpheus.png',
+                character: 'Orpheus',
                 size: '115%'
             },
             {
                 type: 'DINKY',
-                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-makoto_v1.png',
-                character: 'Makoto<br><sup>(old design)</sup>',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173879/helloaerin-dinky-naoshi_v1.png',
+                character: 'Naoshi<br><sup>(old design)</sup>',
                 size: '115%'
             },
             {
@@ -89,6 +89,18 @@
                 type: 'DINKY',
                 imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173833/helloaerin-dinky-masaru.png',
                 character: 'Masaru',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809512/helloaerin-dinky-titania.png',
+                character: 'Titania',
+                size: '115%'
+            },
+            {
+                type: 'DINKY',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809509/helloaerin-dinky-oberon.png',
+                character: 'Oberon',
                 size: '115%'
             },
 
@@ -230,6 +242,18 @@
                 type: 'MISC',
                 imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174775/helloaerin-smooch-weisheng.png',
                 character: 'Weisheng<br><sup><i class="fas fa-user"></i> Minish-Mae</sup>'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809588/helloaerin-bubble-lynaeus.png',
+                character: 'Lynaeus',
+                size: 'contain'
+            },
+            {
+                type: 'MISC',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809583/helloaerin-bubble-qiwen.png',
+                character: 'Qǐ-Wén',
+                size: 'contain'
             },
 
             // ANIMATED
@@ -552,18 +576,18 @@
             },
             {
                 type: 'POP',
-                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-fray.png',
-                character: 'Fray'
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775173424/helloaerin-pop-orpheus.png',
+                character: 'Orpheus'
             },
             {
                 type: 'POP',
-                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-makoto_v1.png',
-                character: 'Makoto<br><sup>(old design)</sup>'
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775171266/helloaerin-pop-naoshi_v1.png',
+                character: 'Naoshi<br><sup>(old design)</sup>'
             },
             {
                 type: 'POP',
-                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-makoto_v2.png',
-                character: 'Makoto'
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775099599/helloaerin-pop-naoshi_v2.png',
+                character: 'Naoshi'
             },
             {
                 type: 'POP',
@@ -604,6 +628,43 @@
                 type: 'POP',
                 imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1775174788/helloaerin-pop-calypso.png',
                 character: 'Calypso'
+            },
+            {
+                type: 'POP',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809452/helloaerin-pop-hanbyeol.png',
+                character: 'Hanbyeol'
+            },
+
+            // ICONS
+            {
+                type: 'ICONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809616/helloaerin-icon-naoshi.png',
+                character: 'Naoshi',
+                size: 'contain'
+            },
+            {
+                type: 'ICONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809620/helloaerin-icon-orpheus.png',
+                character: 'Orpheus',
+                size: 'contain'
+            },
+            {
+                type: 'ICONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809628/helloaerin-icon-masaru.png',
+                character: 'Masaru',
+                size: 'contain'
+            },
+            {
+                type: 'ICONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809612/helloaerin-icon-ulan.png',
+                character: 'Ulán',
+                size: 'contain'
+            },
+            {
+                type: 'ICONS',
+                imglink: 'https://res.cloudinary.com/dtzhke9vf/image/upload/v1778809624/helloaerin-icon-benoit.png',
+                character: 'Benoit',
+                size: 'contain'
             },
         ]
 
@@ -648,6 +709,7 @@
             let bustsList = new List('gallery-busts-container', galleryOptions, commsList.filter((i) => i.type === 'CHIBI BUSTS'));
             let miscList = new List('gallery-misc-container', galleryOptions, commsList.filter((i) => i.type === 'MISC'));
             let animList = new List('gallery-anim-container', galleryOptions, commsList.filter((i) => i.type === 'ANIMATIONS'));
+            let iconsList = new List('gallery-icons-container', galleryOptions, commsList.filter((i) => i.type === 'ICONS'));
             let gummyList = new List('gallery-gummy-container', galleryOptions, commsList.filter((i) => i.type === 'GUMMY'));
             let popList = new List('gallery-pop-container', galleryOptions, commsList.filter((i) => i.type === 'POP'));
 
@@ -668,6 +730,7 @@
             <div><a href="#gallery-chibiref"><i class="fa-solid fa-angles-right"></i> Chibi Refs</a></div>
             <div><a href="#gallery-gummy"><i class="fa-solid fa-angles-right"></i> Gummy</a></div>
             <div><a href="#gallery-anim"><i class="fa-solid fa-angles-right"></i> Animations</a></div>
+            <div><a href="#gallery-icons"><i class="fa-solid fa-angles-right"></i> Icons</a></div>
             <div><a href="#gallery-busts"><i class="fa-solid fa-angles-right"></i> Chibi Busts</a></div>
             <div><a href="#gallery-holiday"><i class="fa-solid fa-angles-right"></i> Holiday Minis</a></div>
             <div><a href="#gallery-tiny"><i class="fa-solid fa-angles-right"></i> Tiny</a></div>
@@ -708,6 +771,10 @@
 
                             <div class="page-sidebar-tab">
                                 <a href="#gallery-anim"><i class="fa-solid fa-angles-right"></i> ANIMATIONS</a>
+                            </div>
+
+                            <div class="page-sidebar-tab">
+                                <a href="#gallery-icons"><i class="fa-solid fa-angles-right"></i> ICONS</a>
                             </div>
 
                             <div class="page-sidebar-tab">
@@ -822,6 +889,26 @@
                             </div>
 
                             <div class="collapse show active" id="gallery-anim-container">
+
+                                <ul class="list p-0 d-flex flex-wrap col-12 gallery">
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="gallery-icons">
+
+                            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2">
+                                <hr class="section-divider" style="width:25px;">
+                                <div class="fancy-section-header col-auto mx-2">
+                                    <a class="fa-xs star-collapse-link" data-bs-toggle="collapse" href="#gallery-icons-container"></a>
+                                    Icons
+                                </div>
+                                <hr class="section-divider col">
+                            </div>
+
+                            <div class="collapse show active" id="gallery-icons-container">
 
                                 <ul class="list p-0 d-flex flex-wrap col-12 gallery">
                                 </ul>
