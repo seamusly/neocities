@@ -1370,7 +1370,7 @@ images.pmdbts = {
                     startlvl: 1
                 },
                 {
-                    name: 'Fray',
+                    name: 'Orpheus',
                     team: 'Syzygy',
                     species: 'Hue Monster Tandemaus',
                     startlvl: 1
@@ -1422,7 +1422,7 @@ images.pmdbts = {
                     startlvl: 11
                 },
                 {
-                    name: 'Fray',
+                    name: 'Orpheus',
                     team: 'Syzygy',
                     species: 'Hue Monster Tandemaus',
                     startlvl: 1
@@ -2050,7 +2050,7 @@ images.pmdbts = {
             ],
             characters: [
                 {
-                    name: 'Fray',
+                    name: 'Orpheus',
                     team: 'Syzygy',
                     species: 'Hue Tandemaus'
                 },
@@ -2326,7 +2326,7 @@ images.pmdbts = {
                     startlvl: 15
                 },
                 {
-                    name: 'Makoto',
+                    name: 'Naoshi',
                     team: 'Syzygy',
                     species: 'Zorua Deco Hisui',
                     startlvl: 1
@@ -2350,13 +2350,13 @@ images.pmdbts = {
                 
                 <p>Once again, the Dedenne found himself standing in a forest; one covered in sheets of ice and snow. Rather than the endless nights covered in auroral skies however, the dungeon saw rays of sun peeking from behind the leafless canopy of trees. The light reflected off of virtually everything in sight. It would have overwhelmed him as it did his teammates had he not had his usual tinted glasses to shield his eyes from the brightness.</p>
                 
-                <p>Though he had been leading at the time, Benoit paused a short ways into the clearing at the entrance to turn around and face his team. “Fray,” he called first. “You doing alright—?”</p>
+                <p>Though he had been leading at the time, Benoit paused a short ways into the clearing at the entrance to turn around and face his team. “Orpheus,” he called first. “You doing alright—?”</p>
                 
                 <p>Benoit’s words were caught in his throat however as an intense, brilliant light suddenly flashed in his periphery. The phenomenon was so powerful that it sent the diminutive rodent staggering. He tripped with a grunt, and his ball-like form sent him rolling a few feet away. “Shit, <i>what</i> the—?!”</p>
                 
                 <p>It took a few seconds for him to recover from his dazed state, blinking away the speckles clouding his vision as he tried to turn his attention upwards towards what caused the seeming explosion. When he could finally make out the shape of the one responsible however, he merely gritted his little teeth and sighed in exasperation.</p>
                 
-                <p>Makoto, a baneful Zorua and more recent addition to the team’s numbers, had his shoulder turned to the light himself. Beneath him, Fray was cowering with both their paws pressed against their head. Alongside their shadow, the Tandemaus was practically pressed into Makoto’s fur with their eyes shut in fright. Makoto was similarly grimacing, perhaps even more unpleased with what he was seeing for himself.</p>
+                <p>Naoshi, a baneful Zorua and more recent addition to the team’s numbers, had his shoulder turned to the light himself. Beneath him, Orpheus was cowering with both their paws pressed against their head. Alongside their shadow, the Tandemaus was practically pressed into Naoshi’s fur with their eyes shut in fright. Naoshi was similarly grimacing, perhaps even more unpleased with what he was seeing for himself.</p>
                 
                 <p>There, standing in the center of the wintery clearing, was a Buneary. Augurys seemed to stumble back and forth a few times themself, trying to regain their balance as the initial burst of power subsided. Atop their head, they now wore a magnificent crystalline crown shaped like an eye. It shone like a beacon, illuminating the entire forest floor and blinding those nearby. As Benoit started to get up to his feet, he could hear the rustling of shrubs nearby, signaling the presence of on-lookers who he could only guess were attempting to move away from them.</p>
                 
@@ -2368,11 +2368,11 @@ images.pmdbts = {
                 
                 <p>Augurys eventually looked up to meet Benoit’s gaze. They wore a blank expression on their face as always and merely blinked at him a few times before their eyes widened and they smiled sheepishly. ”…oh. Right.”</p>
                 
-                <p>“Don’t worry, Benoit.” The sound of Makoto’s jeering voice came from behind them. He was sneering, returning Augurys’s typical friendly demeanour with his own sarcastic grin. “Now that we’ve alerted just about every Pokemon in the area, there should be a path cleared for us to just stroll on in. <i>Thank you</i> for that, Augurys.”</p>
+                <p>“Don’t worry, Benoit.” The sound of Naoshi’s jeering voice came from behind them. He was sneering, returning Augurys’s typical friendly demeanour with his own sarcastic grin. “Now that we’ve alerted just about every Pokemon in the area, there should be a path cleared for us to just stroll on in. <i>Thank you</i> for that, Augurys.”</p>
                 
                 <p>“You’re welcome!” The Buneary practically — and literally — beamed in response.</p>
                 
-                <p>Makoto scoffed. He leaned down and bit lightly down on the scruff of Fray’s neck, lifting them into the air a moment later as though they were a kitten being carried by its mother. They squealed in surprise, though did not seem to struggle in the Zorua’s grasp as he trampled off to find cover for them both from Augurys’s light.</p>
+                <p>Naoshi scoffed. He leaned down and bit lightly down on the scruff of Orpheus’s neck, lifting them into the air a moment later as though they were a kitten being carried by its mother. They squealed in surprise, though did not seem to struggle in the Zorua’s grasp as he trampled off to find cover for them both from Augurys’s light.</p>
                 
                 <p>Benoit squeezed his eyes shut himself and would have hung his head in resignation had he not been addressed suddenly. Augurys looked to him, happy as ever, and reached a hand out to pat him on the side. They said nothing, although he had been through a similar sequence of events with them enough times before to know that they were beckoning him to join them. Despite their current circumstances and his usual reservations about the bubbly, somewhat clumsy ‘mon, he knew that he would end up walking at their side regardless. He could not say his reasons, however.</p>
                 
