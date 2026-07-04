@@ -573,9 +573,13 @@ a.profile-inline-img:hover {
   text-align: center;
 }
 
+.section-body p {
+  text-indent: 2rem;
+}
+
 .section-header {
   font-family: 'Lexend', sans-serif;
-  font-size: 2rem;
+  font-size: calc(1.5rem + .6vw);
   text-align: center;
 }
 
