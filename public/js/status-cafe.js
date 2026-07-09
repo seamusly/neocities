@@ -129,7 +129,7 @@ const emojiList = {
         css: '<i class="em em-bulb" aria-role="presentation" aria-label="ELECTRIC LIGHT BULB"></i>',
         img: ''
     },
-    "🌧️": {
+    "🌧": {
         css: '<i class="em em-rain_cloud" aria-role="presentation" aria-label=""></i>',
         img: ''
     },
@@ -170,7 +170,7 @@ fetch(feedURL)
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
     .then(data => {
-        const postLimit = 5;
+        const postLimit = 8;
         const entries = data.querySelectorAll("entry");
         let html = (entries.length < 1) ? `<p>No statuses yet.</p>` : '';
         if (entries.length > 1) {
