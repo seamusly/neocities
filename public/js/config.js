@@ -15,8 +15,8 @@ config.footer = {
             link: 'credits.html',
         },
         {
-            title: 'Links',
-            link: 'links.html',
+            title: 'Archive',
+            link: '#',
         },
     ]
 };
@@ -32,7 +32,7 @@ config.pages = {
     },
     links: {
         root: './',
-        title: 'Links'
+        title: 'Archive'
     },
     characters : {
         root: './',

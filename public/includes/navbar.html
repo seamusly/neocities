@@ -1,0 +1,63 @@
+<script type="text/javascript" type="module">
+    $(document).ready(function() {
+        if (!window.location.href.includes('character')) return;
+        $(`#navbar-container`).addClass('justify-content-md-start');
+    });
+</script>
+
+<div class="navbar navbar-expand-lg">
+    <div class="container-fluid justify-content-end" id="navbar-container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars m-1 navbar-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link navbar-link" href="/index.html"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="nav-item dropdown mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-book-open"></i> Info
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item navbar-link" href="#">About</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item navbar-link" href="#">Commissions</a></li>
+                        <li><a class="dropdown-item navbar-link" href="#">Terms of Service</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item navbar-link" href="#">Credits</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> My Work
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item navbar-link" href="#">Art Gallery</a></li>
+                        <li><a class="dropdown-item navbar-link" href="#">Library</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item navbar-link" href="#">Characters</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-note-sticky"></i> Posts
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item navbar-link" href="archive.html">Archive</a></li>
+                        <li><a class="dropdown-item navbar-link" href="#"><i class="em em-new" aria-role="presentation" aria-label="SQUARED NEW"></i> Latest Post</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-rainbow"></i> Hobbies
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item navbar-link" href="#">Pokémon</a></li>
+                        <li><a class="dropdown-item navbar-link" href="#">Reading List</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,17 @@ let utils = {};
 const siteUrl = 'dragon-heist.neocities';
 
 utils.init = {
+    navbar(root, profile = false) {
+        $(`.navbar-link`).each(function() {
+            let link = $(this).attr('href');
+            if (!link) return $(this).attr('href', '#');
+            $(this).attr('href', `${root}${link}`);
+        });
+
+        if (!profile) return;
+        $(`#navbar-container`).addClass('justify-content-md-start');
+    },
+
     header(title, subtitle = null) {
         const header = $(`.page-header`);
 
@@ -45,9 +56,11 @@ utils.init = {
 
     // Load files via include
     // Will replace the entire div
-    loadIncludedFiles() {
+    loadIncludedFiles(root = '') {
         $(".load-html").each(function () {
             const target = $(this);
+            const source = target.attr('data-source');
+            target.attr('data-source', `${root}${source}`);
             $.get(this.dataset.source, function (data) {
                 target.replaceWith(data);
             });

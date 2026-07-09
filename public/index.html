@@ -13,6 +13,7 @@
     <script type="text/javascript" src="utilities/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="utilities/list.min.js"></script>
     <script type="text/javascript" src="utilities/lightbox2-2.11.5/lightbox.min.js"></script>
+    <script type="text/javascript" src="js/status-cafe.js"></script>
     <script type="module">
         // Import config and utils
         import { config } from './js/config.js';
@@ -24,6 +25,7 @@
         $(document).ready(function() {
             const urlParams = utils.url.getUrlParams();
 
+            utils.init.loadIncludedFiles();
             utils.init.header(config.pages.index.title);
             utils.init.footer(config.footer.links, config.pages.index.root);
             utils.init.top();
@@ -43,6 +45,10 @@
 
         });
 
+        $(window).on('load', function() {
+            utils.init.navbar(config.pages.index.root);
+        });
+
         function getGallery(imagesArr) {
 
             let latestGalleryList = new List('gallery-recent-container', gallery.options.createGalleryOptions(config.pages.gallery.root), imagesArr);
@@ -53,8 +59,10 @@
 
     <div class="main-container">
 
-        <div class="page-header mb-2">
+        <div class="page-header">
         </div>
+
+        <div class="load-html" data-source="includes/navbar.html"></div>
 
         <div class="page-container d-flex flex-wrap">
 
@@ -62,15 +70,25 @@
 
                 <div class="page-body p-3 h-100">
 
-                    <div class="profile-icon mx-auto mt-n6 mb-2"></div>
+                    <div class="profile-icon mx-auto mb-2"></div>
 
-                    <div class="statuscafe-container mb-1">
-                        <div class="status-arrow mx-auto"></div>
-                        <div class="status-bubble p-3">
-                            <iframe src="https://melonking.net/frames/statusProxy.html?name=dragon-heist&css=https://dragon-heist.neocities.org/css/status-cafe.css" style="border: none; width: 100%; max-width: 500px; max-height: 150px;"></iframe>
+                    <div class="status-box p-3 mb-3">
+                        <p class="status-label mb-0"><i class="fa-solid fa-gamepad"></i> Playing:</p>
+                        <p class="text-center">Pokémon Emerald<br>Pokémon Champions</p>
+
+                        <p class="status-label mb-0"><i class="fa-solid fa-book"></i> Reading:</p>
+                        <p class="text-center">The Traitor Baru Cormorant<br><span class="small opacity-75">by Seth Dickinson</span></p>
+
+                        <p class="status-label mb-0"><i class="fa-solid fa-video"></i> Watching:</p>
+                        <p class="text-center"><span class="small opacity-75"><i>Nothing right now!</i></span></p>
+
+                        <p class="status-label mb-0"><i class="fa-solid fa-music"></i> Listening:</p>
+                        <div class="marquee-container">
+                            <div class="marquee-content">
+                                <a href="https://youtu.be/ICFPzrihGX8">24. Flower Castle (DELTARUNE Chapter 5 Soundtrack) - Toby Fox</a>
+                            </div>
                         </div>
                     </div>
-                    <p style="font-size:small; opacity:0.7;" class="text-end"><a href="https://status.cafe/users/dragon-heist">via status.cafe <i class="fa-solid fa-mug-saucer"></i></a></p>
 
                     <hr class="profile-info-divider my-2">
                     <h4 class="my-3">Work Queue</h4>
@@ -88,7 +106,7 @@
             <div class="col-lg-9 col-12 d-flex">
                 <div class="page-body p-3">
 
-                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n2 mt-2 mb-3">
+                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n1 mt-2 mb-3">
                         <hr class="section-divider" style="width:25px;">
                         <div class="section-header col-auto mx-3">
                             <span class="fa-xs star-collapse-link"></span>
@@ -97,16 +115,23 @@
                         <hr class="section-divider col">
                     </div>
 
-                    <div class="px-3">
-                        <p>This site is a <i>heavy</i> WIP! At the moment, I'm focused on transferring art and character profiles over from Toyhou.se, and so these sections will be pretty barebones for the time being.</p>
-                        <p>Here are some links to get us started at least:</p>
-                        <ul class="fa-ul ms-md-4 ms-2">
-                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="blog/2026-07-04-Art-Life-Updates.html"><i class="em em-new" aria-role="presentation" aria-label="SQUARED NEW"></i> <b>Blog:</b> Art & Life Updates (July 4, 2026)</a></li>
-                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="credits.html">Credits</a></li>
-                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="characters.html">Characters</a></li>
-                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="gallery.html">Gallery</a></li>
-                            <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="comms/helloaerin.html"><b>Showcase:</b> <i class="fas fa-user"></i> helloaerin</a></li>
-                        </ul>
+                    <div class="d-flex flex-wrap">
+                        <div class="col-md-8 col-12 px-3">
+                            <p>This site is a <i>heavy</i> WIP! At the moment, I'm focused on transferring art and character profiles over from Toyhou.se, and so these sections will be pretty barebones for the time being.</p>
+                            <p>Here are some links to get us started at least:</p>
+                            <ul class="fa-ul ms-md-4 ms-2">
+                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="posts/2026-07-04-Art-Life-Updates.html"><i class="em em-new" aria-role="presentation" aria-label="SQUARED NEW"></i> <b>Blog:</b> Art & Life Updates (July 4, 2026)</a></li>
+                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="credits.html">Credits</a></li>
+                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="characters.html">Characters</a></li>
+                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="gallery.html">Gallery</a></li>
+                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="comms/helloaerin.html"><b>Showcase:</b> <i class="fas fa-user"></i> helloaerin</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sc-container col-md-4 col-12 ps-2 py-2 pe-sm-0 pe-2">
+                            <div id="feed-reader" class="sc-scrollbox"></div>
+                            <p style="font-size:small; opacity:0.7;" class="text-end mb-0 mt-1 pe-2"><a href="https://status.cafe/users/dragon-heist">view on status.cafe <i class="fa-solid fa-mug-saucer"></i></a></p>
+                        </div>
                     </div>
 
                     <div class="d-flex align-items-center col-md-auto p-0 mt-lg-4 mt-5 mb-3">

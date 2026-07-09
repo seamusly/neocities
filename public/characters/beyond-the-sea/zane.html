@@ -25,12 +25,13 @@
 
         // Init page elements
         $(document).ready(function() {
+            utils.init.loadIncludedFiles(config.pages.beyondthesea.root);
+
             gallery.root = config.pages.beyondthesea.root;
             utils.init.header(config.pages.beyondthesea.profiles.Zane.title, config.pages.beyondthesea.subtitle);
             utils.init.footer(config.footer.links, config.pages.beyondthesea.root);
             utils.init.top();
 
-            utils.init.loadIncludedFiles();
             utils.init.profile();
 
             pmdbts.init.setTeam('Enochian');
@@ -64,13 +65,20 @@
 </head>
 <body class="beyond-the-sea">
 
-    <div class="load-html" data-source="../../includes/profile-sidebar-small.html"></div>
+    <div class="load-html" data-source="includes/profile-sidebar-small.html"></div>
 
     <div class="main-container">
 
-        <div class="page-header beyond-the-sea mb-2">
+        <div class="page-header beyond-the-sea">
+            <div class="mt-2 page-sidebar-back">
+                <a href="../../characters.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Characters</a>
+            </div>
+        </div>
 
-            <ul class="nav nav-tabs profile-tabs justify-content-md-end justify-content-center pe-md-2 col-12" id="myTab" role="tablist">
+        <div class="load-html" data-source="includes/navbar.html"></div>
+
+        <div class="profile-tabs-container mt-md-0 mt-4">
+            <ul class="nav nav-tabs profile-tabs justify-content-md-end justify-content-center pe-md-2 col-12" role="tablist">
                 <li class="nav-item col-md-auto col px-md-0 px-sm-3" role="presentation">
                     <button class="nav-link active col-12" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
                 </li>
@@ -85,10 +93,6 @@
                     <button class="nav-link col-12" data-bs-toggle="tab" data-bs-target="#logs">Logs</button>
                 </li>
             </ul>
-
-            <div class="mt-2 page-sidebar-back">
-                <a href="../../characters.html"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Characters</a>
-            </div>
         </div>
 
         <div class="tab-content" id="profile-content">
