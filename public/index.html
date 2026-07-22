@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dragon-heist</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>🐉 dragon-heist</title>
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bs-addons.css" rel="stylesheet">
-    <link href="utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
+    <meta name="robots" content="noai, noimageai">
+
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/bs-addons.css" rel="stylesheet">
+    <link href="./utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-    <script type="text/javascript" src="utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="utilities/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="utilities/list.min.js"></script>
-    <script type="text/javascript" src="utilities/lightbox2-2.11.5/lightbox.min.js"></script>
-    <script type="text/javascript" src="js/status-cafe.js"></script>
+    <script type="text/javascript" src="./utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="./utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./utilities/list.min.js"></script>
+    <script type="text/javascript" src="./utilities/lightbox2-2.11.5/lightbox.min.js"></script>
+    <script type="text/javascript" src="./js/status-cafe.js"></script>
     <script type="module">
         // Import config and utils
         import { config } from './js/config.js';
@@ -25,11 +26,6 @@
         // Init page elements
         $(document).ready(function() {
             const urlParams = utils.url.getUrlParams();
-
-            utils.init.loadIncludedFiles();
-            utils.init.header(config.pages.index.title);
-            utils.init.footer(config.footer.links, config.pages.index.root);
-            utils.init.top();
 
             utils.init.tooltips();
             utils.init.lightbox();
@@ -46,10 +42,6 @@
 
         });
 
-        $(window).on('load', function() {
-            utils.init.navbar(config.pages.index.root);
-        });
-
         function getGallery(imagesArr) {
 
             let latestGalleryList = new List('gallery-recent-container', gallery.options.createGalleryOptions(config.pages.gallery.root), imagesArr);
@@ -57,115 +49,192 @@
     </script>
 </head>
 <body>
+    <div class="back-to-top-container">
+        <a role="button" class="btn back-to-top-btn mb-1" data-bs-toggle="tooltip" data-bs-title="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+        <a role="button" class="btn back-to-top-btn" data-bs-toggle="tooltip" data-bs-title="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
+    </div>
 
     <div class="main-container">
 
         <div class="page-header">
-        </div>
+            <h1 class="page-header-title mb-0">dragon-heist</h1></div>
 
-        <div class="load-html" data-source="includes/navbar.html"></div>
-
-        <div class="page-container d-flex flex-wrap">
-
-            <div class="col-lg-3 col-12 pe-lg-2">
-
-                <div class="page-body p-3 h-100">
-
-                    <div class="profile-icon mx-auto mb-2"></div>
-
-                    <div class="status-box p-3 mb-3">
-                        <p class="status-label mb-0"><i class="fa-solid fa-gamepad"></i> Playing:</p>
-                        <p class="text-center">Pokémon Emerald<br>Pokémon Champions</p>
-
-                        <p class="status-label mb-0"><i class="fa-solid fa-book"></i> Reading:</p>
-                        <p class="text-center">The Traitor Baru Cormorant<br><span class="small opacity-75">by Seth Dickinson</span></p>
-
-                        <p class="status-label mb-0"><i class="fa-solid fa-video"></i> Watching:</p>
-                        <p class="text-center"><span class="small opacity-75"><i>Nothing right now!</i></span></p>
-
-                        <p class="status-label mb-0"><i class="fa-solid fa-music"></i> Listening:</p>
-                        <div class="marquee-container">
-                            <div class="marquee-content">
-                                <a href="https://youtu.be/ICFPzrihGX8">24. Flower Castle (DELTARUNE Chapter 5 Soundtrack) - Toby Fox</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="profile-info-divider my-2">
-                    <h4 class="my-3">Work Queue</h4>
-
-                    <div class="text-center">
-                        <blockquote class="trello-board-compact">
-                        <a href="https://trello.com/b/lmDxj4UW/">Trello Board</a>
-                        </blockquote>
-                        <script src="https://p.trellocdn.com/embed.min.js"></script>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-lg-9 col-12 d-flex">
-                <div class="page-body p-3">
-
-                    <div class="d-flex align-items-center col-md-auto p-0 mt-md-n1 mt-2 mb-3">
-                        <hr class="section-divider" style="width:25px;">
-                        <div class="section-header col-auto mx-3">
-                            <span class="fa-xs star-collapse-link"></span>
-                            Welcome!
-                        </div>
-                        <hr class="section-divider col">
-                    </div>
-
-                    <div class="d-flex flex-wrap">
-                        <div class="col-md-8 col-12 px-3">
-                            <p>This site is a <i>heavy</i> WIP! At the moment, I'm focused on transferring art and character profiles over from Toyhou.se, and so these sections will be pretty barebones for the time being.</p>
-                            <p>Here are some links to get us started at least:</p>
-                            <ul class="fa-ul ms-md-4 ms-2">
-                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="posts/2026-07-04-Art-Life-Updates.html"><i class="em em-new" aria-role="presentation" aria-label="SQUARED NEW"></i> <b>Blog:</b> Art & Life Updates (July 4, 2026)</a></li>
-                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="credits.html">Credits</a></li>
-                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="characters.html">Characters</a></li>
-                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="gallery.html">Gallery</a></li>
-                                <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="comms/helloaerin.html"><b>Showcase:</b> <i class="fas fa-user"></i> helloaerin</a></li>
+        <div class="navbar navbar-expand-lg">
+            <div class="container-fluid justify-content-end" id="navbar-container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars m-1 navbar-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link navbar-link" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
+                        </li>
+                        <li class="nav-item dropdown mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-book-open"></i> Info
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item navbar-link" href="./about.html">About</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item navbar-link" href="./commissions.html">Commissions</a></li>
+                                <li><a class="dropdown-item navbar-link" href="./tos.html">Terms of Service</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item navbar-link" href="./credits.html">Credits</a></li>
                             </ul>
-                        </div>
-
-                        <div class="sc-container col-md-4 col-12 ps-2 py-2 pe-sm-0 pe-2">
-                            <div id="feed-reader" class="sc-scrollbox"></div>
-                            <p style="font-size:small; opacity:0.7;" class="text-end mb-0 mt-1 pe-2"><a href="https://status.cafe/users/dragon-heist">view on status.cafe <i class="fa-solid fa-mug-saucer"></i></a></p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center col-md-auto p-0 mt-lg-4 mt-5 mb-3">
-                        <hr class="section-divider" style="width:25px;">
-                        <div class="section-header col-auto mx-3">
-                            <span class="fa-xs star-collapse-link"></span>
-                            Recent Images
-                        </div>
-                        <hr class="section-divider col">
-                    </div>
-
-                    <div class="collapse show active" id="gallery-recent-container">
-                        <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-recent">
-                        </ul>
-                    </div>
-
-
+                        </li>
+                        <li class="nav-item dropdown mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> My Work
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item navbar-link" href="#">Art Gallery</a></li>
+                                <li><a class="dropdown-item navbar-link" href="#">Library</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item navbar-link" href="./characters.html">Characters</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-note-sticky"></i> Posts
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item navbar-link" href="./posts/archive.html">Archive</a></li>
+                                <li><a class="dropdown-item navbar-link" href="#"><i class="em em-new" aria-role="presentation" aria-label="SQUARED NEW"></i> Latest Post</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-rainbow"></i> Hobbies
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item navbar-link" href="#">Pokémon</a></li>
+                                <li><a class="dropdown-item navbar-link" href="#">Reading List</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        </div>
 
-                <div class="d-flex flex-wrap d-none">
-                    <div class="page-body col-lg-3 col-md-4 col-6 p-3">
-                        <h5>Characters</h5>
+        
+<div class="page-container d-flex flex-wrap">
+
+    <div class="col-lg-3 col-12 pe-lg-2">
+
+        <div class="page-body p-3 h-100">
+
+            <div class="profile-icon mx-auto mb-2"></div>
+
+            <div class="status-box p-3 mb-3">
+                <p class="status-label mb-0"><i class="fa-solid fa-gamepad"></i> Playing:</p>
+                <p class="text-center">Pokémon Emerald<br>Pokémon Champions</p>
+
+                <p class="status-label mb-0"><i class="fa-solid fa-book"></i> Reading:</p>
+                <p class="text-center">The Traitor Baru Cormorant<br><span class="small opacity-75">by Seth Dickinson</span></p>
+
+                <p class="status-label mb-0"><i class="fa-solid fa-video"></i> Watching:</p>
+                <p class="text-center"><span class="small opacity-75"><i>Nothing right now!</i></span></p>
+
+                <p class="status-label mb-0"><i class="fa-solid fa-music"></i> Listening:</p>
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        <a href="https://youtu.be/jbZT-bwZD3c">streetcat ft. Nekomura Iroha - FLAVOR FOLEY</a>
                     </div>
                 </div>
+            </div>
 
+            <hr class="profile-info-divider my-2">
+            <h4 class="my-3">Work Queue</h4>
+
+            <div class="text-center">
+                <blockquote class="trello-board-compact">
+                <a href="https://trello.com/b/lmDxj4UW/">Trello Board</a>
+                </blockquote>
+                <script src="https://p.trellocdn.com/embed.min.js"></script>
             </div>
 
         </div>
+    </div>
+
+    <div class="col-lg-9 col-12 d-flex">
+        <div class="page-body p-3">
+
+            <div class="d-flex align-items-center col-md-auto p-0 mt-md-n1 mt-2 mb-3">
+                <hr class="section-divider" style="width:25px;">
+                <div class="section-header col-auto mx-3">
+                    <span class="fa-xs star-collapse-link"></span>
+                    Welcome!
+                </div>
+                <hr class="section-divider col">
+            </div>
+
+            <div class="d-flex flex-wrap">
+                <div class="col-md-8 col-12 px-3">
+                    <p>This site is a <i>heavy</i> WIP! At the moment, I'm focused on transferring art and character profiles over from Toyhou.se, and so these sections will be pretty barebones for the time being.</p>
+                    <p>Here are some links to get us started at least:</p>
+                    <ul class="fa-ul ms-md-4 ms-2">
+                        <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="posts/2026-07-04-Art-Life-Updates.html"><i class="em em-new" aria-role="presentation" aria-label="SQUARED NEW"></i> <b>Blog:</b> Art & Life Updates (July 4, 2026)</a></li>
+                        <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="credits.html">Credits</a></li>
+                        <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="characters.html">Characters</a></li>
+                        <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="gallery.html">Gallery</a></li>
+                        <li class="mb-1"><i class="fa-solid fa-angle-right text-nav"></i> <a href="comms/helloaerin.html"><b>Showcase:</b> <i class="fas fa-user"></i> helloaerin</a></li>
+                    </ul>
+                </div>
+
+                <div class="sc-container col-md-4 col-12 ps-2 py-2 pe-sm-0 pe-2">
+                    <div id="feed-reader" class="sc-scrollbox"></div>
+                    <p style="font-size:small; opacity:0.7;" class="text-end mb-0 mt-1 pe-2"><a href="https://status.cafe/users/dragon-heist">view on status.cafe <i class="fa-solid fa-mug-saucer"></i></a></p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center col-md-auto p-0 mt-lg-4 mt-5 mb-3">
+                <hr class="section-divider" style="width:25px;">
+                <div class="section-header col-auto mx-3">
+                    <span class="fa-xs star-collapse-link"></span>
+                    Recent Images
+                </div>
+                <hr class="section-divider col">
+            </div>
+
+            <div class="collapse show active" id="gallery-recent-container">
+                <ul class="list p-0 d-flex flex-wrap col-12 gallery" id="gallery-recent">
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="d-flex flex-wrap d-none">
+            <div class="page-body col-lg-3 col-md-4 col-6 p-3">
+                <h5>Characters</h5>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
         <div class="page-footer">
-            <div class="footer-content"></div>
+            <div class="footer-content">
+                <span>✦</span>
+                <span class="mx-lg-3 mx-2">
+                    <a href="./index.html">Home</a>
+                </span>
+                <span>✦</span>
+                <span class="mx-lg-3 mx-2">
+                    <a href="#">Sitemap</a>
+                </span>
+                <span>✦</span>
+                <span class="mx-lg-3 mx-2">
+                    <a href="./credits.html">Credits</a>
+                </span>
+                <span>✦</span>
+                <span class="mx-lg-3 mx-2">
+                    <a href="#">Archive</a>
+                </span>
+                <span>✦</span>
+            </div>
         </div>
-
     </div>
 
 </body>
