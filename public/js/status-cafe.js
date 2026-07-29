@@ -125,6 +125,10 @@ const emojiList = {
         css: '<i class="em em-sparkles" aria-role="presentation" aria-label="SPARKLES"></i>',
         img: ''
     },
+    "✨ ": {
+        css: '<i class="em em-sparkles" aria-role="presentation" aria-label="SPARKLES"></i>',
+        img: ''
+    },
     "💡": {
         css: '<i class="em em-bulb" aria-role="presentation" aria-label="ELECTRIC LIGHT BULB"></i>',
         img: ''
@@ -155,6 +159,10 @@ const emojiList = {
     },
     "☀️": {
         css: '<i class="em em-sunny" aria-role="presentation" aria-label="BLACK SUN WITH RAYS"></i>',
+        img: ''
+    },
+    "💻": {
+        css: '<i class="em em-computer" aria-role="presentation" aria-label="PERSONAL COMPUTER"></i>',
         img: ''
     },
 };

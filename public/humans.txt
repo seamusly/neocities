@@ -1,0 +1,26 @@
+/* TEAM */                
+Name: dragon-heist
+Email: dragonheist.art@gmail.com
+Bluesky: dragon-heist.bsky.social
+Location: Canada
+
+
+/* THANKS */  
+atomicwrongs (Toyhou.se)
+    - background tile
+
+Cosmind (Toyhou.se)
+    - animated header banner
+
+l0stlights (Toyhou.se)
+    - pixel pride flags
+
+Flaticon
+    - inline icons
+
+
+/* SITE */                 
+Last update: 2026/07/28
+Standards: HTML5, CSS3
+Components: jQuery, Bootstrap 5, Eleventy
+Software: Visual Studio Code, Github Desktop
