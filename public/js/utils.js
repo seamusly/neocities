@@ -193,6 +193,21 @@ utils.parse = {
 
     filterSubmissions(subList, search, val) {
         return subList.filter((sub) => sub[search].toLowerCase() === val.toLowerCase());
+    },
+
+    getEmoji(emoji) {
+        if (!emoji || typeof emoji !== 'string') return null;
+    
+        let hexCodes = [];
+        for (let i = 0; i < emoji.length; i++) {
+            const cp = emoji.codePointAt(i);
+            if (cp === undefined) continue;
+            hexCodes.push(cp.toString(16).toUpperCase().padStart(4, '0'));
+            if (cp > 0xFFFF) i++; // Skip low surrogate
+        }
+
+        const emojiCode = hexCodes.join('-').toLowerCase();
+        return `<i class="em" style="background-image:url('${`https://raw.githubusercontent.com/twitter/twemoji/refs/heads/master/assets/72x72/${emojiCode}.png`}');"></i>`
     }
 }
 
