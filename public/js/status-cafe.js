@@ -8,7 +8,7 @@ let parsedDate = function(dateString) {
 }
 
 try {
-    fetch('/public/js/emojis.json')
+    fetch('https://dragon-heist.neocities.org/js/emojis.json')
     .then(response => response.text())
     .then(text => JSON.parse(text))
     .then(emojis => getStatusCafe(emojis));
