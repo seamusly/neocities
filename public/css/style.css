@@ -29,6 +29,7 @@
 	--card-link-color: #ffd6b9;
 	--card-link-hover: #cb765a;
 	--body-card-bg-color: #4D2A2A;
+	--body-card-bg-hover: #704646;
 	--navtab-bg-color: #a35c2a;
 	--navtab-bg-hover: #db8047;
 	--top-bg-color: #ba9a7a;
@@ -36,6 +37,36 @@
 	--bts-app-color: #234074;
 	--img-dropshadow-default: drop-shadow(1px 1px 0 var(--img-dropshadow-color)) drop-shadow(-1px -1px 0 var(--img-dropshadow-color)) drop-shadow(-1px 1px 0 var(--img-dropshadow-color)) drop-shadow(1px -1px 0 var(--img-dropshadow-color));
 	--img-dropshadow-hover: var(--img-dropshadow-default) var(--img-dropshadow-default);
+}
+
+/* Tabs */
+.nav-tabs.custom-tabs {
+	border-bottom: none;
+}
+
+.tab-content.custom-tabs{
+	background: var(--body-card-bg-color);
+}
+
+.custom-tabs .nav-link {
+	color: var(--info-link-hover);
+	border: 4px solid var(--body-card-bg-color);
+	border-radius: 0;
+	padding: .25em .5em;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.custom-tabs .nav-link:hover {
+	color: var(--navtab-bg-hover);
+	border-color: var(--body-card-bg-hover);
+}
+
+.custom-tabs .nav-link.active {
+	color: white;
+	background: var(--card-link-hover);
+	border-color: var(--body-card-bg-hover);
+	font-weight: 600;
 }
 
 /* Scroll containers */
@@ -167,14 +198,6 @@ a.nav-link:hover {
 	position: relative;
 }
 
-.profile-icon:hover {
-	background: url('../images/misc/personal-icon-2.webp') #ffddd2;
-	background-repeat: no-repeat;
-	background-size: 150%;
-	background-position: center 40%;
-	animation: profile-icon-hover 2s ease-in;
-}
-
 @keyframes profile-icon-hover {
 
 	0%,
@@ -250,6 +273,7 @@ a.nav-link:hover {
 	position: fixed;
 	right: .5rem;
 	bottom: .5rem;
+	z-index: 100;
 }
 
 .back-to-top-btn {
