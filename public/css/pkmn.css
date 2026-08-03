@@ -78,6 +78,12 @@ body[data-theme="pkmn-blue"] .page-header {
     max-width: 220px;
 }
 
+.accordion-item {
+    background: none;
+    border: none;
+    color: inherit;
+}
+
 .pkmn-blue .nav-item, .pkmn-blue .accordion-item {
     max-width: 150px;
 }
