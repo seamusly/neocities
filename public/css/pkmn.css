@@ -24,7 +24,7 @@ body[data-theme="pkmn-blue"] .page-header {
 .pkmn-badge {
     display: inline-block !important;
     background: url('../images/misc/pkmnblue-badges.png');
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 .pkmn-badge.badge {
