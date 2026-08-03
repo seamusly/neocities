@@ -197,6 +197,7 @@ body[data-theme="pkmn-crystal"] {
     height: 168px;
     position: absolute;
     image-rendering: pixelated;
+    pointer-events: none;
 }
 
 [data-gen="pkmn-rbygsc"] .trainer-blurb,
