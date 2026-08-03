@@ -3,6 +3,11 @@
 	src: url('../fonts/PKMN\ RBYGSC.ttf');
 }
 
+@font-face {
+	font-family: "Onett";
+	src: url('../fonts/Onett.ttf');
+}
+
 /* Body */
 body[data-theme="pkmn-blue"] {
 	background-image: url('../images/backgrounds/bg-pkmnblue-tile.png') !important;
