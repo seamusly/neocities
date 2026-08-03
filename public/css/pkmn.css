@@ -1,0 +1,126 @@
+@font-face {
+	font-family: "PKMN RBYGSC";
+	src: url('../fonts/PKMN\ RBYGSC.ttf');
+}
+
+/* Body */
+body[data-theme="pkmn-blue"] {
+	background-image: url('../images/backgrounds/bg-pkmnblue-tile.png') !important;
+	color: var(--body-font-color);
+	font-size: 12pt;
+}
+
+body[data-theme="pkmn-blue"] .page-header {
+    background-image:url('https://cdn2.steamgriddb.com/hero_thumb/a2915ad0d57ca8c644f99f9c3f20a918.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.pkmn-badge {
+    display: inline-block !important;
+    background: url('../images/misc/pkmnblue-badges.png');
+    image-rendering: crisp-edges;
+}
+
+.pkmn-badge.badge {
+    width: 16px;
+    height: 16px;
+    scale: 2;
+}
+
+.pkmn-badge.badge.badge-1 { background-position: 0px 0px; }
+.pkmn-badge.badge.badge-2 { background-position: -16px 0px; }
+.pkmn-badge.badge.badge-3 { background-position: -32px 0px; }
+.pkmn-badge.badge.badge-4 { background-position: -48px 0px; }
+.pkmn-badge.badge.badge-5 { background-position: 0px -16px; }
+.pkmn-badge.badge.badge-6 { background-position: -16px -16px; }
+.pkmn-badge.badge.badge-7 { background-position: -32px -16px; }
+.pkmn-badge.badge.badge-8 { background-position: -48px -16px; }
+
+.pkmn-blue hr {
+    border-top: 6px double #181010;
+    opacity: 1;
+}
+
+.pkmn-blue .trainer-card {
+    background-image: url('../images/backgrounds/bg-pkmnblue-card.png');
+    color: #181010 !important;
+    font-family: "PKMN RBYGSC" !important;
+    font-size: 16px !important;
+    max-width: 750px;
+}
+
+.pkmn-blue .trainer-card-body {
+    background: #F8E8F8;
+    padding: 4px;
+}
+
+.pkmn-blue .trainer-card-content {
+    box-shadow: 2px 0 #807098, -2px 0 #807098, 0 2px #807098, 0 -2px #807098;
+}
+
+.pkmn-blue img {
+    width: 112px;
+    height: 112px;
+    image-rendering: pixelated;
+}
+
+.trainer-infobox img {
+    width: 168px !important;
+    height: 168px !important;
+}
+
+.pkmn-blue .frame-box {
+    border: 6px double #181010;
+}
+
+.pkmn-blue .moves {
+    max-width: 220px;
+}
+
+.pkmn-blue .nav-item, .pkmn-blue .accordion-item {
+    max-width: 150px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pkmn-blue .nav-item, .pkmn-blue .accordion-item {
+        max-width: 250px;
+    }
+
+    .pkmn-blue .moves {
+        max-width: 320px;
+    }
+}
+
+.pkmn-blue .nav-link, .pkmn-blue .accordion-item button {
+    border-radius: 0 !important;
+    box-shadow: 2px 0 #181010, -2px 0 #181010, 0 2px #181010, 0 -2px #181010;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: linear .07s;
+    background: #F8E8F8 !important;
+}
+
+.pkmn-blue .nav-link.active, .pkmn-blue .nav-link:hover, .pkmn-blue .accordion-item button:hover, .pkmn-blue .accordion-item button:not(.collapsed) {
+    background: #807098 !important; /* F0B088 */
+}
+
+.pkmn-blue .nav-link img, .pkmn-blue .accordion-item button img {
+    width: 168px;
+    height: 168px;
+    position: absolute;
+    image-rendering: pixelated;
+}
+
+.pkmn-blue .trainer-blurb {
+    margin-top: 2rem;
+    margin-bottom: 1.4rem;
+    padding: .1rem .1rem 0 .1rem;
+    font-family: "Onett" !important;
+    font-size: 32px;
+    line-height: 2rem;
+    letter-spacing: .5px;
+}
