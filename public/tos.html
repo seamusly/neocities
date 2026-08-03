@@ -10,15 +10,9 @@
     <link type="text/plain" rel="author" href="humans.txt"/>
 
     <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/bs-addons.css" rel="stylesheet">
-    
-    
-    <script type="text/javascript" src="/utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <link href="/css/bs-addons.css" rel="stylesheet"><script type="text/javascript" src="/utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/utilities/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="/utilities/list.min.js"></script>
-    
 </head>
-
 <body>
     <div class="back-to-top-container">
         <a role="button" class="btn back-to-top-btn mb-1" data-bs-toggle="tooltip" data-bs-title="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
@@ -301,5 +295,14 @@
             </div>
         </div>
     </div>
+
+    
+    
+    
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
 </body>
 </html>

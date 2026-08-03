@@ -11,15 +11,15 @@
 
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/bs-addons.css" rel="stylesheet">
-    
-    
+    <link href="/utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet">
     <script type="text/javascript" src="/utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/status-cafe.js"></script>
+    
+    <script type="text/javascript" src="/utilities/lightbox2-2.11.5/lightbox.min.js"></script>
+    
     <script type="text/javascript" src="/utilities/list.min.js"></script>
-    <link href="./utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet"/>
-<script type="text/javascript" src="./utilities/lightbox2-2.11.5/lightbox.min.js"></script>
-<script type="module" src="./js/status-cafe.js"></script>
-<script type="module">
+    <script type="module">
     // Import config and utils
     import { config } from './js/config.js';
     import { utils } from './js/utils.js';
@@ -29,9 +29,6 @@
     // Init page elements
     $(document).ready(function() {
         const urlParams = utils.url.getUrlParams();
-
-        utils.init.tooltips();
-        utils.init.lightbox();
 
         let latestArr = images.commissions['2026'];
         let latestSize = latestArr.length;
@@ -52,7 +49,6 @@
 </script>
 
 </head>
-
 <body>
     <div class="back-to-top-container">
         <a role="button" class="btn back-to-top-btn mb-1" data-bs-toggle="tooltip" data-bs-title="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
@@ -147,7 +143,7 @@
                 <p class="status-label mb-0"><i class="fa-solid fa-music"></i> Listening:</p>
                 <div class="marquee-container">
                     <div class="marquee-content">
-                        <a href="https://www.youtube.com/watch?v=YBSSpZfwp7g"><i>Homestuck - Sunsetter Cover</i> - Jack Gibson</a>
+                        <a href="https://www.youtube.com/watch?v=7rJWMSYNBU8"><i>Garden of Hopes and Dreams (DELTARUNE Chapter 5)</i></a><span class="small opacity-75"> - insaneintherainmusic</span>
                     </div>
                 </div>
             </div>
@@ -245,5 +241,16 @@
             </div>
         </div>
     </div>
+
+    
+    
+    <script>lightbox.option({'resizeDuration': 0,'imageFadeDuration': 0, 'fadeDuration': 100});</script>
+    
+    
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
 </body>
 </html>
