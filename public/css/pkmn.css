@@ -15,36 +15,71 @@ body[data-theme="pkmn-blue"] {
 	font-size: 12pt;
 }
 
+body[data-theme="pkmn-crystal"] {
+	background-image: url('../images/backgrounds/bg-pkmncrystal-tile.png') !important;
+	color: var(--body-font-color);
+	font-size: 12pt;
+}
+
 body[data-theme="pkmn-blue"] .page-header {
     background-image:url('https://cdn2.steamgriddb.com/hero_thumb/a2915ad0d57ca8c644f99f9c3f20a918.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
 }
 
-.pkmn-badge {
+body[data-theme="pkmn-crystal"] .page-header {
+    background-image:url('https://cdn2.steamgriddb.com/hero_thumb/fcccfc1beffbaa487eb34db63fe3e823.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+body[data-theme="pkmn-blue"] .pkmn-badge {
     display: inline-block !important;
     background: url('../images/misc/pkmnblue-badges.png');
     image-rendering: pixelated;
+    border-radius: 0;
 }
 
-.pkmn-badge.badge {
+body[data-theme="pkmn-crystal"] .pkmn-badge {
+    display: inline-block !important;
+    background: url('../images/misc/pkmncrystal-badges.png');
+    image-rendering: pixelated;
+    border-radius: 0;
+}
+
+body[data-theme="pkmn-blue"] .pkmn-badge.badge,
+body[data-theme="pkmn-crystal"] .pkmn-badge.badge {
     width: 16px;
     height: 16px;
     scale: 2;
 }
 
-.pkmn-badge.badge.badge-1 { background-position: 0px 0px; }
-.pkmn-badge.badge.badge-2 { background-position: -16px 0px; }
-.pkmn-badge.badge.badge-3 { background-position: -32px 0px; }
-.pkmn-badge.badge.badge-4 { background-position: -48px 0px; }
-.pkmn-badge.badge.badge-5 { background-position: 0px -16px; }
-.pkmn-badge.badge.badge-6 { background-position: -16px -16px; }
-.pkmn-badge.badge.badge-7 { background-position: -32px -16px; }
-.pkmn-badge.badge.badge-8 { background-position: -48px -16px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-1, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-1 { background-position: 0px 0px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-2, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-2 { background-position: -16px 0px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-3, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-3 { background-position: -32px 0px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-4, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-4 { background-position: -48px 0px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-5, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-5 { background-position: 0px -16px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-6, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-6 { background-position: -16px -16px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-7, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-7 { background-position: -32px -16px; }
+body[data-theme="pkmn-blue"] .pkmn-badge.badge.badge-8, body[data-theme="pkmn-crystal"] .pkmn-badge.badge.badge-8 { background-position: -48px -16px; }
 
 .pkmn-blue hr {
     border-top: 6px double #181010;
     opacity: 1;
+}
+
+.pkmn-crystal hr {
+    border-top: 4px solid #000;
+    opacity: 1;
+}
+
+.pkmn-crystal .gender {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: -4px;
 }
 
 .pkmn-blue .trainer-card {
@@ -55,8 +90,21 @@ body[data-theme="pkmn-blue"] .page-header {
     max-width: 750px;
 }
 
+.pkmn-crystal .trainer-card {
+    background-image: url('../images/backgrounds/bg-pkmncrystal-card.png');
+    color: #000 !important;
+    font-family: "PKMN RBYGSC" !important;
+    font-size: 16px !important;
+    max-width: 795px;
+}
+
 .pkmn-blue .trainer-card-body {
     background: #F8E8F8;
+    padding: 4px;
+}
+
+.pkmn-crystal .trainer-card-body {
+    background: #fff;
     padding: 4px;
 }
 
@@ -64,7 +112,7 @@ body[data-theme="pkmn-blue"] .page-header {
     box-shadow: 2px 0 #807098, -2px 0 #807098, 0 2px #807098, 0 -2px #807098;
 }
 
-.pkmn-blue img {
+.pkmn-blue img, .pkmn-crystal img {
     width: 112px;
     height: 112px;
     image-rendering: pixelated;
@@ -75,12 +123,16 @@ body[data-theme="pkmn-blue"] .page-header {
     height: 168px !important;
 }
 
-.pkmn-blue .frame-box {
+.pkmn-blue .frame-box, .pkmn-crystal .frame-box {
     border: 6px double #181010;
 }
 
 .pkmn-blue .moves {
     max-width: 220px;
+}
+
+.pkmn-crystal .moves {
+    max-width: 260px;
 }
 
 .accordion-item {
@@ -89,22 +141,26 @@ body[data-theme="pkmn-blue"] .page-header {
     color: inherit !important;
 }
 
-.pkmn-blue .nav-item, .pkmn-blue .accordion-item {
+.pkmn-blue .accordion-item {
     max-width: 150px;
+}
+
+.pkmn-crystal .accordion-item {
+    max-width: 170px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .pkmn-blue .nav-item, .pkmn-blue .accordion-item {
+    .pkmn-blue .accordion-item, .pkmn-crystal .accordion-item {
         max-width: 250px;
     }
 
-    .pkmn-blue .moves {
+    .pkmn-blue .moves, .pkmn-crystal .moves {
         max-width: 320px;
     }
 }
 
-.pkmn-blue .nav-link, .pkmn-blue .accordion-item button {
+.pkmn-blue .accordion-item button {
     border-radius: 0 !important;
     box-shadow: 2px 0 #181010, -2px 0 #181010, 0 2px #181010, 0 -2px #181010;
     height: 50px;
@@ -115,18 +171,36 @@ body[data-theme="pkmn-blue"] .page-header {
     background: #F8E8F8 !important;
 }
 
-.pkmn-blue .nav-link.active, .pkmn-blue .nav-link:hover, .pkmn-blue .accordion-item button:hover, .pkmn-blue .accordion-item button:not(.collapsed) {
-    background: #807098 !important; /* F0B088 */
+.pkmn-crystal .accordion-item button {
+    border-radius: 0 !important;
+    box-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: linear .07s;
+    background: #fff !important;
 }
 
-.pkmn-blue .nav-link img, .pkmn-blue .accordion-item button img {
+.pkmn-blue .accordion-item button:hover, .pkmn-blue .accordion-item button:not(.collapsed) {
+    background: #807098 !important;
+}
+
+.pkmn-crystal .accordion-item button:hover, .pkmn-crystal .accordion-item button:not(.collapsed) {
+    background: #D88870 !important;
+}
+
+
+.pkmn-blue .nav-link img, .pkmn-blue .accordion-item button img,
+.pkmn-crystal .nav-link img, .pkmn-crystal .accordion-item button img {
     width: 168px;
     height: 168px;
     position: absolute;
     image-rendering: pixelated;
 }
 
-.pkmn-blue .trainer-blurb {
+.pkmn-blue .trainer-blurb,
+.pkmn-crystal .trainer-blurb {
     margin-top: 2rem;
     margin-bottom: 1.4rem;
     padding: .1rem .1rem 0 .1rem;
