@@ -152,15 +152,23 @@ body[data-theme="pkmn-crystal"] {
     }
 }
 
-.accordion-item button {
-    box-shadow: 2px 0 var(--btn-border-color), -2px 0 var(--btn-border-color), 0 2px var(--btn-border-color), 0 -2px var(--btn-border-color);
-    border-radius: 0 !important;
+.accordion-container {
     height: 50px;
     width: 100%;
     overflow: hidden;
-    mask-image: none;
-    -webkit-mask-image: none;
     position: relative;
+    box-shadow: 2px 0 var(--btn-border-color), -2px 0 var(--btn-border-color), 0 2px var(--btn-border-color), 0 -2px var(--btn-border-color);
+}
+
+.accordion-item button {
+    border-radius: 0 !important;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     transition: linear .07s;
     background: var(--btn-bg-color);
 }
@@ -170,13 +178,13 @@ body[data-theme="pkmn-crystal"] {
     background: var(--btn-hover-color);
 }
 
-.pkmn-blue .accordion-item button {
+.pkmn-blue .accordion-item {
     --btn-bg-color: #F8E8F8;
     --btn-border-color: #181010;
     --btn-hover-color: #807098;
 }
 
-.pkmn-crystal .accordion-item button {
+.pkmn-crystal .accordion-item {
     --btn-border-color: #000;
     --btn-bg-color: #fff;
     --btn-hover-color: #D88870;
