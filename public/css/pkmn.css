@@ -18,13 +18,13 @@ body {
 body[data-theme="pkmn-blue"] {
 	--bg-image: url('../images/backgrounds/bg-pkmnblue-tile.png');
     --header-image: url('https://cdn2.steamgriddb.com/hero_thumb/a2915ad0d57ca8c644f99f9c3f20a918.jpg');
-    --badge-spritesheet: url('../images/misc/pkmnblue-badges.png');
+    --badge-spritesheet: url('../images/pkmn/misc/blue-badges.png');
 }
 
 body[data-theme="pkmn-crystal"] {
 	--bg-image: url('../images/backgrounds/bg-pkmncrystal-tile.png');
     --header-image: url('https://cdn2.steamgriddb.com/hero_thumb/fcccfc1beffbaa487eb34db63fe3e823.jpg');
-    --badge-spritesheet: url('../images/misc/pkmncrystal-badges.png');
+    --badge-spritesheet: url('../images/pkmn/misc/crystal-badges.png');
 }
 
 .page-header {
@@ -152,23 +152,13 @@ body[data-theme="pkmn-crystal"] {
     }
 }
 
-.accordion-container {
+.accordion-item button {
+    border-radius: 0 !important;
     height: 50px;
     width: 100%;
     overflow: hidden;
     position: relative;
     box-shadow: 2px 0 var(--btn-border-color), -2px 0 var(--btn-border-color), 0 2px var(--btn-border-color), 0 -2px var(--btn-border-color);
-}
-
-.accordion-item button {
-    border-radius: 0 !important;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     transition: linear .07s;
     background: var(--btn-bg-color);
 }

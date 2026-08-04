@@ -190,23 +190,6 @@ a.nav-link:hover {
 	display: block;
 }
 
-@keyframes profile-icon-hover {
-
-	0%,
-	15% {
-		background-position: center 40%;
-	}
-
-	5% {
-		background-position: center 50%;
-	}
-
-	10% {
-		background-position: center 43%;
-	}
-}
-
-
 /* Main Layout */
 .main-container {
 	max-width: 1250px;
@@ -346,7 +329,6 @@ a.nav-link:hover {
 }
 
 .char-directory-img:hover {
-	transform: rotate(5deg);
 	filter: var(--img-dropshadow-hover);
 }
 
@@ -506,7 +488,6 @@ a.profile-inline-img[data-form="feral"] {
 }
 
 a.profile-inline-img:hover {
-	transform: rotate(2deg);
 	filter: var(--img-dropshadow-hover);
 }
 
@@ -764,8 +745,6 @@ a.star-collapse-link.collapsed:hover {
 }
 
 .gallery-card:hover {
-	background: var(--body-card-bg-color);
-	transform: rotate(2.5deg);
 	filter: var(--img-dropshadow-default) drop-shadow(0 0 10px black);
 }
 
@@ -881,7 +860,6 @@ a.star-collapse-link.collapsed:hover {
 
 .btn-profile:hover {
 	background: var(--navtab-bg-hover);
-	transform: rotate(-2deg);
 }
 
 /* Table */
@@ -896,10 +874,6 @@ a.star-collapse-link.collapsed:hover {
 	filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
 	border-radius: .5rem;
 	transition: ease .25s all;
-}
-
-.submission-img:hover {
-	transform: rotate(1.5deg);
 }
 
 .submission-header {
