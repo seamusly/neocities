@@ -12,11 +12,49 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/bs-addons.css" rel="stylesheet"><script type="text/javascript" src="/utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/freezeframe.js"></script><script>
+        let loaded = false;
+        $(window).ready(function(){
+            const scrollPoint = $(this).scrollTop();
+            const scrollPercent = 100 * scrollPoint / ($(document).height() - $(window).height());
+
+            if (isNaN(scrollPercent)) {
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            } else if (scrollPoint <= 205){
+                $('#scroll-top').toggle();
+            } else if (scrollPercent >= 65) {
+                $('#scroll-bottom').toggle();
+            }
+
+            $(`.back-to-top-container`).addClass('active');
+            return loaded = true;
+        });
+
+        $(window).scroll(function(){
+            if (!loaded) return;
+            const scrollPoint = $(this).scrollTop();
+            const scrollPercent = 100 * scrollPoint / ($(document).height() - $(window).height());
+
+            if (scrollPoint <= 205){
+                if (!$('#scroll-top').is(':visible')) return;
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            } else if (scrollPercent >= 65) {
+                if (!$('#scroll-bottom').is(':visible')) return;
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            }
+        });
+    </script>
+    
 </head>
 <body>
     <div class="back-to-top-container">
-        <a role="button" class="btn back-to-top-btn mb-1" data-bs-toggle="tooltip" data-bs-title="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
-        <a role="button" class="btn back-to-top-btn" data-bs-toggle="tooltip" data-bs-title="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
+        <a role="button" class="btn back-to-top-btn toggle-gif mb-1" aria-label="Stop GIFs"><i class="fa-solid fa-pause"></i></a>
+        <a role="button" class="btn back-to-top-btn toggle-gif mb-1" aria-label="Play GIFs" style="display:none;"><i class="fa-solid fa-play"></i></a>
+        <a id="scroll-top" role="button" class="btn back-to-top-btn mb-1" aria-label="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+        <a id="scroll-bottom" role="button" class="btn back-to-top-btn" aria-label="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
     </div>
 
     
@@ -76,7 +114,7 @@
                                 <i class="fa-solid fa-rainbow"></i> Hobbies
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item navbar-link" href="/hobbies/pokemon.html">Pokémon</a></li>
+                                <li><a class="dropdown-item navbar-link" href="/pokemon.html">Pokémon</a></li>
                                 <li><a class="dropdown-item navbar-link" href="/not_found.html">Reading List</a></li>
                             </ul>
                         </li>
@@ -97,7 +135,7 @@
     </div>
 
     <div class="collapse show active px-3 section-body" id="code">
-        <ul role="presentation" class="fa-ul ms-md-4 ms-1"><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://www.11ty.dev/">Eleventy</a> by <a href="https://build.awesome.me/">Build Awesome</a></li><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://getbootstrap.com/">Bootstrap 5.3.8</a></li><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://bechnokid.com/resources/status-cafe/feed-reader/#">StatusCafe Feed Reader</a> by Bechno Kid</li><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://lokeshdhakar.com/projects/lightbox2">Lightbox</a> by Lokesh Dhakar</li></ul>
+        <ul role="presentation" class="fa-ul ms-md-4 ms-1"><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://www.11ty.dev/">Eleventy</a> by <a href="https://build.awesome.me/">Build Awesome</a></li><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://getbootstrap.com/">Bootstrap 5.3.8</a></li><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://bechnokid.com/resources/status-cafe/feed-reader/#">StatusCafe Feed Reader</a> by Bechno Kid</li><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://bechnokid.com/tutorials/freezeframe/#">FreezeframeJS</a> by Bechno Kid</li><li class="mb-2"><i class="fas fa-angle-right me-1 opacity-50"></i> <a href="https://lokeshdhakar.com/projects/lightbox2">Lightbox</a> by Lokesh Dhakar</li></ul>
     
 </div>
 
@@ -119,23 +157,15 @@
 
         <div class="page-footer" id="footer">
             <div class="footer-content">
+                <span aria-hidden="true" aria-hidden="true">✦</span>
+                <a class="mx-lg-3 mx-2" href="/index.html">Home</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/index.html">Home</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/not_found.html">Sitemap</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/not_found.html">Sitemap</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/credits.html">Credits</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/credits.html">Credits</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/not_found.html">Archive</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/not_found.html">Archive</a>
-                </span>
-                <span>✦</span>
             </div>
         </div>
     </div>

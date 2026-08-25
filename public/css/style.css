@@ -39,6 +39,12 @@
 	--img-dropshadow-hover: var(--img-dropshadow-default) var(--img-dropshadow-default);
 }
 
+.no-select, [aria-hidden="true"] {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+
 /* Tabs */
 .nav-tabs.custom-tabs {
 	border-bottom: none;
@@ -249,6 +255,12 @@ a.nav-link:hover {
 	right: .5rem;
 	bottom: .5rem;
 	z-index: 100;
+	opacity: 0;
+}
+
+.back-to-top-container.active {
+	opacity: 100%;
+	animation: .5s fade-in;
 }
 
 .back-to-top-btn {
@@ -325,7 +337,6 @@ a.nav-link:hover {
 	background-position: center;
 	background-repeat: no-repeat;
 	filter: var(--img-dropshadow-default);
-	transition: ease 0.3s all;
 }
 
 .char-directory-img:hover {
@@ -476,7 +487,6 @@ a.profile-inline-img {
 	background-position: center;
 	background-repeat: no-repeat;
 	filter: var(--img-dropshadow-default);
-	transition: ease 0.3s all;
 }
 
 a.profile-inline-img[data-form="humanoid"] {
@@ -732,7 +742,7 @@ a.star-collapse-link.collapsed:hover {
 /* Gallery */
 .gallery-card {
 	background: var(--body-card-bg-color);
-	transition: ease 0.3s all;
+	/* transition: ease 0.3s all; */
 }
 
 #gallery-writing-contents {
@@ -745,7 +755,7 @@ a.star-collapse-link.collapsed:hover {
 }
 
 .gallery-card:hover {
-	filter: var(--img-dropshadow-default) drop-shadow(0 0 10px black);
+	filter: var(--img-dropshadow-default);
 }
 
 .gallery-card-thumb {
@@ -947,4 +957,32 @@ a.star-collapse-link.collapsed:hover {
 
 .marquee-content img {
 	vertical-align: middle;
+}
+
+/* FreezeFrameJS */
+.ff-container {
+	display: flex;
+	position: relative;
+}
+
+.ff-container img,
+.ff-container canvas {
+	align-self: start;
+}
+
+.ff-container.ff-hover:hover .ff-active {
+	position: absolute;
+	opacity: 0;
+}
+
+.ff-container.ff-hover:hover .ff-inactive {
+	position: static;
+	opacity: 1;
+	z-index: 1;
+}
+
+.ff-inactive {
+	position: absolute;
+	opacity: 0;
+	z-index: -99;
 }

@@ -14,11 +14,49 @@
     <link href="/css/pkmn.css" rel="stylesheet">
     <script type="text/javascript" src="/utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/freezeframe.js"></script><script>
+        let loaded = false;
+        $(window).ready(function(){
+            const scrollPoint = $(this).scrollTop();
+            const scrollPercent = 100 * scrollPoint / ($(document).height() - $(window).height());
+
+            if (isNaN(scrollPercent)) {
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            } else if (scrollPoint <= 205){
+                $('#scroll-top').toggle();
+            } else if (scrollPercent >= 65) {
+                $('#scroll-bottom').toggle();
+            }
+
+            $(`.back-to-top-container`).addClass('active');
+            return loaded = true;
+        });
+
+        $(window).scroll(function(){
+            if (!loaded) return;
+            const scrollPoint = $(this).scrollTop();
+            const scrollPercent = 100 * scrollPoint / ($(document).height() - $(window).height());
+
+            if (scrollPoint <= 205){
+                if (!$('#scroll-top').is(':visible')) return;
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            } else if (scrollPercent >= 65) {
+                if (!$('#scroll-bottom').is(':visible')) return;
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            }
+        });
+    </script>
+    
 </head>
 <body data-theme="pkmn-blue" data-gen="pkmn-rbygsc">
     <div class="back-to-top-container">
-        <a role="button" class="btn back-to-top-btn mb-1" data-bs-toggle="tooltip" data-bs-title="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
-        <a role="button" class="btn back-to-top-btn" data-bs-toggle="tooltip" data-bs-title="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
+        <a role="button" class="btn back-to-top-btn toggle-gif mb-1" aria-label="Stop GIFs"><i class="fa-solid fa-pause"></i></a>
+        <a role="button" class="btn back-to-top-btn toggle-gif mb-1" aria-label="Play GIFs" style="display:none;"><i class="fa-solid fa-play"></i></a>
+        <a id="scroll-top" role="button" class="btn back-to-top-btn mb-1" aria-label="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+        <a id="scroll-bottom" role="button" class="btn back-to-top-btn" aria-label="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
     </div>
 
     
@@ -78,7 +116,7 @@
                                 <i class="fa-solid fa-rainbow"></i> Hobbies
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item navbar-link" href="/hobbies/pokemon.html">Pokémon</a></li>
+                                <li><a class="dropdown-item navbar-link" href="/pokemon.html">Pokémon</a></li>
                                 <li><a class="dropdown-item navbar-link" href="/not_found.html">Reading List</a></li>
                             </ul>
                         </li>
@@ -110,41 +148,41 @@
 
                             <div class="d-flex flex-wrap"><div class="accordion-item col-sm-4 col-6 p-1">
                                     <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#team-1">
-                                        <img src="/images/pkmn/pokemon/blue-porygon.png" alt="sprite of Porygon from Pokémon Blue" style="top:-60%; left:-5%;">
+                                        <img src="/images/pkmn/pokemon/blue-porygon.png" alt="sprite of Porygon from Pokémon Blue" data-render="pkmn-rbygsc" data-inherit="true" width="156" height="156" style="position:absolute; top:-60%; left:-5%;">
                                     </button>
                                 </div><div class="accordion-item col-sm-4 col-6 p-1">
                                     <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#team-2">
-                                        <img src="/images/pkmn/pokemon/blue-lapras.png" alt="sprite of Lapras from Pokémon Blue" style="top:-35%; left:12%;">
+                                        <img src="/images/pkmn/pokemon/blue-lapras.png" alt="sprite of Lapras from Pokémon Blue" data-render="pkmn-rbygsc" data-inherit="true" width="156" height="156" style="position:absolute; top:-35%; left:12%;">
                                     </button>
                                 </div><div class="accordion-item col-sm-4 col-6 p-1">
                                     <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#team-3">
-                                        <img src="/images/pkmn/pokemon/blue-venusaur.png" alt="sprite of Venusaur from Pokémon Blue" style="bottom:-100%; left:5%;">
+                                        <img src="/images/pkmn/pokemon/blue-venusaur.png" alt="sprite of Venusaur from Pokémon Blue" data-render="pkmn-rbygsc" data-inherit="true" width="156" height="156" style="position:absolute; bottom:-100%; left:5%;">
                                     </button>
                                 </div><div class="accordion-item col-sm-4 col-6 p-1">
                                     <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#team-4">
-                                        <img src="/images/pkmn/pokemon/blue-snorlax.png" alt="sprite of Snorlax from Pokémon Blue" style="top:-55%; right:5%;">
+                                        <img src="/images/pkmn/pokemon/blue-snorlax.png" alt="sprite of Snorlax from Pokémon Blue" data-render="pkmn-rbygsc" data-inherit="true" width="156" height="156" style="position:absolute; top:-55%; right:5%;">
                                     </button>
                                 </div><div class="accordion-item col-sm-4 col-6 p-1">
                                     <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#team-5">
-                                        <img src="/images/pkmn/pokemon/blue-sandslash.png" alt="sprite of Sandslash from Pokémon Blue" style="top:-140%; left:0;">
+                                        <img src="/images/pkmn/pokemon/blue-sandslash.png" alt="sprite of Sandslash from Pokémon Blue" data-render="pkmn-rbygsc" data-inherit="true" width="156" height="156" style="position:absolute; top:-140%; left:0;">
                                     </button>
                                 </div><div class="accordion-item col-sm-4 col-6 p-1">
                                     <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#team-6">
-                                        <img src="/images/pkmn/pokemon/blue-dodrio.png" alt="sprite of Dodrio from Pokémon Blue" style="top:-70%; left:-7%;">
+                                        <img src="/images/pkmn/pokemon/blue-dodrio.png" alt="sprite of Dodrio from Pokémon Blue" data-render="pkmn-rbygsc" data-inherit="true" width="156" height="156" style="position:absolute; top:-70%; left:-7%;">
                                     </button>
                                 </div></div>
 
                         </div>
 
                         <div class="col-sm-auto col-12 trainer-infobox order-sm-2 order-1 text-center">
-                            <img src="/images/pkmn/trainers/blue-trainer.png" alt="sprite of player character from Pokémon Blue" class="mt-md-1 mt-sm-3 mt-1 me-md-3 mx-sm-2 mx-auto">
+                            <img src="/images/pkmn/trainers/blue-trainer-custom.png" data-render="pkmn-rbygsc" alt="sprite of player character from Pokémon Blue" class="mt-md-1 mt-sm-3 mt-1 me-md-3 mx-sm-2 mx-auto">
                         </div>
 
                     </div>
 
                     <div class="p-1"><div id="team-1" class="accordion-collapse collapse fade mt-3" data-bs-parent="#team-accordion">
                             <div class="d-flex flex-wrap align-items-md-center align-items-start">
-                                <img src="/images/pkmn/pokemon/blue-porygon.png" alt="sprite of Porygon from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto">
+                                <img src="/images/pkmn/pokemon/blue-porygon.png" alt="sprite of Porygon from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto" width="112" height="112" data-render="pkmn-rbygsc" data-inherit="true">
                                 <div class="col-sm d-flex flex-wrap">
 
                                     <div class="col-md col-12 align-content-center me-md-0 me-sm-3 text-sm-start text-center">
@@ -180,7 +218,7 @@
                             </div>
                         </div><div id="team-2" class="accordion-collapse collapse fade mt-3" data-bs-parent="#team-accordion">
                             <div class="d-flex flex-wrap align-items-md-center align-items-start">
-                                <img src="/images/pkmn/pokemon/blue-lapras.png" alt="sprite of Lapras from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto">
+                                <img src="/images/pkmn/pokemon/blue-lapras.png" alt="sprite of Lapras from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto" width="112" height="112" data-render="pkmn-rbygsc" data-inherit="true">
                                 <div class="col-sm d-flex flex-wrap">
 
                                     <div class="col-md col-12 align-content-center me-md-0 me-sm-3 text-sm-start text-center">
@@ -214,7 +252,7 @@
                             </div>
                         </div><div id="team-3" class="accordion-collapse collapse fade mt-3" data-bs-parent="#team-accordion">
                             <div class="d-flex flex-wrap align-items-md-center align-items-start">
-                                <img src="/images/pkmn/pokemon/blue-venusaur.png" alt="sprite of Venusaur from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto">
+                                <img src="/images/pkmn/pokemon/blue-venusaur.png" alt="sprite of Venusaur from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto" width="112" height="112" data-render="pkmn-rbygsc" data-inherit="true">
                                 <div class="col-sm d-flex flex-wrap">
 
                                     <div class="col-md col-12 align-content-center me-md-0 me-sm-3 text-sm-start text-center">
@@ -248,7 +286,7 @@
                             </div>
                         </div><div id="team-4" class="accordion-collapse collapse fade mt-3" data-bs-parent="#team-accordion">
                             <div class="d-flex flex-wrap align-items-md-center align-items-start">
-                                <img src="/images/pkmn/pokemon/blue-snorlax.png" alt="sprite of Snorlax from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto">
+                                <img src="/images/pkmn/pokemon/blue-snorlax.png" alt="sprite of Snorlax from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto" width="112" height="112" data-render="pkmn-rbygsc" data-inherit="true">
                                 <div class="col-sm d-flex flex-wrap">
 
                                     <div class="col-md col-12 align-content-center me-md-0 me-sm-3 text-sm-start text-center">
@@ -282,7 +320,7 @@
                             </div>
                         </div><div id="team-5" class="accordion-collapse collapse fade mt-3" data-bs-parent="#team-accordion">
                             <div class="d-flex flex-wrap align-items-md-center align-items-start">
-                                <img src="/images/pkmn/pokemon/blue-sandslash.png" alt="sprite of Sandslash from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto">
+                                <img src="/images/pkmn/pokemon/blue-sandslash.png" alt="sprite of Sandslash from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto" width="112" height="112" data-render="pkmn-rbygsc" data-inherit="true">
                                 <div class="col-sm d-flex flex-wrap">
 
                                     <div class="col-md col-12 align-content-center me-md-0 me-sm-3 text-sm-start text-center">
@@ -318,7 +356,7 @@
                             </div>
                         </div><div id="team-6" class="accordion-collapse collapse fade mt-3" data-bs-parent="#team-accordion">
                             <div class="d-flex flex-wrap align-items-md-center align-items-start">
-                                <img src="/images/pkmn/pokemon/blue-dodrio.png" alt="sprite of Dodrio from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto">
+                                <img src="/images/pkmn/pokemon/blue-dodrio.png" alt="sprite of Dodrio from Pokémon Blue" class="col-sm-auto ms-md-0 me-md-3 mx-sm-4 mx-auto" width="112" height="112" data-render="pkmn-rbygsc" data-inherit="true">
                                 <div class="col-sm d-flex flex-wrap">
 
                                     <div class="col-md col-12 align-content-center me-md-0 me-sm-3 text-sm-start text-center">
@@ -369,23 +407,15 @@
 
         <div class="page-footer" id="footer">
             <div class="footer-content">
+                <span aria-hidden="true" aria-hidden="true">✦</span>
+                <a class="mx-lg-3 mx-2" href="/index.html">Home</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/index.html">Home</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/not_found.html">Sitemap</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/not_found.html">Sitemap</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/credits.html">Credits</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/credits.html">Credits</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/not_found.html">Archive</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/not_found.html">Archive</a>
-                </span>
-                <span>✦</span>
             </div>
         </div>
     </div>

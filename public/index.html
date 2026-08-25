@@ -14,11 +14,47 @@
     <link href="/utilities/lightbox2-2.11.5/lightbox.min.css" rel="stylesheet">
     <script type="text/javascript" src="/utilities/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/utilities/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/freezeframe.js"></script>
     <script type="text/javascript" src="/js/status-cafe.js"></script>
     
     <script type="text/javascript" src="/utilities/lightbox2-2.11.5/lightbox.min.js"></script>
     
     <script type="text/javascript" src="/utilities/list.min.js"></script>
+    <script>
+        let loaded = false;
+        $(window).ready(function(){
+            const scrollPoint = $(this).scrollTop();
+            const scrollPercent = 100 * scrollPoint / ($(document).height() - $(window).height());
+
+            if (isNaN(scrollPercent)) {
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            } else if (scrollPoint <= 205){
+                $('#scroll-top').toggle();
+            } else if (scrollPercent >= 65) {
+                $('#scroll-bottom').toggle();
+            }
+
+            $(`.back-to-top-container`).addClass('active');
+            return loaded = true;
+        });
+
+        $(window).scroll(function(){
+            if (!loaded) return;
+            const scrollPoint = $(this).scrollTop();
+            const scrollPercent = 100 * scrollPoint / ($(document).height() - $(window).height());
+
+            if (scrollPoint <= 205){
+                if (!$('#scroll-top').is(':visible')) return;
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            } else if (scrollPercent >= 65) {
+                if (!$('#scroll-bottom').is(':visible')) return;
+                $('#scroll-top').toggle();
+                $('#scroll-bottom').toggle();
+            }
+        });
+    </script>
     <script type="module">
     // Import config and utils
     import { config } from './js/config.js';
@@ -51,8 +87,10 @@
 </head>
 <body>
     <div class="back-to-top-container">
-        <a role="button" class="btn back-to-top-btn mb-1" data-bs-toggle="tooltip" data-bs-title="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
-        <a role="button" class="btn back-to-top-btn" data-bs-toggle="tooltip" data-bs-title="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
+        <a role="button" class="btn back-to-top-btn toggle-gif mb-1" aria-label="Stop GIFs"><i class="fa-solid fa-pause"></i></a>
+        <a role="button" class="btn back-to-top-btn toggle-gif mb-1" aria-label="Play GIFs" style="display:none;"><i class="fa-solid fa-play"></i></a>
+        <a id="scroll-top" role="button" class="btn back-to-top-btn mb-1" aria-label="Scroll to top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+        <a id="scroll-bottom" role="button" class="btn back-to-top-btn" aria-label="Scroll to bottom" href="#footer"><i class="fa-solid fa-arrow-down"></i></a>
     </div>
 
     
@@ -112,7 +150,7 @@
                                 <i class="fa-solid fa-rainbow"></i> Hobbies
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item navbar-link" href="/hobbies/pokemon.html">Pokémon</a></li>
+                                <li><a class="dropdown-item navbar-link" href="/pokemon.html">Pokémon</a></li>
                                 <li><a class="dropdown-item navbar-link" href="/not_found.html">Reading List</a></li>
                             </ul>
                         </li>
@@ -132,10 +170,10 @@
 
             <div class="status-box p-3 mb-3">
                 <p class="status-label mb-0"><i class="fa-solid fa-gamepad"></i> Playing:</p>
-                <p class="text-center">Pokémon Emerald<br>Pokémon Champions</p>
+                <p class="text-center">Pokémon Platinum</p>
 
                 <p class="status-label mb-0"><i class="fa-solid fa-book"></i> Reading:</p>
-                <p class="text-center">The Traitor Baru Cormorant<br><span class="small opacity-75">by Seth Dickinson</span></p>
+                <p class="text-center"><span class="small opacity-75"><i>Nothing right now!</i></span><!--<br><span class="small opacity-75">by </span>--></p>
 
                 <p class="status-label mb-0"><i class="fa-solid fa-video"></i> Watching:</p>
                 <p class="text-center"><span class="small opacity-75"><i>Nothing right now!</i></span></p>
@@ -143,7 +181,7 @@
                 <p class="status-label mb-0"><i class="fa-solid fa-music"></i> Listening:</p>
                 <div class="marquee-container">
                     <div class="marquee-content">
-                        <a href="https://www.youtube.com/watch?v=7rJWMSYNBU8"><i>Garden of Hopes and Dreams (DELTARUNE Chapter 5)</i></a><span class="small opacity-75"> - insaneintherainmusic</span>
+                        <a href="https://www.youtube.com/watch?v=IwInqrN_auU"><i>Pokémon Ruby & Sapphire Music Medley</i></a><span class="small opacity-75"> - Dr. Pez</span>
                     </div>
                 </div>
             </div>
@@ -221,23 +259,15 @@
 
         <div class="page-footer" id="footer">
             <div class="footer-content">
+                <span aria-hidden="true" aria-hidden="true">✦</span>
+                <a class="mx-lg-3 mx-2" href="/index.html">Home</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/index.html">Home</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/not_found.html">Sitemap</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/not_found.html">Sitemap</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/credits.html">Credits</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/credits.html">Credits</a>
-                </span>
+                <a class="mx-lg-3 mx-2" href="/not_found.html">Archive</a>
                 <span aria-hidden="true">✦</span>
-                <span class="mx-lg-3 mx-2">
-                    <a href="/not_found.html">Archive</a>
-                </span>
-                <span>✦</span>
             </div>
         </div>
     </div>

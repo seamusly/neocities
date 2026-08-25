@@ -104,9 +104,9 @@ body[data-theme="pkmn-crystal"] {
     box-shadow: 2px 0 #807098, -2px 0 #807098, 0 2px #807098, 0 -2px #807098;
 }
 
-.pkmn-blue img, .pkmn-crystal img {
-    width: 112px;
-    height: 112px;
+[data-render="pkmn-rbygsc"] img,
+img[data-render="pkmn-rbygsc"],
+[data-render="pkmn-rbygsc"] canvas  {
     image-rendering: pixelated;
 }
 
@@ -181,18 +181,13 @@ body[data-theme="pkmn-crystal"] {
 }
 
 
-.pkmn-blue .nav-link img, .pkmn-blue .accordion-item button img,
-.pkmn-crystal .nav-link img, .pkmn-crystal .accordion-item button img {
-    width: 168px;
-    height: 168px;
+[data-gen="pkmn-rbygsc"] .accordion-item button .ff-container {
     position: absolute;
-    image-rendering: pixelated;
     pointer-events: none;
 }
 
-[data-gen="pkmn-rbygsc"] .trainer-blurb,
-.pkmn-blue .trainer-blurb,
-.pkmn-crystal .trainer-blurb {
+
+[data-gen="pkmn-rbygsc"] .trainer-blurb {
     margin-top: 2rem;
     margin-bottom: 1.4rem;
     padding: .1rem .1rem 0 .1rem;
