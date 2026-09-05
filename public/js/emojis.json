@@ -1313,7 +1313,7 @@
     "📭": { "name": "open mailbox with lowered flag", "hex": "1f4ed" },
     "📮": { "name": "postbox", "hex": "1f4ee" },
     "🗳": { "name": "ballot box with ballot", "hex": "1f5f3" },
-    "✏": { "name": "pencil", "hex": "270f" },
+    "✏️": { "name": "pencil", "hex": "270f" },
     "✒": { "name": "black nib", "hex": "2712" },
     "🖋": { "name": "fountain pen", "hex": "1f58b" },
     "🖊": { "name": "pen", "hex": "1f58a" },
