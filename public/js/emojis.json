@@ -830,6 +830,7 @@
     "🍼": { "name": "baby bottle", "hex": "1f37c" },
     "🥛": { "name": "glass of milk", "hex": "1f95b" },
     "☕": { "name": "hot beverage", "hex": "2615" },
+    "☕️": { "name": "hot beverage", "hex": "2615" },
     "🫖": { "name": "teapot", "hex": "1fad6" },
     "🍵": { "name": "teacup without handle", "hex": "1f375" },
     "🍶": { "name": "sake", "hex": "1f376" },
