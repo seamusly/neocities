@@ -5,3 +5,5 @@ src
 /.eleventy.js
 /package-lock.json
 /package.json
+
+public/personal

@@ -50,7 +50,7 @@
 	border-bottom: none;
 }
 
-.tab-content.custom-tabs{
+.tab-content.custom-tabs, .generic-textbox {
 	background: var(--body-card-bg-color);
 }
 
@@ -118,6 +118,12 @@ body {
 	font-size: 12pt;
 }
 
+.comms-tag {
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
 body.beyond-the-sea {
 	background-image: url('../images/backgrounds/bg-beyondthesea-dark.png');
 	background-attachment: fixed;
@@ -126,6 +132,10 @@ body.beyond-the-sea {
 
 [data-lightbox] {
 	image-rendering: auto;
+}
+
+.small-caps {
+	font-variant: small-caps;
 }
 
 /* Typography */

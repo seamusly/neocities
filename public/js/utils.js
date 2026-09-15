@@ -108,7 +108,7 @@ utils.init = {
     },
 
 
-    lightbox(resizeDuration = 400, fadeDuration = 200) {
+    lightbox(resizeDuration = 400, fadeDuration = 400) {
         lightbox.option({
             'resizeDuration': resizeDuration,
             'fadeDuration': fadeDuration,

@@ -36,6 +36,25 @@ gallery.options = {
         }
     },
 
+    createCompactGalleryOptions(category) {
+        return {
+            valueNames: [
+                'imglink',
+                'client',
+            ],
+        item: function(values) {
+            return `
+                <div class="col-lg-2 col-sm-3 col-6 p-2">
+                    <a data-lightbox="${category}" data-title="@${values.client}" href="${values.imglink}">
+                        <div class="gallery-card p-2">
+                            <div class="gallery-card-thumb" style="background-image:url('${values.imglink}'); background-size:cover; background-size:contain; background-position:center;"></div>
+                        </div>
+                    </a>
+                </div>`
+            }
+        }
+    },
+
     createGeneralOptions(root) {
         return {
             valueNames: [

@@ -2,6 +2,113 @@ import { utils } from './utils.js';
 let images = {};
 
 images.commissions = {
+    'minichibis': [
+        {
+            imglink: `../images/commissions/2026-01-03_villaincomplex_minichibi.webp`,
+            client: 'villaincomplex',
+        },
+        {
+            imglink: `../images/commissions/2026-01-04_phoenixxtalon_minichibi.webp`,
+            client: 'PhoeniXXTalon',
+        },
+        {
+            imglink: `../images/commissions/2026-01-06_sleepylegion_minichibi.webp`,
+            client: 'SleepyLegion',
+        },
+        {
+            imglink: `../images/commissions/2026-01-06_scharkdesign_minichibi.webp`,
+            client: 'ScharkDesign',
+        },
+        {
+            imglink: `../images/commissions/2026-01-08_lilfungus_minichibi.webp`,
+            client: 'Lil_Fungus',
+        },
+        {
+            imglink: `../images/commissions/2026-01-08_marciemai_minichibi.webp`,
+            client: 'MarcieMai',
+        },
+        {
+            imglink: `../images/commissions/2026-01-09_votapoki_minichibi.webp`,
+            client: 'votakopi',
+        },
+        {
+            imglink: `../images/commissions/2026-01-09_lovebiites_minichibi.webp`,
+            client: 'LoveBiites',
+        },
+        {
+            imglink: `../images/commissions/2026-01-09_sagethewolfblooded_minichibi.webp`,
+            client: 'Sagethewolfblooded',
+        },
+        {
+            imglink: `../images/commissions/2026-01-10_scharkdesign_minichibi1.webp`,
+            client: 'ScharkDesign',
+        },
+        {
+            imglink: `../images/commissions/2026-01-10_scharkdesign_minichibi2.webp`,
+            client: 'ScharkDesign',
+        },
+        {
+            imglink: `../images/commissions/2026-01-10_scharkdesign_minichibi3.webp`,
+            client: 'ScharkDesign',
+        },
+        {
+            imglink: `../images/commissions/2026-01-13_yeehaw09_minichibi1.webp`,
+            client: 'Yeehaw09',
+        },
+        {
+            imglink: `../images/commissions/2026-01-13_bankruptbunny_minichibi1.webp`,
+            client: 'Majojello',
+        },
+        {
+            imglink: `../images/commissions/2026-01-14_bankruptbunny_minichibi1.webp`,
+            client: 'Majojello',
+        },
+        {
+            imglink: `../images/commissions/2026-01-14_bankruptbunny_minichibi2.webp`,
+            client: 'Majojello',
+        },
+        {
+            imglink: `../images/commissions/2026-01-14_bankruptbunny_minichibi3.webp`,
+            client: 'Majojello',
+        },
+        {
+            imglink: `../images/commissions/2026-01-19_robomikka_minichibi1.webp`,
+            client: 'Robomikka',
+        },
+        {
+            imglink: `../images/commissions/2026-01-19_robomikka_minichibi2.webp`,
+            client: 'Robomikka',
+        },
+        {
+            imglink: `../images/commissions/2026-01-19_robomikka_minichibi3.webp`,
+            client: 'Robomikka',
+        },
+        {
+            imglink: `../images/commissions/2026-01-30_someguynamedrudy_minichibi.webp`,
+            client: 'Rudy',
+        },
+        {
+            imglink: `../images/commissions/2026-02-05_someguynamedrudy_minichibi1.webp`,
+            client: 'Rudy',
+        },
+        {
+            imglink: `../images/commissions/2026-02-05_someguynamedrudy_minichibi2.webp`,
+            client: 'Rudy',
+        },
+        {
+            imglink: `../images/commissions/2026-02-06_someguynamedrudy_minichibi.webp`,
+            client: 'Rudy',
+        },
+        {
+            imglink: `../images/commissions/2026-02-07_someguynamedrudy_minichibi1.webp`,
+            client: 'Rudy',
+        },
+        {
+            imglink: `../images/commissions/2026-02-07_someguynamedrudy_minichibi2.webp`,
+            client: 'Rudy',
+        },
+    ],
+
     '2026': [
         {
             imglink: `/commissions/2026-01-03_villaincomplex_minichibi.webp`,

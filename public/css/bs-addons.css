@@ -94,8 +94,16 @@
     color: rgb(69, 219, 122) !important;
 }
 
+a.text-success:hover {
+    color: rgb(22, 135, 73) !important;
+}
+
 .text-warning {
     color: rgb(255, 197, 52) !important;
+}
+
+.bg-warning {
+    background-color: rgb(213, 139, 41) !important;
 }
 
 .text-danger {
