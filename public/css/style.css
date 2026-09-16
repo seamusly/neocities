@@ -138,6 +138,10 @@ body.beyond-the-sea {
 	font-variant: small-caps;
 }
 
+.ul-dotted {
+	text-decoration: underline dotted;
+}
+
 /* Typography */
 h1 {
 	font-family: 'Hello Bonia Serif', sans-serif;
